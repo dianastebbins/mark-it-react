@@ -1,25 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+// import StatsPage from './pages/examples/StatsPage';
+// import AddPlayerPage from './pages/examples/AddPlayerPage';
+// import DetailsPage from "./pages/examples/DetailsPage";
+import AddProductPage from "./pages/AddProductPage";
+import DetailPage from "./pages/DetailPage";
+import LandingPage from "./pages/LandingPage";
+import ListingPage from "./pages/ListingPage";
+import LoginPage from "./pages/LoginPage";
+import MapPage from "./pages/MapPage";
+import RegistrationPage from "./pages/RegistrationPage";
+import SchedulerPage from "./pages/SchedulerPage";
+import UserLandingPage from "./pages/UserLandingPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+        <Route exact path="/add-product">
+          <AddProductPage/>
+        </Route>
+        {/* one per detail type? */}
+        <Route exact path="/detail">
+          <DetailPage/>
+        </Route>
+        {/* one per listing type? */}
+        <Route exact path="/listing">
+          <ListingPage/>
+        </Route>
+        <Route exact path="/login">
+          <LoginPage/>
+        </Route>
+        <Route exact path="/map">
+          <MapPage/>
+        </Route>
+        <Route exact path="/registration">
+          <RegistrationPage/>
+        </Route>
+        <Route exact path="/scheduler">
+          <SchedulerPage/>
+        </Route>
+        one per 
+        <Route exact path="/user-landing">
+          <UserLandingPage/>
+        </Route>
+        {/* <Route exact path ="/player/:id">
+          <DetailsPage/>
+        </Route> */}
+      </Switch>
+    </Router>
   );
 }
 
