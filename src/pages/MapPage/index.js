@@ -50,7 +50,7 @@ export default function MapPage() {
     return (
         <div className="MapPage">
             <h1>MapPage</h1>
-            <h3>Navbar goes here...unless map opens in new window?</h3>
+            <h3>Navbar goes here</h3>
             <h3>Everything Zac created goes here :-)</h3>
             <Link to="/registration" >temporary link to RegistrationPage</Link>
         </div>

@@ -51,6 +51,7 @@ export default function UserLandingPage() {
         <div className="UserLandingPage">
             <h1>UserLandingPage</h1>
             <h3>Navbar goes here</h3>
+            <h3>Notification section...Vendor added product or date, other?</h3>
             <h3>IF(user is Vendor and selected Vendor mgmt)<br></br>
                 ....Schedule at a Market link goes here<br></br>
                 ....Manage Products link goes here<br></br>
@@ -58,7 +59,9 @@ export default function UserLandingPage() {
                 ....View Upcoming Schedule link goes here<br></br>
                 ELSE Favs was selected<br></br>
                 ....Favorite Markets link goes here<br></br>
+                ....Search All Markets link goes here<br></br>
                 ....Favorite Vendors link goes here<br></br>
+                ....Search All Vendors link goes here<br></br>
             </h3>
             <Link to="/" >temporary link to LandingPage</Link>
         </div>

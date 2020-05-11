@@ -65,13 +65,19 @@ export default function DetailPage() {
                 ........Favorites/Heart button,<br></br>
                 ....Business Email, Business Phone,<br></br>
                 ....Website,<br></br>
-                ....See Products link,<br></br>
                 ....Chat with Vendor button<br></br>
+                IF(user is vendor and on their own vendor page)
+                ........Add Product button
+                ........THIS BUTTON COULD BE ON VENDOR PROFILE PAGE
+                ....Show Products list,<br></br>
                 IF(Product Detail)<br></br>
                 ....Product Name,Product Description,<br></br>
                 ....Price,Unit,<br></br>
                 ....Details,<br></br>
                 ....Photo<br></br>
+                ....IF(user is vendor and on their own product page)<br></br>
+                ........update button<br></br>
+                .......delete button<br></br>
             </h3>
             <Link to="/listing" >temporary link to ListingPage</Link>
         </div>
