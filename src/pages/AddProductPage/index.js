@@ -62,7 +62,7 @@ export default function AddProductPage() {
     // }
 
     return (
-        <div className="AddProductPage">
+        <div className="AddProductPage container">
             <h1>AddProductPage</h1>
             <h3>Navbar goes here</h3>
             {/* <h3>FORM with<br></br>
@@ -79,14 +79,11 @@ export default function AddProductPage() {
             <form>
                 <input type="text" onChange={handleInputChange} name="product_name" value={productState.product_name} placeholder="Product Name" />
                 <input type="text" onChange={handleInputChange} name="product_description" value={productState.product_description} placeholder="Description" />
-                <br />
                 <input type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="price" />
                 <input type="text" onChange={handleInputChange} name="price_unit" value={productState.price_unit} placeholder="unit - each, dozen, etc." />
-                <br />
                 <input type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
                 <input type="text" onChange={handleInputChange} name="upload_photo" value={productState.upload_photo} placeholder="use upload component instead" />
-                <br />
-                <button onClick={handleFormSubmit}>Add Product!</button>
+                <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
             </form>
             <Link to="/detail" >temporary link to DetailPage</Link>
         </div>

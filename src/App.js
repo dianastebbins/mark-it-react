@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import 'bulma/css/bulma.css'
+import _ from 'lodash'
 // import StatsPage from './pages/examples/StatsPage';
 // import AddPlayerPage from './pages/examples/AddPlayerPage';
 // import DetailsPage from "./pages/examples/DetailsPage";
@@ -12,11 +14,13 @@ import MapPage from "./pages/MapPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import SchedulerPage from "./pages/SchedulerPage";
 import UserLandingPage from "./pages/UserLandingPage";
+import Nav from "./components/Nav"
 
 
 function App() {
   return (
     <Router>
+      <Nav />
       <Switch>
         <Route exact path="/">
           <LandingPage />
