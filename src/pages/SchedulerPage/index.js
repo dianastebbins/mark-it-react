@@ -60,6 +60,7 @@ export default function SchedulerPage() {
                 ....City input,<br></br>
                 ....State input,<br></br>
                 ....Date input,<br></br>
+                {/* possibly use calendar picker component */}
                 ....Start Time input,<br></br>
                 ....End Time input,<br></br>
                 ....Schedule it! button<br></br>

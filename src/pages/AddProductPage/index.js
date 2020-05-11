@@ -66,11 +66,12 @@ export default function AddProductPage() {
             <h1>AddProductPage</h1>
             <h3>Navbar goes here</h3>
             {/* <h3>FORM with<br></br>
+                ....Product Category, <br></br>
                 ....Product Name input,<br></br>
-                ....Product Description input,<br></br>
+                ....Short Description input,<br></br>
                 ....Price input,<br></br>
                 ....Unit input,<br></br>
-                ....Details input,<br></br>
+                ....Detailed description (optional) input,<br></br>
                 ....Upload Photo component,<br></br>
                 ....Add Product! button<br></br>
                 goes here

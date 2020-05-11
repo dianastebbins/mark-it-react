@@ -51,6 +51,7 @@ export default function RegistrationPage() {
         <div className="RegistrationPage">
             <h1>RegistrationPage</h1>
             <h3>Welcome banner, registration option description goes here</h3>
+            {/* video as background, gif? */}
             <h3>I am a vendor checkbox goes here</h3>
             <h3>FORM with<br></br>
                 ....first name input,<br></br>
@@ -59,6 +60,7 @@ export default function RegistrationPage() {
                 ....username input,<br></br>
                 ....password input,<br></br>
                 ....IF(user is vendor is true) <br></br>
+                {/* business id, via UUID package */}
                 ........business name input,<br></br>
                 ........business email input,<br></br>
                 ........business phone input,<br></br>
