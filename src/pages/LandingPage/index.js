@@ -50,7 +50,7 @@ export default function LandingPage() {
 
     return (
         <div className="LandingPage">
-            <div className="splashbody">
+            <div className="body">
                 <section className="hero is-bold MainImage">
                     <div className="hero-body">
                         <div className="container">
@@ -63,14 +63,14 @@ export default function LandingPage() {
                 
                 <h3>Navbar goes here</h3>
                 {/* navbar has Favs link, Vendors Only link, Reg/Login  */}
-                <h3>IF(user is logged in)<br></br>
+                <h3>IF(user is logged in)
                 ....Vendor List link goes here</h3>
                 <h3>Label "Markets near me:" goes here</h3>
                 <h3>Map button goes here</h3>
                 <h3>NOT HERE, just map Market List result goes here</h3>
-                <h3>FORM with<br></br>
-                ...."or find by"<br></br>
-                ....zipcode input<br></br>
+                <h3>FORM with
+                ...."or find by"
+                ....zipcode input
                     <input class="input" type="text" placeholder="Zip Code"></input><br></br>
                 ....Go! button<br></br>
                     <input class="button" type="submit" value="Find" /><br></br>
