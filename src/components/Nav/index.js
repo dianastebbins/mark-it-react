@@ -36,7 +36,7 @@ export default function Nav() {
 
               <div className="navbar-dropdown">
                 <a className="navbar-item">Events</a>
-                <a className="navbar-item">About</a>
+                <a className="navbar-item"><Link to="/about" >About</Link></a>
                 <a className="navbar-item">Contact</a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item"></a>

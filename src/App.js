@@ -14,6 +14,7 @@ import MapPage from "./pages/MapPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import SchedulerPage from "./pages/SchedulerPage";
 import UserLandingPage from "./pages/UserLandingPage";
+import AboutPage from "./pages/AboutPage";
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
 
@@ -52,6 +53,9 @@ function App() {
         one per 
         <Route exact path="/user-landing">
           <UserLandingPage/>
+        </Route>
+        <Route exact path="/about">
+          <AboutPage/>
         </Route>
         {/* <Route exact path ="/player/:id">
           <DetailsPage/>
