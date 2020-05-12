@@ -48,14 +48,60 @@ export default function LoginPage() {
     // }
 
     return (
-        <div className="LoginPage">
-            <h1>LoginPage</h1>
-            <h3>FORM with <br></br>
-                ....username input,<br></br>
-                ....password input, <br></br>
-                ....Login! button <br></br>
-                goes here</h3>
-            <Link to="/map" >temporary link to MapPage</Link>
+        // <div className="LoginPage">
+        //     <h1>LoginPage</h1>
+        //     <h3>FORM with <br></br>
+        //         ....username input,<br></br>
+        //         ....password input, <br></br>
+        //         ....Login! button <br></br>
+        //         goes here</h3>
+        //     
+        // </div>
+        <div className="section">
+        <div className="container">
+        <div className="card">
+        <div className="card-header">
+            <p className="card-header-title">
+                Please Login:
+            </p>
         </div>
+        <div className="card-content">
+        <form>
+        <div className="field">
+        <p className="control has-icons-left has-icons-right">
+          <input className="input" type="email" placeholder="Email"/>
+          <span className="icon is-small is-left">
+            <i className="fas fa-envelope"></i>
+          </span>
+          <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+      <div className="field">
+        <p className="control has-icons-left">
+          <input className="input" type="password" placeholder="Password"/>
+          <span className="icon is-small is-left">
+            <i className="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div className="field">
+        <p className="control">
+          <button className="button is-success">
+            Login
+          </button>
+        </p>
+      </div>
+      </form>
+      </div>
+      </div>
+      <div className="section">
+          <button className="button">
+            <Link to="/map" >temporary link to MapPage</Link>
+          </button>
+      </div>
+      </div>
+      </div>
     )
 }
