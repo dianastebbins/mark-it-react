@@ -49,6 +49,14 @@ export default function LandingPage() {
 
     return (
         <div className="LandingPage">
+            <section className="hero is-success is-bold">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">Mark-It</h1>
+                        <h2 className="subtitle">Farm/Kitchen/Garage to App to Table/Home</h2>
+                    </div>
+                </div>
+            </section>
             <h1>Front/Landing/Splash/Home Page</h1>
             <h1>FLSH</h1>
             <h3>Navbar goes here</h3>

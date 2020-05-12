@@ -58,14 +58,7 @@ export default function Nav() {
           </div>
         </div>
       </nav>
-      <section className="hero is-success is-bold">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">Mark-It</h1>
-            <h2 className="subtitle">Farm/Kitchen/Garage to App to Table/Home</h2>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 }
