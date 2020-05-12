@@ -27,7 +27,17 @@ export default function Nav() {
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
           <a className=" brandlogo"><img src="assets/images/brandlogo.png"  height="80px" width="80px"></img></a>
-            <a className="navbar-item">Home</a>
+            <a className="navbar-item"> <Link to="/" >Home</Link></a>
+            <a className="navbar-item"> <Link to="/add-product" >Add Product</Link></a>
+            <a className="navbar-item"> <Link to="/detail" >Detail</Link></a>
+            <a className="navbar-item"> <Link to="/listing" >Listing</Link></a>
+            <a className="navbar-item"> <Link to="/login" >Login</Link></a>
+            <a className="navbar-item"> <Link to="/map" >Map</Link></a>
+            <a className="navbar-item"> <Link to="/registration" >Registratio</Link></a>
+            <a className="navbar-item"> <Link to="/schedular" >Schedular</Link></a>
+            <a className="navbar-item"> <Link to="/user-landing" >User landing</Link></a>
+            <a className="navbar-item"><Link to="/about" >About</Link></a>
+
 
             {/* <a className="navbar-item">Documentation</a> */}
 
