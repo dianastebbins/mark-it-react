@@ -52,7 +52,48 @@ export default function DetailPage() {
             <h1>DetailPage</h1>
             <h3>Navbar goes here</h3>
             <h3>Table/List goes here (read/view only data)<br></br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Name</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th><abbr title="Position">Pos</abbr></th>
+                            <th>Player</th>
+                            <th>
+                                <abbr title="Played for the country">Country</abbr>
+                            </th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Sachin</td>
+                            <td>India</td>
+                            <td><button class="button is-primary">Details</button><br></br></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Smith</td>
+                            <td>Australia</td>
+                            <td><button class="button is-primary">Details</button><br></br></td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Joe Root</td>
+                            <td>England</td>
+                            <td><button class="button is-primary">Details</button><br></br></td>
+
+                        </tr>
+                    </tbody>
+                </table>
                 IF(Market Detail)<br></br>
+                <label class="checkbox"><input type="checkbox" /> Market Detail</label><br></br>
                 ....Market Name,<br></br>
                 ....IF(user is logged in)<br></br>
                 ........Favorites/Heart button,<br></br>
@@ -60,13 +101,17 @@ export default function DetailPage() {
                 ....Dates,Start Time,End Time,<br></br>
                 ....Details/info<br></br>
                 IF(Vendor Detail)<br></br>
+                <label class="checkbox"><input type="checkbox" /> Vendor</label><br></br>
+
                 ....Business Name,<br></br>
                 ....IF(user is logged in)<br></br>
                 ........Favorites/Heart button,<br></br>
                 ....Business Email, Business Phone,<br></br>
                 ....Website,<br></br>
                 ....Chat with Vendor button<br></br>
-                IF(user is vendor and on their own vendor page)
+                IF(user is vendor and on their own vendor page)<br></br>
+                <label class="checkbox"><input type="checkbox" /> user vender on their own page</label><br></br>
+
                 ........Add Product button
                 ........THIS BUTTON COULD BE ON VENDOR PROFILE PAGE
                 ....Show Products list,<br></br>
