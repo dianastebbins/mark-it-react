@@ -157,7 +157,7 @@ export default function AddProductPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
+           
         </div>
 
     )

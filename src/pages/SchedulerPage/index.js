@@ -83,7 +83,6 @@ export default function SchedulerPage() {
                 <Link to="/user-landing" >temporary link to UserLandingPage</Link>
 
             </div>
-            <Footer />
         </div>
     )
 }

@@ -87,7 +87,6 @@ export default function RegistrationPage() {
                 <Link to="/scheduler" >temporary link to SchedulerPage</Link>
 
             </div>
-            <Footer />
         </div>
     )
 }

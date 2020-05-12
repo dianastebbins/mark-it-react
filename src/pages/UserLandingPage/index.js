@@ -73,7 +73,6 @@ export default function UserLandingPage() {
 
                 <Link to="/" >temporary link to LandingPage</Link>
             </div>
-            <Footer />
         </div>
     )
 }

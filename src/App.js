@@ -15,6 +15,7 @@ import RegistrationPage from "./pages/RegistrationPage";
 import SchedulerPage from "./pages/SchedulerPage";
 import UserLandingPage from "./pages/UserLandingPage";
 import Nav from "./components/Nav"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <DetailsPage/>
         </Route> */}
       </Switch>
+      <Footer/>
     </Router>
   );
 }

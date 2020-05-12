@@ -191,7 +191,6 @@ export default function ListingPage() {
             <Link to="/login" >temporary link to LoginPage</Link>
 
          </div>
-         <Footer />
       </div>
    )
 }
