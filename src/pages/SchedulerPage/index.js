@@ -60,11 +60,21 @@ export default function SchedulerPage() {
                 ....City input,<br></br>
                 ....State input,<br></br>
                 ....Date input,<br></br>
+                <input class="input" type="text" placeholder="Market Name"></input>
+                <input class="input" type="text" placeholder="Address"></input>
+                <input class="input" type="text" placeholder="City"></input>
+                <input class="input" type="text" placeholder="State"></input>
+                <input class="input" type="text" placeholder="Date"></input>
+
                 {/* possibly use calendar picker component */}
                 ....Start Time input,<br></br>
                 ....End Time input,<br></br>
                 ....Schedule it! button<br></br>
                 goes here
+                <input class="input" type="text" placeholder="Start Time"></input>
+                <input class="input" type="text" placeholder="End Time"></input>
+                <input class="button" type="submit" value="Schedule"/>
+
             </h3>
             <Link to="/user-landing" >temporary link to UserLandingPage</Link>
         </div>
