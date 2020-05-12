@@ -1,0 +1,9 @@
+.footer{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow:hidden;
+    height: 10vh;
+    background-color:hsl(0, 0%, 21%);
+}

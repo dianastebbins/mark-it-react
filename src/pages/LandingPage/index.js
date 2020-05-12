@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./style.css"
 import API from "../../utils/API"
+import Footer from '../../components/Footer';
 
 // import SomeComponent from '../../components/SomeComponent';
 
@@ -75,6 +76,7 @@ export default function LandingPage() {
                 <input class="button" type="submit" value="Find"/><br></br>
                 goes here</h3>
             <Link to="/add-product" >temporary link to AddProductPage</Link>
+            <Footer/>
         </div>
     )
 }

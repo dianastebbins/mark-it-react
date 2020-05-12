@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./style.css"
 import API from "../../utils/API"
+import Footer from '../../components/Footer';
+
 
 // import SomeComponent from '../../components/SomeComponent';
 
@@ -77,6 +79,7 @@ export default function SchedulerPage() {
 
             </h3>
             <Link to="/user-landing" >temporary link to UserLandingPage</Link>
+            <Footer/>
         </div>
     )
 }

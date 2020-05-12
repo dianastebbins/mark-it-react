@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./style.css"
 import API from "../../utils/API"
+import Footer from '../../components/Footer';
+
 
 // import SomeComponent from '../../components/SomeComponent';
 
@@ -186,6 +188,7 @@ export default function ListingPage() {
             </h3>
             <h3>Each row has Detail button</h3>
             <Link to="/login" >temporary link to LoginPage</Link>
+            <Footer/>
         </div>
     )
 }

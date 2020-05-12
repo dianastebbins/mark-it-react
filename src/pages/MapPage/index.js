@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./style.css"
 import API from "../../utils/API"
+import Footer from '../../components/Footer';
+
 
 // import SomeComponent from '../../components/SomeComponent';
 
@@ -53,6 +55,7 @@ export default function MapPage() {
             <h3>Navbar goes here</h3>
             <h3>Everything Zac created goes here :-)</h3>
             <Link to="/registration" >temporary link to RegistrationPage</Link>
+            <Footer/>
         </div>
     )
 }

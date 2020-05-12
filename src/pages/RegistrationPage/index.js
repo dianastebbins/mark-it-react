@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./style.css"
 import API from "../../utils/API"
+import Footer from '../../components/Footer';
+
 
 // import SomeComponent from '../../components/SomeComponent';
 
@@ -81,6 +83,7 @@ export default function RegistrationPage() {
                 ....Register! button <br></br>
                 goes here</h3>
             <Link to="/scheduler" >temporary link to SchedulerPage</Link>
+            <Footer/>
         </div>
     )
 }
