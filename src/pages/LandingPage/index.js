@@ -52,8 +52,8 @@ export default function LandingPage() {
             <section className="hero is-bold MainImage">
                 <div className="hero-body">
                     <div className="container">
-                        <h1 className="title">Mark-It</h1>
-                        <h2 className="subtitle">Farm/Kitchen/Garage to App to Table/Home</h2>
+                        <h1 className="title mainIntro">Mark-It</h1>
+                        <h2 className="subtitle mainIntro">Farm/Kitchen/Garage to App to Table/Home</h2>
                     </div>
                 </div>
             </section>
