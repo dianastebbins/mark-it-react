@@ -64,7 +64,7 @@ export default function AddProductPage() {
     return (
         <div className="AddProductPage container">
             <h1>AddProductPage</h1>
-            <h3>Navbar goes here</h3>
+
             {/* <h3>FORM with<br></br>
                 ....Product Category, <br></br>
                 ....Product Name input,<br></br>
@@ -106,32 +106,50 @@ export default function AddProductPage() {
                                 <label className="label">Product Description</label>
                                 <div className="control">
                                     <input className="input" type="text" onChange={handleInputChange} name="product_description" value={productState.product_description} placeholder="Description" />
-                                    <input className="input" onChange={handleInputChange} name="product_description" placeholder="Description"></input>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <label className="label">Price</label>
-                    <div className="control">
-                        <input className="input" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="price" />
-                    </div>
-                    <label className="label">Unit</label>
-                    <div className="control">
-                        <input className="input" type="text" onChange={handleInputChange} name="price_unit" value={productState.price_unit} placeholder="unit - each, dozen, etc." />
-                    </div>
-                    <label className="label">Details</label>
-                    <div className="control">
-                        <input className="input" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
-                    </div>
-                    <div className="field">
-                        <label className="label">Photo Placeholder</label>
-                        <div className="control">
-                            <input className="input" type="text" onChange={handleInputChange} name="upload_photo" value={productState.upload_photo} placeholder="use upload component instead" />
+                    <div className="field is-horizontal">
+                        <div className="field-body">
+                            <div className="field">
+                                <label className="label">Price</label>
+                                <div className="control">
+                                    <input className="input" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
+                                </div>
+                            </div>
+                            <div className="field">
+                                <label className="label">Unit</label>
+                                <div className="control">
+                                    <input className="input" type="text" onChange={handleInputChange} name="price_unit" value={productState.unit} placeholder="Unit" />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+                    <div className="field is-horizontal">
+                        <div className="field-body">
+                            <div className="field">
+                                <label className="label">Details</label>
+                                <div className="control">
+                                    <input className="input" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
+                                </div>
+                            </div>
+                            <div className="field">
+                                <label className="label">Photo Placeholder</label>
+                                <div className="control">
+                                    <input className="input" type="text" onChange={handleInputChange} name="upload_photo" value={productState.upload_photo} placeholder="use upload component instead" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                            <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
                 </form>
-                <Link to="/detail" >temporary link to DetailPage</Link>
+                <div className="section">
+                <button class="button">
+                    <Link to="/detail" >DetailPage</Link>
+                </button>
+                </div>
             </div>
         </div>
 
