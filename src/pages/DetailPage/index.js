@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
-
+import MarketDetail from "../../components/MarketDetail"
+import ProductDetail from "../../components/ProductDetail"
+import VendorDetail from "../../components/VendorDetail"
 import "./style.css"
 import API from "../../utils/API"
 
 // import SomeComponent from '../../components/SomeComponent';
 
-export default function DetailPage() {
-    // const [playerState,setPlayerState]= useState({
-    //     name:'',
-    //     team:''
-    // })
+class DetailPage extends React.Component {
+    state = {
+        markets: ["Ballard", "Fremont", "Gold Bar", "Maple Valley", "Kirkland", "Mill Creek"],
+        products: ["Bread", "Croissant", "Brown Butter Toffee Chocolate Chip Cookies", "Brownies"],
+        vendors:["Bob", "Bobbie", "Bobo", "Bobette", "Frank"]
+    }
 
     // useEffect(()=>{
     //     API.getAllPlayers().then(res=>{
@@ -46,12 +49,16 @@ export default function DetailPage() {
     //         history.push("/")
     //     })
     // }
-
+render() {
     return (
         <div className="DetailPage">
             <h1>DetailPage</h1>
             <h3>Navbar goes here</h3>
-            <h3>Table/List goes here (read/view only data)<br></br>
+            <MarketDetail markets={this.state.markets}/>
+            <VendorDetail vendors={this.state.vendors}/>
+            <ProductDetail products={this.state.products}/>
+
+            {/* <h3>Table/List goes here (read/view only data)<br></br>
                 IF(Market Detail)<br></br>
                 ....Market Name,<br></br>
                 ....IF(user is logged in)<br></br>
@@ -78,8 +85,12 @@ export default function DetailPage() {
                 ....IF(user is vendor and on their own product page)<br></br>
                 ........update button<br></br>
                 .......delete button<br></br>
-            </h3>
+            </h3> */}
+            <button className="button">
             <Link to="/listing" >temporary link to ListingPage</Link>
+            </button>
         </div>
     )
 }
+}
+export default DetailPage

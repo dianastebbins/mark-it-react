@@ -91,8 +91,10 @@ export default function AddProductPage() {
                     </div>
                 </div>
             </div> */}
-            <div className="section">
 
+            {/* may want a panel here */}
+            <div className="section">
+                <div className="container">
                 <form>
                     <div className="field is-horizontal">
                         <div className="field-body">
@@ -145,6 +147,7 @@ export default function AddProductPage() {
                     
                             <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
                 </form>
+                </div>
                 <div className="section">
                 <button class="button">
                     <Link to="/detail" >DetailPage</Link>
