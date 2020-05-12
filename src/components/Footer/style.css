@@ -1,0 +1,11 @@
+.footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    overflow:hidden;
+    background-color:hsl(0, 0%, 21%);
+    /* height not working */
+    height: 50px;
+    color: white;
+}

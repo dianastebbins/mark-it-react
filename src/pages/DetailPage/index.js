@@ -6,6 +6,8 @@ import ProductDetail from "../../components/ProductDetail"
 import VendorDetail from "../../components/VendorDetail"
 import "./style.css"
 import API from "../../utils/API"
+import Footer from '../../components/Footer';
+
 
 // import SomeComponent from '../../components/SomeComponent';
 
@@ -52,6 +54,8 @@ class DetailPage extends React.Component {
 render() {
     return (
         <div className="DetailPage">
+            <div className="body">
+
             <h1>DetailPage</h1>
             <h3>Navbar goes here</h3>
             <MarketDetail markets={this.state.markets}/>
@@ -89,6 +93,9 @@ render() {
             <button className="button">
             <Link to="/listing" >temporary link to ListingPage</Link>
             </button>
+            </div>
+
+            <Footer/>
         </div>
     )
 }
