@@ -58,7 +58,6 @@ export default function MapPage() {
                 <Link to="/registration" >temporary link to RegistrationPage</Link>
 
             </div>
-            <Footer />
         </div>
     )
 }

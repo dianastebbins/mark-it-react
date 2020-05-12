@@ -109,7 +109,7 @@ export default function LoginPage() {
         </div>
 
       </div>
-      <Footer />
+
     </div>
   )
 }

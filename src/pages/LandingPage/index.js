@@ -78,7 +78,6 @@ export default function LandingPage() {
                 <Link to="/add-product" >temporary link to AddProductPage</Link>
 
             </div>
-            <Footer />
         </div>
     )
 }

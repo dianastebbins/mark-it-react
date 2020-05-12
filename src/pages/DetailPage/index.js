@@ -95,7 +95,6 @@ render() {
             </button>
             </div>
 
-            <Footer/>
         </div>
     )
 }
