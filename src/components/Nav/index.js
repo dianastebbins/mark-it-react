@@ -8,11 +8,7 @@ export default function Nav() {
       <nav className="navbar is-dark is-bold" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="#">
-            <i class="brandlogo"><img src="assets/images/screenshot4.png"></img></i>
-            <i class="fas fa-bread-slice"></i>
-            <i class="fas fa-soap"></i>
-            <i class="fas fa-carrot"></i>
-            <i class="fas fa-people-arrows"></i>
+            {/* <i className="brandlogo"><img src="assets/images/screenshot4.png" height="100px" width="90px"></img></i> */}
           </a>
 
           <a
@@ -30,6 +26,7 @@ export default function Nav() {
 
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
+          <a className=" brandlogo"><img src="assets/images/brandlogo.png"  height="80px" width="80px"></img></a>
             <a className="navbar-item">Home</a>
 
             {/* <a className="navbar-item">Documentation</a> */}

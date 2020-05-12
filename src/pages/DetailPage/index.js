@@ -57,7 +57,6 @@ render() {
             <div className="body">
 
             <h1>DetailPage</h1>
-            <h3>Navbar goes here</h3>
             <MarketDetail markets={this.state.markets}/>
             <VendorDetail vendors={this.state.vendors}/>
             <ProductDetail products={this.state.products}/>

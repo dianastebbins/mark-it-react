@@ -8,4 +8,15 @@
     /* height not working */
     height: 50px;
     color: white;
+    margin-top: 200px;
+}
+
+.copyright{
+   text-align: right;
+   margin: 10px;
+   margin-bottom: 20px;
+}
+
+.footertag{
+    text-align: left;
 }
