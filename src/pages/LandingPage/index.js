@@ -49,6 +49,14 @@ export default function LandingPage() {
 
     return (
         <div className="LandingPage">
+            <section className="hero is-bold MainImage">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title mainIntro">Mark-It</h1>
+                        <h2 className="subtitle mainIntro">Farm/Kitchen/Garage to App to Table/Home</h2>
+                    </div>
+                </div>
+            </section>
             <h1>Front/Landing/Splash/Home Page</h1>
             <h1>FLSH</h1>
             <h3>Navbar goes here</h3>
@@ -62,7 +70,9 @@ export default function LandingPage() {
             <h3>FORM with<br></br>
                 ...."or find by"<br></br>
                 ....zipcode input<br></br>
+                <input class="input" type="text" placeholder="Zip Code"></input><br></br>
                 ....Go! button<br></br>
+                <input class="button" type="submit" value="Find"/><br></br>
                 goes here</h3>
             <Link to="/add-product" >temporary link to AddProductPage</Link>
         </div>

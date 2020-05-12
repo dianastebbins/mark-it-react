@@ -1,3 +1,16 @@
 .LandingPage {
     background: red;
+    text-align: center;
+    color: white;
+
+}
+
+.MainImage{
+    background-image: url(../../assets/images/main1.jpg);
+    /* need to adjust and change the image */
+    text-align: center;
+}
+
+.mainIntro{
+    color: white;
 }
