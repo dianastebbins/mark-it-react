@@ -18,12 +18,14 @@ import AboutPage from "./pages/AboutPage";
 import SignupPage from "./pages/SignupPage";
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
+import './App.css';
 
 
 function App() {
   return (
     <Router>
       <Nav />
+      <div id="wrapper">
       <Switch>
         <Route exact path="/">
           <LandingPage />
@@ -65,6 +67,7 @@ function App() {
           <DetailsPage/>
         </Route> */}
       </Switch>
+      </div>
       <Footer/>
     </Router>
   );

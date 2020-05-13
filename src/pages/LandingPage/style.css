@@ -3,7 +3,7 @@
     text-align: center;
     color: white;
     /* background-image: url(../../assets/images/main1.jpg); */
-
+    min-height: 100vh;
 }
 
 .MainImage{

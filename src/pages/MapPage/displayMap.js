@@ -115,7 +115,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
                 const schedule = e.features[0].properties.schedule.trim();
                 const products = e.features[0].properties.products.trim();
                 const googleLink = e.features[0].properties.googleLink.trim();
-
+                const name = e.features[0].properties.name.trim();
                 // Ensure that if the map is zoomed out such that
                 // multiple copies of the feature are visible, the
                 // popup appears over the copy being pointed to.
@@ -126,7 +126,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
                     .setHTML(
-                        `<h1>Mark-It!</h1><p><strong>Address:</strong> ${address}<br><strong>Schedule:</strong> ${schedule}<strong>Products:</strong> ${products}</p>
+                        `<h1><strong>${name}</strong></h1><p><strong>Address:</strong> ${address}<br><strong>Schedule:</strong> ${schedule}<strong>Products:</strong> ${products}</p>
                         <br><a href="${googleLink}" target="_blank">click here</a>`
                     )
                     .addTo(map);
