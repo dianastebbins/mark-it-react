@@ -16,8 +16,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhlLW1lZGl1bS1wbGFjZSIsImEiOiJja2EwMHcxOWwwa
 
 class MapPage extends React.Component {
     state = {
-        lng: '',
-        lat: '',
+        lng: null,
+        lat: null,
         zoom: '',
         search: '',
         results: []
@@ -31,23 +31,25 @@ class MapPage extends React.Component {
 
 
     componentDidMount(userLat, userLong) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-             userLat = position.coords.latitude
-             userLong = position.coords.longitude  
+        navigator.geolocation.getCurrentPosition(position => {
+             this.setState({
+                 lng: position.coords.longitude,
+                 lat: position.coords.latitude
+             })
+             console.log(this.state.lat)
              
             const map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v9',
-                center: [position.coords.longitude, position.coords.latitude],  // [-96, 37.8]
+                center: [this.state.lng, this.state.lat],  // [-96, 37.8]
                 zoom: 9
             });
             console.log(position.coords.latitude)
             const marker = new mapboxgl.Marker()
-                .setLngLat([userLong, userLat])
+                .setLngLat([this.state.lng, this.state.lat])
                 .addTo(map);
 
         })
-        console.log(userLat)
     };
 
         
@@ -87,6 +89,8 @@ class MapPage extends React.Component {
                 const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('-').pop().split('%')[0]))
 
                 const coords = [long, lat];
+
+
                 // GET LAT AND LONG FROM data.marketdetails.GoogleLink 
                 // AND MAKE ARRAY [long,lat]
                 // console.log(data.marketdetails.GoogleLInk.split('-'))
@@ -128,6 +132,8 @@ class MapPage extends React.Component {
             }).then(() => {
                 //FIXME: TIMEOUT CURRENTLY SET TO GIVE ARRAY TIME TO POPULATE
                 //FIXME: KINDA HACKY RIGHT NOW, NEED TO FIX LATER
+                const userLat = this.state.lat
+                const userLong = this.state.lng
                 setTimeout(function () {
                     console.log(MarketArr);
                     displayMap(MarketArr, userLong, userLat);
@@ -302,13 +308,11 @@ class MapPage extends React.Component {
         return (
             <div className="MapPage section">
                 <div className="container">
-                    <div className="box">
-                        <div className="sidebarStyle">
-                            <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
-                        </div>
-                        <div className="MapContainer" id="map" />
+                    
+                
+                        <div style={{height: "80vh", width: "80vw"}} className="MapContainer" id="map" />
                     </div>
-                </div>
+                
 
                 <SearchForm
                     value={this.state.search}
