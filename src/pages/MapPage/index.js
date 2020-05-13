@@ -87,6 +87,8 @@ class MapPage extends React.Component {
                 const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('-').pop().split('%')[0]))
 
                 const coords = [long, lat];
+
+
                 // GET LAT AND LONG FROM data.marketdetails.GoogleLink 
                 // AND MAKE ARRAY [long,lat]
                 // console.log(data.marketdetails.GoogleLInk.split('-'))
@@ -302,13 +304,11 @@ class MapPage extends React.Component {
         return (
             <div className="MapPage section">
                 <div className="container">
-                    <div className="box">
-                        <div className="sidebarStyle">
-                            <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
-                        </div>
-                        <div className="MapContainer" id="map" />
+                    
+                
+                        <div style={{height: "80vh", width: "80vw"}} className="MapContainer" id="map" />
                     </div>
-                </div>
+                
 
                 <SearchForm
                     value={this.state.search}
