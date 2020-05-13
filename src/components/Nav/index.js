@@ -37,6 +37,7 @@ export default function Nav() {
             <a className="navbar-item"> <Link to="/schedular" >Schedular</Link></a>
             <a className="navbar-item"> <Link to="/user-landing" >User landing</Link></a>
             <a className="navbar-item"><Link to="/about" >About</Link></a>
+            <a className="navbar-item"><Link to="/signup" >Sign Up</Link></a>
 
 
             {/* <a className="navbar-item">Documentation</a> */}
