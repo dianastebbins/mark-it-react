@@ -58,7 +58,7 @@ export default function Nav() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-rounded is-link">Sign Up</a>
+                <a className="button is-rounded is-link"><Link to="/signup" >Sign Up</Link></a>
                 <a className="button is-rounded is-info">Login</a>
               </div>
             </div>
