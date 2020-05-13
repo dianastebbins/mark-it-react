@@ -1,19 +1,20 @@
 .container {
-    background: white;
+    /* background: white; */
     text-align: center;
-    color: white;
+    /* color: white; */
     margin: 0 auto;
     border-radius: 10px;
+    width: 50%;
 
 }
 
 .AddProductPage{
-    background-color: #bfd8bd;
+    background-color: #969696;
 }
 
-.label{
+/* .label{
     color:white;
-}
+} */
 
 .mainSection{
     margin: 20px;
