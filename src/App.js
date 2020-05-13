@@ -24,6 +24,10 @@ function App() {
       <Switch>
         <Route exact path="/">
           <LandingPage />
+          
+        </Route>
+        <Route exact path="/map-page">
+        <MapPage />
         </Route>
         <Route exact path="/add-product">
           <AddProductPage/>
