@@ -1,7 +1,8 @@
 .LandingPage {
-    background: red;
+    background: gray;
     text-align: center;
     color: white;
+    /* background-image: url(../../assets/images/main1.jpg); */
 
 }
 

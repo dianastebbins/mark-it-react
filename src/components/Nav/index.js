@@ -8,11 +8,7 @@ export default function Nav() {
       <nav className="navbar is-dark is-bold" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="#">
-            <i class="brandlogo"><img src="assets/images/screenshot4.png"></img></i>
-            <i class="fas fa-bread-slice"></i>
-            <i class="fas fa-soap"></i>
-            <i class="fas fa-carrot"></i>
-            <i class="fas fa-people-arrows"></i>
+            {/* <i className="brandlogo"><img src="assets/images/screenshot4.png" height="100px" width="90px"></img></i> */}
           </a>
 
           <a
@@ -30,7 +26,18 @@ export default function Nav() {
 
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
-            <a className="navbar-item">Home</a>
+          <a className=" brandlogo"><img src="assets/images/brandlogo.png"  height="80px" width="80px"></img></a>
+            <div className="navbar-item"> <Link to="/" >Home</Link></div>
+            <a className="navbar-item"> <Link to="/add-product" >Add Product</Link></a>
+            <a className="navbar-item"> <Link to="/detail" >Detail</Link></a>
+            <a className="navbar-item"> <Link to="/listing" >Listing</Link></a>
+            <a className="navbar-item"> <Link to="/login" >Login</Link></a>
+            <a className="navbar-item"> <Link to="/map" >Map</Link></a>
+            <a className="navbar-item"> <Link to="/registration" >Registratio</Link></a>
+            <a className="navbar-item"> <Link to="/schedular" >Schedular</Link></a>
+            <a className="navbar-item"> <Link to="/user-landing" >User landing</Link></a>
+            <a className="navbar-item"><Link to="/about" >About</Link></a>
+
 
             {/* <a className="navbar-item">Documentation</a> */}
 
@@ -39,7 +46,7 @@ export default function Nav() {
 
               <div className="navbar-dropdown">
                 <a className="navbar-item">Events</a>
-                <a className="navbar-item">About</a>
+                <a className="navbar-item"><Link to="/about" >About</Link></a>
                 <a className="navbar-item">Contact</a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item"></a>
@@ -50,10 +57,8 @@ export default function Nav() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-rounded is-link">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button is-rounded is-info">Log in</a>
+                <a className="button is-rounded is-link">Sign Up</a>
+                <a className="button is-rounded is-info">Login</a>
               </div>
             </div>
           </div>

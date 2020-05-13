@@ -7,14 +7,11 @@ export default function Footer() {
         <div>
             <footer className="footer fix-footer">
                 <div className="content has-text-centered">
-                    <p>
-                        <strong>Bulma</strong> by <a href="#">Passionate Developers</a>. The source code is licensed
-      <a target="_blank" href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-       {/* The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. */}
-    </p>
+                    <div color="white">Mark-It</div> by <a href="#">Passionate Developers</a>. The source code is licensed by
+<a target="_blank" href="http://opensource.org/licenses/mit-license.php">MIT</a>.
                 </div>
-                <div> copy right 2020</div>
+                <h5 className="copyright">&copy; 2020 Copyright</h5>
+
             </footer>
         </div>
     )
