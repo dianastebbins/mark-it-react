@@ -1,7 +1,7 @@
 .UserLandingPage {
     background: magenta;
     text-align: center;
-
+    min-height: 100vh;
 }
 
 
