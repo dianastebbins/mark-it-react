@@ -1,5 +1,20 @@
-.AddProductPage {
-    background: orange;
+.container {
+    background: rgb(17, 75, 95);
     text-align: center;
+    color: white;
+    margin: 0 auto;
+    border-radius: 10px;
 
+}
+
+.AddProductPage{
+    background-color: #e6b89c;
+}
+
+.label{
+    color:white;
+}
+
+.mainSection{
+    margin: 20px;
 }

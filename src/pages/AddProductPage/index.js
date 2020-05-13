@@ -64,11 +64,15 @@ export default function AddProductPage() {
     // }
 
     return (
-        <div className="AddProductPage container">
+        <div className="AddProductPage">
+
+<div className="container">
+
+
+
             <div className="body">
 
 
-                <h1>AddProductPage</h1>
 
                 {/* <h3>FORM with<br></br>
                 ....Product Category, <br></br>
@@ -96,7 +100,7 @@ export default function AddProductPage() {
                     </div>
                 </div>
             </div> */}
-                <div className="section">
+                <div className="section mainSection">
 
                     <form>
                         <div className="field is-horizontal">
@@ -148,16 +152,16 @@ export default function AddProductPage() {
                             </div>
                         </div>
 
-                        <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+                        <button className="button is-link is-outlined is-light" onClick={handleFormSubmit}>Add Product</button>
                     </form>
-                    <div className="section">
+                    {/* <div className="section">
                         <button class="button">
                             <Link to="/detail" >DetailPage</Link>
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-           
+            </div>
         </div>
 
     )
