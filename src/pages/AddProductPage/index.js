@@ -108,13 +108,13 @@ export default function AddProductPage() {
                                 <div className="field">
                                     <label className="label">Product Name</label>
                                     <div className="control">
-                                        <input className="input" type="text" onChange={handleInputChange} name="product_name" value={productState.product_name} placeholder="Product Name" />
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="product_name" value={productState.product_name} placeholder="Product Name" />
                                     </div>
                                 </div>
                                 <div className="field">
                                     <label className="label">Product Description</label>
                                     <div className="control">
-                                        <input className="input" type="text" onChange={handleInputChange} name="product_description" value={productState.product_description} placeholder="Description" />
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="product_description" value={productState.product_description} placeholder="Description" />
                                     </div>
                                 </div>
                             </div>
@@ -124,13 +124,13 @@ export default function AddProductPage() {
                                 <div className="field">
                                     <label className="label">Price</label>
                                     <div className="control">
-                                        <input className="input" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
                                     </div>
                                 </div>
                                 <div className="field">
                                     <label className="label">Unit</label>
                                     <div className="control">
-                                        <input className="input" type="text" onChange={handleInputChange} name="price_unit" value={productState.unit} placeholder="Unit" />
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="price_unit" value={productState.unit} placeholder="Unit" />
                                     </div>
                                 </div>
                             </div>
@@ -140,13 +140,13 @@ export default function AddProductPage() {
                                 <div className="field">
                                     <label className="label">Details</label>
                                     <div className="control">
-                                        <input className="input" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
                                     </div>
                                 </div>
                                 <div className="field">
                                     <label className="label">Photo Placeholder</label>
                                     <div className="control">
-                                        <input className="input" type="text" onChange={handleInputChange} name="upload_photo" value={productState.upload_photo} placeholder="use upload component instead" />
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="upload_photo" value={productState.upload_photo} placeholder="use upload component instead" />
                                     </div>
                                 </div>
                             </div>
