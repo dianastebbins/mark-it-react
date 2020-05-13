@@ -1,14 +1,13 @@
 .footer{
-    bottom: 0;
-    /* position: fixed; */
+    position: relative;
     width: 100%;
     bottom: 0;
     overflow:hidden;
     background-color:hsl(0, 0%, 21%);
-    /* height not working */
-    height: 50px;
+    height: 40px;
     color: white;
-    margin-top: 200px;
+    margin-top: 10px;
+
 }
 
 .copyright{

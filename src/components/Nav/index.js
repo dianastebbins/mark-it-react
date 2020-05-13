@@ -27,7 +27,7 @@ export default function Nav() {
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
           <a className=" brandlogo"><img src="assets/images/brandlogo.png"  height="80px" width="80px"></img></a>
-            <a className="navbar-item"> <Link to="/" >Home</Link></a>
+            <div className="navbar-item"> <Link to="/" >Home</Link></div>
             <a className="navbar-item"> <Link to="/add-product" >Add Product</Link></a>
             <a className="navbar-item"> <Link to="/detail" >Detail</Link></a>
             <a className="navbar-item"> <Link to="/listing" >Listing</Link></a>
