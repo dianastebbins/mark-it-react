@@ -20,7 +20,8 @@ class MapPage extends React.Component {
         lat: null,
         zoom: '',
         search: '',
-        results: []
+        marketname: [],
+        id:[]
     }
 
 
@@ -36,7 +37,6 @@ class MapPage extends React.Component {
                  lng: position.coords.longitude,
                  lat: position.coords.latitude
              })
-             console.log(this.state.lat)
              
             const map = new mapboxgl.Map({
                 container: 'map',
@@ -65,12 +65,10 @@ class MapPage extends React.Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(event.target.value)
         this.getResults(this.state.search);
-        console.log(userLat)
     };
 
-    getDetails = (query) => {
+    getDetails = (query, count) => {
 
         API.searchMarket(query)
             .then((data) => {
@@ -95,15 +93,14 @@ class MapPage extends React.Component {
                 // AND MAKE ARRAY [long,lat]
                 // console.log(data.marketdetails.GoogleLInk.split('-'))
               
-
                 // ADD MARKET DETAILS TO GEOJSON OBJECT newMarketObj
                 newMarketObj.geometry.coordinates = coords;
                 newMarketObj.properties.products = data.data.marketdetails.Products;
                 newMarketObj.properties.schedule = data.data.marketdetails.Schedule;
                 newMarketObj.properties.address = data.data.marketdetails.Address;
                 newMarketObj.properties.googleLink = data.data.marketdetails.GoogleLink;
+                newMarketObj.properties.name = this.state.marketname[count]
                 MarketArr.push(newMarketObj);
-                console.log(newMarketObj)
             })
     };
 
@@ -120,22 +117,38 @@ class MapPage extends React.Component {
         API.search(zip)
             .then((data) => {
 
-                console.log(data.data.results)
                 // LOOP THROUGH ARRAY OF MARKET IDS AND NAMES
                 // AND RUN getDetails FOR EACH ENTRY - 
                 // THIS RUNS THE SECOND AJAX REQUEST
-                data.data.results.forEach(market => {
-                    this.getDetails(market.id);
-                    console.log(market.marketname)
+                const nameArr = []
+                const idArr = []
+                data.data.results.forEach((market) => {
+                    nameArr.push(market.marketname)
+                    idArr.push(market.id)
                 });
-
+                this.setState({
+                    marketname: [...nameArr],
+                    id: [...idArr]
+                })
+                // console.log(this.state.marketname, "-------", this.state.id)
+                let counter = 0
+                data.data.results.forEach(market => {
+                    this.getDetails(market.id, counter);
+                    counter++;
+                });
+                
+                    
+                    
+                
+                
+                
             }).then(() => {
                 //FIXME: TIMEOUT CURRENTLY SET TO GIVE ARRAY TIME TO POPULATE
                 //FIXME: KINDA HACKY RIGHT NOW, NEED TO FIX LATER
                 const userLat = this.state.lat
                 const userLong = this.state.lng
                 setTimeout(function () {
-                    console.log(MarketArr);
+                    
                     displayMap(MarketArr, userLong, userLat);
                 }, 1000);
             });

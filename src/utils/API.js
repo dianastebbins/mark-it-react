@@ -7,17 +7,22 @@ const API = {
     search: function(zip) {
         return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip);
       },
-    searchMarket: function(id) {
+    
+      searchMarket: function(id) {
         return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id);
-      }
+      },
     
     
-    // getAllPlayers:function(){
-    //     return axios.get(`${BASE_URL}/api/players`)
-    // },
-    // createPlayer:function(playerData){
-    //     return axios.post(`${BASE_URL}/api/players`,playerData)
-    // },
+    getAllUsers:function(){
+        return axios.get(`${BASE_URL}/api/users`)
+    },
+    
+    createUser: function(userData){
+        return axios.post(`${BASE_URL}/api/users`,userData)
+    }
+
+
+
     // getPlayerById:function(id){
     //     return axios.get(`${BASE_URL}/api/players/${id}`)
     // },
