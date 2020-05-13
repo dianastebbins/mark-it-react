@@ -2,7 +2,7 @@
 
 ## Your local farmers market
 
-###  Mark It is a full stack application that allows user to create, edit and delete a posting of a product.
+###  Mark It is a full stack application built with React that allows user to create, edit and delete a posting of a product.
 
 ## Table of contents
 * [General info](#general-info) 
