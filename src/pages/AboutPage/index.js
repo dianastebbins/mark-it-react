@@ -23,12 +23,12 @@ export default function AboutPage() {
             <div className="columns">
 
               {/* first comlumn */}
-              <div className="column is-2">
+              <div className="column is-3">
                 
              <div className="card">
                   <div className="card-image">
                     <figure className="image is-4by3">
-                      <img src="https://place-hold.it/200x200" alt="Placeholder image" />
+                      <img src="../../../assets/images/Diana2.png" alt="Placeholder image" />
                     </figure>
                   </div>
                   <div className="card-content">
@@ -36,13 +36,13 @@ export default function AboutPage() {
 
                       <div className="media-content">
                         <p className="title is-4">Diana Stebbins</p>
-                        <p className="subtitle is-6">Back End Developer</p>
+                        <p className="subtitle is-6">Back End Developer<br></br>Git Master</p>
                       </div>
                     </div>
 
                     <div className="content">
-                    <a target="blank" href="https://www.linkedin.com/in/diana-stebbins-b618b034/">LinkedIn</a> <br></br>
-                    <a target="blank" href="https://github.com/dianastebbins">Github</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/diana-stebbins-b618b034/">LinkedIn</a> <br></br>
+                    <a target="_blank" href="https://github.com/dianastebbins">Github</a>
                     </div>
                   </div>
                 </div>
@@ -50,19 +50,19 @@ export default function AboutPage() {
               </div>
 
               {/* second column */}
-              <div className="column is-2">
+              <div className="column is-3">
                 
           <div className="card">
                   <div className="card-image">
                     <figure className="image is-4by3">
-                      <img src="https://place-hold.it/200x200" alt="Placeholder image" />
+                      <img src="../../../assets/images/John1.png" alt="Placeholder image" />
                     </figure>
                   </div>
                   <div className="card-content">
                     <div className="media">
                       <div className="media-content">
                         <p className="title is-4">John Huntsperger</p>
-                        <p className="subtitle is-6">Front End Developer</p>
+                        <p className="subtitle is-6">Front End Developer<br></br>UI/UX Designer</p>
                       </div>
                     </div>
 
@@ -70,22 +70,18 @@ export default function AboutPage() {
                     <a target="_blank" href="https://www.linkedin.com/in/john-huntsperger-4854b01a1/">LinkedIn</a><br></br>
                     <a target="_blank" href="https://github.com/Huelsdonk">Github</a>
 
-
-                        
-                      <br></br>
-                      {/* <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> */}
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* third column */}
-              <div className="column is-2">
+              <div className="column is-3">
                 
           <div className="card">
                   <div className="card-image">
                     <figure className="image is-4by3">
-                      <img src="https://place-hold.it/200x200" alt="Placeholder image" />
+                      <img src="../../../assets/images/Yalda1.png" alt="Placeholder image" />
                     </figure>
                   </div>
                   <div className="card-content">
@@ -94,14 +90,14 @@ export default function AboutPage() {
                       </div>
                       <div className="media-content">
                         <p className="title is-4">Yalda Ali Aghazadeh</p>
-                        <p className="subtitle is-6">Project Manager</p>
+                        <p className="subtitle is-6">Project Manager <br></br>Front End Developer<br></br>UI/UX Designer</p>
                       </div>
                     </div>
 
                     <div className="content">
                       
                     <a target="_blank" href="https://www.linkedin.com/in/zahraaliaghazadeh/">LinkedIn</a><br></br>
-                    <a target="_blank" href="">Github</a>
+                    <a target="_blank" href="https://github.com/zahraaliaghazadeh">Github</a>
                 
                     </div>
                   </div>
@@ -109,19 +105,19 @@ export default function AboutPage() {
               </div>
 
               {/* forth column */}
-              <div className="column is-2">
+              <div className="column is-3">
                 
           <div className="card">
                   <div className="card-image">
                     <figure className="image is-4by3">
-                      <img src="https://place-hold.it/200x200" alt="Placeholder image" />
+                      <img src="../../../assets/images/zac.png" alt="Placeholder image" />
                     </figure>
                   </div>
                   <div className="card-content">
                     <div className="media">
                       <div className="media-content">
                         <p className="title is-4">Zac Stowell</p>
-                        <p className="subtitle is-6">Back End Developer</p>
+                        <p className="subtitle is-6 is-centered">Back End Developer<br></br>Front End Developer</p>
                       </div>
                     </div>
 
