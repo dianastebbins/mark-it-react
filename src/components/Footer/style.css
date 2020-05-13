@@ -6,7 +6,8 @@
     background-color:hsl(0, 0%, 21%);
     height: 40px;
     color: white;
-    margin-top: 10px;
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 .copyright{
