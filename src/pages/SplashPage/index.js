@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
-
+// for the next arrow svg icon
+import { ReactComponent as NextArrow } from "../../assets/images/nextarrow.svg";
 import "./style.css"
 import API from "../../utils/API"
 import Footer from '../../components/Footer';
@@ -61,15 +62,28 @@ export default function SplashPage() {
                     </div>
 
                     {/* <!-- Hero content: will be in the middle --> */}
-                    <div class="hero-body">
-                        <div class="container has-text-centered">
+                    {/* <div class="hero-body">
+                        <div class="container has-text-centered splashpagetext">
                             <h1 class="title">
                                 Mark-It
                             </h1>
                             <h2 class="subtitle">
                                 A friendly place for your local farmers market from the comfort of your home
                              </h2>
+                            <NextArrow className="nextarrow" onClick={() => console.log("next arrow was clicked")} />
                         </div>
+                    </div> */}
+
+                    <img className="mainImage" src="https://images.unsplash.com/photo-1505872342847-6dbb5e76cd31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2208&q=80"></img>
+                    <div className="splashpagetext">
+                        <h1 class="title">
+                            Mark-It
+                        </h1>
+                        <h2 class="subtitle">
+                            A friendly place for your local farmers market from the comfort of your home
+                        </h2>
+                        <NextArrow className="nextarrow" onClick={() => console.log("next arrow was clicked")} />
+
                     </div>
 
                     {/* <!-- Hero footer: will stick at the bottom --> */}
@@ -81,7 +95,7 @@ export default function SplashPage() {
                                     <li><a>Home</a></li>
                                     <li><a>Events</a></li>
                                     <li><a>About</a></li>
-                                  
+
                                 </ul>
                             </div>
                         </nav>
