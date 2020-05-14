@@ -1,3 +1,182 @@
+# [Mark-It](#)
+
+## Your local farmers market
+
+###  Mark It is a full stack application built with React that allows user to create, edit and delete a posting of a product.
+
+## Table of contents
+* [General info](#general-info) 
+* [Screenshots](#screenshots) 
+* [Installation](#installation) 
+* [Usage](#usage)
+* [Credits](#credits)
+* [Features](#features) 
+* [Status](#status) 
+* [License](#license) 
+* [Contributers](#contributers)
+
+
+## General Info
+
+This application will give you the ability to 
+
+
+## Screenshots
+
+mobile screen size responsive
+
+<img src="./public/assets/images/.png" width="250px">  <img src="./public/assets/images/.png" width="250px"> 
+
+
+
+
+
+## Installation
+To install:
+* [Visual Code](https://code.visualstudio.com/docs/setup/setup-overview)
+* [NodeJS](https://nodejs.org/en/download/)
+* [MySql](https://dev.mysql.com/downloads/installer/)
+* [MySqlworkbench](https://dev.mysql.com/downloads/workbench/)
+
+
+
+In order to install, first download the files. Then you would open terminal and type ```npm install``` . This will install all the npm packages listed under the dependencies in the package.json. Then you will type the command ``` npm start```. This will start the react app at the port 300 in the browser. Finally you will type ```localhost:3000``` in the browser window and use the application. 
+
+
+## Usage 
+
+To use this application, you can [click here](#).
+
+Upon clicking on the link above, you will create a user and password in the app, ...
+
+![gif1](./app/public/assets/images/gif1.gif)
+
+
+
+
+## Credits
+
+Built with [Bulma](https://bulma.io/)
+
+Fonts from [Google Fonts](https://developers.google.com/fonts)
+
+Icons from [flat icon](https://www.flaticon.com/)
+
+Logo from [tailorbrands](https://www.tailorbrands.com/)
+
+deploy with [heroku](https://dashboard.heroku.com/)
+
+#### npm packages used:
+
+ * [axios](https://www.npmjs.com/package/axios)
+ * [bulma](https://www.npmjs.com/package/bulma)
+ * [mapbox-gl](https://www.npmjs.com/package/mapbox-gl)
+ * [bcrypt](https://www.npmjs.com/package/bcrypt)
+ * [dotenv](https://www.npmjs.com/package/dotenv)
+ * [express](https://www.npmjs.com/package/express)
+ * [sequelize](https://www.npmjs.com/package/sequelize)
+ * [uniqid](https://www.npmjs.com/package/uniqid)
+ * [Node MySQL 2](https://www.npmjs.com/package/mysql2)
+ * [MySQL](https://www.npmjs.com/package/mysql)
+ * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+ * [express-session](https://www.npmjs.com/package/express-session)
+ * [foundation-sites](https://www.npmjs.com/package/foundation-sites)
+ * [mysql2](https://www.npmjs.com/package/mysql2)
+ * [nodemailer](https://www.npmjs.com/package/nodemailer)
+ * [session](https://www.npmjs.com/package/node-session)
+
+
+
+## Features
+List of features:
+* Feature 1: Easy to navigate design.
+* Feature 2: Ability to create, update, delete product postings.
+* Feature 3: Map to show where on the map the item is selling.
+* Feature 4: Ability to create a user and password.
+* Feature 5: Ability to send email to the users that follow a vender.
+
+
+To-do list:
+* a
+* b 
+* c
+* d
+
+
+
+## Status
+Project is:  _in progress_
+
+#### Inspiration
+The  Covid 19 pandemic has caused the majority of the population to practice social distancing. This application can help local producers to sell their products to local people.
+
+
+## License
+
+MIT license 
+Copyright © 2020 Zahra Ali Aghazadeh, Diana Stebbins, John Huntsperger, Zac Stowell
+
+
+
+## Contributors
+
+Feel free to contact us via linkedIn for any feedbacks, questions or collaborations! 
+
+
+
+<img src="./src/assets/images/Diana2.png" width="80px"> <br>
+Diana Stebbins : Back End Developer/ Git Master
+[Github](https://github.com/dianastebbins) ,
+[LinkedIn](https://www.linkedin.com/in/diana-stebbins-b618b034/)
+
+
+<img src="./src/assets/images/John1.png" width="80px"><br>
+John Huntsperger : Front End Developer/ Designer
+[Github](https://github.com/Huelsdonk) ,
+[linkedIn](https://www.linkedin.com/in/john-huntsperger-4854b01a1/)
+
+
+
+<img src="./src/assets/images/zac.png" width="80px"> <br>
+Zac Stowell: Back End Developer
+[Github](https://github.com/the-medium-place) ,
+[LinkedIn](https://www.linkedin.com/in/zachary-stowell)
+
+
+<img src="./src/assets/images/Yalda1.png" width="80px"> <br>
+Yalda Ali Aghazadeh : Project Manager / Front End Developer/ Designer
+[Github](https://github.com/zahraaliaghazadeh) ,
+[LinkedIn](www.linkedin.com/in/yalda-aghazade)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -65,4 +244,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
