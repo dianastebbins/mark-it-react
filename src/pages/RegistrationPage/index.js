@@ -1,92 +1,75 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
-
-import "./style.css"
+import React, { useState } from 'react'
+import { useHistory, Link } from "react-router-dom"
 import API from "../../utils/API"
-import Footer from '../../components/Footer';
+import "./style.css"
+
+class RegistrationPage extends React.Component {
+    state = {
+        username: '',
+        password: '',
+        first_name: "",
+        last_name: "",
+        email: "",
+        vendor_name: "",
+        vendor_email: "",
+        vendor_phone: "",
+        bus_lic: ""
+    }
 
 
-// import SomeComponent from '../../components/SomeComponent';
 
-export default function RegistrationPage() {
-    // const [playerState,setPlayerState]= useState({
-    //     name:'',
-    //     team:''
-    // })
 
-    // useEffect(()=>{
-    //     API.getAllPlayers().then(res=>{
-    //         console.log(res.data)
-    //         setPlayersState(res.data)
-    //         setFilteredPlayersState(res.data)
-    //     }).catch(err=>{
-    //         console.log(err);
-    //     })
-    // },[])
+    handleInputChange = event => {
+        const { name, value } = event.target;
 
-    // const params = useParams(); // for retrieving id from .../path/:id apis
-    // const history = useHistory();
+        this.setState({
+            [name]: value
+        })
+    }
 
-    // const handleDeleteBtnClick = event=>{
-    //     event.preventDefault();
-    //     API.deletePlayerById(params.id).then(res=>{
-    //         history.push('/')
-    //     })
-    // }
+    handleFormSubmit = event => {
+        event.preventDefault();
+        API.createUser(this.state).then(newUser => {
+            console.log(this.state)
+            this.setState({
+                username: '',
+                password: '',
+                first_name: "",
+                last_name: "",
+                email: "",
+                vendor_name: "",
+                vendor_email: "",
+                vendor_phone: "",
+                bus_lic: ""
+            })
+        })
 
-    // const handleFormSubmit = event=>{
-    // OR
-    // const handleInputChange = event=>{
-    //     event.preventDefault();
-    //     API.createPlayer(playerState).then(newPlayer=>{
-    //         console.log(newPlayer)
-    //         setPlayerState({
-    //             name:'',
-    //             team:''
-    //         })
-    //         history.push("/")
-    //     })
-    // }
+    }
+    render() {
 
-    return (
-        <div className="RegistrationPage">
-            <div className="body">
-
-                <h1>RegistrationPage</h1>
-                <h3>Welcome banner, registration option description goes here</h3>
-                {/* video as background, gif? */}
-                <h3>I am a vendor checkbox goes here</h3>
-                <h3>FORM with<br></br>
-                    <input class="input" type="text" placeholder="First Name"></input>
-                    <input class="input" type="text" placeholder="Last Name"></input>
-                    <input class="input" type="text" placeholder="email"></input>
-                    <input class="input" type="text" placeholder="username"></input>
-                    <input class="input" type="text" placeholder="password"></input>
-                ....first name input,<br></br>
-                ....last name input,<br></br>
-                ....email input,<br></br>
-                ....username input,<br></br>
-                ....password input,<br></br>
-                ....IF(user is vendor is true) <br></br>
-                    {/* business id, via UUID package */}
-                    <input class="input" type="text" placeholder="Business Name"></input>
-                    <input class="input" type="text" placeholder="Business Email"></input>
-                    <input class="input" type="text" placeholder="Business phone"></input>
-                    <input class="input" type="text" placeholder="Website"></input>
-                    <input class="input" type="text" placeholder="Business License number"></input>
-                ........business name input,<br></br>
-                ........business email input,<br></br>
-                ........business phone input,<br></br>
-                ........website input,<br></br>
-                ........business license input<br></br>
-                    <input class="button" type="submit" value="Submit" />
-
-                ....Register! button <br></br>
-                goes here</h3>
-                <Link to="/scheduler" >temporary link to SchedulerPage</Link>
-
+        return (
+            <div className="SignupPage section">
+                <div className="container">
+                    <h1>Signup</h1>
+                    <div className="field">
+                        <form>
+                            <input type="text" onChange={this.handleInputChange} name="username" value={this.state.name} placeholder="username" />
+                            <input type="text" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
+                            <input type="text" onChange={this.handleInputChange} name="first_name" value={this.state.first_name} placeholder="first_name" />
+                            <input type="text" onChange={this.handleInputChange} name="last_name" value={this.state.last_name} placeholder="last_name" />
+                            <input type="text" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                            <input type="text" onChange={this.handleInputChange} name="vendor_name" value={this.state.vendor_name} placeholder="vendor_name" />
+                            <input type="text" onChange={this.handleInputChange} name="vendor_email" value={this.state.vendor_email} placeholder="vendor_email" />
+                            <input type="text" onChange={this.handleInputChange} name="vendor_phone" value={this.state.vendor_phone} placeholder="vendor_phone" />
+                            <input type="text" onChange={this.handleInputChange} name="bus_lic" value={this.state.bus_lic} placeholder="business license" />
+                            <button onClick={this.handleFormSubmit}>Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    )
+
+
+        )
+    }
 }
+export default RegistrationPage
