@@ -10,31 +10,29 @@ export default function MarketDetail(props) {
               <div className="column is-one-third">
                 <div className="card  has-background-light">
                   <header className="card-header">
-                    <p className="card-header-title">{market}</p>
-                    <a href="#" class="card-header-icon" aria-label="favorite">
-                      <span class="icon">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
+                    <p className="card-header-title">{market.market_id}</p>
+                    <a href="/detail" className="card-header-icon" aria-label="favorite">
+                      <span className="icon">
+                        <i className="fas fa-heart" aria-hidden="true"></i>
                       </span>
                     </a>
                   </header>
-                  <div class="card-image">
+                  <div className="card-image">
                     <figure class="image is-3by1">
                       <img
-                        src="http://placegoat.com/300/100"
-                        alt="Placeholder image"
+                        src="http://placegoat.com/300/100" alt="a goat"
                       />
                     </figure>
                   </div>
                   <div className="card-content">
-                    <div class="list is-hoverable">
+                    <div className="list is-hoverable">
                       <p className="list-item">
                         <h3>Market</h3>
                       </p>
                       <p className="list-item">
-                        40 This Road, Redding, CT 06896
+                        
                       </p>
                       <p className="list-item">
-                        Saturdays at 11am, May - October
                       </p>
                       <p className="list-item">
                         Details - Lorem ipsum dolor sit amet consectetur

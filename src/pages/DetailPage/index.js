@@ -6,14 +6,13 @@ import ProductDetail from "../../components/ProductDetail"
 import VendorDetail from "../../components/VendorDetail"
 import "./style.css"
 import API from "../../utils/API"
-import Footer from '../../components/Footer';
 
 
 // import SomeComponent from '../../components/SomeComponent';
 
 class DetailPage extends React.Component {
     state = {
-        markets: ["Ballard", "Fremont", "Gold Bar", "Maple Valley", "Kirkland", "Mill Creek"],
+        markets: [],
         products: [],
         vendors: []
     }
@@ -49,6 +48,18 @@ class DetailPage extends React.Component {
                 this.setState({
                     vendors: res.data
                 })
+                
+            )
+            .catch((err) => console.log(err));
+    };
+
+    searchMarkets = () => {
+        API.getMarkets()
+            .then((res) =>
+                console.log(res.data)
+                // this.setState({
+                //     markets: res.data
+                // })
                 
             )
             .catch((err) => console.log(err));

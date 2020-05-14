@@ -1,15 +1,25 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import API from "../../utils/API"
 
-export default function Nav() {
+export default function Nav(props) {
+  
+  const handleLogout = event=>{
+    API.logout().then(res=>{
+        props.logoutHandle();
+        console.log(res.data)
+    //    history.push('/')
+    })
+}
+  
   return (
     <div>
       <nav className="navbar is-dark is-bold" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="#">
+          <span className="navbar-item" href="#">
             {/* <i className="brandlogo"><img src="assets/images/screenshot4.png" height="100px" width="90px"></img></i> */}
-          </a>
+          </span>
 
           <a
             role="button"
@@ -26,33 +36,33 @@ export default function Nav() {
 
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
-          <a className=" brandlogo"><img src="assets/images/brandlogo.png"  height="80px" width="80px"></img></a>
-            <div className="navbar-item"> <Link to="/" >Home</Link></div>
-            <a className="navbar-item"> <Link to="/add-product" >Add Product</Link></a>
-            <a className="navbar-item"> <Link to="/detail" >Detail</Link></a>
-            <a className="navbar-item"> <Link to="/listing" >Listing</Link></a>
-            <a className="navbar-item"> <Link to="/login" >Login</Link></a>
-            <a className="navbar-item"> <Link to="/map" >Map</Link></a>
-            <a className="navbar-item"> <Link to="/registration" >Registratio</Link></a>
-            <a className="navbar-item"> <Link to="/schedular" >Schedular</Link></a>
-            <a className="navbar-item"> <Link to="/user-landing" >User landing</Link></a>
-            <a className="navbar-item"><Link to="/about" >About</Link></a>
-            <a className="navbar-item"><Link to="/signup" >Sign Up</Link></a>
-            <a className="navbar-item"><Link to="/profile" >Profile</Link></a>
-            <a className="navbar-item"><Link to="/signup2" >signing up</Link></a>
+          <span className=" brandlogo"><img src="assets/images/brandlogo.png" alt="logo" height="80px" width="80px"></img></span>
+            <a className="navbar-item" href="/"> Home</a>
+            <a className="navbar-item" href="/add-product">Add Product</a>
+            <a className="navbar-item" href="/detail"> Detail</a>
+            <a className="navbar-item" href="/listing"> Listing</a>
+            <a className="navbar-item" href="/login"> Login</a>
+            <a className="navbar-item" href="/map"> Map</a>
+            <a className="navbar-item" href="/registration">Registration</a>
+            <a className="navbar-item" href="/scheduler"> Calendar</a>
+            <a className="navbar-item" href="/user-landing"> User landing</a>
+            <a className="navbar-item" href="/about">About</a>
+            <a className="navbar-item" href="/signup">Sign Up</a>
+            <a className="navbar-item" href="/profile">Profile</a>
+            <a className="navbar-item" href="/signup2">signing up</a>
 
 
             {/* <a className="navbar-item">Documentation</a> */}
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">More</a>
+              <span className="navbar-link">More</span>
 
               <div className="navbar-dropdown">
-                <a className="navbar-item">Events</a>
-                <a className="navbar-item"><Link to="/about" >About</Link></a>
-                <a className="navbar-item">Contact</a>
+                <span className="navbar-item">Events</span>
+                <a className="navbar-item" href="/about">About</a>
+                <span className="navbar-item">Contact</span>
                 <hr className="navbar-divider" />
-                <a className="navbar-item"></a>
+                <span className="navbar-item"></span>
               </div>
             </div>
           </div>
@@ -60,8 +70,8 @@ export default function Nav() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-rounded is-inverted"><Link to="/signup" >Sign Up</Link></a>
-                <a className="button is-rounded is-inverted">Login</a>
+                <button className="button is-rounded is-inverted"><Link to="/signup" >Sign Up</Link></button>
+                <button className="button is-rounded is-inverted" onClick={handleLogout}>LOGOUT</button>
               </div>
             </div>
           </div>
