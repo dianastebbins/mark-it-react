@@ -50,7 +50,7 @@ function App() {
   
   return (
     <Router>
-      <Nav />
+      <Nav logoutHandle={logoutHandle}/>
       <div id="wrapper">
       <Switch>
         <Route exact path="/">

@@ -27,12 +27,19 @@ const API = {
     getProducts: function(){
         return axios.get(`${BASE_URL}/api/products`, {withCredentials:true})
     },
+    getMarkets: function(){
+        return axios.get(`${BASE_URL}/api/markets`, {withCredentials:true})
+    },
     login: function(userData){
         return axios.post(`${BASE_URL}/login`,userData, {withCredentials:true})
     },
     readSessions: function() {
         return axios.get(`${BASE_URL}/readsessions`, {withCredentials:true})
+    },
+    logout:function(){
+        return axios.get(`${BASE_URL}/logout`,{withCredentials:true})
     }
+
 
     // getPlayerById:function(id){
     //     return axios.get(`${BASE_URL}/api/players/${id}`)
