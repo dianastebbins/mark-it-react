@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import 'bulma/css/bulma.css'
 import _ from 'lodash'
@@ -17,11 +17,37 @@ import SignupPage from "./pages/SignupPage";
 import ProfilePage from "./pages/ProfilePage";
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
+import API from "./utils/API"
 import './App.css';
 import SplashPage from './pages/SplashPage';
 
 
+
+
+
+
 function App() {
+  const [currentUser,setCurrentUser] = useState(false);
+
+  useEffect(()=>{
+    API.readSessions().then(res=>{
+      if(res.data.user){
+        setCurrentUser(res.data.user)
+      }else {
+        setCurrentUser(false)
+      }
+    })
+  },[])
+  
+  const loginSubmitHandler= userData=>{
+    setCurrentUser(userData)
+  }
+
+  const logoutHandle = ()=>{
+    setCurrentUser(false)
+  }
+  
+  
   return (
     <Router>
       <Nav />
@@ -31,18 +57,18 @@ function App() {
           <SplashPage />
         </Route>
         <Route exact path="/add-product">
-          <AddProductPage/>
+          <AddProductPage currentUser={currentUser}/>
         </Route>
         {/* one per detail type? */}
         <Route exact path="/detail">
-          <DetailPage/>
+          <DetailPage currentUser = {currentUser}/>
         </Route>
         {/* one per listing type? */}
         <Route exact path="/listing">
           <ListingPage/>
         </Route>
         <Route exact path="/login">
-          <LoginPage/>
+          <LoginPage submitHandler={loginSubmitHandler}/>
         </Route>
         <Route exact path="/map">
           <MapPage/>

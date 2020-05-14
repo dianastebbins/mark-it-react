@@ -137,7 +137,10 @@ class AddProductPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Photo Placeholder</label>
                                         <div className="control">
+
                                             <input className="input is-hovered" type="file" onChange={this.uploadFile} name="userId" value={this.state.userId} placeholder="use upload component instead" />
+
+
                                             <i class="fas fa-upload uploadicon"></i>
                                         </div>
                                     </div>
