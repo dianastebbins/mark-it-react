@@ -144,7 +144,11 @@ class AddProductPage extends React.Component {
                                             <i class="fas fa-upload uploadicon"></i>
                                         </div>
                                     </div>
-                                    
+                                    {this.state.image ? (
+                                        <div>
+                                            <img src={this.state.image}></img>
+                                        </div>
+                                    ) : (<div />)}
                                     <div class="field">
                                         <div class="control">
                                             <label class="checkbox">
