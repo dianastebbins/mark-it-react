@@ -18,17 +18,21 @@ const API = {
     },
     
     createUser: function(userData){
-        return axios.post(`${BASE_URL}/api/users`,userData)
+        return axios.post(`${BASE_URL}/api/users`,userData, {withCredentials:true})
     },
     
     addProduct: function(productData){
-        return axios.post(`${BASE_URL}/api/products`,productData)
+        return axios.post(`${BASE_URL}/api/products`,productData, {withCredentials:true})
     },
     getProducts: function(){
-        return axios.get(`${BASE_URL}/api/products`)
+        return axios.get(`${BASE_URL}/api/products`, {withCredentials:true})
     },
-
-
+    login: function(userData){
+        return axios.post(`${BASE_URL}/login`,userData, {withCredentials:true})
+    },
+    readSessions: function() {
+        return axios.get(`${BASE_URL}/readsessions`, {withCredentials:true})
+    }
 
     // getPlayerById:function(id){
     //     return axios.get(`${BASE_URL}/api/players/${id}`)
