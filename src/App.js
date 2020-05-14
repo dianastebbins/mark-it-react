@@ -7,7 +7,6 @@ import _ from 'lodash'
 // import DetailsPage from "./pages/examples/DetailsPage";
 import AddProductPage from "./pages/AddProductPage";
 import DetailPage from "./pages/DetailPage";
-import LandingPage from "./pages/LandingPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
