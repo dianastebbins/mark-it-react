@@ -124,6 +124,7 @@ Feel free to contact us via linkedIn for any feedbacks, questions or collaborati
 
 
 
+
 <img src="./src/assets/images/Diana2.png" width="80px"> <br>
 Diana Stebbins : Back End Developer/ Git Master
 [Github](https://github.com/dianastebbins) ,

@@ -1,0 +1,18 @@
+/* .UserLandingPage {
+    background: magenta;
+    text-align: center;
+    min-height: 100vh;
+} */
+
+
+
+/* .body{
+    height: 70vh;
+} */
+
+
+.ProfilePage{
+    background-image: url("https://images.unsplash.com/photo-1453335925686-b01dd9665916?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+    text-align: center;
+    min-height: 100vh;
+}

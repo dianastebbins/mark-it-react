@@ -18,9 +18,9 @@ export default function Nav() {
             aria-expanded="false"
             data-target="navbarBasicExample"
           >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+            <span aria-hidden="true">Home</span>
+            <span aria-hidden="true">About</span>
+            <span aria-hidden="true">Login</span>
           </a>
         </div>
 
@@ -38,6 +38,8 @@ export default function Nav() {
             <a className="navbar-item"> <Link to="/user-landing" >User landing</Link></a>
             <a className="navbar-item"><Link to="/about" >About</Link></a>
             <a className="navbar-item"><Link to="/signup" >Sign Up</Link></a>
+            <a className="navbar-item"><Link to="/profile" >Profile</Link></a>
+            <a className="navbar-item"><Link to="/signup2" >signing up</Link></a>
 
 
             {/* <a className="navbar-item">Documentation</a> */}
@@ -58,8 +60,8 @@ export default function Nav() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-rounded is-link"><Link to="/signup" >Sign Up</Link></a>
-                <a className="button is-rounded is-info">Login</a>
+                <a className="button is-rounded is-inverted"><Link to="/signup" >Sign Up</Link></a>
+                <a className="button is-rounded is-inverted">Login</a>
               </div>
             </div>
           </div>

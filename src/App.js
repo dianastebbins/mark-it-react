@@ -7,18 +7,18 @@ import _ from 'lodash'
 // import DetailsPage from "./pages/examples/DetailsPage";
 import AddProductPage from "./pages/AddProductPage";
 import DetailPage from "./pages/DetailPage";
-import LandingPage from "./pages/LandingPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import SchedulerPage from "./pages/SchedulerPage";
-import UserLandingPage from "./pages/UserLandingPage";
 import AboutPage from "./pages/AboutPage";
 import SignupPage from "./pages/SignupPage";
+import ProfilePage from "./pages/ProfilePage";
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
 import './App.css';
+import SplashPage from './pages/SplashPage';
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
       <div id="wrapper">
       <Switch>
         <Route exact path="/">
-          <LandingPage />
+          <SplashPage />
         </Route>
         <Route exact path="/add-product">
           <AddProductPage/>
@@ -53,16 +53,17 @@ function App() {
         <Route exact path="/scheduler">
           <SchedulerPage/>
         </Route>
-        one per 
-        <Route exact path="/user-landing">
-          <UserLandingPage/>
-        </Route>
         <Route exact path="/about">
           <AboutPage/>
         </Route>
         <Route exact path="/signup">
           <SignupPage/>
         </Route>
+        <Route exact path="/profile">
+          <ProfilePage/>
+        </Route>
+        
+
         {/* <Route exact path ="/player/:id">
           <DetailsPage/>
         </Route> */}

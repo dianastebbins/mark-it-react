@@ -1,0 +1,40 @@
+.SplashPage {
+    background: gray;
+    text-align: center;
+    color: white;
+    /* background-image: url(../../assets/images/main1.jpg); */
+    min-height: 100vh;
+    /* background-image: url(../../assets/images/main1.jpg); */
+    /* background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2168&q=80); */
+
+}
+
+.MainImage{
+    /* background-image: url(../../assets/images/main1.jpg); */
+    /* need to adjust and change the image */
+    text-align: center;
+}
+
+.mainIntro{
+    color: white;
+}
+
+/* .body{
+    height: 70vh;
+} */
+
+.hero-body{
+        /* farm */
+        /* background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2168&q=80); */
+        /* apples */
+        /* background-image: url(https://images.unsplash.com/photo-1505872342847-6dbb5e76cd31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2208&q=80); */
+        /* jewelry */
+        background-image: url(https://images.unsplash.com/photo-1523252012848-c22188792c27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
+        background-size: cover;
+        font-weight: bolder;
+}
+
+.zipcodeform{
+width: 40%;
+margin-top: 30px;
+}
