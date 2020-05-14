@@ -14,7 +14,8 @@ export default function VendorDetail(props) {
                             <div className="column">
                                 <div className="card  has-background-light">
                                     <header className="card-header">
-                                        <p className="card-header-title">{vendor}</p>
+                                        <p className="card-header-title">{vendor.first_name} </p>
+                                        <p className="card-header-title">{vendor.last_name} </p>
                                         <a href="#" class="card-header-icon" aria-label="favorite">
                                             <span class="icon">
                                                 <i class="fas fa-heart" aria-hidden="true"></i>
@@ -24,11 +25,9 @@ export default function VendorDetail(props) {
 
                                     <div className="card-content">
                                         <div class="list is-hoverable">
-                                            <p className="list-item">Business Name</p>
-                                            <p className="list-item">Email</p>
-                                            <p className="list-item">Phone</p>
-                                            <p className="list-item">Website</p>
-                                            <p className="list-item">Chat</p>
+                                            <p className="list-item">{vendor.vendor_name}</p>
+                                            <p className="list-item">{vendor.email}</p>
+                                            <p className="list-item">{vendor.phone}</p>
                                         </div>
                                     </div>
                                 </div>

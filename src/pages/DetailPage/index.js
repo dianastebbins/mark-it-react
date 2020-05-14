@@ -14,8 +14,8 @@ import Footer from '../../components/Footer';
 class DetailPage extends React.Component {
     state = {
         markets: ["Ballard", "Fremont", "Gold Bar", "Maple Valley", "Kirkland", "Mill Creek"],
-        products: ["Bread", "Croissant", "Brown Butter Toffee Chocolate Chip Cookies", "Brownies"],
-        vendors:["Bob", "Bobbie", "Bobo", "Bobette", "Frank"]
+        products: [],
+        vendors: []
     }
 
     // useEffect(()=>{
@@ -27,7 +27,32 @@ class DetailPage extends React.Component {
     //         console.log(err);
     //     })
     // },[])
+    componentDidMount() {
+        this.searchProducts();
+        this.searchVendors();
+    }
 
+
+    searchProducts = () => {
+        API.getProducts()
+            .then((res) =>
+                this.setState({
+                    products: res.data
+                })
+                
+            )
+            .catch((err) => console.log(err));
+    };
+    searchVendors = () => {
+        API.getAllUsers()
+            .then((res) =>
+                this.setState({
+                    vendors: res.data
+                })
+                
+            )
+            .catch((err) => console.log(err));
+    };
     // const params = useParams(); // for retrieving id from .../path/:id apis
     // const history = useHistory();
 
@@ -51,17 +76,17 @@ class DetailPage extends React.Component {
     //         history.push("/")
     //     })
     // }
-render() {
-    return (
-        <div className="DetailPage">
-            <div className="body">
+    render() {
+        return (
+            <div className="DetailPage">
+                <div className="body">
 
-            <h1>DetailPage</h1>
-            <MarketDetail markets={this.state.markets}/>
-            <VendorDetail vendors={this.state.vendors}/>
-            <ProductDetail products={this.state.products}/>
+                    <h1>DetailPage</h1>
+                    <MarketDetail markets={this.state.markets} />
+                    <VendorDetail vendors={this.state.vendors} />
+                    <ProductDetail products={this.state.products} />
 
-            {/* <h3>Table/List goes here (read/view only data)<br></br>
+                    {/* <h3>Table/List goes here (read/view only data)<br></br>
                 IF(Market Detail)<br></br>
                 ....Market Name,<br></br>
                 ....IF(user is logged in)<br></br>
@@ -89,13 +114,13 @@ render() {
                 ........update button<br></br>
                 .......delete button<br></br>
             </h3> */}
-            <button className="button">
-            <Link to="/listing" >temporary link to ListingPage</Link>
-            </button>
-            </div>
+                    <button className="button">
+                        <Link to="/listing" >temporary link to ListingPage</Link>
+                    </button>
+                </div>
 
-        </div>
-    )
-}
+            </div>
+        )
+    }
 }
 export default DetailPage
