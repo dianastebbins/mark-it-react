@@ -12,7 +12,7 @@ export default function ProductDetail(props) {
                             <div className="column">
                                 <div className="card  has-background-light">
                                     <header className="card-header">
-                                        <p className="card-header-title">{product}</p>
+                                        <p className="card-header-title">{product.name}</p>
                                         <a href="#" class="card-header-icon" aria-label="favorite">
                                             <span class="icon">
                                                 <i class="fas fa-heart" aria-hidden="true"></i>
@@ -29,10 +29,10 @@ export default function ProductDetail(props) {
                                     </div>
                                     <div className="card-content">
                                         <div class="list is-hoverable">
-                                            <p className="list-item">Levain</p>
-                                            <p className="list-item">A loaf of bread</p>
-                                            <p className="list-item">$5.00</p>
-                                            <p className="list-item">By the loaf</p>
+                                            <p className="list-item">{product.description}</p>
+                                            <p className="list-item">{product.price}</p>
+                                            <p className="list-item">{product.details}</p>
+                                            <p className="list-item"></p>
                                         </div>
                                     </div>
                                 </div>

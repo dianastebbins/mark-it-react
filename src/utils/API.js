@@ -19,7 +19,14 @@ const API = {
     
     createUser: function(userData){
         return axios.post(`${BASE_URL}/api/users`,userData)
-    }
+    },
+    
+    addProduct: function(productData){
+        return axios.post(`${BASE_URL}/api/products`,productData)
+    },
+    getProducts: function(){
+        return axios.get(`${BASE_URL}/api/products`)
+    },
 
 
 
