@@ -12,7 +12,8 @@ export default function AddProductPage() {
         description: '',
         price: '',
         details: '',
-        userId: ''
+        userId: '',
+        image: ''
     })
     
     // useEffect(()=>{
@@ -39,12 +40,13 @@ export default function AddProductPage() {
         const { name, value } = event.target;
 
         setProductState({
-            [name]: value
+            ...productState, [name]: value
         })
     }
 
     const handleFormSubmit = event => {
         event.preventDefault();
+        console.log(productState);
         API.addProduct(productState).then(newProduct => {
             console.log(productState)
             setProductState({
@@ -52,7 +54,8 @@ export default function AddProductPage() {
                 description: '',
                 price: '',
                 details: '',
-                userId: ''
+                userId: '',
+                image: ''
             })
         })
     }
@@ -77,7 +80,7 @@ export default function AddProductPage() {
         const file = await res.json();
         console.log(file);
         setProductState({
-            image: file.secure_url,
+            ...productState, image: file.secure_url
             // largeImage: file.eager[0].secure_url
         });
     }
