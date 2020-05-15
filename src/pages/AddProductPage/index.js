@@ -35,6 +35,19 @@ export default function AddProductPage() {
     //         history.push('/')
     //     })
     // }
+    useEffect(() => {
+        API.readSessions().then(res=>{
+           const ID = res.data.user.id
+            setProductState({
+                userId: ID
+            })
+                
+            
+          })
+          
+    },[])
+
+
 
     const handleInputChange = event => {
         const { name, value } = event.target;
@@ -47,6 +60,7 @@ export default function AddProductPage() {
     const handleFormSubmit = event => {
         event.preventDefault();
         console.log(productState);
+       
         API.addProduct(productState).then(newProduct => {
             console.log(productState)
             setProductState({
@@ -138,10 +152,10 @@ export default function AddProductPage() {
                                         <label className="label">Photo Placeholder</label>
                                         <div className="control">
 
-                                            <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" value={productState.userId} placeholder="use upload component instead" />
+                                            <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
 
 
-                                            <i class="fas fa-upload uploadicon"></i>
+                                            <i className="fas fa-upload uploadicon"></i>
                                         </div>
                                     </div>
                                     {productState.image ? (
@@ -149,9 +163,9 @@ export default function AddProductPage() {
                                             <img src={productState.image}></img>
                                         </div>
                                     ) : (<div />)}
-                                    <div class="field">
-                                        <div class="control">
-                                            <label class="checkbox">
+                                    <div className="field">
+                                        <div className="control">
+                                            <label className="checkbox">
                                                 <input type="checkbox" />
                                             I agree to the <a href="#">terms and conditions</a>
                                             </label>
