@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
 import MarketDetail from "../../components/MarketDetail"
@@ -8,15 +8,15 @@ import "./style.css"
 import API from "../../utils/API"
 
 
-// import SomeComponent from '../../components/SomeComponent';
 
-class DetailPage extends React.Component {
-    state = {
-        markets: [],
-        products: [],
-        vendors: []
-    }
-
+export default function DetailPage()  {
+    const params = useParams();
+    const history = useHistory();
+    const [marketState,setMarketState] = useState([]);
+    const [productState,setProductState] = useState([]);
+    const [vendorState,setVendorState] = useState([]);
+ 
+    
     // useEffect(()=>{
     //     API.getAllPlayers().then(res=>{
     //         console.log(res.data)
@@ -26,46 +26,38 @@ class DetailPage extends React.Component {
     //         console.log(err);
     //     })
     // },[])
-    componentDidMount() {
-        this.searchProducts();
-        this.searchVendors();
-    }
+    useEffect(() => {
+        searchProducts();
+        searchVendors();
+    },[])
 
 
-    searchProducts = () => {
+    const searchProducts = () => {
         API.getProducts()
-            .then((res) =>
-                this.setState({
-                    products: res.data
-                })
-                
+            .then((res) => 
+                setProductState(res.data)
             )
             .catch((err) => console.log(err));
     };
-    searchVendors = () => {
+    const searchVendors = () => {
         API.getAllUsers()
-            .then((res) =>
-                this.setState({
-                    vendors: res.data
-                })
-                
+            .then((res) => 
+                setVendorState(res.data)
             )
             .catch((err) => console.log(err));
     };
 
-    searchMarkets = () => {
+    const searchMarkets = () => {
         API.getMarkets()
             .then((res) =>
                 console.log(res.data)
-                // this.setState({
-                //     markets: res.data
-                // })
+                // setMarketState( res.data)
                 
             )
             .catch((err) => console.log(err));
     };
-    // const params = useParams(); // for retrieving id from .../path/:id apis
-    // const history = useHistory();
+    
+    
 
     // const handleDeleteBtnClick = event=>{
     //     event.preventDefault();
@@ -87,15 +79,15 @@ class DetailPage extends React.Component {
     //         history.push("/")
     //     })
     // }
-    render() {
+  
         return (
             <div className="DetailPage">
                 <div className="body">
 
                     <h1>DetailPage</h1>
-                    <MarketDetail markets={this.state.markets} />
-                    <VendorDetail vendors={this.state.vendors} />
-                    <ProductDetail products={this.state.products} />
+                    <MarketDetail markets={marketState} />
+                    <VendorDetail vendors={vendorState} />
+                    <ProductDetail products={productState} />
 
                     {/* <h3>Table/List goes here (read/view only data)<br></br>
                 IF(Market Detail)<br></br>
@@ -133,5 +125,3 @@ class DetailPage extends React.Component {
             </div>
         )
     }
-}
-export default DetailPage

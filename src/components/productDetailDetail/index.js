@@ -24,7 +24,7 @@ export default function ProductDetail(props) {
                                         <figure class="image is-3by2">
                                             <img
                                                 src="https://images.unsplash.com/photo-1568471173242-461f0a730452?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2530&q=80"
-                                                alt="bread"
+                                                alt="Placeholder image"
                                             />
                                         </figure>
                                     </div>

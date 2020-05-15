@@ -1,6 +1,6 @@
 import React from 'react'
 import "./style.css";
-
+import {Link} from "react-router-dom"
 
 export default function VendorDetail(props) {
     return (
@@ -16,11 +16,11 @@ export default function VendorDetail(props) {
                                     <header className="card-header">
                                         <p className="card-header-title">{vendor.first_name} </p>
                                         <p className="card-header-title">{vendor.last_name} </p>
-                                        <a href="#" class="card-header-icon" aria-label="favorite">
-                                            <span class="icon">
+                                        <Link to={`/user/${vendor.id}`}>   
+                                             <span class="icon">
                                                 <i class="fas fa-heart" aria-hidden="true"></i>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </header>
 
                                     <div className="card-content">

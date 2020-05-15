@@ -7,6 +7,8 @@ import API from "../../utils/API"
 
 
 export default function LoginPage(props) {
+  const params = useParams()
+  const history = useHistory()
   const [loginState, setLoginState] = useState({
       username:"",
       password:""
@@ -30,6 +32,7 @@ export default function LoginPage(props) {
       console.log(res.data)
       if(res.data.user){
         props.submitHandler(res.data.user)
+        history.push(`/user/${res.data.user.id}`)
     } else {
         props.submitHandler(false)
     }
