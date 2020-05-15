@@ -107,7 +107,6 @@ class MapPage extends React.Component {
 
      getResults = (zip) => {
         // create array to hold geojson objects
-        const marketArr = [];
         // or
         // function getResults(lat, lng) {
 

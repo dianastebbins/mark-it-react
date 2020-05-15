@@ -6,12 +6,14 @@ import _ from 'lodash'
 // import AddPlayerPage from './pages/examples/AddPlayerPage';
 // import DetailsPage from "./pages/examples/DetailsPage";
 import AddProductPage from "./pages/AddProductPage";
+import UserPage from "./pages/UserPage"
+import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import RegistrationPage from "./pages/RegistrationPage";
-import SchedulerPage from "./pages/SchedulerPage";
+import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
 import SignupPage from "./pages/SignupPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -20,6 +22,7 @@ import Footer from "./components/Footer"
 import API from "./utils/API"
 import './App.css';
 import SplashPage from './pages/SplashPage';
+
 
 
 
@@ -75,6 +78,12 @@ function App() {
         </Route>
         <Route exact path="/registration">
           <RegistrationPage/>
+        </Route>
+        <Route exact path="/user/:id">
+          <UserPage/>
+        </Route>
+        <Route exact path="/product/:id">
+          <ProductPage/>
         </Route>
         <Route exact path="/scheduler">
           <SchedulerPage/>

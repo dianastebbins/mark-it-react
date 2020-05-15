@@ -4,19 +4,17 @@ import { Link } from "react-router-dom";
 
 import "./style.css"
 import API from "../../utils/API"
-import Footer from '../../components/Footer';
 
-
-// import SomeComponent from '../../components/SomeComponent';
-class AddProductPage extends React.Component {
-    state = {
+export default function AddProductPage() {
+    const [productState, setProductState] = useState({
+        
         name: '',
         description: '',
         price: '',
         details: '',
         userId: ''
-    }
-
+    })
+    
     // useEffect(()=>{
     //     API.getAllPlayers().then(res=>{
     //         console.log(res.data)
@@ -37,19 +35,19 @@ class AddProductPage extends React.Component {
     //     })
     // }
 
-    handleInputChange = event => {
+    const handleInputChange = event => {
         const { name, value } = event.target;
 
-        this.setState({
+        setProductState({
             [name]: value
         })
     }
 
-    handleFormSubmit = event => {
+    const handleFormSubmit = event => {
         event.preventDefault();
-        API.addProduct(this.state).then(newProduct => {
-            console.log(this.state)
-            this.setState({
+        API.addProduct(productState).then(newProduct => {
+            console.log(productState)
+            setProductState({
                 name: '',
                 description: '',
                 price: '',
@@ -63,7 +61,7 @@ class AddProductPage extends React.Component {
 
 // dw69fw1u3 is my cloudname
     // https://api.cloudinary.com/v1_1/dw69fw1u3/image/upload
-    uploadFile = async e => {
+    const uploadFile = async e => {
         const files = e.target.files;
         const data = new FormData();
         data.append("file", files[0]);
@@ -78,7 +76,7 @@ class AddProductPage extends React.Component {
         );
         const file = await res.json();
         console.log(file);
-        this.setState({
+        setProductState({
             image: file.secure_url,
             // largeImage: file.eager[0].secure_url
         });
@@ -97,8 +95,7 @@ class AddProductPage extends React.Component {
     //         history.push("/")
     //     })
     // }
-    render() {
-        return (
+      return (
             <div className="AddProductPage">
                 <div className="container addProduct">
 
@@ -109,28 +106,28 @@ class AddProductPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Product Name</label>
                                         <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={this.handleInputChange} name="name" value={this.state.className} placeholder="Product Name" />
+                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
                                         </div>
                                     </div>
                                    
                                     <div className="field">
                                         <label className="label">Product Description</label>
                                         <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={this.handleInputChange} name="description" value={this.state.description} placeholder="Description" />
+                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder="Description" />
                                         </div>
                                     </div>
 
                                     <div className="field">
                                         <label className="label">Price</label>
                                         <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={this.handleInputChange} name="price" value={this.state.price} placeholder="Price" />
+                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
                                         </div>
                                     </div>
 
                                     <div className="field">
                                         <label className="label">Details</label>
                                         <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={this.handleInputChange} name="details" value={this.state.details} placeholder="details" />
+                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
                                         </div>
                                     </div>
 
@@ -138,15 +135,15 @@ class AddProductPage extends React.Component {
                                         <label className="label">Photo Placeholder</label>
                                         <div className="control">
 
-                                            <input className="input is-hovered" type="file" onChange={this.uploadFile} name="userId" value={this.state.userId} placeholder="use upload component instead" />
+                                            <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" value={productState.userId} placeholder="use upload component instead" />
 
 
                                             <i class="fas fa-upload uploadicon"></i>
                                         </div>
                                     </div>
-                                    {this.state.image ? (
+                                    {productState.image ? (
                                         <div>
-                                            <img src={this.state.image}></img>
+                                            <img src={productState.image}></img>
                                         </div>
                                     ) : (<div />)}
                                     <div class="field">
@@ -159,7 +156,7 @@ class AddProductPage extends React.Component {
                                     </div>
                              
                              {/* units input should be added later */}
-                                    <button className="button is-success is-light" onClick={this.handleFormSubmit}>Add Product!</button>
+                                    <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
 
                                 </div>
                             </form>
@@ -172,6 +169,3 @@ class AddProductPage extends React.Component {
 
         )
     }
-}
-
-export default AddProductPage
