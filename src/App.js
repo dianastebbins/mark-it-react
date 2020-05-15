@@ -30,12 +30,14 @@ import SplashPage from './pages/SplashPage';
 
 
 function App() {
+  const [id, setId] = useState()
   const [currentUser,setCurrentUser] = useState(false);
 
   useEffect(()=>{
     API.readSessions().then(res=>{
       if(res.data.user){
         setCurrentUser(res.data.user)
+        setId(res.data.user.id)
       }else {
         setCurrentUser(false)
       }
@@ -53,7 +55,7 @@ function App() {
   
   return (
     <Router>
-      <Nav logoutHandle={logoutHandle}/>
+      <Nav id={id} logoutHandle={logoutHandle}/>
       <div id="wrapper">
       <Switch>
         <Route exact path="/">

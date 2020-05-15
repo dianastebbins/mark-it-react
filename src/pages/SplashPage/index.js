@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
+import React from 'react'
 // for the next arrow svg icon
 import { ReactComponent as NextArrow } from "../../assets/images/nextarrow.svg";
 import "./style.css"
-import API from "../../utils/API"
-import Footer from '../../components/Footer';
 
-// import SomeComponent from '../../components/SomeComponent';
+
 
 export default function SplashPage() {
 

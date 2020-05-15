@@ -84,40 +84,40 @@ export default function UserPage() {
                 <div className="columns is-centered">
 
                     <div className="column">
-                        <div class="tile is-ancestor">
-                            <div class="tile is-vertical is-8">
-                                <div class="tile">
-                                    <div class="tile is-parent is-vertical">
-                                        <article class="tile is-child box">
-                                            <p class="title is-5">My Products</p>
+                        <div className="tile is-ancestor">
+                            <div className="tile is-vertical is-8">
+                                <div className="tile">
+                                    <div className="tile is-parent is-vertical">
+                                        <article className="tile is-child box">
+                                            <p className="title is-5">My Products</p>
                                             <ul className="list">
 
                                                 {userState.products.map((product) => (
-                                                    <li className="list-item">
+                                                    <li key={product.id} className="list-item">
                                                         {product.name}
                                                     </li>
                                                 ))}
                                             </ul>
                                         </article>
-                                        <article class="tile is-child box">
-                                            <p class="title is-5">My Markets</p>
+                                        <article className="tile is-child box">
+                                            <p className="title is-5">My Markets</p>
                                             <ul className="list">
 
                                                 {userState.markets.map((market) => (
-                                                    <li className="list-item">
+                                                    <li key={market.id} className="list-item">
                                                         {market.market_id}
                                                     </li>
                                                 ))}
                                             </ul>
                                         </article>
                                     </div>
-                                    <div class="tile is-parent">
-                                        <article class="tile is-child box">
-                                            <p class="title is-5">My Favorite Sellers</p>
+                                    <div className="tile is-parent">
+                                        <article className="tile is-child box">
+                                            <p className="title is-5">My Favorite Sellers</p>
                                             <ul className="list">
 
                                                 {userState.favorites.map((favorite) => (
-                                                    <li className="list-item">
+                                                    <li key={favorite.id} className="list-item">
                                                         {favorite.last_name}
                                                     </li>
                                                 ))}
@@ -125,13 +125,13 @@ export default function UserPage() {
                                         </article>
                                     </div>
                                 </div>
-                                <div class="tile is-parent is-primary">
-                                    <article class="tile is-child box">
-                                        <p class="title is-5">My schedules</p>
+                                <div className="tile is-parent is-primary">
+                                    <article className="tile is-child box">
+                                        <p className="title is-5">My schedules</p>
                                         <ul className="list">
 
                                             {userState.schedules.map((schedule) => (
-                                                <li className="list-item">
+                                                <li key={schedule.id} className="list-item">
                                                     {schedule.open_time}
                                                 </li>
                                             ))}
