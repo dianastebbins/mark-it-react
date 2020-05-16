@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import "./style.css"
 import { useParams } from "react-router-dom"
 import API from "../../utils/API"
@@ -64,7 +65,9 @@ export default function UserPage() {
 
     }
     
-
+    const refreshPage = () => {
+        window.location.reload(false);
+      }
 
     return (
         <div className="UserPage">
@@ -91,9 +94,10 @@ export default function UserPage() {
                                         <article className="tile is-12 is-child box">
                                             <p className="title is-5">My Products</p>
                                             <ul className="list">
-
+                                        {/* see if you can throw a value on the text content and send the data to the api
+                                        so that you don't have to use a form */}
                                                 {userState.products.map((product) => (
-                                                    <li key={product.id} className="list-item">
+                                                    <li contentEditable="true" key={product.id} className="list-item">
                                                         {product.name}  
                                                         <button name={product.id} onClick={userProdClick} class="button is-small is-info is-pulled-right">Info</button>
                                                         
@@ -102,7 +106,7 @@ export default function UserPage() {
                                             </ul>
                                         </article>
                                         <article className="tile is-12 is-child box">
-                                            <p className="title is-5">My Markets</p>
+                                            <p className="title is-5" >My Markets</p>
                                             <ul className="list">
 
                                                 {userState.markets.map((market) => (
@@ -123,8 +127,9 @@ export default function UserPage() {
                                                 {userState.favorites.map((favorite) => (
                                                     <li key={favorite.id} className="list-item">
                                                            {favorite.first_name} {favorite.last_name} 
+                                                           <Link to={`/vendor/${favorite.id}`}>
                                                         <button  class="button is-small is-info is-pulled-right">Info</button>
-
+                                                            </Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -157,7 +162,7 @@ export default function UserPage() {
             <div className="section">
                 <div className="columns">
                 <div className="column">
-                {singleProdSt? ( <ProductInfo product={singleProdSt} />):''}
+                {singleProdSt? ( <ProductInfo refreshPage={refreshPage} product={singleProdSt} />):''}
                 </div>
                 </div>
             </div>

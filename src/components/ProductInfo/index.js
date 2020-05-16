@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "./style.css"
 import API from "../../utils/API";
 
 export default function ProductInfo(props) {
+    const history = useHistory();
     const [productState, setProductState] = useState({
         name: '',
         description: '',
@@ -11,6 +12,8 @@ export default function ProductInfo(props) {
         details: '',
         userId: ''
     })
+
+    
 
     const handleDeleteBtn = event => {
         console.log(props.product.userId)
@@ -36,7 +39,8 @@ export default function ProductInfo(props) {
                 description: '',
                 price: '',
                 details: '',
-            })
+            }) 
+            props.refreshPage()
         })
     }
 
@@ -69,7 +73,7 @@ export default function ProductInfo(props) {
                                     </div>
                                     <div className="card-content">
                                         <div class="list is-hoverable">
-                                            <p className="list-item">{props.product.description}</p>
+                                            <p contentEditable="true" className="list-item">{props.product.description}</p>
                                             <p className="list-item">{props.product.price}</p>
                                             <p className="list-item">{props.product.details}</p>
                                             <p className="list-item"></p>
@@ -77,7 +81,7 @@ export default function ProductInfo(props) {
                                     </div>
                                 </div>
                                 <div className="card has-background-light">
-
+                                    <div className="card-content">
                                 <form>
                                     <div className="field">
                                         <h5>Update Product Information</h5>
@@ -108,6 +112,7 @@ export default function ProductInfo(props) {
                                         <button className="button is-success is-light" onClick={handleFormSubmit}>Update</button>
 
                                  </form>
+                                </div>
                                 </div>
                             </div>
 

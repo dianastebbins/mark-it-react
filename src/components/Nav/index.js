@@ -43,7 +43,7 @@ export default function Nav(props) {
             {/* <a className="navbar-item" href="/"> Home</a> */}
             <a className="navbar-item" href="/map">Find Markets</a>
             <a className="navbar-item" href="/add-product">Add Product</a>
-            <a className="navbar-item" href="/detail">Detail</a>
+            <a className="navbar-item" href="/detail">Items for Sale</a>
 
 
             {/* <a className="navbar-item">Documentation</a> */}
@@ -52,7 +52,7 @@ export default function Nav(props) {
               <span className="navbar-link">More</span>
 
               <div className="navbar-dropdown">
-                <a className="navbar-item" href={`/user/${props.id}`}>My Profile</a>
+              {props.currentUser?<a className="navbar-item" href={`/user/${props.id}`}>My Profile</a>:""}
                 <a className="navbar-item" href="/about">About</a>
                 {/* <span className="navbar-item">Contact</span> */}
                 {/* <hr className="navbar-divider" /> */}
@@ -63,9 +63,9 @@ export default function Nav(props) {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <button className="button is-rounded is-inverted"><Link to="/registration">Sign Up</Link></button>
-                <button className="button is-rounded is-inverted"><Link to="/login">Login</Link></button>
-                <button className="button is-rounded is-inverted" onClick={handleLogout}>Logout</button>
+              {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/registration">Sign Up</Link></button>:''}
+                {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/login">Login</Link></button>:''}
+                {props.currentUser?<button className="button is-rounded is-inverted" onClick={handleLogout}>Logout</button>:''}
               </div>
             </div>
           </div>

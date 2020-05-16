@@ -48,6 +48,7 @@ const API = {
         return axios.get(`${BASE_URL}/api/markets`, { withCredentials: true })
     },
     
+    
     getUserById: function (id) {
         return axios.get(`${BASE_URL}/api/users/${id}`, { withCredentials: true })
     },
