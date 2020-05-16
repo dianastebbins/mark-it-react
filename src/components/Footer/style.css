@@ -1,0 +1,21 @@
+.footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    overflow:hidden;
+    background-color:hsl(0, 0%, 21%);
+    height: 40px;
+    color: white;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.copyright{
+   text-align: right;
+   margin: 10px;
+   margin-bottom: 20px;
+}
+
+.footertag{
+    text-align: left;
+}
