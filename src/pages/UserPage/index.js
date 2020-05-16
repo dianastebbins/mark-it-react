@@ -5,10 +5,14 @@ import { useParams } from "react-router-dom"
 import API from "../../utils/API"
 import VendorDetail from "../../components/VendorDetail"
 import ProductInfo from "../../components/ProductInfo"
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'
+import Moment from 'react-moment';
 
 export default function UserPage() {
     const params = useParams();
     const [singleProdSt, setSingleProdSt] = useState([])
+    const [value, setValue] = useState(new Date());
     const [userState, setUserState] = useState({
         markets: [],
         products: [],
@@ -65,6 +69,10 @@ export default function UserPage() {
 
     }
     
+    function onChange(nextValue) {
+        setValue(nextValue);
+      }
+
     const refreshPage = () => {
         window.location.reload(false);
       }
@@ -143,12 +151,14 @@ export default function UserPage() {
 
                                             {userState.schedules.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
-                                                    {schedule.open_time}
+                                                    <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
                                                     <button class="button is-small is-info is-pulled-right">Info</button>
 
                                                 </li>
                                             ))}
                                         </ul>
+                                        <Calendar onChange={onChange}
+                                                    value={value}/>
                                     </article>
                                 </div>
                             </div>
