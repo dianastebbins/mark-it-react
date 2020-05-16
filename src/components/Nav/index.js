@@ -39,11 +39,11 @@ export default function Nav(props) {
 
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
-          <span className=" brandlogo"><img src={photo} alt="logo" height="80px" width="80px"></img></span>
-            <a className="navbar-item" href="/"> Home</a>
+          <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>
+            {/* <a className="navbar-item" href="/"> Home</a> */}
+            <a className="navbar-item" href="/map">Find Markets</a>
             <a className="navbar-item" href="/add-product">Add Product</a>
             <a className="navbar-item" href="/detail">Detail</a>
-            <a className="navbar-item" href="/map">Find Markets</a>
 
 
             {/* <a className="navbar-item">Documentation</a> */}

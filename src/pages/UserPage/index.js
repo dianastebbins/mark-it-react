@@ -3,10 +3,11 @@ import "./style.css"
 import { useParams } from "react-router-dom"
 import API from "../../utils/API"
 import VendorDetail from "../../components/VendorDetail"
-
+import ProductInfo from "../../components/ProductInfo"
 
 export default function UserPage() {
     const params = useParams();
+    const [singleProdSt, setSingleProdSt] = useState([])
     const [userState, setUserState] = useState({
         markets: [],
         products: [],
@@ -22,10 +23,10 @@ export default function UserPage() {
                 favorites: res.data[0].favorites,
                 schedules: res.data[0].schedules
             })
+            
 
         })
 
-        console.log(userState)
     }, [])
 
 
@@ -39,8 +40,9 @@ export default function UserPage() {
     }
     const userProdClick = event => {
         event.preventDefault();
-        API.getUserProducts(params.id).then(res => {
-            console.log(res.data)
+        console.log(userState)
+        API.getProductbyId(event.target.name).then(res => {
+            setSingleProdSt(res.data)
         })
 
 
@@ -48,7 +50,7 @@ export default function UserPage() {
     const getVendorsclick = event => {
         event.preventDefault();
         API.getUserFavVendors(params.id).then(res => {
-            console.log(res.data)
+            console.log(userState)
         })
 
 
@@ -61,15 +63,14 @@ export default function UserPage() {
 
 
     }
-
+    
 
 
     return (
         <div className="UserPage">
-            {/* <VendorDetail vendors={userState.favorites} /> */}
             <div className="section">
                 <div className="box">
-                    <h3 className="title">Button Farm</h3>
+                    <h3 className="title">My Profile Page</h3>
                     <div className="buttons is-centered">
                         <button onClick={getAllClick} className="button is-primary is-bold">All Info</button>
                         <button onClick={userProdClick} className="button is-link is bold">Products</button>
@@ -80,32 +81,35 @@ export default function UserPage() {
                 </div>
             </div>
             <div className="section">
-
-                <div className="columns is-centered">
-
-                    <div className="column">
+                <div className="columns">
+                    
+                    <div className="column is-10 is-offset-1">
                         <div className="tile is-ancestor">
-                            <div className="tile is-vertical is-8">
+                            <div className="tile is-vertical is-12">
                                 <div className="tile">
                                     <div className="tile is-parent is-vertical">
-                                        <article className="tile is-child box">
+                                        <article className="tile is-12 is-child box">
                                             <p className="title is-5">My Products</p>
                                             <ul className="list">
 
                                                 {userState.products.map((product) => (
                                                     <li key={product.id} className="list-item">
-                                                        {product.name}
+                                                        {product.name}  
+                                                        <button name={product.id} onClick={userProdClick} class="button is-small is-info is-pulled-right">Info</button>
+                                                        
                                                     </li>
                                                 ))}
                                             </ul>
                                         </article>
-                                        <article className="tile is-child box">
+                                        <article className="tile is-12 is-child box">
                                             <p className="title is-5">My Markets</p>
                                             <ul className="list">
 
                                                 {userState.markets.map((market) => (
                                                     <li key={market.id} className="list-item">
                                                         {market.market_id}
+                                                        <button class="button is-small is-info is-pulled-right">Info</button>
+
                                                     </li>
                                                 ))}
                                             </ul>
@@ -118,21 +122,25 @@ export default function UserPage() {
 
                                                 {userState.favorites.map((favorite) => (
                                                     <li key={favorite.id} className="list-item">
-                                                        {favorite.last_name}
+                                                           {favorite.first_name} {favorite.last_name} 
+                                                        <button  class="button is-small is-info is-pulled-right">Info</button>
+
                                                     </li>
                                                 ))}
                                             </ul>
                                         </article>
                                     </div>
                                 </div>
-                                <div className="tile is-parent is-primary">
-                                    <article className="tile is-child box">
+                                <div className="tile is-parent">
+                                    <article className="tile is-primary is-child box">
                                         <p className="title is-5">My schedules</p>
                                         <ul className="list">
 
                                             {userState.schedules.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
                                                     {schedule.open_time}
+                                                    <button class="button is-small is-info is-pulled-right">Info</button>
+
                                                 </li>
                                             ))}
                                         </ul>
@@ -142,8 +150,18 @@ export default function UserPage() {
                         </div>
                     </div>
                 </div>
+                
+
             </div>
-            {/* <VendorDetail vendors={userState.favorites} /> */}
+
+            <div className="section">
+                <div className="columns">
+                <div className="column">
+                {singleProdSt? ( <ProductInfo product={singleProdSt} />):''}
+                </div>
+                </div>
+            </div>
+
         </div>
 
     )
