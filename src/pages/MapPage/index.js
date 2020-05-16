@@ -43,6 +43,7 @@ class MapPage extends React.Component {
                 center: [this.state.lng, this.state.lat],  // [-96, 37.8]
                 zoom: 9
             });
+            this.getUserLocMarks(position.coords.latitude, position.coords.longitude);
             console.log(position.coords.latitude)
             const marker = new mapboxgl.Marker()
                 .setLngLat([this.state.lng, this.state.lat])
@@ -53,6 +54,47 @@ class MapPage extends React.Component {
         })
     };
 
+
+      
+    // =====================================
+    // SET MARKET POINT FOR USER ON MAP LOAD
+    // =====================================
+    getUserLocMarks = () => {
+        const marketArr = []
+
+        API.searchLatLong(this.state.lat, this.state.lng)
+            .then((data) => {
+
+                const idArr = []
+                const nameArr = []
+
+                data.data.results.forEach((market) => {
+                    nameArr.push(market.marketname)
+                    idArr.push(market.id)
+                });
+                this.setState({
+                    marketname: [...nameArr],
+                    id: [...idArr]
+                })
+                console.log(data.data.results);
+                let counter = 0;
+                data.data.results.forEach(market => {
+                    this.getDetails(market.id, counter);
+                    counter++;
+                
+                })
+                setTimeout(() => {
+                    displayMap(MarketArr, this.state.lng, this.state.lat)
+
+                }, 1000);
+                console.log(MarketArr)
+                console.log(this.state.marketname)
+
+
+            })
+
+
+    }  
 
 
 
@@ -101,6 +143,7 @@ class MapPage extends React.Component {
                 newMarketObj.properties.address = data.data.marketdetails.Address;
                 newMarketObj.properties.googleLink = data.data.marketdetails.GoogleLink;
                 newMarketObj.properties.name = this.state.marketname[count]
+                    console.log(this.state.marketname[count])
                 MarketArr.push(newMarketObj);
             })
     };
