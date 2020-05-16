@@ -1,15 +1,18 @@
 import React from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import API from "../../utils/API"
+import photo from "../../assets/images/brandlogo.png"
 
 export default function Nav(props) {
+  const history = useHistory()
+  
   
   const handleLogout = event=>{
     API.logout().then(res=>{
         props.logoutHandle();
         console.log(res.data)
-    //    history.push('/')
+       history.push('/')
     })
 }
   
@@ -36,20 +39,11 @@ export default function Nav(props) {
 
         <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
-          <span className=" brandlogo"><img src="assets/images/brandlogo.png" alt="logo" height="80px" width="80px"></img></span>
-            <a className="navbar-item" href="/"> Home</a>
+          <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>
+            {/* <a className="navbar-item" href="/"> Home</a> */}
+            <a className="navbar-item" href="/map">Find Markets</a>
             <a className="navbar-item" href="/add-product">Add Product</a>
-            <a className="navbar-item" href="/detail"> Detail</a>
-            <a className="navbar-item" href="/listing"> Listing</a>
-            <a className="navbar-item" href="/login"> Login</a>
-            <a className="navbar-item" href="/map"> Map</a>
-            <a className="navbar-item" href="/registration">Registration</a>
-            <a className="navbar-item" href="/scheduler"> Calendar</a>
-            <a className="navbar-item" href="/user-landing"> User landing</a>
-            <a className="navbar-item" href="/about">About</a>
-            <a className="navbar-item" href="/signup">Sign Up</a>
-            <a className="navbar-item" href="/profile">Profile</a>
-            <a className="navbar-item" href="/signup2">signing up</a>
+            <a className="navbar-item" href="/detail">Items for Sale</a>
 
 
             {/* <a className="navbar-item">Documentation</a> */}
@@ -58,11 +52,10 @@ export default function Nav(props) {
               <span className="navbar-link">More</span>
 
               <div className="navbar-dropdown">
-                <span className="navbar-item">Events</span>
+              {props.currentUser?<a className="navbar-item" href={`/user/${props.id}`}>My Profile</a>:""}
                 <a className="navbar-item" href="/about">About</a>
-                <span className="navbar-item">Contact</span>
-                <hr className="navbar-divider" />
-                <span className="navbar-item"></span>
+                {/* <span className="navbar-item">Contact</span> */}
+                {/* <hr className="navbar-divider" /> */}
               </div>
             </div>
           </div>
@@ -70,8 +63,9 @@ export default function Nav(props) {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <button className="button is-rounded is-inverted"><Link to="/signup" >Sign Up</Link></button>
-                <button className="button is-rounded is-inverted" onClick={handleLogout}>LOGOUT</button>
+              {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/registration">Sign Up</Link></button>:''}
+                {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/login">Login</Link></button>:''}
+                {props.currentUser?<button className="button is-rounded is-inverted" onClick={handleLogout}>Logout</button>:''}
               </div>
             </div>
           </div>
