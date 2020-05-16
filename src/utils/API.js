@@ -1,11 +1,15 @@
 import axios from "axios";
-// const BASE_URL = "http://localhost:8080"
-const BASE_URL = "https://dashboard.heroku.com/apps/mark-it-test-api"
+const BASE_URL = "http://localhost:8080"
+// const BASE_URL = "https://dashboard.heroku.com/apps/mark-it-test-api"
 
 const API = {
 
     search: function (zip) {
         return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip);
+    },
+
+    searchLatLong: function(lat, long) {
+        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + long)
     },
 
     searchMarket: function (id) {
