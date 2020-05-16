@@ -36,7 +36,7 @@ export default function LoginPage(props) {
     } else {
         props.submitHandler(false)
     }
-    })
+    }).catch((err) => console.log(err));
 
   }
 

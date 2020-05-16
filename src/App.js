@@ -22,7 +22,8 @@ import Footer from "./components/Footer"
 import API from "./utils/API"
 import './App.css';
 import SplashPage from './pages/SplashPage';
-
+import VendorInfo from './pages/VendorProducts';
+import VendorProducts from './pages/VendorProducts';
 
 
 
@@ -30,12 +31,14 @@ import SplashPage from './pages/SplashPage';
 
 
 function App() {
+  const [id, setId] = useState()
   const [currentUser,setCurrentUser] = useState(false);
 
   useEffect(()=>{
     API.readSessions().then(res=>{
       if(res.data.user){
         setCurrentUser(res.data.user)
+        setId(res.data.user.id)
       }else {
         setCurrentUser(false)
       }
@@ -53,7 +56,7 @@ function App() {
   
   return (
     <Router>
-      <Nav logoutHandle={logoutHandle}/>
+      <Nav id={id} currentUser= {currentUser} logoutHandle={logoutHandle}/>
       <div id="wrapper">
       <Switch>
         <Route exact path="/">
@@ -78,6 +81,9 @@ function App() {
         </Route>
         <Route exact path="/registration">
           <RegistrationPage/>
+        </Route>
+        <Route exact path="/vendor/:id">
+          <VendorProducts/>
         </Route>
         <Route exact path="/user/:id">
           <UserPage/>
