@@ -60,8 +60,6 @@ class MapPage extends React.Component {
     // SET MARKET POINT FOR USER ON MAP LOAD
     // =====================================
     getUserLocMarks = () => {
-        const marketArr = []
-
         API.searchLatLong(this.state.lat, this.state.lng)
             .then((data) => {
 
@@ -143,17 +141,16 @@ class MapPage extends React.Component {
                 newMarketObj.properties.address = data.data.marketdetails.Address;
                 newMarketObj.properties.googleLink = data.data.marketdetails.GoogleLink;
                 newMarketObj.properties.name = this.state.marketname[count]
-                    console.log(this.state.marketname[count])
                 MarketArr.push(newMarketObj);
             })
     };
 
 
     getResults = (zip) => {
-        // create array to hold geojson objects
-        // or
-        // function getResults(lat, lng) {
-
+        
+        // CLEAR MarketArr BEFORE NEW SEARCH
+        MarketArr.splice(0, MarketArr.length);
+      
         // =======================================
         // FIRST AJAX REQUEST FOR MARKET NAME & ID
         // =======================================

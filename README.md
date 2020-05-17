@@ -40,12 +40,12 @@ To install:
 
 
 
-In order to install, first download the files. Then you would open terminal and type ```npm install``` . This will install all the npm packages listed under the dependencies in the package.json. Then you will type the command ``` npm start```. This will start the react app at the port 300 in the browser. Finally you will type ```localhost:3000``` in the browser window and use the application. 
+In order to install, first download the files. Then you would open terminal and type ```npm install``` . This will install all the npm packages listed under the dependencies in the package.json. Then you will type the command ``` npm start```. This will start the react app at the port 3000 in the browser. Finally you will type ```localhost:3000``` in the browser window and use the application. 
 
 
 ## Usage 
 
-To use this application, you can [click here](#).
+To use this application, you can [click here](https://awesome-mark-it.herokuapp.com/).
 
 Upon clicking on the link above, you will create a user and password in the app, ...
 
