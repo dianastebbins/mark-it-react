@@ -69,7 +69,7 @@ export default function VendorProducts()  {
             <div className="container">
                 <div className="columns is-multiline is-centered">
 
-                     {vendorState.products ? vendorState.products.map((product) => (  
+                     {vendorState.products ? vendorState.products.map((product) => ( 
                     <div className="column">
                         <div className="card  has-background-light">
                             <header className="card-header">

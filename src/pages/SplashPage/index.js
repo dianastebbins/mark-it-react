@@ -5,6 +5,7 @@ import "./style.css"
 import API from "../../utils/API"
 import Footer from '../../components/Footer';
 import video from '../../assets/images/farm2.mp4'
+import logo from '../../assets/images/brandlogo.png'
 
 
 
@@ -28,10 +29,10 @@ export default function SplashPage() {
                 <video autoPlay loop muted src={video}></video>
 
                 <div className="splashpagetext">
-                    <h1 className="title">
-                        Mark-It
-                        </h1>
-                    <h2 className="subtitle">
+                    <img src={logo} className="title fade-in" />
+                       
+                      
+                    <h2 class="subtitle">
                         A friendly place for your local farmers market from the comfort of your home
                         </h2>
 

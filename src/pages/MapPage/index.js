@@ -110,6 +110,9 @@ class MapPage extends React.Component {
     };
 
     getDetails = (query, count) => {
+        if(query=="Error"){
+            console.log("it's an error");
+        }
 
         API.searchMarket(query)
             .then((data) => {
@@ -162,6 +165,10 @@ class MapPage extends React.Component {
                 // THIS RUNS THE SECOND AJAX REQUEST
                 const nameArr = []
                 const idArr = []
+                if(!data.data.results){
+                    return console.log('no results');
+                } 
+
                 data.data.results.forEach((market) => {
                     nameArr.push(market.marketname)
                     idArr.push(market.id)
