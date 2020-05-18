@@ -16,7 +16,9 @@ export default function ProductInfo(props) {
     
 
     const handleDeleteBtn = event => {
-        console.log(props.product.userId)
+        API.deleteProduct(props.product.id).then(res => {
+            props.refreshPage();
+        })
     }
 
     const handleInputChange = event => {
