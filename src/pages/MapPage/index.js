@@ -21,7 +21,8 @@ class MapPage extends React.Component {
         zoom: '',
         search: '',
         marketname: [],
-        id: []
+        id: [],
+        marketArrState: []
     }
 
 
@@ -146,6 +147,9 @@ class MapPage extends React.Component {
                 newMarketObj.properties.googleLink = data.data.marketdetails.GoogleLink;
                 newMarketObj.properties.name = this.state.marketname[count]
                 MarketArr.push(newMarketObj);
+                this.setState({
+                    marketArrState: [...MarketArr]
+                })
             })
     };
 
@@ -221,7 +225,12 @@ class MapPage extends React.Component {
             <div className="MapPage section">
                 <div className="container">
                     <div className="mapCards" id="overflow-fix">
-                        {MarketArr.map((market, index) => {
+                        {(this.state.marketArrState.length < 1) ? 
+                            <h1>Search markets to continue!</h1> :
+                        
+                        
+                        
+                        this.state.marketArrState.map((market, index) => {
                             return <MapCard name={market.properties.name.substr(4)} products={market.properties.products} schedule={market.properties.schedule.slice(0, -16)} address={market.properties.address} key={index} id={index+1}/>
                         })
                         }
