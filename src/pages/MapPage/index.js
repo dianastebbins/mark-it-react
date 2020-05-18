@@ -6,6 +6,7 @@ import "./style.css"
 import API from "../../utils/API";
 import MarketArr from "../../components/MarketArr"
 
+import MapCard from "./MapCard";
 import displayMap from "./displayMap"
 import SearchForm from "../../components/SearchForm"
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhlLW1lZGl1bS1wbGFjZSIsImEiOiJja2EwMHcxOWwwa2ZmM2hvMG9nNHhoZXdrIn0.UBg5PKfAeHOcP_xn2SEkTw';
@@ -20,7 +21,8 @@ class MapPage extends React.Component {
         zoom: '',
         search: '',
         marketname: [],
-        id: []
+        id: [],
+        marketArrState: []
     }
 
 
@@ -48,14 +50,14 @@ class MapPage extends React.Component {
             const marker = new mapboxgl.Marker()
                 .setLngLat([this.state.lng, this.state.lat])
                 .addTo(map);
-            
-            
+
+
 
         })
     };
 
 
-      
+
     // =====================================
     // SET MARKET POINT FOR USER ON MAP LOAD
     // =====================================
@@ -79,7 +81,7 @@ class MapPage extends React.Component {
                 data.data.results.forEach(market => {
                     this.getDetails(market.id, counter);
                     counter++;
-                
+
                 })
                 setTimeout(() => {
                     displayMap(MarketArr, this.state.lng, this.state.lat)
@@ -92,7 +94,7 @@ class MapPage extends React.Component {
             })
 
 
-    }  
+    }
 
 
 
@@ -110,7 +112,7 @@ class MapPage extends React.Component {
     };
 
     getDetails = (query, count) => {
-        if(query=="Error"){
+        if (query == "Error") {
             console.log("it's an error");
         }
 
@@ -145,15 +147,18 @@ class MapPage extends React.Component {
                 newMarketObj.properties.googleLink = data.data.marketdetails.GoogleLink;
                 newMarketObj.properties.name = this.state.marketname[count]
                 MarketArr.push(newMarketObj);
+                this.setState({
+                    marketArrState: [...MarketArr]
+                })
             })
     };
 
 
     getResults = (zip) => {
-        
+
         // CLEAR MarketArr BEFORE NEW SEARCH
         MarketArr.splice(0, MarketArr.length);
-      
+
         // =======================================
         // FIRST AJAX REQUEST FOR MARKET NAME & ID
         // =======================================
@@ -165,9 +170,9 @@ class MapPage extends React.Component {
                 // THIS RUNS THE SECOND AJAX REQUEST
                 const nameArr = []
                 const idArr = []
-                if(!data.data.results){
+                if (!data.data.results) {
                     return console.log('no results');
-                } 
+                }
 
                 data.data.results.forEach((market) => {
                     nameArr.push(market.marketname)
@@ -219,7 +224,19 @@ class MapPage extends React.Component {
         return (
             <div className="MapPage section">
                 <div className="container">
-                    <div style={{ height: "80vh", width: "80vw" }} className="MapContainer" id="map" />
+                    <div className="mapCards" id="overflow-fix">
+                        {(this.state.marketArrState.length < 1) ? 
+                            <h1>Search markets to continue!</h1> :
+                        
+                        
+                        
+                        this.state.marketArrState.map((market, index) => {
+                            return <MapCard name={market.properties.name.substr(4)} products={market.properties.products} schedule={market.properties.schedule.slice(0, -16)} address={market.properties.address} key={index} id={index+1}/>
+                        })
+                        }
+                    </div>
+
+                    <div style={{ height: "80vh", width: "65vw" }} className="MapContainer" id="map" />
                 </div>
                 <SearchForm
                     value={this.state.search}
