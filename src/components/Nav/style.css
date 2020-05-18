@@ -1,3 +1,12 @@
 .navbar.is-dark {
     box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.31);
 }
+
+#navbarBasicExample {
+    background:hsla(0, 0%, 21%);
+    
+}
+
+.navbar-item {
+    color: whitesmoke;
+}
