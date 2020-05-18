@@ -22,7 +22,8 @@ export default function Nav(props) {
     <div>
       <nav className="navbar is-dark is-bold" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          
+        {!isActive? <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}
+
 
           <a
             onClick={() => {
@@ -44,7 +45,7 @@ export default function Nav(props) {
         className={`navbar-menu ${isActive ? "is-active" : ""}`}>
 
           <div className="navbar-start">
-          <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>
+          {isActive?<a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}
             {/* <a className="navbar-item" href="/"> Home</a> */}
             <a className="navbar-item" href="/map">Find Markets</a>
             {props.currentUser?<a className="navbar-item" href="/add-product">Add Product</a>:""}
