@@ -14,11 +14,11 @@ export default function ProductDetail(props) {
                                 <div className="card  has-background-light">
                                     <header className="card-header">
                                         <p className="card-header-title">{product.name}</p>
-                                        <Link to={`/vendor/${product.userId}`}>
+                                        {/* <Link to={`/product/${product.userId}`}>
                                             <span class="icon">
                                                 <i class="fas fa-heart" aria-hidden="true"></i>
                                             </span>
-                                            </Link>
+                                            </Link> */}
                                     </header>
                                     <div class="card-image">
                                     {product.image ? <figure class="image is-3by2">

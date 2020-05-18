@@ -12,7 +12,7 @@ export default function Nav(props) {
   
   const handleLogout = event=>{
     API.logout().then(res=>{
-        props.logoutHandle();
+        props.logoutHandle(); 
         console.log(res.data)
        history.push('/')
     })
