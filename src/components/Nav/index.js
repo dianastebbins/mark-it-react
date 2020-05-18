@@ -47,7 +47,7 @@ export default function Nav(props) {
           <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>
             {/* <a className="navbar-item" href="/"> Home</a> */}
             <a className="navbar-item" href="/map">Find Markets</a>
-            <a className="navbar-item" href="/add-product">Add Product</a>
+            {props.currentUser?<a className="navbar-item" href="/add-product">Add Product</a>:""}
             <a className="navbar-item" href="/detail">Items for Sale</a>
             {props.currentUser?<a className="navbar-item" href={`/user/${props.id}`}>My Profile</a>:""}
             <a className="navbar-item" href="/about">About</a>
