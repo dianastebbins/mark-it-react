@@ -71,5 +71,9 @@ const API = {
     getUserMarkets: function (id) {
         return axios.get(`${BASE_URL}/api/users/${id}/markets`, { withCredentials: true })
     },  
+    addVendorToFavs: function(id) {
+        return axios.post(`${BASE_URL}/api/users/${id}/vendors`, { withCredentials: true })
+
+    }
 }
 export default API
