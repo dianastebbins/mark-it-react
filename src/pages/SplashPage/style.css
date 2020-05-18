@@ -1,5 +1,6 @@
 .SplashPage {
     background: gray;
+    width: 100vw;
     text-align: center;
     color: white;
     /* background-image: url(../../assets/images/main1.jpg); */
@@ -55,4 +56,9 @@ color: white;
 .mainImage{
     /* width: 100vw; */
     height: 500px;
+}
+
+video {
+    width: 100%;
+    height: auto;
 }

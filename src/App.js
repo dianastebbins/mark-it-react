@@ -22,7 +22,6 @@ import Footer from "./components/Footer"
 import API from "./utils/API"
 import './App.css';
 import SplashPage from './pages/SplashPage';
-import VendorInfo from './pages/VendorProducts';
 import VendorProducts from './pages/VendorProducts';
 
 

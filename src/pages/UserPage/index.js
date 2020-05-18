@@ -5,10 +5,16 @@ import { useParams } from "react-router-dom"
 import API from "../../utils/API"
 import VendorDetail from "../../components/VendorDetail"
 import ProductInfo from "../../components/ProductInfo"
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'
+import Moment from 'react-moment';
+import MapPage from '../MapPage'
 
 export default function UserPage() {
     const params = useParams();
     const [singleProdSt, setSingleProdSt] = useState([])
+    const [value, setValue] = useState(new Date());
+    const [allProdState, setAllProdState] = useState([])
     const [userState, setUserState] = useState({
         markets: [],
         products: [],
@@ -23,8 +29,9 @@ export default function UserPage() {
                 products: res.data[0].products,
                 favorites: res.data[0].favorites,
                 schedules: res.data[0].schedules
+                
             })
-            
+            console.log(userState.markets[0])
 
         })
 
@@ -48,23 +55,27 @@ export default function UserPage() {
 
 
     }
-    const getVendorsclick = event => {
-        event.preventDefault();
-        API.getUserFavVendors(params.id).then(res => {
-            console.log(userState)
-        })
+    // const getVendorsclick = event => {
+    //     event.preventDefault();
+    //     API.getUserFavVendors(params.id).then(res => {
+    //         console.log(userState)
+    //     })
 
 
-    }
-    const getMarketsClick = event => {
-        event.preventDefault();
-        API.getUserMarkets(params.id).then(res => {
-            console.log(userState)
-        })
+    // }
+    // const getMarketsClick = event => {
+    //     event.preventDefault();
+    //     API.getUserMarkets(params.id).then(res => {
+    //         console.log(userState)
+    //     })
 
 
-    }
+    // }
     
+    function onChange(nextValue) {
+        setValue(nextValue);
+      }
+
     const refreshPage = () => {
         window.location.reload(false);
       }
@@ -74,13 +85,13 @@ export default function UserPage() {
             <div className="section">
                 <div className="box">
                     <h3 className="title">My Profile Page</h3>
-                    <div className="buttons is-centered">
+                    {/* <div className="buttons is-centered">
                         <button onClick={getAllClick} className="button is-primary is-bold">All Info</button>
                         <button onClick={userProdClick} className="button is-link is bold">Products</button>
                         <button onClick={getVendorsclick} className="button is-info">Vendors</button>
                         <button onClick={getMarketsClick} className="button is-success">Markets</button>
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="section">
@@ -91,12 +102,12 @@ export default function UserPage() {
                             <div className="tile is-vertical is-12">
                                 <div className="tile">
                                     <div className="tile is-parent is-vertical">
-                                        <article className="tile is-12 is-child box">
+                                        {userState.products[0] === undefined?'':(<article className="tile is-12 is-child box">
                                             <p className="title is-5">My Products</p>
                                             <ul className="list">
                                         {/* see if you can throw a value on the text content and send the data to the api
                                         so that you don't have to use a form */}
-                                                {userState.products.map((product) => (
+                                                { userState.products.map((product) => (
                                                     <li contentEditable="true" key={product.id} className="list-item">
                                                         {product.name}  
                                                         <button name={product.id} onClick={userProdClick} class="button is-small is-info is-pulled-right">Info</button>
@@ -104,8 +115,8 @@ export default function UserPage() {
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </article>
-                                        <article className="tile is-12 is-child box">
+                                        </article>)}
+                                        {userState.markets[0] === undefined?'':(<article className="tile is-12 is-child box">
                                             <p className="title is-5" >My Markets</p>
                                             <ul className="list">
 
@@ -117,9 +128,9 @@ export default function UserPage() {
                                                     </li>
                                                 ))}
                                             </ul>
-                                        </article>
+                                        </article>)}
                                     </div>
-                                    <div className="tile is-parent">
+                                    {userState.favorites[0] === undefined?'':( <div className="tile is-parent">
                                         <article className="tile is-child box">
                                             <p className="title is-5">My Favorite Sellers</p>
                                             <ul className="list">
@@ -134,22 +145,24 @@ export default function UserPage() {
                                                 ))}
                                             </ul>
                                         </article>
-                                    </div>
+                                    </div>)}
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-primary is-child box">
+                                    {userState.schedules[0] === undefined?'':(<article className="tile is-primary is-child box">
                                         <p className="title is-5">My schedules</p>
                                         <ul className="list">
 
                                             {userState.schedules.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
-                                                    {schedule.open_time}
+                                                    <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
                                                     <button class="button is-small is-info is-pulled-right">Info</button>
 
                                                 </li>
                                             ))}
                                         </ul>
-                                    </article>
+                                        {userState.schedules[0] !== undefined?(<Calendar onChange={onChange}
+                                                    value={value}/>):''}
+                                    </article>)}
                                 </div>
                             </div>
                         </div>
@@ -166,9 +179,8 @@ export default function UserPage() {
                 </div>
                 </div>
             </div>
-
         </div>
-
+       
     )
 }
 
