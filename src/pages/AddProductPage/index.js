@@ -27,7 +27,8 @@ export default function AddProductPage() {
                 
             
           })
-          
+    //  the component runs on page load   
+
     },[])
 
 
@@ -137,8 +138,8 @@ export default function AddProductPage() {
                                     <div className="field">
                                         <div className="control">
                                             <label className="checkbox">
-                                                <input type="checkbox" />
-                                            I agree to the <a href="#">terms and conditions</a>
+                                                <input required type="checkbox" />
+                                            I agree to the <a href="https://gist.github.com/zahraaliaghazadeh/7f5bbde80804ca1ae0cb6f9ed1fbc540">terms and conditions</a>
                                             </label>
                                         </div>
                                     </div>
