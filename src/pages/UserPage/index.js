@@ -31,7 +31,6 @@ export default function UserPage() {
                 schedules: res.data[0].schedules
                 
             })
-            console.log(userState.markets[0])
 
         })
 
@@ -79,6 +78,9 @@ export default function UserPage() {
     const refreshPage = () => {
         window.location.reload(false);
       }
+      console.log(userState.schedules.sched)
+      console.log(userState.schedules.mark)
+
 
     // const getMarketInfo = (marketId) => {
     //     API.searchMarket(marketId)
@@ -166,7 +168,7 @@ export default function UserPage() {
 
                                             {userState.schedules.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
-                                                    {"At " + schedule.marketId + " on "}
+                                                    {"At " + schedule.market_id + " on "}
                                                     <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
                                                     <button className="button is-small is-info is-pulled-right">Info</button>
 

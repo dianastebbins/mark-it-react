@@ -58,10 +58,9 @@ color: white;
     height: 500px;
 }
 
-.title{
-    color: white;
-}
-.subtitle{
+
+
+.SplashSubtitle{
     color: white;
 }
 video {
@@ -75,6 +74,7 @@ video {
 
 .title.fade-in {
     max-width: 10vw;
+    color: white;
 }
 
 
@@ -129,9 +129,4 @@ video {
     100% {
       opacity: 1;
   }
-}
-
-.subtitle {
-    color: white;
-
 }

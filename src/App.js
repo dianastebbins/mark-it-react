@@ -12,7 +12,7 @@ import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import SignUpPage from "./pages/SignUpPage";
+import SignUpPage from "./pages/SignupPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -81,7 +81,7 @@ function App() {
           <SignUpPage/>
         </Route>
         <Route exact path="/vendor/:id">
-          <VendorProducts/>
+          <VendorProducts  currentUser= {currentUser}/>
         </Route>
         <Route exact path="/user/:id">
           <UserPage/>

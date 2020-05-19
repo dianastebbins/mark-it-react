@@ -8,15 +8,15 @@
     background-attachment: fixed;
 }
 
-p.title{
+p.title.about {
     text-align: center;
     color: black;
 }
-p.subtitle {
+p.subtitle.about {
     color: black;
     /* text-align: center; */
 }
 
-.card {
+.card.about {
     height: 550px;
 }
