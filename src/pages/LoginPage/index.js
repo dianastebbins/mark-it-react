@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
 import "./style.css"
 import API from "../../utils/API"
-
+import { toast } from "bulma-toast";
 
 
 export default function LoginPage(props) {
@@ -34,6 +34,14 @@ export default function LoginPage(props) {
         props.submitHandler(res.data.user)
         history.push(`/user/${res.data.user.id}`)
     } else {
+      // let user know what went wrong
+        toast({
+          message: res.data,
+          type: "is-danger",
+          position: "center",
+          duration: 4000,
+          dismissible: true
+        });
         props.submitHandler(false)
     }
     }).catch((err) => console.log(err));

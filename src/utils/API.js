@@ -36,7 +36,7 @@ const API = {
     },
 
     createUser: function (userData) {
-        return axios.post(`${BASE_URL}/api/users`, userData, { withCredentials: true })
+        return axios.post(`${BASE_URL}/api/users`, userData, { validateStatus: () => true, withCredentials: true })
     },
     
     addProduct: function (productData) {
