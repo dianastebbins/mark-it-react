@@ -4,7 +4,7 @@ import "./style.css"
 import API from "../../utils/API"
 import _ from 'lodash'
 
-export default function VendorProducts(props)  {
+export default function FavVendor(props)  {
     const history = useHistory()
     const params = useParams();
     const [vendorState,setVendorState] = useState({
@@ -47,7 +47,6 @@ export default function VendorProducts(props)  {
                             <header className="card-header">
                                 <p className="card-header-title">{vendorState.seller.first_name} </p>
                                 <p className="card-header-title">{vendorState.seller.last_name} </p>
-                                {props.currentUser?<button onClick={handleClickEvent} className="button">Add Vendor to Favorites</button>:''}
                             </header>
 
                             <div className="card-content">

@@ -22,7 +22,7 @@ import API from "./utils/API"
 import './App.css';
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
-
+import FavVendor from './pages/FavVendor'
 
 
 
@@ -95,7 +95,9 @@ function App() {
         <Route exact path="/about">
           <AboutPage/>
         </Route>
-        
+        <Route exact path="/favvendor/:id">
+          <FavVendor currentUser={currentUser}/>
+        </Route>
         <Route exact path="/profile">
           <ProfilePage/>
         </Route>
