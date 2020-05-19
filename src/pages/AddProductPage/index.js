@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
-import VendorArr from "../../components/VendorArr.js";
+
+import { toast } from "bulma-toast";
+
 
 import "./style.css"
 import API from "../../utils/API"
@@ -17,6 +19,7 @@ export default function AddProductPage() {
         userId: '',
         image: ''
     })
+
     const [geoState, setGeoState] = useState({
         lat: null,
         lng: null
@@ -47,14 +50,21 @@ export default function AddProductPage() {
             lat: position.coords.latitude
         })
     })
+
     useEffect(() => {
         API.readSessions().then(res => {
             const ID = res.data.user.id
             setProductState({
                 userId: ID
             })
-        })
-    }, [])
+
+                
+            
+          })
+    //  the component runs on page load   
+
+    },[])
+
 
 
 
@@ -100,22 +110,43 @@ export default function AddProductPage() {
 
         API.addProduct(productState).then(newProduct => {
             console.log(productState)
-            setProductState({
-                name: '',
-                description: '',
-                price: '',
-                details: '',
-                userId: '',
-                image: ''
-            })
+            
+            if(newProduct.data.name) {
+                // let user know product was created
+                toast({
+                    message: newProduct.data.name + " added to products",
+                    type: "is-info",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
+                });
+                
+                setProductState({
+                    name: '',
+                    description: '',
+                    price: '',
+                    details: '',
+                    userId: '',
+                    image: ''
+                })
+            } else {
+                // let user know what went wrong
+                toast({
+                    message: newProduct.data,
+                    type: "is-danger",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
+                });
+            }
         })
-        // history.push('/')
+
+
     }
 
 
+// Function to upload image on add product
 
-    // dw69fw1u3 is my cloudname
-    // https://api.cloudinary.com/v1_1/dw69fw1u3/image/upload
     const uploadFile = async e => {
         const files = e.target.files;
         const data = new FormData();
@@ -137,27 +168,15 @@ export default function AddProductPage() {
         });
     }
 
-    // const handleFormSubmit = event=>{
-    // OR
-    // const this.handleInputChange = event=>{
-    //     event.preventDefault();
-    //     API.createPlayer(playerState).then(newPlayer=>{
-    //         console.log(newPlayer)
-    //         setPlayerState({
-    //             name:'',
-    //             team:''
-    //         })
-    //         history.push("/")
-    //     })
-    // }
-    return (
-        <div className="AddProductPage">
-            <div className="container addProduct">
 
-                <div className="section mainSection">
-                    <div className="box">
-                        <form>
-                            <div className="field">
+   
+      return (
+            <div className="AddProductPage">
+                <div className="container addProduct">
+
+                    <div className="section mainSection">
+                        <div className="box">
+                            <form>
                                 <div className="field">
                                     <label className="label">Product Name</label>
                                     <div className="control">
@@ -186,11 +205,13 @@ export default function AddProductPage() {
                                     </div>
                                 </div>
 
-                                <div className="field">
-                                    <label className="label">Photo Placeholder</label>
-                                    <div className="control">
 
-                                        <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
+                                    <div className="field">
+                                        <label className="label">Photo Placeholder</label>
+                                        <div className="control">
+                                        {/* calling the upload file function for uploading image on card */}
+                                            <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
+
 
 
                                         <i className="fas fa-upload uploadicon"></i>
@@ -200,14 +221,24 @@ export default function AddProductPage() {
                                     <div>
                                         <img src={productState.image}></img>
                                     </div>
-                                ) : (<div />)}
-                                <div className="field">
-                                    <div className="control">
-                                        <label className="checkbox">
-                                            <input type="checkbox" />
-                                            I agree to the <a href="#">terms and conditions</a>
-                                        </label>
+\
+                                    {productState.image ? (
+                                        <div>
+                                            <img src={productState.image}></img>
+                                        </div>
+                                    ) : (<div />)}
+                                    <div className="field">
+                                        <div className="control">
+                                            <label className="checkbox">
+                                                <input required type="checkbox" />
+                                            I agree to the <a href="https://gist.github.com/zahraaliaghazadeh/7f5bbde80804ca1ae0cb6f9ed1fbc540">terms and conditions</a>
+                                            </label>
+                                        </div>
                                     </div>
+                             
+                             {/* TODO: units input should be added later */}
+                                    <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+\
                                 </div>
 
                                 {/* units input should be added later */}

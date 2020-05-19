@@ -1,28 +1,37 @@
+// to use hooks /functional components instead of classes
 import React,{useState,useEffect} from 'react';
+// for routes in React
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+// importing bulma a css framework
 import 'bulma/css/bulma.css'
+// npm package for additional array methods
 import _ from 'lodash'
-// import StatsPage from './pages/examples/StatsPage';
-// import AddPlayerPage from './pages/examples/AddPlayerPage';
-// import DetailsPage from "./pages/examples/DetailsPage";
+// importing pages
 import AddProductPage from "./pages/AddProductPage";
 import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
+import SignUpPage from './pages/SignUpPage';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import RegistrationPage from "./pages/RegistrationPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
+
 import SignUpPage from "./pages/SignUpPage";
+
 import ProfilePage from "./pages/ProfilePage";
-import Nav from "./components/Nav"
-import Footer from "./components/Footer"
-import API from "./utils/API"
-import './App.css';
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
+import FavVendor from './pages/FavVendor'
+// importing components
+import Nav from "./components/Nav"
+import Footer from "./components/Footer"
+// importing the api routes
+import API from "./utils/API"
+// the main css file
+import './App.css';
+
 
 
 
@@ -54,6 +63,7 @@ function App() {
   
   
   return (
+    // all the routes
     <Router>
       <Nav id={id} currentUser= {currentUser} logoutHandle={logoutHandle}/>
       <div id="wrapper">
@@ -78,11 +88,11 @@ function App() {
         <Route exact path="/map">
           <MapPage/>
         </Route>
-        <Route exact path="/registration">
-          <RegistrationPage/>
+        <Route exact path="/signup">
+          <SignUpPage/>
         </Route>
         <Route exact path="/vendor/:id">
-          <VendorProducts/>
+          <VendorProducts  currentUser= {currentUser}/>
         </Route>
         <Route exact path="/user/:id">
           <UserPage/>
@@ -96,17 +106,15 @@ function App() {
         <Route exact path="/about">
           <AboutPage/>
         </Route>
-        <Route exact path="/signup">
-          <SignUpPage/>
+        <Route exact path="/favvendor/:id">
+          <FavVendor currentUser={currentUser}/>
         </Route>
         <Route exact path="/profile">
           <ProfilePage/>
         </Route>
         
 
-        {/* <Route exact path ="/player/:id">
-          <DetailsPage/>
-        </Route> */}
+       
       </Switch>
       </div>
       <Footer/>

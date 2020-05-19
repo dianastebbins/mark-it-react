@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bulma": "^0.8.2",
+    "bulma-toast": "^1.5.10",
     "mapbox-gl": "^1.10.0",
     "moment": "^2.25.3",
     "react": "^16.13.1",

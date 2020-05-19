@@ -1,48 +1,39 @@
 import React from 'react'
-// import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
-
+// about page style
 import "./style.css"
-import API from "../../utils/API"
-import Footer from '../../components/Footer';
 
 export default function AboutPage() {
   return (
     <div className="AboutPage">
 
-      <div className="section">
-        <div className="container">
+      <div className="section is-large">
+        <div className="columns">
+          <div className="box column is-10">
 
-          <div className="box">
-
-           <h1 className="title"> Meet the Team</h1>
+            <h1 className="title has-text-centered"> Meet the Team</h1>
 
             {/* start of card for our photos */}
             {/* card 1 */}
-            <div className="columns">
 
-              {/* first comlumn */}
+
+            {/* first column */}
+            <div className="columns">
               <div className="column is-3">
-                
-             <div className="card">
+
+                <div className="card about">
                   <div className="card-image">
-                    <figure className="image is-4by3">
-                      <img src="../../../assets/images/Diana2.png" alt="Placeholder image" />
+                    <figure className="image is-3by3">
+                      <img src="../../../assets/images/Diana2.png" alt="A Diana" />
                     </figure>
                   </div>
                   <div className="card-content">
-                    <div className="media">
 
-                      <div className="media-content">
-                        <p className="title is-4">Diana Stebbins</p>
-                        <p className="subtitle is-6">Back End Developer<br></br>Git Master</p>
-                      </div>
-                    </div>
+                    <p className="title about">Diana Stebbins</p>
+                    <p className="subtitle about has-text-centered">Back End Developer<br></br>Git Master</p>
 
                     <div className="content">
-                    <a target="_blank" href="https://www.linkedin.com/in/diana-stebbins-b618b034/">LinkedIn</a> <br></br>
-                    <a target="_blank" href="https://github.com/dianastebbins">Github</a>
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/diana-stebbins-b618b034/">LinkedIn</a> <br></br>
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/dianastebbins">Github</a>
                     </div>
                   </div>
                 </div>
@@ -51,24 +42,19 @@ export default function AboutPage() {
 
               {/* second column */}
               <div className="column is-3">
-                
-          <div className="card">
+
+                <div className="card about">
                   <div className="card-image">
-                    <figure className="image is-4by3">
-                      <img src="../../../assets/images/John1.png" alt="Placeholder image" />
+                    <figure className="image is-3by3">
+                      <img src="../../../assets/images/John1.png" alt="A John" />
                     </figure>
                   </div>
                   <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-4">John Huntsperger</p>
-                        <p className="subtitle is-6">Front End Developer<br></br>UI/UX Designer</p>
-                      </div>
-                    </div>
-
+                    <p className="title about">John Huntsperger</p>
+                    <p className="subtitle about has-text-centered">Front End Developer<br></br>UI/UX Designer</p>
                     <div className="content">
-                    <a target="_blank" href="https://www.linkedin.com/in/john-huntsperger-4854b01a1/">LinkedIn</a><br></br>
-                    <a target="_blank" href="https://github.com/Huelsdonk">Github</a>
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/john-huntsperger-4854b01a1/">LinkedIn</a><br></br>
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/Huelsdonk">Github</a>
 
                     </div>
                   </div>
@@ -77,28 +63,22 @@ export default function AboutPage() {
 
               {/* third column */}
               <div className="column is-3">
-                
-          <div className="card">
+
+                <div className="card about">
                   <div className="card-image">
-                    <figure className="image is-4by3">
-                      <img src="../../../assets/images/Yalda1.png" alt="Placeholder image" />
+                    <figure className="image is-3by3">
+                      <img src="../../../assets/images/Yalda1.png" alt="A Yalda" />
                     </figure>
                   </div>
                   <div className="card-content">
-                    <div className="media">
-                      <div className="media-left">
-                      </div>
-                      <div className="media-content">
-                        <p className="title is-4">Yalda Ali Aghazadeh</p>
-                        <p className="subtitle is-6">Project Manager <br></br>Front End Developer<br></br>UI/UX Designer</p>
-                      </div>
-                    </div>
+                    <p className="title about">Yalda Ali Aghazadeh</p>
+                    <p className="subtitle about has-text-centered">Project Manager <br></br>Front End Developer<br></br>UI/UX Designer</p>
 
                     <div className="content">
-                      
-                    <a target="_blank" href="https://www.linkedin.com/in/zahraaliaghazadeh/">LinkedIn</a><br></br>
-                    <a target="_blank" href="https://github.com/zahraaliaghazadeh">Github</a>
-                
+
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/zahraaliaghazadeh/">LinkedIn</a><br></br>
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/zahraaliaghazadeh">Github</a>
+
                     </div>
                   </div>
                 </div>
@@ -106,39 +86,34 @@ export default function AboutPage() {
 
               {/* forth column */}
               <div className="column is-3">
-                
-          <div className="card">
+
+                <div className="card about">
                   <div className="card-image">
-                    <figure className="image is-4by3">
-                      <img src="../../../assets/images/zac.png" alt="Placeholder image" />
+                    <figure className="image is-3by3">
+                      <img src="../../../assets/images/zac.png" alt="A Zac" />
                     </figure>
                   </div>
                   <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-4">Zac Stowell</p>
-                        <p className="subtitle is-6 is-centered">Back End Developer<br></br>Front End Developer</p>
-                      </div>
-                    </div>
+                    <p className="title about">Zac Stowell</p>
+                    <p className="subtitle about has-text-centered">Back End Developer<br></br>Front End Developer</p>
 
                     <div className="content">
-                    <a target="_blank" href="https://www.linkedin.com/in/zachary-stowell">LinkedIn</a> <br></br>
-                    <a target="_blank" href="https://github.com/the-medium-place">Github</a>
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/zachary-stowell">LinkedIn</a> <br></br>
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/the-medium-place">Github</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
+
         </div>
 
       </div>
 
 
 
-    </div>
+    </div >
   )
 }
 
