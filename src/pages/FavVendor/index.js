@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom"
 import "./style.css"
 import API from "../../utils/API"
 import _ from 'lodash'
+import { toast } from "bulma-toast"
 
 export default function FavVendor(props)  {
     const history = useHistory()
@@ -28,8 +29,16 @@ export default function FavVendor(props)  {
 
     const handleClickEvent = () => {
         API.addVendorToFavs(props.currentUser.id, vendorState.seller.id)
-        .then((res) =>
-            history.push('/')
+        .then((newFav) => {
+            // let user know favorite is complete
+            toast({
+                message: vendorState.seller.vendor_name + " added to your favorite vendor list",
+                type: "is-info",
+                position: "center",
+                duration: 4000,
+                dismissible: true
+                });
+        }
         ).catch((err) => console.log(err))
     }
     
