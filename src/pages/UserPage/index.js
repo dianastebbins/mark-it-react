@@ -166,6 +166,7 @@ export default function UserPage() {
 
                                             {userState.schedules.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
+                                                    {"At " + schedule.marketId + " on "}
                                                     <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
                                                     <button className="button is-small is-info is-pulled-right">Info</button>
 
