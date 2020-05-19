@@ -104,9 +104,7 @@ function App() {
         </Route>
         
 
-        {/* <Route exact path ="/player/:id">
-          <DetailsPage/>
-        </Route> */}
+       
       </Switch>
       </div>
       <Footer/>
