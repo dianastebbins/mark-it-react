@@ -12,9 +12,9 @@ import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
+import SignUpPage from './pages/SignUpPage';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import SignUpPage from "./pages/SignUpPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -28,6 +28,7 @@ import Footer from "./components/Footer"
 import API from "./utils/API"
 // the main css file
 import './App.css';
+
 
 
 

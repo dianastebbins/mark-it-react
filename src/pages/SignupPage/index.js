@@ -65,7 +65,7 @@ class SignUpPage extends React.Component {
     render() {
 
         return (
-            <div className="SignupPage section">
+            <div className="SignUpPage section">
                 <div className="container">
                     <div className="box">
 
