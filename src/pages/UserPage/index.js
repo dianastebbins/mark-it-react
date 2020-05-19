@@ -80,6 +80,18 @@ export default function UserPage() {
         window.location.reload(false);
       }
 
+    // const getMarketInfo = (marketId) => {
+    //     API.searchMarket(marketId)
+    //     .then((dbMarkets) => {
+    //         console.log(dbMarkets)
+    //         return (
+    //             <li>
+
+    //             </li>
+    //         )
+    //     })
+    // }
+
     return (
         <div className="UserPage">
             <div className="section">
@@ -101,7 +113,7 @@ export default function UserPage() {
                         <div className="tile is-ancestor">
                             <div className="tile is-vertical is-12">
                                 <div className="tile">
-                                    <div className="tile is-parent is-vertical">
+                                    <div className="tile is-parent is-vertical has-text-centered">
                                         {userState.products[0] === undefined?'':(<article className="tile is-12 is-child box">
                                             <p className="title is-5">My Products</p>
                                             <ul className="list">
@@ -174,11 +186,9 @@ export default function UserPage() {
             </div>
 
             <div className="section">
-                <div className="columns">
-                <div className="column">
+                
                 {singleProdSt? ( <ProductInfo refreshPage={refreshPage} product={singleProdSt} />):''}
-                </div>
-                </div>
+               
             </div>
         </div>
        

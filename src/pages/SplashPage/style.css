@@ -63,7 +63,7 @@ video {
     height: auto;
 }
 
-.title {
+.title.fade-in {
     max-width: 10vw;
 }
 

@@ -110,6 +110,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
             // the location of the feature, with
             // description HTML from its properties.
             map.on('click', 'unclustered-point', function (e) {
+                
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const address = e.features[0].properties.address.trim();
                 const schedule = e.features[0].properties.schedule.trim();
@@ -127,7 +128,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
                     .setLngLat(coordinates)
                     .setHTML(
                         `<h1><strong>${name}</strong></h1><p><strong>Address:</strong> ${address}<br><strong>Schedule:</strong> ${schedule}<strong>Products:</strong> ${products}</p>
-                        <br><a href="${googleLink}" target="_blank">click here</a>`
+                        <br><a href="${googleLink}" target="_blank">click here</a><p>${coordinates}<br>${googleLink}</p>`
                     )
                     .addTo(map);
             });
