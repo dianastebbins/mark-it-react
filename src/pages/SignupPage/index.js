@@ -4,39 +4,47 @@ import API from "../../utils/API"
 import "./style.css"
 
 export default function SignupPage(props) {
-    const [signupState, setSignupState] = useState({
-        username:"",
-        password:""
+  const [signupState, setSignupState] = useState({
+    username: "",
+    password: ""
+  })
+
+
+
+
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+
+    setSignupState({
+      [name]: value
+    })
+  }
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    API.createUser(signupState).then(newUser => {
+      console.log(signupState)
+      setSignupState({
+        username: '',
+        password: '',
+
+      })
     })
 
+  }
+
+  return (
+    <div className="SignUpPage">
+      <div className="container">
 
 
 
-    const handleInputChange = event => {
-        const { name, value } = event.target;
+        <div className="section mainSection">
+          {/* <div className="body"> */}
+            <div className="box">
 
-        setSignupState({
-            [name]: value
-        })
-    }
 
-    const handleFormSubmit = event => {
-        event.preventDefault();
-        API.createUser(signupState).then(newUser => {
-            console.log(signupState)
-            setSignupState({
-                username: '',
-                password: '',
-               
-            })
-        })
 
-    }
-
-        return (
-            <div className="section">
-            <div className="body">
-    
               <div className="container">
                 <div className="card">
                   <div className="card-header">
@@ -48,7 +56,7 @@ export default function SignupPage(props) {
                     <form>
                       <div className="field">
                         <p className="control has-icons-left has-icons-right">
-                          <input className="input" type="text" onChange={handleInputChange} name="username" value={signupState.name} placeholder="username"/>
+                          <input className="input" type="text" onChange={handleInputChange} name="username" value={signupState.name} placeholder="username" />
                           <span className="icon is-small is-left">
                             <i className="fas fa-envelope"></i>
                           </span>
@@ -79,14 +87,17 @@ export default function SignupPage(props) {
                   <button className="button">
                     <Link to="/map" >temporary link to MapPage</Link>
                   </button>
-    
+
                 </div>
               </div>
-    
+
             </div>
-    
-          </div>
+
+          {/* </div> */}
+        </div>
+      </div>
+    </div>
 
 
-        )
-    }
+  )
+}

@@ -69,9 +69,15 @@ video {
     height: auto;
 }
 
+
+
+/* fade in animated effect */
+
 .title.fade-in {
     max-width: 10vw;
 }
+
+
 
 .fade-in {
     animation: fadeIn ease 1.5s;
