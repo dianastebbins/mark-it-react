@@ -92,6 +92,11 @@ const API = {
     addVendorToFavs: function(id, vendor_id) {
         return axios.post(`${BASE_URL}/api/users/${id}/vendors`,vendor_id, { withCredentials: true })
 
+    },
+    getUserSchedules: function(id) {
+        return axios.get(`${BASE_URL}/api/users/${id}/markets/schedules`, { withCredentials: true })
+
     }
+
 }
 export default API
