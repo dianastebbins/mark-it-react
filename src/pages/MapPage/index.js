@@ -145,7 +145,8 @@ class MapPage extends React.Component {
                 newMarketObj.properties.schedule = data.data.marketdetails.Schedule;
                 newMarketObj.properties.address = data.data.marketdetails.Address;
                 newMarketObj.properties.googleLink = data.data.marketdetails.GoogleLink;
-                newMarketObj.properties.name = this.state.marketname[count]
+                newMarketObj.properties.name = this.state.marketname[count];
+                newMarketObj.properties.USDA_id = this.state.id[count];
                 MarketArr.push(newMarketObj);
                 this.setState({
                     marketArrState: [...MarketArr]
@@ -217,7 +218,17 @@ class MapPage extends React.Component {
     //         .catch((err) => console.log(err));
     // };
 
+    handleMarketSaveClick = (marketDetails) => {
 
+        console.log(marketDetails)
+        API.addFavMarkets(marketDetails)
+            .then(newMarket => {
+                return console.log(newMarket);
+            })
+            .catch(err => console.log(err))
+
+
+    }
 
 
     render() {
@@ -225,14 +236,28 @@ class MapPage extends React.Component {
             <div className="MapPage section">
                 <div className="container">
                     <div className="mapCards" id="overflow-fix">
-                        {(this.state.marketArrState.length < 1) ? 
-                            <h1>Search markets to continue!</h1> :
-                        
-                        
-                        
-                        this.state.marketArrState.map((market, index) => {
-                            return <MapCard name={market.properties.name.substr(4)} products={market.properties.products} schedule={market.properties.schedule.slice(0, -16)} address={market.properties.address} key={index} id={index+1}/>
-                        })
+                        {(this.state.marketArrState.length < 1) ?
+                            <h1>Markets Loading...</h1> :
+
+
+
+                            this.state.marketArrState.map((market, index) => {
+                                return (
+                                    <div>
+                                        <MapCard
+                                            name={market.properties.name.substr(4)}
+                                            distance={market.properties.name.slice(0, 4)}
+                                            products={market.properties.products}
+                                            schedule={market.properties.schedule.slice(0, -16)}
+                                            address={market.properties.address}
+                                            key={index}
+                                            id={index + 1}
+                                            USDA_id={market.properties.USDA_id}
+                                            handleMarketSaveClick={this.handleMarketSaveClick}
+                                        />
+                                    </div>
+                                )
+                            })
                         }
                     </div>
 

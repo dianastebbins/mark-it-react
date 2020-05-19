@@ -51,7 +51,10 @@ const API = {
     getMarkets: function () {
         return axios.get(`${BASE_URL}/api/markets`, { withCredentials: true })
     },
-    
+
+    addFavMarkets: function (marketDetails) {
+        return axios.post(`${BASE_URL}/api/market`, marketDetails, { withCredentials: true })
+    },    
     
     getUserById: function (id) {
         return axios.get(`${BASE_URL}/api/users/${id}`, { withCredentials: true })
