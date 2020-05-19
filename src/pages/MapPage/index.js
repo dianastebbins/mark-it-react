@@ -46,7 +46,6 @@ class MapPage extends React.Component {
                 zoom: 9
             });
             this.getUserLocMarks(position.coords.latitude, position.coords.longitude);
-            console.log(position.coords.latitude)
             const marker = new mapboxgl.Marker()
                 .setLngLat([this.state.lng, this.state.lat])
                 .addTo(map);
@@ -130,8 +129,8 @@ class MapPage extends React.Component {
                     }
                 };
                 const lat = parseFloat(data.data.marketdetails.GoogleLink.split('=').pop().split('%')[0])
-                const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('-').pop().split('%')[0]))
-
+                const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('%20-').pop().split('%')[0]))
+                
                 const coords = [long, lat];
 
 
