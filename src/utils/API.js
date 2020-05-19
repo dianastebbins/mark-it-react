@@ -88,6 +88,7 @@ const API = {
     getUserMarkets: function (id) {
         return axios.get(`${BASE_URL}/api/users/${id}/markets`, { withCredentials: true })
     },  
+
     // to add vendor to favorites
     addVendorToFavs: function(id, vendor_id) {
         return axios.post(`${BASE_URL}/api/users/${id}/vendors`,{vendor_id: vendor_id}, { withCredentials: true })
@@ -104,6 +105,13 @@ const API = {
     deleteSchedule: function (id) {
         return axios.delete(`${BASE_URL}/api/schedules/${id}`, { withCredentials: true})
     },
+    addProductMapMarker: function(productData){
+        return axios.post(`${BASE_URL}/api/vendorgeojson`, productData, { withCredentials: true })
+    },
+    getProductMapMarkers: function() {
+        return axios.get(`${BASE_URL}/api/vendorgeojson`, { withCredentials: true })
+    }
+
 
 }
 export default API
