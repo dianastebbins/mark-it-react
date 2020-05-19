@@ -17,14 +17,14 @@ export default function VendorDetail(props) {
                                         <p className="card-header-title">{vendor.first_name} </p>
                                         <p className="card-header-title">{vendor.last_name} </p>
                                         <Link to={`/user/${vendor.id}`}>   
-                                             <span class="icon">
-                                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                             <span className="icon">
+                                                <i className="fas fa-heart" aria-hidden="true"></i>
                                             </span>
                                         </Link>
                                     </header>
 
                                     <div className="card-content">
-                                        <div class="list is-hoverable">
+                                        <div className="list is-hoverable">
                                             <p className="list-item">{vendor.vendor_name}</p>
                                             <p className="list-item">{vendor.email}</p>
                                             <p className="list-item">{vendor.phone}</p>
