@@ -32,7 +32,7 @@ export default function SplashPage() {
                     <img src={logo} className="title fade-in" />
                        
                       
-                    <h2 class="subtitle">
+                    <h2 className="subtitle">
                         A friendly place for your local farmers market from the comfort of your home
                         </h2>
 

@@ -6,6 +6,7 @@ import "./style.css"
 import API from "../../utils/API"
 
 export default function AddProductPage() {
+    const history = useHistory();
     const [productState, setProductState] = useState({
         
         name: '',
@@ -72,6 +73,7 @@ export default function AddProductPage() {
                 image: ''
             })
         })
+        history.push('/')
     }
    
    
