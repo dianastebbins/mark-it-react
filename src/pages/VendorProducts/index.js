@@ -4,7 +4,7 @@ import "./style.css"
 import API from "../../utils/API"
 import _ from 'lodash'
 
-export default function VendorProducts()  {
+export default function VendorProducts(props)  {
     const history = useHistory()
     const params = useParams();
     const [vendorState,setVendorState] = useState({
@@ -18,7 +18,8 @@ export default function VendorProducts()  {
             .then((res) => 
                 setVendorState({
                     seller: res.data[0],
-                    products: res.data[0].products
+                    products: res.data[0].products,
+                    
                 })
                 
             )
@@ -26,13 +27,13 @@ export default function VendorProducts()  {
     },[])
 
     const handleClickEvent = () => {
-        API.addVendorToFavs(params.id)
+        API.addVendorToFavs(props.currentUser.id, vendorState.seller.id)
         .then((res) =>
             history.push('/')
         ).catch((err) => console.log(err))
     }
     
-    console.log(vendorState.products)
+    console.log(vendorState.seller)
     
         return (
             <div>
@@ -82,7 +83,7 @@ export default function VendorProducts()  {
                                     <p className="list-item">{product.description}</p>
                                     <p className="list-item">{product.details}</p>
                                     <p className="list-item">{product.price}</p>
-                                    <p className="list-item"><img alt="product" src={product.img}/></p>
+                                    <p className="list-item"><img alt="product" src={product.image}/></p>
 
                                 </div>
                             </div>
