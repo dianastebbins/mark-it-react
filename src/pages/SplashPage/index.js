@@ -26,7 +26,7 @@ export default function SplashPage() {
                         </section> */}
 
             <section>
-                <video autoPlay playsinline loop muted src={video}></video>
+                <video autoPlay loop muted src={video}></video>
 
                 <div className="splashpagetext">
                     <img src={logo} className="title fade-in" />

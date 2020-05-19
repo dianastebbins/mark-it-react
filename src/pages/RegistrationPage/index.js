@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, Link } from "react-router-dom"
 import API from "../../utils/API"
 import "./style.css"
+import { toast } from "bulma-toast";
 
 class RegistrationPage extends React.Component {
     state = {
@@ -30,18 +31,31 @@ class RegistrationPage extends React.Component {
     handleFormSubmit = event => {
         event.preventDefault();
         API.createUser(this.state).then(newUser => {
-            console.log(this.state)
-            this.setState({
-                username: '',
-                password: '',
-                first_name: "",
-                last_name: "",
-                email: "",
-                vendor_name: "",
-                vendor_email: "",
-                vendor_phone: "",
-                bus_lic: ""
-            })
+            if(newUser.status !== 200){
+                console.log(newUser.status)
+                
+                // there was an error, notify user
+                toast({
+                    message: "New account not created. Please check that you have completed all required fields and try again.",
+                    type: "is-danger",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
+                });
+            } else {
+                console.log(this.state)
+                this.setState({
+                    username: '',
+                    password: '',
+                    first_name: "",
+                    last_name: "",
+                    email: "",
+                    vendor_name: "",
+                    vendor_email: "",
+                    vendor_phone: "",
+                    bus_lic: ""
+                })
+            }
         })
 
     }
