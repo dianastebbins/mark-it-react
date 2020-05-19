@@ -128,7 +128,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
                     .setLngLat(coordinates)
                     .setHTML(
                         `<h1><strong>${name}</strong></h1><p><strong>Address:</strong> ${address}<br><strong>Schedule:</strong> ${schedule}<strong>Products:</strong> ${products}</p>
-                        <br><a href="${googleLink}" target="_blank">click here</a>`
+                        <br><a href="${googleLink}" target="_blank">click here</a><p>${coordinates}<br>${googleLink}</p>`
                     )
                     .addTo(map);
             });
