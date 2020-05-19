@@ -7,6 +7,7 @@ import { toast } from "bulma-toast";
 
 // convert to rfc
 
+
 class SignUpPage extends React.Component {
     state = {
         username: '',
@@ -19,6 +20,7 @@ class SignUpPage extends React.Component {
         vendor_phone: "",
         bus_lic: ""
     }
+
 
 
 

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
+
 import { toast } from "bulma-toast";
+
 
 import "./style.css"
 import API from "../../utils/API"
@@ -9,7 +11,7 @@ import API from "../../utils/API"
 export default function AddProductPage() {
     const history = useHistory();
     const [productState, setProductState] = useState({
-        
+
         name: '',
         description: '',
         price: '',
@@ -17,20 +19,52 @@ export default function AddProductPage() {
         userId: '',
         image: ''
     })
-    
-    
+
+    const [geoState, setGeoState] = useState({
+        lat: null,
+        lng: null
+    })
+
+    // useEffect(()=>{
+    //     API.getAllPlayers().then(res=>{
+    //         console.log(res.data)
+    //         setPlayersState(res.data)
+    //         setFilteredPlayersState(res.data)
+    //     }).catch(err=>{
+    //         console.log(err);
+    //     })
+    // },[])
+
+    // const params = useParams(); // for retrieving id from .../path/:id apis
+    // const history = useHistory();
+
+    // const handleDeleteBtnClick = event=>{
+    //     event.preventDefault();
+    //     API.deletePlayerById(params.id).then(res=>{
+    //         history.push('/')
+    //     })
+    // }
+    navigator.geolocation.getCurrentPosition(position => {
+        setGeoState({
+            lng: position.coords.longitude,
+            lat: position.coords.latitude
+        })
+    })
+
     useEffect(() => {
-        API.readSessions().then(res=>{
-           const ID = res.data.user.id
+        API.readSessions().then(res => {
+            const ID = res.data.user.id
             setProductState({
                 userId: ID
             })
+
                 
             
           })
     //  the component runs on page load   
 
     },[])
+
 
 
 
@@ -44,8 +78,36 @@ export default function AddProductPage() {
 
     const handleFormSubmit = event => {
         event.preventDefault();
+
         console.log(productState);
-       
+        console.log(geoState);
+        // if (geoState.lng != null) {
+        const vendorObj = {
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [geoState.lng, geoState.lat]
+            },
+            properties: {
+                timestamp: Date.now(),
+                icon: 'star', //'circle',
+                name: productState.name,
+                description: productState.description,
+                price: productState.price,
+                details: productState.description,
+                userId: productState.userId,
+                image: productState.image
+            }
+        }
+        // CALL TO MAP MARKER TABLE FOR ALL MARKER DATA
+        // FROM USER PRODUCTS
+        API.addProductMapMarker(vendorObj)
+            .then(newGeoObj => {
+                console.log('item added to marker list')
+                console.log(newGeoObj);
+            })
+        // }
+
         API.addProduct(productState).then(newProduct => {
             console.log(productState)
             
@@ -78,11 +140,13 @@ export default function AddProductPage() {
                 });
             }
         })
+
+
     }
-   
-   
+
 
 // Function to upload image on add product
+
     const uploadFile = async e => {
         const files = e.target.files;
         const data = new FormData();
@@ -104,6 +168,7 @@ export default function AddProductPage() {
         });
     }
 
+
    
       return (
             <div className="AddProductPage">
@@ -113,33 +178,33 @@ export default function AddProductPage() {
                         <div className="box">
                             <form>
                                 <div className="field">
-                                    <div className="field">
-                                        <label className="label">Product Name</label>
-                                        <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
-                                        </div>
+                                    <label className="label">Product Name</label>
+                                    <div className="control">
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
                                     </div>
-                                   
-                                    <div className="field">
-                                        <label className="label">Product Description</label>
-                                        <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder="Description" />
-                                        </div>
-                                    </div>
+                                </div>
 
-                                    <div className="field">
-                                        <label className="label">Price</label>
-                                        <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
-                                        </div>
+                                <div className="field">
+                                    <label className="label">Product Description</label>
+                                    <div className="control">
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder="Description" />
                                     </div>
+                                </div>
 
-                                    <div className="field">
-                                        <label className="label">Details</label>
-                                        <div className="control">
-                                            <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
-                                        </div>
+                                <div className="field">
+                                    <label className="label">Price</label>
+                                    <div className="control">
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
                                     </div>
+                                </div>
+
+                                <div className="field">
+                                    <label className="label">Details</label>
+                                    <div className="control">
+                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
+                                    </div>
+                                </div>
+
 
                                     <div className="field">
                                         <label className="label">Photo Placeholder</label>
@@ -148,9 +213,15 @@ export default function AddProductPage() {
                                             <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
 
 
-                                            <i className="fas fa-upload uploadicon"></i>
-                                        </div>
+
+                                        <i className="fas fa-upload uploadicon"></i>
                                     </div>
+                                </div>
+                                {productState.image ? (
+                                    <div>
+                                        <img src={productState.image}></img>
+                                    </div>
+\
                                     {productState.image ? (
                                         <div>
                                             <img src={productState.image}></img>
@@ -167,15 +238,20 @@ export default function AddProductPage() {
                              
                              {/* TODO: units input should be added later */}
                                     <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
-
+\
                                 </div>
-                            </form>
-                        </div>
-                    </div>
 
+                                {/* units input should be added later */}
+                                <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
-            </div >
+            </div>
 
-        )
-    }
+        </div >
+
+    )
+}
