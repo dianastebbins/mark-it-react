@@ -79,7 +79,14 @@ const API = {
     },  
     addVendorToFavs: function(id) {
         return axios.post(`${BASE_URL}/api/users/${id}/vendors`, { withCredentials: true })
+    },
 
+    addProductMapMarker: function(productData){
+        return axios.post(`${BASE_URL}/api/vendorgeojson`, productData, { withCredentials: true })
+    },
+
+    getProductMapMarkers: function() {
+        return axios.get(`${BASE_URL}/api/vendorgeojson`, { withCredentials: true })
     }
 }
 export default API

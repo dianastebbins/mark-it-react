@@ -3,7 +3,7 @@ import { useHistory, Link } from "react-router-dom"
 import API from "../../utils/API"
 import "./style.css"
 
-export default function SignupPage(props) {
+export default function SignUpPage(props) {
     const [signupState, setSignupState] = useState({
         username:"",
         password:""

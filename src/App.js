@@ -15,7 +15,7 @@ import MapPage from "./pages/MapPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
-import SignupPage from "./pages/SignupPage";
+import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage";
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
@@ -97,7 +97,7 @@ function App() {
           <AboutPage/>
         </Route>
         <Route exact path="/signup">
-          <SignupPage/>
+          <SignUpPage/>
         </Route>
         <Route exact path="/profile">
           <ProfilePage/>

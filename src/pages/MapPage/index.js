@@ -250,7 +250,6 @@ class MapPage extends React.Component {
                                             schedule={market.properties.schedule.slice(0, -16)}
                                             address={market.properties.address}
                                             key={index}
-                                            id={index + 1}
                                             USDA_id={market.properties.USDA_id}
                                             handleMarketSaveClick={this.handleMarketSaveClick}
                                         />
