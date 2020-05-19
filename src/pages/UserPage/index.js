@@ -173,11 +173,9 @@ export default function UserPage() {
             </div>
 
             <div className="section">
-                <div className="columns">
-                <div className="column">
+                
                 {singleProdSt? ( <ProductInfo refreshPage={refreshPage} product={singleProdSt} />):''}
-                </div>
-                </div>
+               
             </div>
         </div>
        

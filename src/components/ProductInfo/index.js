@@ -53,8 +53,6 @@ export default function ProductInfo(props) {
         return (
             <div>
 
-                <div className="section">
-                    <div className="container">
                         <div className="columns is-multiline is-centered">
 
                             <div className="column is-half">
@@ -119,8 +117,7 @@ export default function ProductInfo(props) {
                             </div>
 
                         </div>
-                    </div>
-                </div>
+                
             </div>
         )
     } else {
