@@ -45,14 +45,7 @@ export default function UserPage() {
     }, [])
 
 
-    const getAllClick = event => {
-        event.preventDefault();
-        API.getAllUserInfo(params.id).then(res => {
-            console.log(res.data)
-        })
-
-
-    }
+   
     const userProdClick = event => {
         event.preventDefault();
         console.log(userState)
@@ -62,22 +55,39 @@ export default function UserPage() {
 
 
     }
-    // const getVendorsclick = event => {
-    //     event.preventDefault();
-    //     API.getUserFavVendors(params.id).then(res => {
-    //         console.log(userState)
-    //     })
+    
+
+    
+    
 
 
-    // }
-    // const getMarketsClick = event => {
-    //     event.preventDefault();
-    //     API.getUserMarkets(params.id).then(res => {
-    //         console.log(userState)
-    //     })
+    
+    const handleDeleteBtnSch = event => {
+        event.preventDefault();
+        API.deleteSchedule(event.target.name).then(res => {
+            refreshPage();
+        })
+    }
+    const handleDeleteBtnFav = event => {
+        event.preventDefault();
+        API.deleteFavoriteVendor(event.target.name).then(res => {
+            refreshPage();
+        })
+    }
+    const handleDeleteBtnMarket = event => {
+        event.preventDefault();
+        API.deleteMarket(event.target.name).then(res => {
+            refreshPage();
+        })
+    }
 
-
-    // }
+    const handleDeleteBtnProd = event => {
+        event.preventDefault();
+        API.deleteProduct(event.target.name).then(res => {
+            refreshPage();
+        })
+    }
+    
 
     console.log(schedState)
     
@@ -131,6 +141,7 @@ export default function UserPage() {
                                         so that you don't have to use a form */}
                                                 { userState.products.map((product) => (
                                                     <li contentEditable="true" key={product.id} className="list-item">
+                                                    <a name={product.id} data="product" onClick={handleDeleteBtnProd} class="delete">&nbsp</a>
                                                         {product.name}  
                                                         <button name={product.id} onClick={userProdClick} className="button is-small is-info is-pulled-right">Info</button>
                                                         
@@ -144,6 +155,7 @@ export default function UserPage() {
 
                                                 {userState.markets.map((market) => (
                                                     <li key={market.id} className="list-item">
+                                                        <a name={market.id} data="market" onClick={handleDeleteBtnMarket} class="delete">&nbsp</a>
                                                         {market.market_name}
                                                         <button className="button is-small is-info is-pulled-right">Info</button>
 
@@ -159,6 +171,7 @@ export default function UserPage() {
 
                                                 {userState.favorites.map((favorite) => (
                                                     <li key={favorite.id} className="list-item">
+                                                           <a name={favorite.id} data="favorite" onClick={handleDeleteBtnFav} class="delete">&nbsp</a>
                                                            {favorite.first_name} {favorite.last_name} 
                                                            <Link to={`/favvendor/${favorite.id}`}>
                                                         <button  className="button is-small is-info is-pulled-right">Info</button>
@@ -176,6 +189,7 @@ export default function UserPage() {
 
                                             {schedState.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
+                                                <a name={schedule.id} data="schedule" onClick={handleDeleteBtnSch} class="delete">&nbsp</a>
                                                     {"At " + schedule.market.market_name + " on "}
                                                     <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
                                                     <button className="button is-small is-info is-pulled-right">Info</button>
