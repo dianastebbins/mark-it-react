@@ -10,3 +10,8 @@
 .navbar-item {
     color: whitesmoke;
 }
+
+/* logo on navbar */
+.brandlogo{
+    margin: 8px 5px 5px 15px;
+}

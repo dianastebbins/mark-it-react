@@ -17,25 +17,7 @@ export default function AddProductPage() {
         image: ''
     })
     
-    // useEffect(()=>{
-    //     API.getAllPlayers().then(res=>{
-    //         console.log(res.data)
-    //         setPlayersState(res.data)
-    //         setFilteredPlayersState(res.data)
-    //     }).catch(err=>{
-    //         console.log(err);
-    //     })
-    // },[])
-
-    // const params = useParams(); // for retrieving id from .../path/:id apis
-    // const history = useHistory();
-
-    // const handleDeleteBtnClick = event=>{
-    //     event.preventDefault();
-    //     API.deletePlayerById(params.id).then(res=>{
-    //         history.push('/')
-    //     })
-    // }
+    
     useEffect(() => {
         API.readSessions().then(res=>{
            const ID = res.data.user.id
@@ -78,8 +60,7 @@ export default function AddProductPage() {
    
    
 
-// dw69fw1u3 is my cloudname
-    // https://api.cloudinary.com/v1_1/dw69fw1u3/image/upload
+// Function to upload image on add product
     const uploadFile = async e => {
         const files = e.target.files;
         const data = new FormData();
@@ -101,19 +82,7 @@ export default function AddProductPage() {
         });
     }
 
-    // const handleFormSubmit = event=>{
-    // OR
-    // const this.handleInputChange = event=>{
-    //     event.preventDefault();
-    //     API.createPlayer(playerState).then(newPlayer=>{
-    //         console.log(newPlayer)
-    //         setPlayerState({
-    //             name:'',
-    //             team:''
-    //         })
-    //         history.push("/")
-    //     })
-    // }
+   
       return (
             <div className="AddProductPage">
                 <div className="container addProduct">
@@ -153,7 +122,7 @@ export default function AddProductPage() {
                                     <div className="field">
                                         <label className="label">Photo Placeholder</label>
                                         <div className="control">
-
+                                        {/* calling the upload file function for uploading image on card */}
                                             <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
 
 
@@ -174,7 +143,7 @@ export default function AddProductPage() {
                                         </div>
                                     </div>
                              
-                             {/* units input should be added later */}
+                             {/* TODO: units input should be added later */}
                                     <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
 
                                 </div>

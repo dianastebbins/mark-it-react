@@ -12,10 +12,9 @@ import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import RegistrationPage from "./pages/RegistrationPage";
+import SignUpPage from "./pages/SignUpPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
-import SignupPage from "./pages/SignupPage";
 import ProfilePage from "./pages/ProfilePage";
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
@@ -78,8 +77,8 @@ function App() {
         <Route exact path="/map">
           <MapPage/>
         </Route>
-        <Route exact path="/registration">
-          <RegistrationPage/>
+        <Route exact path="/signup">
+          <SignUpPage/>
         </Route>
         <Route exact path="/vendor/:id">
           <VendorProducts/>
@@ -96,9 +95,7 @@ function App() {
         <Route exact path="/about">
           <AboutPage/>
         </Route>
-        <Route exact path="/signup">
-          <SignupPage/>
-        </Route>
+        
         <Route exact path="/profile">
           <ProfilePage/>
         </Route>

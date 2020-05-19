@@ -58,14 +58,26 @@ color: white;
     height: 500px;
 }
 
+.title{
+    color: white;
+}
+.subtitle{
+    color: white;
+}
 video {
     width: 100%;
     height: auto;
 }
 
+
+
+/* fade in animated effect */
+
 .title.fade-in {
     max-width: 10vw;
 }
+
+
 
 .fade-in {
     animation: fadeIn ease 1.5s;
