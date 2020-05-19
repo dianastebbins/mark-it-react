@@ -24,6 +24,7 @@ export default function UserPage() {
 
     useEffect(() => {
         API.getAllUserInfo(params.id).then(res => {
+            if (res.data) {
             setUserState({
                 markets: res.data[0].markets,
                 products: res.data[0].products,
@@ -31,7 +32,7 @@ export default function UserPage() {
                 schedules: res.data[0].schedules
                 
             })
-
+        }
         })
 
     }, [])
@@ -152,7 +153,7 @@ export default function UserPage() {
                                                 {userState.favorites.map((favorite) => (
                                                     <li key={favorite.id} className="list-item">
                                                            {favorite.first_name} {favorite.last_name} 
-                                                           <Link to={`/vendor/${favorite.id}`}>
+                                                           <Link to={`/favvendor/${favorite.id}`}>
                                                         <button  className="button is-small is-info is-pulled-right">Info</button>
                                                             </Link>
                                                     </li>

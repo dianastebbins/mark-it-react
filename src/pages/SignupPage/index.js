@@ -5,6 +5,8 @@ import API from "../../utils/API"
 import "./style.css"
 import { toast } from "bulma-toast";
 
+// convert to rfc
+
 class SignUpPage extends React.Component {
     state = {
         username: '',
