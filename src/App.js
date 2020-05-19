@@ -2,9 +2,6 @@ import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import 'bulma/css/bulma.css'
 import _ from 'lodash'
-// import StatsPage from './pages/examples/StatsPage';
-// import AddPlayerPage from './pages/examples/AddPlayerPage';
-// import DetailsPage from "./pages/examples/DetailsPage";
 import AddProductPage from "./pages/AddProductPage";
 import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
@@ -12,7 +9,6 @@ import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import SignUpPage from "./pages/SignUpPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -23,6 +19,7 @@ import './App.css';
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
 import FavVendor from './pages/FavVendor'
+import SignUpPage from './pages/SignUpPage';
 
 
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
+import { toast } from "bulma-toast";
 
 import "./style.css"
 import API from "../../utils/API"
@@ -47,16 +48,36 @@ export default function AddProductPage() {
        
         API.addProduct(productState).then(newProduct => {
             console.log(productState)
-            setProductState({
-                name: '',
-                description: '',
-                price: '',
-                details: '',
-                userId: '',
-                image: ''
-            })
+            
+            if(newProduct.data.name) {
+                // let user know product was created
+                toast({
+                    message: newProduct.data.name + " added to products",
+                    type: "is-info",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
+                });
+                
+                setProductState({
+                    name: '',
+                    description: '',
+                    price: '',
+                    details: '',
+                    userId: '',
+                    image: ''
+                })
+            } else {
+                // let user know what went wrong
+                toast({
+                    message: newProduct.data,
+                    type: "is-danger",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
+                });
+            }
         })
-        history.push('/')
     }
    
    
