@@ -122,7 +122,7 @@ export default function UserPage() {
                                                 { userState.products.map((product) => (
                                                     <li contentEditable="true" key={product.id} className="list-item">
                                                         {product.name}  
-                                                        <button name={product.id} onClick={userProdClick} class="button is-small is-info is-pulled-right">Info</button>
+                                                        <button name={product.id} onClick={userProdClick} className="button is-small is-info is-pulled-right">Info</button>
                                                         
                                                     </li>
                                                 ))}
@@ -135,7 +135,7 @@ export default function UserPage() {
                                                 {userState.markets.map((market) => (
                                                     <li key={market.id} className="list-item">
                                                         {market.market_name}
-                                                        <button class="button is-small is-info is-pulled-right">Info</button>
+                                                        <button className="button is-small is-info is-pulled-right">Info</button>
 
                                                     </li>
                                                 ))}
@@ -151,7 +151,7 @@ export default function UserPage() {
                                                     <li key={favorite.id} className="list-item">
                                                            {favorite.first_name} {favorite.last_name} 
                                                            <Link to={`/vendor/${favorite.id}`}>
-                                                        <button  class="button is-small is-info is-pulled-right">Info</button>
+                                                        <button  className="button is-small is-info is-pulled-right">Info</button>
                                                             </Link>
                                                     </li>
                                                 ))}
@@ -167,7 +167,7 @@ export default function UserPage() {
                                             {userState.schedules.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
                                                     <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
-                                                    <button class="button is-small is-info is-pulled-right">Info</button>
+                                                    <button className="button is-small is-info is-pulled-right">Info</button>
 
                                                 </li>
                                             ))}
