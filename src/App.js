@@ -1,25 +1,35 @@
+// to use hooks /functional components instead of classes
 import React,{useState,useEffect} from 'react';
+// for routes in React
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+// importing bulma a css framework
 import 'bulma/css/bulma.css'
+// npm package for additional array methods
 import _ from 'lodash'
+// importing pages
 import AddProductPage from "./pages/AddProductPage";
 import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
+import SignUpPage from './pages/SignUpPage';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
-import Nav from "./components/Nav"
-import Footer from "./components/Footer"
-import API from "./utils/API"
-import './App.css';
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
 import FavVendor from './pages/FavVendor'
-import SignUpPage from './pages/SignUpPage';
+// importing components
+import Nav from "./components/Nav"
+import Footer from "./components/Footer"
+// importing the api routes
+import API from "./utils/API"
+// the main css file
+import './App.css';
+
+
 
 
 
@@ -50,6 +60,7 @@ function App() {
   
   
   return (
+    // all the routes
     <Router>
       <Nav id={id} currentUser= {currentUser} logoutHandle={logoutHandle}/>
       <div id="wrapper">
