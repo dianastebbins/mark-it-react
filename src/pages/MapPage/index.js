@@ -241,6 +241,7 @@ class MapPage extends React.Component {
 
 
                             this.state.marketArrState.map((market, index) => {
+                                        
                                 return (
                                     <div>
                                         <MapCard
