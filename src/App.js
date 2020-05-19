@@ -17,9 +17,6 @@ import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
-
-import SignUpPage from "./pages/SignUpPage";
-
 import ProfilePage from "./pages/ProfilePage";
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';

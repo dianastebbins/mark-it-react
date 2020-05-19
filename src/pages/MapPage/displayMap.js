@@ -9,7 +9,8 @@ const vendorArr = [];
 API.getProductMapMarkers().then(res => {
     // console.log(JSON.parse(res.data[1].vendorObj))
     res.data.map((geoJson, index) => {
-        vendorArr.push(JSON.parse(geoJson.vendorObj))
+        vendorArr.push(geoJson.vendorObj)
+        console.log(geoJson);
     })
 }).then(() => console.log(vendorArr))
     .catch(err => console.log(err))
