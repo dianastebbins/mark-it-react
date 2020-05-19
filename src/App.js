@@ -12,7 +12,7 @@ import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import SignUpPage from "./pages/SignupPage";
+import SignUpPage from "./pages/SignUpPage";
 import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
