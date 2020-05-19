@@ -216,12 +216,12 @@ export default function AddProductPage() {
 
                                         <i className="fas fa-upload uploadicon"></i>
                                     </div>
-                                </div>
-                                {productState.image ? (
+                                {/* </div> */}
+                                {/* {productState.image ? (
                                     <div>
                                         <img src={productState.image}></img>
-                                    </div>
-\
+                                    </div> */}
+
                                     {productState.image ? (
                                         <div>
                                             <img src={productState.image}></img>
@@ -235,23 +235,23 @@ export default function AddProductPage() {
                                             </label>
                                         </div>
                                     </div>
-                             
+
                              {/* TODO: units input should be added later */}
                                     <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
-\
+
                                 </div>
 
                                 {/* units input should be added later */}
                                 <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
 
-                            </div>
+                            {/* </div> */}
                         </form>
                     </div>
                 </div>
 
-            </div>
+        //     </div>
 
-        </div >
+        // </div >
 
     )
 }

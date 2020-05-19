@@ -12,7 +12,6 @@ import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
 import ListingPage from "./pages/ListingPage";
-import SignUpPage from './pages/SignUpPage';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import SchedulerPage from "./pages/Scheduler";
