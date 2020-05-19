@@ -5,6 +5,7 @@ import mapboxgl from 'mapbox-gl';
 import "./style.css"
 import API from "../../utils/API";
 import MarketArr from "../../components/MarketArr"
+import { toast } from "bulma-toast";
 
 import MapCard from "./MapCard";
 import displayMap from "./displayMap"
@@ -222,6 +223,15 @@ class MapPage extends React.Component {
         console.log(marketDetails)
         API.addFavMarkets(marketDetails)
             .then(newMarket => {
+                console.log(newMarket);
+                // let user know save is complete
+                toast({
+                  message: newMarket.data.market_name + " added to your favorite market list",
+                  type: "is-info",
+                  position: "center",
+                  duration: 4000,
+                  dismissible: true
+                });
                 return console.log(newMarket);
             })
             .catch(err => console.log(err))
