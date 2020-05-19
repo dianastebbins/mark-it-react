@@ -69,7 +69,7 @@ export default function Nav(props) {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-              {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/registration">Sign Up</Link></button>:''}
+              {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/signup">Sign Up</Link></button>:''}
                 {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/login">Login</Link></button>:''}
                 {props.currentUser?<button className="button is-rounded is-inverted" onClick={handleLogout}>Logout</button>:''}
               </div>

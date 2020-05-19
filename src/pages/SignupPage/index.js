@@ -3,101 +3,85 @@ import { useHistory, Link } from "react-router-dom"
 import API from "../../utils/API"
 import "./style.css"
 
-export default function SignupPage(props) {
-  const [signupState, setSignupState] = useState({
-    username: "",
-    password: ""
-  })
-
-
-
-
-  const handleInputChange = event => {
-    const { name, value } = event.target;
-
-    setSignupState({
-      [name]: value
-    })
-  }
-
-  const handleFormSubmit = event => {
-    event.preventDefault();
-    API.createUser(signupState).then(newUser => {
-      console.log(signupState)
-      setSignupState({
+class SignUpPage extends React.Component {
+    state = {
         username: '',
         password: '',
-
-      })
-    })
-
-  }
-
-  return (
-    <div className="SignUpPage">
-      <div className="container">
-
-
-
-        <div className="section mainSection">
-          {/* <div className="body"> */}
-            <div className="box">
+        first_name: "",
+        last_name: "",
+        email: "",
+        vendor_name: "",
+        vendor_email: "",
+        vendor_phone: "",
+        bus_lic: ""
+    }
 
 
 
-              <div className="container">
-                <div className="card">
-                  <div className="card-header">
-                    <p className="card-header-title">
-                      Sign up!!!!!!
-                </p>
-                  </div>
-                  <div className="card-content">
-                    <form>
-                      <div className="field">
-                        <p className="control has-icons-left has-icons-right">
-                          <input className="input" type="text" onChange={handleInputChange} name="username" value={signupState.name} placeholder="username" />
-                          <span className="icon is-small is-left">
-                            <i className="fas fa-envelope"></i>
-                          </span>
-                          <span className="icon is-small is-right">
-                            <i className="fas fa-check"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div className="field">
-                        <p className="control has-icons-left">
-                          <input className="input" type="text" onChange={handleInputChange} name="password" value={signupState.password} placeholder="password" />
-                          <span className="icon is-small is-left">
-                            <i className="fas fa-lock"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div className="field">
-                        <p className="control">
-                          <button className="button is-success" onClick={handleFormSubmit}>
-                            Signup
-                        </button>
-                        </p>
-                      </div>
-                    </form>
-                  </div>
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        API.createUser(this.state).then(newUser => {
+            console.log(this.state)
+            this.setState({
+                username: '',
+                password: '',
+                first_name: "",
+                last_name: "",
+                email: "",
+                vendor_name: "",
+                vendor_email: "",
+                vendor_phone: "",
+                bus_lic: ""
+            })
+        })
+
+    }
+    render() {
+
+        return (
+            <div className="SignupPage section">
+                <div className="container">
+                    <div className="box">
+
+                    <h1>Signup</h1>
+                    <div className="field">
+                        <form>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="username" value={this.state.name} placeholder="username" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="first_name" value={this.state.first_name} placeholder="first_name" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="last_name" value={this.state.last_name} placeholder="last_name" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="vendor_name" value={this.state.vendor_name} placeholder="vendor_name" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="vendor_email" value={this.state.vendor_email} placeholder="vendor_email" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="vendor_phone" value={this.state.vendor_phone} placeholder="vendor_phone" />
+                            <br></br>
+                            <input type="text is-hovered" onChange={this.handleInputChange} name="bus_lic" value={this.state.bus_lic} placeholder="business license" />
+                            <br></br>
+                            <button onClick={this.handleFormSubmit}>Submit</button>
+                        </form>
+                    </div>
                 </div>
-                <div className="section">
-                  <button className="button">
-                    <Link to="/map" >temporary link to MapPage</Link>
-                  </button>
-
-                </div>
-              </div>
-
             </div>
-
-          {/* </div> */}
-        </div>
-      </div>
-    </div>
+            </div >
 
 
-  )
+        )
+    }
 }
+export default SignUpPage
