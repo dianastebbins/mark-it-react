@@ -249,9 +249,9 @@ export default function AddProductPage() {
                     </div>
                 </div>
 
-        //     </div>
+             </div>
 
-        // </div >
+         </div >
 
     )
 }

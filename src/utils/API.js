@@ -105,6 +105,12 @@ const API = {
     deleteSchedule: function (id) {
         return axios.delete(`${BASE_URL}/api/schedules/${id}`, { withCredentials: true})
     },
+    addProductMapMarker: function(productData){
+        return axios.post(`${BASE_URL}/api/vendorgeojson`, productData, { withCredentials: true })
+    },
+    getProductMapMarkers: function() {
+        return axios.get(`${BASE_URL}/api/vendorgeojson`, { withCredentials: true })
+    }
 
 
 }
