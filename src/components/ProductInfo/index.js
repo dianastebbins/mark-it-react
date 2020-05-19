@@ -16,7 +16,9 @@ export default function ProductInfo(props) {
     
 
     const handleDeleteBtn = event => {
-        console.log(props.product.userId)
+        API.deleteProduct(props.product.id).then(res => {
+            props.refreshPage();
+        })
     }
 
     const handleInputChange = event => {
@@ -51,8 +53,6 @@ export default function ProductInfo(props) {
         return (
             <div>
 
-                <div className="section">
-                    <div className="container">
                         <div className="columns is-multiline is-centered">
 
                             <div className="column is-half">
@@ -117,8 +117,7 @@ export default function ProductInfo(props) {
                             </div>
 
                         </div>
-                    </div>
-                </div>
+                
             </div>
         )
     } else {

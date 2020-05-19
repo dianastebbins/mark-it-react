@@ -32,7 +32,7 @@ export default function SplashPage() {
                     <img src={logo} className="title fade-in" />
                        
                       
-                    <h2 class="subtitle">
+                    <h2 className="subtitle">
                         A friendly place for your local farmers market from the comfort of your home
                         </h2>
 
@@ -48,8 +48,8 @@ export default function SplashPage() {
 
 
 
-            <input class="input zipcodeform" type="text" placeholder="Zip Code"></input><br></br>
-            <input class="button" type="submit" value="Find" /><br></br>
+            <input className="input zipcodeform" type="text" placeholder="Zip Code"></input><br></br>
+            <input className="button" type="submit" value="Find" /><br></br>
 
 
 
