@@ -110,6 +110,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
             // the location of the feature, with
             // description HTML from its properties.
             map.on('click', 'unclustered-point', function (e) {
+                
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const address = e.features[0].properties.address.trim();
                 const schedule = e.features[0].properties.schedule.trim();

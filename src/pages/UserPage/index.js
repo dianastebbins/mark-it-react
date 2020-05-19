@@ -80,6 +80,18 @@ export default function UserPage() {
         window.location.reload(false);
       }
 
+    // const getMarketInfo = (marketId) => {
+    //     API.searchMarket(marketId)
+    //     .then((dbMarkets) => {
+    //         console.log(dbMarkets)
+    //         return (
+    //             <li>
+
+    //             </li>
+    //         )
+    //     })
+    // }
+
     return (
         <div className="UserPage">
             <div className="section">
@@ -122,7 +134,7 @@ export default function UserPage() {
 
                                                 {userState.markets.map((market) => (
                                                     <li key={market.id} className="list-item">
-                                                        {market.market_id}
+                                                        {market.market_name}
                                                         <button class="button is-small is-info is-pulled-right">Info</button>
 
                                                     </li>
