@@ -14,7 +14,7 @@ export default function UserPage() {
     const params = useParams();
     const [singleProdSt, setSingleProdSt] = useState([])
     const [value, setValue] = useState(new Date());
-    const [allProdState, setAllProdState] = useState([])
+    const [schedState, setSchedState] = useState([])
     const [userState, setUserState] = useState({
         markets: [],
         products: [],
@@ -30,6 +30,13 @@ export default function UserPage() {
                 products: res.data[0].products,
                 favorites: res.data[0].favorites,
                 schedules: res.data[0].schedules
+                   
+                
+                
+            });
+            API.getUserSchedules(params.id).then(res => {
+                
+                    setSchedState(res.data[0].schedules)
                 
             })
         }
@@ -71,6 +78,8 @@ export default function UserPage() {
 
 
     // }
+
+    console.log(schedState)
     
     function onChange(nextValue) {
         setValue(nextValue);
@@ -79,9 +88,7 @@ export default function UserPage() {
     const refreshPage = () => {
         window.location.reload(false);
       }
-      console.log(userState.schedules.sched)
-      console.log(userState.schedules.mark)
-
+      
 
     // const getMarketInfo = (marketId) => {
     //     API.searchMarket(marketId)
@@ -167,9 +174,9 @@ export default function UserPage() {
                                         <p className="title is-5">My schedules</p>
                                         <ul className="list">
 
-                                            {userState.schedules.map((schedule) => (
+                                            {schedState.map((schedule) => (
                                                 <li key={schedule.id} className="list-item">
-                                                    {"At " + schedule.market_id + " on "}
+                                                    {"At " + schedule.market.market_name + " on "}
                                                     <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
                                                     <button className="button is-small is-info is-pulled-right">Info</button>
 
