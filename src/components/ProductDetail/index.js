@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom"
-
+import { Link } from "react-router-dom"
+import "./style.css"
 
 // try putting classes in an array and picking random indexes??
 
@@ -10,43 +10,42 @@ export default function ProductDetail(props) {
         <div>
 
             <div className="section">
-                <div className="container">
-                    <div className="columns is-multiline is-centered">
+                <div className="columns is-variable is-multiline is-centered">
 
-                        {props.products.map((product) => (
-                            <div className="column">
-                                <div className="card  has-background-light">
-                                    <header className="card-header">
-                                        <p className="card-header-title">{product.name}</p>
-                                        <Link to={`/vendor/${product.userId}`}>
-                                            <span class="icon">
-                                                <i class="fas fa-heart" aria-hidden="true"></i>
-                                            </span>
-                                            </Link>
-                                    </header>
-                                    <div class="card-image">
-                                    {product.image ? <figure class="image is-3by2">
-                                            <img
-                                                src={product.image}
-                                                alt="the item for sale"
-                                            />
-                                        </figure>:''}
-                                    </div>
-                                    <div className="card-content">
-                                        <div class="list is-hoverable">
-                                            <p className="list-item">{product.description}</p>
-                                            <p className="list-item">{product.price}</p>
-                                            <p className="list-item">{product.details}</p>
-                                            <p className="list-item"></p>
-                                        </div>
-                                    </div>
+                    {props.products.map((product) => (
+                        <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
+                            <div className="card has-background-light">
+                                <div class="card-image">
+                                    {product.image ? <figure class="image is-4by3">
+                                        <img
+                                            src={product.image}
+                                            alt="the item for sale"
+                                        />
+                                    </figure> : ''}
                                 </div>
-                            </div>
+                                <header className="card-header">
+                                    <p className="card-header-title">{product.name}</p>
+                                    
+                                </header>
 
-                        ))}
-                    </div>
+
+                                <div class="list is-hoverable">
+                                    <p className="list-item">{product.description}</p>
+                                    <p className="list-item">{product.price}</p>
+                                    <p className="list-item">{product.details}</p>
+                                    <p className="list-item">
+                                        <Link to={`/vendor/${product.userId}`}>
+                                        {/* eslint-disable-next-line */}
+                                        <a href="#" class="card-footer-item">More Information</a>
+                                    </Link></p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    ))}
                 </div>
             </div>
-    </div>
+        </div>
     )
 }

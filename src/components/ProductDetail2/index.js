@@ -13,7 +13,7 @@ export default function ProductDetail(props) {
                 <div className="columns is-variable is-multiline is-centered">
 
                     {props.products.map((product) => (
-                        <div className="column is-4">
+                        <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
                             <div className="card has-background-light">
                                 <div class="card-image">
                                     {product.image ? <figure class="image is-4by3">

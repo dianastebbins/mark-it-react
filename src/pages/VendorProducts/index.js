@@ -45,7 +45,7 @@ export default function VendorProducts(props)  {
     console.log(vendorState.seller)
     
         return (
-            <div>
+            <div className="VendorProducts">
 
         <div className="section">
             <div className="container">

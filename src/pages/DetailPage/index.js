@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
-// import ProductDetail from "../../components/ProductDetail"
-import ProductDetail2 from "../../components/ProductDetail2"
+import ProductDetail from "../../components/ProductDetail"
+// import ProductDetail2 from "../../components/ProductDetail2"
 import "./style.css"
 import API from "../../utils/API"
 
@@ -56,7 +56,7 @@ export default function DetailPage() {
 
 
             {/* <ProductDetail products={productState} /> */}
-            <ProductDetail2 products={productState} />
+            <ProductDetail products={productState} />
 
 
 
