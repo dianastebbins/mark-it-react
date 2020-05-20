@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom"
+import React, { useState } from "react";
 import "./style.css"
 import API from "../../utils/API";
 
 export default function ProductInfo(props) {
-    const history = useHistory();
     const [productState, setProductState] = useState({
         name: '',
         description: '',
@@ -32,10 +30,9 @@ export default function ProductInfo(props) {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        console.log(productState);
 
         API.updateProduct(productState, props.product.id).then(newProduct => {
-            console.log(productState)
+            
             setProductState({
                 name: '',
                 description: '',
@@ -57,7 +54,7 @@ export default function ProductInfo(props) {
 
                             <div className="column is-half">
                                 <div className="card has-background-light">
-                                    <header className="card-header">
+                                    <header className="card-header">{/* eslint-disable-next-line */}
                                         <p className="product card-header-title">{props.product.name}<a onClick={handleDeleteBtn} class="delete"></a></p>
 
                                     </header>
@@ -73,7 +70,7 @@ export default function ProductInfo(props) {
                                     </div>
                                     <div className="card-content">
                                         <div class="list is-hoverable">
-                                            <p contentEditable="true" className="list-item">{props.product.description}</p>
+                                            <p className="list-item">{props.product.description}</p>
                                             <p className="list-item">{props.product.price}</p>
                                             <p className="list-item">{props.product.details}</p>
                                             <p className="list-item"></p>
@@ -84,28 +81,32 @@ export default function ProductInfo(props) {
                                     <div className="card-content">
                                 <form>
                                     <div className="field">
-                                        <h5>Update Product Information</h5>
+                                        <h5 className="has-text-centered">Update Product Information</h5>
                                         <div className="field">
+                                        <label class="label">Name</label>
                                             <div className="control">
-                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.name} placeholder="Product Name" />
+                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.name} placeholder={props.product.name} required/>
                                             </div>
                                         </div>
 
                                         <div className="field">
+                                        <label class="label">Description</label>
                                             <div className="control">
-                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder="Description" />
+                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder={props.product.description} required/>
                                             </div>
                                         </div>
 
                                         <div className="field">
+                                        <label class="label">Price</label>
                                             <div className="control">
-                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
+                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder={props.product.price} required/>
                                             </div>
                                         </div>
 
                                         <div className="field">
+                                        <label class="label">Details</label>
                                             <div className="control">
-                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
+                                                <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder={props.product.details} required />
                                             </div>
                                         </div>
                                         </div>

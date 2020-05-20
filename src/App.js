@@ -4,19 +4,15 @@ import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // importing bulma a css framework
 import 'bulma/css/bulma.css'
-// npm package for additional array methods
-import _ from 'lodash'
 // importing pages
 import AddProductPage from "./pages/AddProductPage";
 import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
-import ListingPage from "./pages/ListingPage";
+import SignUpPage from './pages/SignUpPage';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
-import SchedulerPage from "./pages/Scheduler";
 import AboutPage from "./pages/AboutPage";
-import ProfilePage from "./pages/ProfilePage";
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
 import FavVendor from './pages/FavVendor'
@@ -27,7 +23,6 @@ import Footer from "./components/Footer"
 import API from "./utils/API"
 // the main css file
 import './App.css';
-import SignUpPage from './pages/SignUpPage'
 
 
 
@@ -76,9 +71,7 @@ function App() {
           <DetailPage currentUser = {currentUser}/>
         </Route>
         {/* one per listing type? */}
-        <Route exact path="/listing">
-          <ListingPage/>
-        </Route>
+        
         <Route exact path="/login">
           <LoginPage submitHandler={loginSubmitHandler}/>
         </Route>
@@ -97,18 +90,13 @@ function App() {
         <Route exact path="/product/:id">
           <ProductPage/>
         </Route>
-        <Route exact path="/scheduler">
-          <SchedulerPage/>
-        </Route>
         <Route exact path="/about">
           <AboutPage/>
         </Route>
         <Route exact path="/favvendor/:id">
           <FavVendor currentUser={currentUser}/>
         </Route>
-        <Route exact path="/profile">
-          <ProfilePage/>
-        </Route>
+        
         
 
        
