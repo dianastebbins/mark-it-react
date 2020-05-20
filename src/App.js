@@ -9,14 +9,13 @@ import AddProductPage from "./pages/AddProductPage";
 import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
-import SignUpPage from './pages/SignUpPage';
+import SignUpPage from './pages/SignUp';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
 import AboutPage from "./pages/AboutPage";
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
 import FavVendor from './pages/FavVendor'
-import DetailsPage from './pages/examples/DetailsPage'
 // importing components
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
@@ -97,9 +96,7 @@ function App() {
         <Route exact path="/favvendor/:id">
           <FavVendor currentUser={currentUser}/>
         </Route>
-        <Route exact path="/det">
-          <DetailsPage/>
-        </Route>
+       
         
 
        
