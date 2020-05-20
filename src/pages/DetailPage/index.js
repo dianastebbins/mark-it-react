@@ -43,7 +43,7 @@ export default function DetailPage() {
 
     return (
         <div className="DetailPage">
-            <section class="hero is-success is-bold">
+            <section class="hero is-info is-bold">
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
