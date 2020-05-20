@@ -87,13 +87,13 @@ export default function AddProductPage() {
             },
             properties: {
                 timestamp: Date.now(),
-                icon: 'star', //'circle',
                 name: productState.name,
                 description: productState.description,
                 price: productState.price,
                 details: productState.description,
                 userId: productState.userId,
-                image: productState.image
+                image: productState.image,
+                userId: productState.userId
             }
         }
         // CALL TO MAP MARKER TABLE FOR ALL MARKER DATA
