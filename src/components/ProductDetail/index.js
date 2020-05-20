@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import "./style.css"
-
+import BrandLogo from "./../../assets/images/brandlogo.png"
 // try putting classes in an array and picking random indexes??
 
 
@@ -16,12 +16,14 @@ export default function ProductDetail(props) {
                         <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
                             <div className="card has-background-light">
                                 <div class="card-image">
-                                    {product.image ? <figure class="image is-4by3">
+                                     <figure class="image is-4by3">{product.image ?
                                         <img
                                             src={product.image}
                                             alt="the item for sale"
-                                        />
-                                    </figure> : ''}
+                                        />:<img className="logoImageAdd" src={BrandLogo} alt="Mark-It Logo"/>}
+                                    
+                                    
+                                    </figure> 
                                 </div>
                                 <header className="card-header">
                                     <p className="card-header-title">{product.name}</p>
