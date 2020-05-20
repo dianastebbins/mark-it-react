@@ -172,6 +172,17 @@ export default function AddProductPage() {
    
       return (
             <div className="AddProductPage">
+                <section class="hero is-success is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Add a Product
+                        </h1>
+                     
+                    </div>
+                </div>
+                </section>
+                
                 <div className="container addProduct">
 
                     <div className="section mainSection">
@@ -241,9 +252,7 @@ export default function AddProductPage() {
 
                                 </div>
 
-                                {/* units input should be added later */}
-                                <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
-
+                               
                             {/* </div> */}
                         </form>
                     </div>
