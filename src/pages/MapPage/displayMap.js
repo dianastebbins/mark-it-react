@@ -9,7 +9,7 @@ API.getProductMapMarkers().then(res => {
     // console.log(JSON.parse(res.data[1].vendorObj))
     //eslint-disable-next-line
     res.data.map((geoJson, index) => {
-        vendorArr.push(JSON.parse(geoJson.vendorObj))
+        vendorArr.push(geoJson.vendorObj)
         console.log(geoJson);
     })
 }).then(() => console.log(vendorArr))
@@ -45,20 +45,7 @@ export default function displayMap(locObjArr, userLong, userLat) {
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
         });
 
-        // ================================
-        // ADD LIST OF GEOJSON VENDOR ITEMS
-        // ================================
-        // map.addSource('vendors', {
-        //     type: 'geojson',
-        //     'data': {
-        //         'type': 'FeatureCollection',
-        //         'features': vendorArr
-        //     }, 
-        //     cluser: true,
-        //     clusterMaxZoom: 14,
-        //     clusterRadius: 50
-        // })
-
+    
         // =========================
         // ADD LIST OF FOUND MARKETS
         // =========================
@@ -124,16 +111,6 @@ export default function displayMap(locObjArr, userLong, userLat) {
             }
         });
 
-        // ADD LAYER FOR VENDOR PRODUCTS FROM VENDORS SOURCE
-        // map.addLayer({
-        //     'id': 'vendor-products',
-        //     'type': 'symbol',
-        //     'source':'vendors',
-        //     'layout': {
-        //     'icon-image': '{icon}-15',
-        //     'icon-allow-overlap': true
-        //     }
-        //     });
 
         // inspect a cluster on click
         map.on('click', 'clusters', function (e) {
@@ -186,58 +163,6 @@ export default function displayMap(locObjArr, userLong, userLat) {
 
 
 
-        // ================================
-        // ADD POPUP TO VENDOR ITEM MARKERS
-        // ================================
-        map.on('click', 'vendor-products', function (e) {
-            console.log(e);
-
-            const coordinates = e.features[0].geometry.coordinates.slice();
-            // const address = e.features[0].properties.address.trim();
-            // const schedule = e.features[0].properties.schedule.trim();
-            // const products = e.features[0].properties.products.trim();
-            // const googleLink = e.features[0].properties.googleLink.trim();
-            // const name = e.features[0].properties.name.trim();
-            // Ensure that if the map is zoomed out such that
-            // multiple copies of the feature are visible, the
-            // popup appears over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-            }
-
-            new mapboxgl.Popup()
-                .setLngLat(coordinates)
-                .setHTML(
-                    `${coordinates}`
-                )
-                .addTo(map);
-        });
-
-        // map.on('click', 'vendor-products', function (e) {
-        //     const features = map.queryRenderedFeatures(e.point, {
-        //         layers: ['vendor-products']
-        //     });
-        //     const clusterId = features[0].properties.cluster_id;
-        //     map.getSource('vendors').getClusterExpansionZoom(
-        //         clusterId,
-        //         function (err, zoom) {
-        //             if (err) return;
-
-        //             map.easeTo({
-        //                 center: features[0].geometry.coordinates,
-        //                 zoom: zoom
-        //             });
-        //         }
-        //     );
-        // });
-        // ======================================
-        // END TOYING WITH VENDOR PRODUCT MARKERS
-        // ======================================
-
-
-
-
-
 
 
         map.on('mouseenter', 'clusters', function () {
@@ -248,9 +173,16 @@ export default function displayMap(locObjArr, userLong, userLat) {
         });
 
         // USER MARKER PULLS FROM GLOBAL USER LOCATION VARIABLES
-        var marker = new mapboxgl.Marker()
-            .setLngLat([userLong, userLat])
-            .addTo(map);
+        // var marker = new mapboxgl.Marker()
+        //     .setLngLat([userLong, userLat])
+        //     .addTo(map);
+
+            map.addControl(new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true
+                },
+                trackUserLocation: true
+            }));
 
         // ==========================================
         // ADD MARKERS AND POPUPS FOR VENDOR PRODUCTS
@@ -262,13 +194,12 @@ export default function displayMap(locObjArr, userLong, userLat) {
             const price = marker.properties.price;
             const details = marker.properties.details;
             const userId = marker.properties.userId;
+            const image = marker.properties.image;
 
             const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-                `<strong><h1>Item Name:</h1></strong> ${name}<br>
-                <strong><h1>Item Description: </h1></strong>${description}<br>
-                <strong><h1>Price: </h1></strong>${price}<br>
-                <strong><h1>Item Details: </h1></strong>${details}<br>
-                <strong><h1>Vendor User ID: </h1></strong>${userId}<br>`
+                `<img src="${image}"><br>
+                <h1>${name}</h1><br>
+                Click <a href="/vendor/${userId}" target="_blank">HERE</a> to view this vendor's page!`
                 // 'test test test'
                 );
             // create a HTML element for each feature
