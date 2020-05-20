@@ -6,6 +6,8 @@ import { toast } from "bulma-toast";
 import "./style.css"
 import API from "../../utils/API"
 
+
+
 export default function AddProductPage() {
     const [productState, setProductState] = useState({
 
@@ -41,12 +43,7 @@ export default function AddProductPage() {
     //         history.push('/')
     //     })
     // }
-    navigator.geolocation.getCurrentPosition(position => {
-        setGeoState({
-            lng: position.coords.longitude,
-            lat: position.coords.latitude
-        })
-    })
+   
 
     useEffect(() => {
         API.readSessions().then(res => {
@@ -55,6 +52,12 @@ export default function AddProductPage() {
                 userId: ID
             })
 
+            navigator.geolocation.getCurrentPosition(position => {
+                setGeoState({
+                    lng: position.coords.longitude,
+                    lat: position.coords.latitude
+                })
+            })
                 
             
           })
