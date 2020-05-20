@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
+import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
 import "./style.css"
 import API from "../../utils/API"
@@ -7,7 +7,6 @@ import { toast } from "bulma-toast";
 
 
 export default function LoginPage(props) {
-  const params = useParams()
   const history = useHistory()
   const [loginState, setLoginState] = useState({
       username:"",

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
 
 import { toast } from "bulma-toast";
 
@@ -9,7 +7,6 @@ import "./style.css"
 import API from "../../utils/API"
 
 export default function AddProductPage() {
-    const history = useHistory();
     const [productState, setProductState] = useState({
 
         name: '',
@@ -220,7 +217,7 @@ export default function AddProductPage() {
 
                             {productState.image ? (
                                 <div>
-                                    <img src={productState.image}></img>
+                                    <img alt="product" src={productState.image}></img>
                                 </div>
                             ) : ""}
                             <div className="field">

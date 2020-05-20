@@ -1,4 +1,3 @@
-import React from 'react'
 import mapboxgl from 'mapbox-gl';
 import API from '../../utils/API';
 
@@ -8,6 +7,7 @@ const vendorArr = [];
 
 API.getProductMapMarkers().then(res => {
     // console.log(JSON.parse(res.data[1].vendorObj))
+    //eslint-disable-next-line
     res.data.map((geoJson, index) => {
         vendorArr.push(geoJson.vendorObj)
         console.log(geoJson);

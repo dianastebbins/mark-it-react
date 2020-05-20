@@ -1,6 +1,4 @@
 import React from 'react'
-import { useParams, useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
 import mapboxgl from 'mapbox-gl';
 import "./style.css"
 import API from "../../utils/API";

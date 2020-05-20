@@ -42,7 +42,6 @@ export default function FavVendor(props)  {
         ).catch((err) => console.log(err))
     }
     
-    console.log(vendorState.seller)
     
         return (
             <div>
