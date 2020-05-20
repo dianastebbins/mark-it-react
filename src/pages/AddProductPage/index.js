@@ -219,7 +219,6 @@ export default function AddProductPage() {
                                         <img src={productState.image}></img>
                                     </div> */}
 
-
                             {productState.image ? (
                                 <div>
                                     <img alt="product" src={productState.image}></img>
