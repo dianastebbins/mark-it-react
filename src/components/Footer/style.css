@@ -1,13 +1,15 @@
 .footer{
-    position: relative;
+    position: fixed;
     width: 100%;
     bottom: 0;
-    overflow:hidden;
     background-color:hsl(0, 0%, 21%);
-    height: 40px;
+    height: 20px;
     color: white;
     margin-top: auto;
     flex-shrink: 0;
+    box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.31);
+    /* opacity: .98; */
+
 }
 
 .copyright{

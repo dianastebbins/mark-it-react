@@ -9,8 +9,8 @@
 }
 
 .AddProductPage{
-    background-color: #969696;
-    /* margin: 0 auto; */
+    background: lightslategray;
+    box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
 }
 
 /* .label{
@@ -19,13 +19,13 @@
 
 .mainSection{
     /* margin: 20px; */
-    height: 100vh;
+    height: 100%;
     /* margin: 0 auto; */
 }
 
 .box{
     width: 50%;
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
 }
 
 .uploadicon{

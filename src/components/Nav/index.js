@@ -1,77 +1,76 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import API from "../../utils/API"
+import photo from "../../assets/images/brandlogo.png"
 
 export default function Nav(props) {
+  const [isActive, setisActive] = useState(false);
+
+  const history = useHistory()
+  
   
   const handleLogout = event=>{
     API.logout().then(res=>{
-        props.logoutHandle();
+        props.logoutHandle(); 
         console.log(res.data)
-    //    history.push('/')
+       history.push('/')
     })
 }
   
   return (
     <div>
-      <nav className="navbar is-dark is-bold" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-fixed-top is-dark is-bold" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <span className="navbar-item" href="#">
-            {/* <i className="brandlogo"><img src="assets/images/screenshot4.png" height="100px" width="90px"></img></i> */}
-          </span>
+        {!isActive? <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}
 
+          {/* eslint-disable-next-line */}
           <a
+            onClick={() => {
+              setisActive(!isActive);
+            }}
             role="button"
-            className="navbar-burger burger"
+            className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
           >
-            <span aria-hidden="true">Home</span>
-            <span aria-hidden="true">About</span>
-            <span aria-hidden="true">Login</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
         </div>
+            {/* eslint-disable-next-line */}
+        <div id="navbarBasicExample" className="navbar-menu" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
 
-        <div id="navbarBasicExample" className="navbar-menu Nav">
           <div className="navbar-start">
-          <span className=" brandlogo"><img src="assets/images/brandlogo.png" alt="logo" height="80px" width="80px"></img></span>
-            <a className="navbar-item" href="/"> Home</a>
-            <a className="navbar-item" href="/add-product">Add Product</a>
-            <a className="navbar-item" href="/detail"> Detail</a>
-            <a className="navbar-item" href="/listing"> Listing</a>
-            <a className="navbar-item" href="/login"> Login</a>
-            <a className="navbar-item" href="/map"> Map</a>
-            <a className="navbar-item" href="/registration">Registration</a>
-            <a className="navbar-item" href="/scheduler"> Calendar</a>
-            <a className="navbar-item" href="/user-landing"> User landing</a>
+          {isActive?<a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}
+            {/* <a className="navbar-item" href="/"> Home</a> */}
+            <a className="navbar-item" href="/map">Find Markets</a>
+            {props.currentUser?<a className="navbar-item" href="/add-product">Add Product</a>:""}
+            <a className="navbar-item" href="/detail">Items for Sale</a>
+            {props.currentUser?<a className="navbar-item" href={`/user/${props.id}`}>My Profile</a>:""}
             <a className="navbar-item" href="/about">About</a>
-            <a className="navbar-item" href="/signup">Sign Up</a>
-            <a className="navbar-item" href="/profile">Profile</a>
-            <a className="navbar-item" href="/signup2">signing up</a>
-
 
             {/* <a className="navbar-item">Documentation</a> */}
 
-            <div className="navbar-item has-dropdown is-hoverable">
+            {/* <div className="navbar-item has-dropdown is-hoverable">
               <span className="navbar-link">More</span>
 
               <div className="navbar-dropdown">
-                <span className="navbar-item">Events</span>
-                <a className="navbar-item" href="/about">About</a>
-                <span className="navbar-item">Contact</span>
-                <hr className="navbar-divider" />
-                <span className="navbar-item"></span>
-              </div>
-            </div>
+              
+                {/* <span className="navbar-item">Contact</span> */}
+                {/* <hr className="navbar-divider" /> */}
+              {/* </div> */}
+            {/* </div> */} 
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <button className="button is-rounded is-inverted"><Link to="/signup" >Sign Up</Link></button>
-                <button className="button is-rounded is-inverted" onClick={handleLogout}>LOGOUT</button>
+              {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/signup">Sign Up</Link></button>:''}
+                {!props.currentUser?<button className="button is-rounded is-inverted"><Link to="/login">Login</Link></button>:''}
+                {props.currentUser?<button className="button is-rounded is-inverted" onClick={handleLogout}>Logout</button>:''}
               </div>
             </div>
           </div>

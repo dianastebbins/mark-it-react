@@ -1,9 +1,10 @@
 .SplashPage {
     background: gray;
+    width: 100vw;
     text-align: center;
     color: white;
     /* background-image: url(../../assets/images/main1.jpg); */
-    min-height: 100vh;
+    height: 100%;
     /* background-image: url(../../assets/images/main1.jpg); */
     /* background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2168&q=80); */
 
@@ -23,21 +24,10 @@
     height: 70vh;
 } */
 
-.hero-body{
-        /* farm */
-        /* background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2168&q=80); */
-        /* apples */
-        /* background-image: url(https://images.unsplash.com/photo-1505872342847-6dbb5e76cd31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2208&q=80); */
-        /* jewelry */
-        /* background-image: url(https://images.unsplash.com/photo-1523252012848-c22188792c27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80); */
-        background-size: cover;
-        font-weight: bolder;
-}
-
-.zipcodeform{
+/* .zipcodeform{
 width: 40%;
 margin-top: 30px;
-}
+} */
 
 .nextarrow{
     width: 100px;
@@ -52,7 +42,77 @@ transform: translate(-50%, -50%);
 color: white;
 }
 
-.mainImage{
-    /* width: 100vw; */
-    height: 500px;
+
+
+
+
+.SplashSubtitle{
+    color: white;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* fade in animated effect */
+
+.title.fade-in {
+    max-width: 10vw;
+    color: white;
+}
+
+
+
+.fade-in {
+    animation: fadeIn ease 1.5s;
+    -webkit-animation: fadeIn ease 1.5s;
+    -moz-animation: fadeIn ease 1.5s;
+    -o-animation: fadeIn ease 1.5s;
+    -ms-animation: fadeIn ease 1.5s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity: 1;
+  }
 }

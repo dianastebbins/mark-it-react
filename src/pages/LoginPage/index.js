@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
+import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
 import "./style.css"
 import API from "../../utils/API"
-
+import { toast } from "bulma-toast";
 
 
 export default function LoginPage(props) {
-  const params = useParams()
   const history = useHistory()
   const [loginState, setLoginState] = useState({
       username:"",
@@ -34,9 +33,17 @@ export default function LoginPage(props) {
         props.submitHandler(res.data.user)
         history.push(`/user/${res.data.user.id}`)
     } else {
-        props.submitHandler(false)
+      // let user know what went wrong
+      toast({
+        message: res.data,
+        type: "is-danger",
+        position: "center",
+        duration: 4000,
+        dismissible: true
+      });
+      props.submitHandler(false)
     }
-    })
+    }).catch((err) => console.log(err));
 
   }
 
@@ -75,7 +82,7 @@ export default function LoginPage(props) {
                   </div>
                   <div className="field">
                     <p className="control has-icons-left">
-                      <input className="input" type="text" onChange={handleInputChange} name="password" value={loginState.password} placeholder="password" />
+                      <input className="input" type="password" onChange={handleInputChange} name="password" value={loginState.password} placeholder="password" />
                       <span className="icon is-small is-left">
                         <i className="fas fa-lock"></i>
                       </span>

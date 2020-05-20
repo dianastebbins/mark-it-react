@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import "./style.css"
 import {useParams} from "react-router-dom"
 import API from "../../utils/API"
-import ProductDetailDetail from "../../components/productDetailDetail"
+import ProductDetail from "../../components/ProductInfo"
 
 export default function ProductPage() {
     const params = useParams();
@@ -21,7 +21,7 @@ export default function ProductPage() {
 
     return (
         <div>
-            <ProductDetailDetail products={prodState} />
+            <ProductDetail products={prodState} />
             
         </div>
     )

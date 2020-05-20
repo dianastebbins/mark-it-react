@@ -1,92 +1,106 @@
-import React, { useState } from 'react'
-import { useHistory, Link } from "react-router-dom"
+
+import React from 'react'
 import API from "../../utils/API"
 import "./style.css"
+import { toast } from "bulma-toast";
 
-export default function SignupPage(props) {
-    const [signupState, setSignupState] = useState({
-        username:"",
-        password:""
-    })
+// convert to rfc
 
 
+class SignUpPage extends React.Component {
+    state = {
+        username: '',
+        password: '',
+        first_name: "",
+        last_name: "",
+        email: "",
+        vendor_name: "",
+        vendor_email: "",
+        vendor_phone: "",
+        bus_lic: ""
+    }
 
 
-    const handleInputChange = event => {
+
+
+
+    handleInputChange = event => {
         const { name, value } = event.target;
 
-        setSignupState({
+        this.setState({
             [name]: value
         })
     }
 
-    const handleFormSubmit = event => {
+    handleFormSubmit = event => {
         event.preventDefault();
-        API.createUser(signupState).then(newUser => {
-            console.log(signupState)
-            setSignupState({
-                username: '',
-                password: '',
-               
-            })
+        API.createUser(this.state).then(newUser => {
+            if (newUser.status !== 200) {
+                console.log(newUser.status)
+
+                // there was an error, notify user
+                toast({
+                    message: "New account not created. Please check that you have completed all required fields and try again.",
+                    type: "is-danger",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
+                });
+            } else {
+                console.log(this.state)
+                this.setState({
+                    username: '',
+                    password: '',
+                    first_name: "",
+                    last_name: "",
+                    email: "",
+                    vendor_name: "",
+                    vendor_email: "",
+                    vendor_phone: "",
+                    bus_lic: ""
+                })
+            }
         })
 
     }
+    render() {
 
         return (
-            <div className="section">
-            <div className="body">
-    
-              <div className="container">
-                <div className="card">
-                  <div className="card-header">
-                    <p className="card-header-title">
-                      Sign up!!!!!!
-                </p>
-                  </div>
-                  <div className="card-content">
-                    <form>
-                      <div className="field">
-                        <p className="control has-icons-left has-icons-right">
-                          <input className="input" type="text" onChange={handleInputChange} name="username" value={signupState.name} placeholder="username"/>
-                          <span className="icon is-small is-left">
-                            <i className="fas fa-envelope"></i>
-                          </span>
-                          <span className="icon is-small is-right">
-                            <i className="fas fa-check"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div className="field">
-                        <p className="control has-icons-left">
-                          <input className="input" type="text" onChange={handleInputChange} name="password" value={signupState.password} placeholder="password" />
-                          <span className="icon is-small is-left">
-                            <i className="fas fa-lock"></i>
-                          </span>
-                        </p>
-                      </div>
-                      <div className="field">
-                        <p className="control">
-                          <button className="button is-success" onClick={handleFormSubmit}>
-                            Signup
-                        </button>
-                        </p>
-                      </div>
-                    </form>
-                  </div>
+            <div className="SignUpPage section">
+                <div className="container">
+                    <div className="box">
+
+
+                        <h1>Signup</h1>
+                        <div className="field">
+                            <form>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="username" value={this.state.name} placeholder="username" />
+                                <br></br>
+                                <input type="password" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="first_name" value={this.state.first_name} placeholder="first_name" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="last_name" value={this.state.last_name} placeholder="last_name" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="vendor_name" value={this.state.vendor_name} placeholder="vendor_name" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="vendor_email" value={this.state.vendor_email} placeholder="vendor_email" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="vendor_phone" value={this.state.vendor_phone} placeholder="vendor_phone" />
+                                <br></br>
+                                <input type="text is-hovered" onChange={this.handleInputChange} name="bus_lic" value={this.state.bus_lic} placeholder="business license" />
+                                <br></br>
+                                <button onClick={this.handleFormSubmit}>Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div className="section">
-                  <button className="button">
-                    <Link to="/map" >temporary link to MapPage</Link>
-                  </button>
-    
-                </div>
-              </div>
-    
             </div>
-    
-          </div>
 
 
         )
     }
+}
+export default SignUpPage
