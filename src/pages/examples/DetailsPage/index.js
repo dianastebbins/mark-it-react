@@ -1,101 +1,183 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import "./style.css"
-import {useParams,useHistory} from "react-router-dom"
-import API from "../../../utils/API"
+import { useParams, useHistory } from "react-router-dom"
 
 
 export default function DetailsPage() {
     const params = useParams(); // for retrieving id from .../path/:id apis
     const history = useHistory(); // to save page visited, can return back
-    const [playerState,setPlayerState]=useState({});
-    const [atBatState,setAtBatState] = useState({
-        result:"none",
-        RBIS:0
+    const [atBatState, setAtBatState] = useState({
+        result: "none",
+        RBIS: 0
     })
+
+   
+
     
-    useEffect(()=>{
-        API.getPlayerById(params.id).then(res=>{
-            setPlayerState(res.data)
-        })
-    },[])
 
-    const handleDeleteBtnClick = event=>{
-        event.preventDefault();
-        API.deletePlayerById(params.id).then(res=>{
-            history.push('/')
-        })
-    }
-
-    const handleInputChange = event=>{
-        const {name,value} = event.target;
+    const handleInputChange = event => {
+        const { name, value } = event.target;
         setAtBatState({
             ...atBatState,
-            [name]:value
+            [name]: value
         })
-    }
-    const handleFormSubmit = event=>{
-        event.preventDefault();
-        const copyOfPlayer = {...playerState};
-        copyOfPlayer.at_bats++;
-        copyOfPlayer.runs_batted_in += parseInt(atBatState.RBIS);
-        switch (atBatState.result) {
-            case "none":
-                
-                break;
-        
-            case "single":
-                copyOfPlayer.singles++;
-                break;
-        
-            case "double":
-                copyOfPlayer.doubles++;
-                break;
-        
-            case "triple":
-                copyOfPlayer.triples++;
-                break;
-        
-            case "home_run":
-                copyOfPlayer.home_runs++;
-                break;
-        
-            default:
-                break;
-        }
-
-        API.updatePlayerById(params.id,copyOfPlayer).then(res=>{
-            setPlayerState(copyOfPlayer);
-        })
-
     }
     
+
+    
+
     return (
         <div className="DetailsPage">
-            {/* {playerState?<h1>{playerState.name}</h1>:<h1>Loading...</h1>} */}
-            <h1>{playerState.name} <button onClick={handleDeleteBtnClick}>Delete Me!</button></h1>
-            <h3>{playerState.team}</h3>
-            <h5>Stats</h5>
-            <ul>
-                <li>At bats:{playerState.at_bats}</li>
-                <li>Hits:{playerState.singles+playerState.doubles+playerState.triples+playerState.home_runs}</li>
-                <li>Batting Average:{((playerState.singles+playerState.doubles+playerState.triples+playerState.home_runs)/playerState.at_bats).toFixed(3)}</li>
-                <li>singles:{playerState.singles}</li>
-                <li>doubles:{playerState.doubles}</li>
-                <li>triples:{playerState.triples}</li>
-                <li>home runs:{playerState.home_runs}</li>
-                <li>rbis:{playerState.runs_batted_in}</li>
-            </ul>
-            <form>
-                <select value={atBatState.result} onChange={handleInputChange} name="result">
-                    <option value="none">None</option>
-                    <option value="single">Single</option>
-                    <option value="double">Double</option>
-                    <option value="triple">Triple</option>
-                    <option value="home_run">Home Run</option>
-                </select>
-                <input type="text" value={atBatState.RBIS} onChange = {handleInputChange} name= "RBIS" placeholder="RBIs"/>
-                <button onClick={handleFormSubmit}>Add at bat!</button>
-            </form>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">One</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Two</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Three</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Four</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+
+                <div class="tile is-parent is-4">
+                    <article class="tile is-child box">
+                        <p class="title">One</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent is-2">
+                    <article class="tile is-child box">
+                        <p class="title">Two</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent is-3">
+                    <article class="tile is-child box">
+                        <p class="title">Three</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Four</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+            </div>
+            {/* <div class="tile is-ancestor">
+                <div class="tile is-vertical is-9">
+                    <div class="tile">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">Five</p>
+                                <p class="subtitle">Subtitle</p>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-8 is-vertical">
+                            <div class="tile">
+                                <div class="tile is-parent">
+                                    <article class="tile is-child box">
+                                        <p class="title">Six</p>
+                                        <p class="subtitle">Subtitle</p>
+                                    </article>
+                                </div>
+                                <div class="tile is-parent">
+                                    <article class="tile is-child box">
+                                        <p class="title">Seven</p>
+                                        <p class="subtitle">Subtitle</p>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">Eight</p>
+                                    <p class="subtitle">Subtitle</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile">
+                        <div class="tile is-8 is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">Nine</p>
+                                <p class="subtitle">Subtitle</p>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">Ten</p>
+                                <p class="subtitle">Subtitle</p>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <div class="content">
+                            <p class="title">Eleven</p>
+                            <p class="subtitle">Subtitle</p>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+                                <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Twelve</p>
+                        <p class="subtitle">Subtitle</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="tile is-parent is-6">
+                    <article class="tile is-child box">
+                        <p class="title">Thirteen</p>
+                        <p class="subtitle">Subtitle</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Fourteen</p>
+                        <p class="subtitle">Subtitle</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut.</p>
+                        </div>
+                    </article>
+                </div>
+            </div> */}
         </div>
     )
 }

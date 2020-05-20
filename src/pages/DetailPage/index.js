@@ -49,9 +49,7 @@ export default function DetailPage()  {
                     <ProductDetail products={productState} />
 
                
-                    <button className="button">
-                        <Link to="/listing" >temporary link to ListingPage</Link>
-                    </button>
+                   
                 </div>
 
             </div>

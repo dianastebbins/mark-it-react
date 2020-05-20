@@ -4,9 +4,9 @@ import "./style.css"
 export default function AboutPage() {
   return (
     <div className="AboutPage">
-      <div className="section is-large">
+      <div className="section">
         <div className="columns">
-          <div className="box column is-10">
+          <div className="box column is-12">
             <h1 className="title has-text-centered"> Meet the Team</h1>
             {/* start of card for our photos */}
             {/* card 1 */}

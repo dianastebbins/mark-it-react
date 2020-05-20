@@ -1,6 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom"
 
+
+// try putting classes in an array and picking random indexes??
+
+
 export default function ProductDetail(props) {
     return (
         <div>

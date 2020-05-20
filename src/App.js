@@ -16,6 +16,7 @@ import AboutPage from "./pages/AboutPage";
 import SplashPage from './pages/SplashPage';
 import VendorProducts from './pages/VendorProducts';
 import FavVendor from './pages/FavVendor'
+import DetailsPage from './pages/examples/DetailsPage'
 // importing components
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
@@ -96,7 +97,9 @@ function App() {
         <Route exact path="/favvendor/:id">
           <FavVendor currentUser={currentUser}/>
         </Route>
-        
+        <Route exact path="/det">
+          <DetailsPage/>
+        </Route>
         
 
        
