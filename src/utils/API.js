@@ -91,13 +91,13 @@ const API = {
 
     // to add vendor to favorites
     addVendorToFavs: function(id, vendor_id) {
-        return axios.post(`${BASE_URL}/api/users/${id}/vendors`,vendor_id, { withCredentials: true })
+        return axios.post(`${BASE_URL}/api/users/${id}/vendors`,{vendor_id: vendor_id}, { withCredentials: true })
     },
     getUserSchedules: function(id) {
         return axios.get(`${BASE_URL}/api/users/${id}/markets/schedules`, { withCredentials: true })
     },
-    deleteFavoriteVendor: function (id) {
-        return axios.put(`${BASE_URL}/api/users/unfavor/vendor/${id}`, { withCredentials: true})
+    deleteFavoriteVendor: function (id, vendor_id) {
+        return axios.put(`${BASE_URL}/api/users/unfavor/vendor/${id}`,{vendor_id: vendor_id}, { withCredentials: true})
     },
     deleteMarket: function (id) {
         return axios.delete(`${BASE_URL}/api/markets/${id}`, { withCredentials: true})

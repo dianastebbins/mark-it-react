@@ -60,7 +60,7 @@ export default function UserPage() {
     }
     const handleDeleteBtnFav = event => {
         event.preventDefault();
-        API.deleteFavoriteVendor(event.target.name).then(res => {
+        API.deleteFavoriteVendor(params.id, event.target.name).then(res => {
             refreshPage();
         })
     }
