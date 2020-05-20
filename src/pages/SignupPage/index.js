@@ -76,7 +76,7 @@ class SignUpPage extends React.Component {
                             <form>
                                 <input type="text is-hovered" onChange={this.handleInputChange} name="username" value={this.state.name} placeholder="username" />
                                 <br></br>
-                                <input type="text is-hovered" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
+                                <input type="password" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
                                 <br></br>
                                 <input type="text is-hovered" onChange={this.handleInputChange} name="first_name" value={this.state.first_name} placeholder="first_name" />
                                 <br></br>
