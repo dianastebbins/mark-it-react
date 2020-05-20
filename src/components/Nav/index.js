@@ -20,7 +20,7 @@ export default function Nav(props) {
   
   return (
     <div>
-      <nav className="navbar is-dark is-bold" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-fixed-top is-dark is-bold" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
         {!isActive? <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}
 

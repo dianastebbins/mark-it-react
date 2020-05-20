@@ -9,8 +9,8 @@
 }
 
 .AddProductPage{
-    background-color: #969696;
-    /* margin: 0 auto; */
+    background: lightslategray;
+    box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
 }
 
 /* .label{

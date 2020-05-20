@@ -2,7 +2,7 @@
 
 .box{
     /* width: 50%; */
-    background-color: white;
+    background: linear-gradient(rgba(0, 3, 77, 0.194), rgba(16, 0, 193, 0.413)), url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
     margin: 0 auto 200px auto;
 }
 
