@@ -29,7 +29,7 @@ export default function DetailsPage() {
     return (
         <div className="DetailsPage">
             <div class="tile is-ancestor">
-                <div class="tile is-parent">
+                <div class="tile is-parent is-4">
                     <article class="tile is-child box">
                         <p class="title">One</p>
                         <p class="subtitle">Subtitle</p>
