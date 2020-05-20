@@ -9,7 +9,6 @@ import AddProductPage from "./pages/AddProductPage";
 import UserPage from "./pages/UserPage"
 import ProductPage from "./pages/ProductPage"
 import DetailPage from "./pages/DetailPage";
-import ListingPage from "./pages/ListingPage";
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from "./pages/LoginPage";
 import MapPage from "./pages/MapPage";
@@ -61,7 +60,7 @@ function App() {
     // all the routes
     <Router>
       <Nav id={id} currentUser= {currentUser} logoutHandle={logoutHandle}/>
-      <div id="wrapper">
+      
       <Switch>
         <Route exact path="/">
           <SplashPage />
@@ -106,7 +105,6 @@ function App() {
 
        
       </Switch>
-      </div>
       <Footer/>
     </Router>
   );

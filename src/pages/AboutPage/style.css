@@ -1,11 +1,11 @@
 .AboutPage {
    /* background-color: rgb(183, 93, 105); */
     /* margin: 0 auto; */
-    padding: 0 40px;
     background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
-    min-height: 100vh;
+    min-height: 100%;
     background-size: cover;
     background-attachment: fixed;
+    padding-bottom: 200px;
 }
 
 p.title.about {
@@ -18,5 +18,10 @@ p.subtitle.about {
 }
 
 .card.about {
-    height: 550px;
+    max-height: 100%;
+}
+
+.aboutImg {
+    padding: 30px;
+    
 }

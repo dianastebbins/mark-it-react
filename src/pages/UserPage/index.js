@@ -97,18 +97,16 @@ export default function UserPage() {
 
     return (
         <div className="UserPage">
-            <div className="section">
-                <div className="box">
-                    <h3 className="title">My Profile Page</h3>
-                    {/* <div className="buttons is-centered">
-                        <button onClick={getAllClick} className="button is-primary is-bold">All Info</button>
-                        <button onClick={userProdClick} className="button is-link is bold">Products</button>
-                        <button onClick={getVendorsclick} className="button is-info">Vendors</button>
-                        <button onClick={getMarketsClick} className="button is-success">Markets</button>
-
-                    </div> */}
+           <section class="hero is-success is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Profile
+                        </h1>
+                     
+                    </div>
                 </div>
-            </div>
+                </section>
             <div className="section">
                 <div className="columns">
 
