@@ -24,7 +24,7 @@ export default function Nav(props) {
         <div className="navbar-brand">
         {!isActive? <a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}
 
-
+          {/* eslint-disable-next-line */}
           <a
             onClick={() => {
               setisActive(!isActive);
@@ -40,9 +40,8 @@ export default function Nav(props) {
             <span aria-hidden="true"></span>
           </a>
         </div>
-
-        <div id="navbarBasicExample" className="navbar-menu"
-        className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+            {/* eslint-disable-next-line */}
+        <div id="navbarBasicExample" className="navbar-menu" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
 
           <div className="navbar-start">
           {isActive?<a className=" brandlogo" href="/"><img src={photo} alt="logo" height="80px" width="80px"></img></a>:''}

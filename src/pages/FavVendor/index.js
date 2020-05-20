@@ -2,7 +2,6 @@ import React, {useState,useEffect} from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import "./style.css"
 import API from "../../utils/API"
-import _ from 'lodash'
 
 export default function FavVendor(props)  {
     const history = useHistory()
@@ -33,7 +32,6 @@ export default function FavVendor(props)  {
         ).catch((err) => console.log(err))
     }
     
-    console.log(vendorState.seller)
     
         return (
             <div>
