@@ -173,9 +173,16 @@ export default function displayMap(locObjArr, userLong, userLat) {
         });
 
         // USER MARKER PULLS FROM GLOBAL USER LOCATION VARIABLES
-        var marker = new mapboxgl.Marker()
-            .setLngLat([userLong, userLat])
-            .addTo(map);
+        // var marker = new mapboxgl.Marker()
+        //     .setLngLat([userLong, userLat])
+        //     .addTo(map);
+
+            map.addControl(new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true
+                },
+                trackUserLocation: true
+            }));
 
         // ==========================================
         // ADD MARKERS AND POPUPS FOR VENDOR PRODUCTS
@@ -190,11 +197,6 @@ export default function displayMap(locObjArr, userLong, userLat) {
             const image = marker.properties.image;
 
             const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-                // <strong><h1>Item Name:</h1></strong> ${name}<br>
-                // <strong><h1>Item Description: </h1></strong>${description}<br>
-                // <strong><h1>Price: </h1></strong>${price}<br>
-                // <strong><h1>Item Details: </h1></strong>${details}<br>
-                // <strong><h1>Vendor User ID: </h1></strong>${userId}<br>
                 `<img src="${image}"><br>
                 <h1>${name}</h1><br>
                 Click <a href="/vendor/${userId}" target="_blank">HERE</a> to view this vendor's page!`
