@@ -12,6 +12,7 @@ export default function MapCard(props) {
                 <li>{props.products}</li>
                 <li>{props.address}</li>
                 <li><button type="submit" onClick={() => props.handleMarketSaveClick({ id: props.USDA_id, market_name: props.name.substr(0) })}>Save to Favs!</button></li>
+
             </ul>
             <br />
 

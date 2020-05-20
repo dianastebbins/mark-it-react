@@ -1,6 +1,5 @@
 
-import React, { useState } from 'react'
-import { useHistory, Link } from "react-router-dom"
+import React from 'react'
 import API from "../../utils/API"
 import "./style.css"
 import { toast } from "bulma-toast";

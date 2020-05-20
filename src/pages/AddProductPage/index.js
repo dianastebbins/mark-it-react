@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
 
 import { toast } from "bulma-toast";
 
@@ -9,7 +7,6 @@ import "./style.css"
 import API from "../../utils/API"
 
 export default function AddProductPage() {
-    const history = useHistory();
     const [productState, setProductState] = useState({
 
         name: '',
@@ -222,15 +219,16 @@ export default function AddProductPage() {
                                         <img src={productState.image}></img>
                                     </div> */}
 
-                                    {productState.image ? (
-                                        <div>
-                                            <img src={productState.image}></img>
-                                        </div>
-                                    ) : (<div />)}
-                                    <div className="field">
-                                        <div className="control">
-                                            <label className="checkbox">
-                                                <input required type="checkbox" />
+
+                            {productState.image ? (
+                                <div>
+                                    <img alt="product" src={productState.image}></img>
+                                </div>
+                            ) : ""}
+                            <div className="field">
+                                <div className="control">
+                                    <label className="checkbox">
+                                        <input required type="checkbox" />
                                             I agree to the <a href="https://gist.github.com/zahraaliaghazadeh/7f5bbde80804ca1ae0cb6f9ed1fbc540">terms and conditions</a>
                                             </label>
                                         </div>

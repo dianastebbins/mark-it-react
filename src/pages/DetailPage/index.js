@@ -1,9 +1,6 @@
 import React, {useState,useEffect} from 'react'
-import { useParams, useHistory } from "react-router-dom"
 import { Link } from "react-router-dom";
-import MarketDetail from "../../components/MarketDetail"
 import ProductDetail from "../../components/ProductDetail"
-import VendorDetail from "../../components/VendorDetail"
 import "./style.css"
 import API from "../../utils/API"
 
@@ -11,9 +8,9 @@ import API from "../../utils/API"
 
 export default function DetailPage()  {
    
-    const [marketState,setMarketState] = useState([]);
+    // const [marketState,setMarketState] = useState([]);
     const [productState,setProductState] = useState([]);
-    const [vendorState,setVendorState] = useState([]);
+    // const [vendorState,setVendorState] = useState([]);
  
     
     
@@ -29,13 +26,13 @@ export default function DetailPage()  {
             )
             .catch((err) => console.log(err));
     };
-    const searchVendors = () => {
-        API.getAllUsers()
-            .then((res) => 
-                setVendorState(res.data)
-            )
-            .catch((err) => console.log(err));
-    };
+    // const searchVendors = () => {
+    //     API.getAllUsers()
+    //         .then((res) => 
+    //             setVendorState(res.data)
+    //         )
+    //         .catch((err) => console.log(err));
+    // };
 
     
     
