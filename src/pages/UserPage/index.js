@@ -6,6 +6,7 @@ import API from "../../utils/API"
 import VendorDetail from "../../components/VendorDetail"
 import ProductInfo from "../../components/ProductInfo"
 import Calendar from 'react-calendar';
+import TileContent from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import Moment from 'react-moment';
 import _ from 'lodash'
@@ -185,6 +186,12 @@ export default function UserPage() {
                                         </ul>
                                         {userState.schedules[0] !== undefined ? (<Calendar
                                             value={[newArr[0], newArr[newArr.length - 1]]} />) : ''}
+{/* 
+                                        {userState.schedules[0] !== undefined ? (<TileContent
+    //  onChange={ onDateChange }
+     value={newArr[0] } // s/b "today"
+                                            tileContent={ ({ date, view }) => view === 'month' && ((date.getMonth() === newArr[0].getMonth() && date.getDate() === newArr[0].getDate()) || (date.getMonth() === newArr[1].getMonth() && date.getDate() === newArr[1].getDate()))  ? <p>Market Day</p> : null } />) : ''} */}
+                                            
                                     </article>)}
                                 </div>
                             </div>
