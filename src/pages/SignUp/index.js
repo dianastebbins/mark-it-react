@@ -205,7 +205,7 @@ class SignUpPage extends React.Component {
                                     </div>
                                     <div className="field">
                                         <div className="control">
-                                            <button class="button is-primary" onClick={this.handleFormSubmit}>Submit</button>
+                                            <button class="button is-info" onClick={this.handleFormSubmit}>Submit</button>
                                         </div>
                                     </div>
                                     <span className='form-error'>* Required Field</span>

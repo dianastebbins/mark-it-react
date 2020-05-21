@@ -27,6 +27,7 @@
   flex-direction: row;
   justify-content: center;
   width: auto;
+  background-attachment: fixed;
 
 }
 
@@ -44,10 +45,12 @@
 .mapResultCard {
   width: 100%;
   height: auto;
+  /* background: rgba(0, 0, 0, 0.082); */
+  background: transparent;
 }
 
 .mapResultCard li {
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.144);
   background: gainsboro;
   padding: 8px 8px 8px 8px;
       box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);
