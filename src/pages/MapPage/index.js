@@ -101,7 +101,7 @@ class MapPage extends React.Component {
                 };
                 const lat = parseFloat(data.data.marketdetails.GoogleLink.split('=').pop().split('%')[0])
                 const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('%20-').pop().split('%')[0]))
-                
+
                 const coords = [long, lat];
 
 
@@ -180,11 +180,11 @@ class MapPage extends React.Component {
             .then(newMarket => {
                 // let user know save is complete
                 toast({
-                  message: newMarket.data.market_name + " added to your favorite market list",
-                  type: "is-info",
-                  position: "center",
-                  duration: 4000,
-                  dismissible: true
+                    message: newMarket.data.market_name + " added to your favorite market list",
+                    type: "is-info",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
                 });
                 return console.log(newMarket);
             })
@@ -206,42 +206,49 @@ class MapPage extends React.Component {
                     </div>
                 </section>
                 <div className="section">
-                <div className="container Maps">
-                    <div className="mapCards" id="overflow-fix">
-                        {(this.state.marketArrState.length < 1) ?
-                            <h1>Markets Loading...</h1> :
+                    <div className="Maps">
+                        <div className="mapCards" id="overflow-fix">
+                            {(this.state.marketArrState.length < 1) ?
+                                <h1>Markets Loading...</h1> :
 
 
 
-                            this.state.marketArrState.map((market, index) => {
-                                        
-                                return (
-                                    <div>
-                                        <MapCard
-                                            name={market.properties.name.substr(4)}
-                                            distance={market.properties.name.slice(0, 4)}
-                                            products={market.properties.products}
-                                            schedule={market.properties.schedule.slice(0, -16)}
-                                            address={market.properties.address}
-                                            key={index}
-                                            USDA_id={market.properties.USDA_id}
-                                            handleMarketSaveClick={this.handleMarketSaveClick}
-                                        />
-                                    </div>
-                                )
-                            })
-                        }
+                                this.state.marketArrState.map((market, index) => {
+
+                                    return (
+                                        <div>
+                                            <MapCard
+                                                name={market.properties.name.substr(4)}
+                                                distance={market.properties.name.slice(0, 4)}
+                                                products={market.properties.products}
+                                                schedule={market.properties.schedule.slice(0, -16)}
+                                                address={market.properties.address}
+                                                key={index}
+                                                USDA_id={market.properties.USDA_id}
+                                                handleMarketSaveClick={this.handleMarketSaveClick}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+
+                        <div style={{ height: "80vh", width: "65vw" }} className="MapContainer" id="map" />
+                    </div>
+                    <div className="section">
+                        <div className="level">
+                            <div className="level-item">
+
+                                <p className="coronavirusalert title is-4">Alert: The searh results may be outdated and events might have been canceled due to the Corona virus pandemic.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div style={{ height: "80vh", width: "65vw" }} className="MapContainer" id="map" />
-                </div>
-
-                <h1 className="coronavirusalert">Alert: The searh results may be outdated and events might have been canceled due to the Corona virus pandemic.</h1>
-                <SearchForm
-                    value={this.state.search}
-                    handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit}
-                />
+                    <SearchForm
+                        value={this.state.search}
+                        handleInputChange={this.handleInputChange}
+                        handleFormSubmit={this.handleFormSubmit}
+                    />
                 </div>
             </div>
         )

@@ -26,6 +26,7 @@ export default function UserPage() {
     });
 
     useEffect(() => {
+        if (params.id) {
         API.getAllUserInfo(params.id).then(res => {
             if (res.data) {
                 setUserState({
@@ -40,6 +41,9 @@ export default function UserPage() {
                 });
             }
         })
+        } else {
+            console.log("loading")
+        }
     }, [])
 
     const newArr = []
@@ -107,7 +111,7 @@ export default function UserPage() {
         }
         return '';
     }
-
+    console.log(userState.markets[0])
     return (
         <div className="UserPage">
             <section className="hero is-info is-bold">
@@ -210,8 +214,7 @@ export default function UserPage() {
                                                     <div className="card-content">
                                                     {/* <div className="card-content"> */}
                                                     <ul className="list">
-                                                        {/* see if you can throw a value on the text content and send the data to the api
-                                        so that you don't have to use a form */}
+                                                        
                                                         {userState.products.map((product) => (
                                                             <li key={product.id} className="list-item">
                                                                 {/* eslint-disable-next-line */}
@@ -237,7 +240,7 @@ export default function UserPage() {
                                                             <li key={market.id} className="list-item">
                                                                 {/* eslint-disable-next-line */}
                                                                 <a name={market.id} data="market" onClick={handleDeleteBtnMarket} className="delete is-pulled-left">&nbsp</a>
-                                                                {market.market_name}
+                                                                {market.market_name ? market.market_name:''}
                                                                 {/* <button className="button is-small is-info is-pulled-right">Info</button> */}
 
                                                             </li>
@@ -293,12 +296,17 @@ export default function UserPage() {
                                                 {/* original calendar
                                         {userState.schedules[0] !== undefined ? (<Calendar
                                             value={[newArr[0], newArr[newArr.length - 1]]} />) : ''} */}
+                                                <div className="columns">
+                                                    <div className="column">
                                                 <div className="container">
+                                                
                                                 <div id="calendarBox" className="box">
                                                 {userState.schedules[0] !== undefined ? (<TileContent
                                                     value={newArr[0]} // s/b "today"
                                                     tileContent={({ date, view }) => view === 'month' ? <p>{isDateOnSchedule(date)}</p> : null} />) : ''}
                                                 {/* tileContent={ ({ date, view }) => view === 'month' && isDateOnSchedule(date)  ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''} */}
+                                                </div>
+                                                </div>
                                                 </div>
                                                 </div>
                                             </article>)}

@@ -59,9 +59,9 @@ display: none;
 
 
 
-.SplashSubtitle{
+/* .SplashSubtitle{
     color: white;
-}
+} */
 /* video {
     width: 100%;
     height: auto;
@@ -186,14 +186,14 @@ display: none;
 /* TODO The 3 properties below can change based on our desire */
 
   /* this is the background of the text on video */
-    background: black none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
     /* color of text */
     color: white;
     /* how see through the text is */
-    opacity: 0.6;
+    opacity: 0.9;
     font-size: 24px;
 
-    font-weight: 600;
+    font-weight: 800;
     margin: 2rem 3rem 0;
     mix-blend-mode: overlay;
     padding: 5px 15px;
