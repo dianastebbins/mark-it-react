@@ -133,7 +133,7 @@ To-do list:
 * f. allowing user to rate a vender or write a review
 * g. add to cart
 * h. ability to add review on items from a vendor
-* i. to 
+* i. to make payments within the application
 
 
 
