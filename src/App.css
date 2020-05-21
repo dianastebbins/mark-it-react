@@ -14,3 +14,7 @@ body {
   padding-top: 48px;
   text-align: center;
 }
+
+.input {
+  font-family: inherit;
+}

@@ -1,108 +1,152 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from "react-router-dom"
 import "./style.css"
 import API from "../../utils/API"
 import _ from 'lodash'
 import { toast } from "bulma-toast"
+import BrandLogo from "./../../assets/images/brandlogo.png"
 
-export default function FavVendor(props)  {
+
+export default function FavVendor(props) {
     const history = useHistory()
     const params = useParams();
-    const [vendorState,setVendorState] = useState({
+    const [vendorState, setVendorState] = useState({
         seller: '',
         products: ''
     });
- 
-    
+
+
     useEffect(() => {
         API.getUserProducts(params.id)
-            .then((res) => 
+            .then((res) =>
                 setVendorState({
                     seller: res.data[0],
                     products: res.data[0].products,
-                    
+
                 })
-                
+
             )
             .catch((err) => console.log(err));
-    },[])
+    }, [])
 
     const handleClickEvent = () => {
         API.addVendorToFavs(props.currentUser.id, vendorState.seller.id)
-        .then((newFav) => {
-            // let user know favorite is complete
-            toast({
-                message: vendorState.seller.vendor_name + " added to your favorite vendor list",
-                type: "is-info",
-                position: "center",
-                duration: 4000,
-                dismissible: true
+            .then((newFav) => {
+                // let user know favorite is complete
+                toast({
+                    message: vendorState.seller.vendor_name + " added to your favorite vendor list",
+                    type: "is-info",
+                    position: "center",
+                    duration: 4000,
+                    dismissible: true
                 });
-        }
-        ).catch((err) => console.log(err))
+            }
+            ).catch((err) => console.log(err))
     }
-    
-    
-        return (
-            <div>
 
-        <div className="section">
-            <div className="container">
-                <div className="columns is-multiline is-centered">
 
-                    <div className="column">
-                        <div className="card  has-background-light">
-                            <header className="card-header">
-                                <p className="card-header-title">{vendorState.seller.first_name} </p>
-                                <p className="card-header-title">{vendorState.seller.last_name} </p>
-                            </header>
+    return (
+        <div className="FavVendor">
+            <section class="hero is-info is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            {vendorState.seller.first_name} {vendorState.seller.last_name}
+                        </h1>
 
-                            <div className="card-content">
-                                <div className="list is-hoverable">
-                                    <p className="list-item">{vendorState.seller.vendor_name}</p>
-                                    <p className="list-item">{vendorState.seller.vendor_email}</p>
-                                    <p className="list-item">{vendorState.seller.vendor_phone}</p>
+                    </div>
+                </div>
+            </section>
+
+            <div className="section">
+                <div className="container">
+                    <div className="columns is-multiline is-centered">
+
+                        <div className="column">
+                            <div className="card ">
+                                <header className="card-header">
+                                    <p className="card-header-title">Get in touch with {vendorState.seller.first_name} </p>
+                                </header>
+
+                                <div className="card-content">
+
+                                    <nav class="level is-mobile">
+
+                                        <div class="level-item has-text-centered">
+                                            <div>
+                                                <p class="heading">DBA</p>
+                                                <p class="title">{vendorState.seller.vendor_name}</p>
+                                            </div>
+                                        </div>
+                                        <div class="level-item has-text-centered">
+                                            <div>
+                                                <p class="heading">Email</p>
+                                                <p class="title">{vendorState.seller.vendor_email}</p>
+                                            </div>
+                                        </div>
+                                        <div class="level-item has-text-centered">
+                                            <div>
+                                                <p class="heading">Phone</p>
+                                                <p class="title">{vendorState.seller.vendor_phone}</p>
+                                            </div>
+                                        </div>
+
+                                    </nav>
+
+
+
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
                     </div>
 
-
-
                 </div>
-
             </div>
-        </div>
-        <div className="section">
-            <div className="container">
-                <div className="columns is-multiline is-centered">
+            <div className="favven section">
+                <div className="container">
+                    <div className="columns is-multiline is-centered">
 
-                     {vendorState.products ? vendorState.products.map((product) => ( 
-                    <div className="column">
-                        <div className="card  has-background-light">
-                            <header className="card-header">
-                                <p className="card-header-title">{product.name} </p>
+                        {vendorState.products ? vendorState.products.map((product) => (
+                            <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
+                                <div className="card has-background-light">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">{product.image ?
+                                            <img
+                                                src={product.image}
+                                                alt="the item for sale"
+                                            /> : <img className="logoImageAdd" src={BrandLogo} alt="Mark-It Logo" />}
 
-                            </header>
 
-                            <div className="card-content">
-                                <div class="list is-hoverable">
-                                    <p className="list-item">{product.description}</p>
-                                    <p className="list-item">{product.details}</p>
-                                    <p className="list-item">{product.price}</p>
-                                    <p className="list-item"><img alt="product" src={product.image}/></p>
+                                        </figure>
+                                    </div>
 
+                                    <header className="card-header">
+                                        <p className="card-header-title">{product.name} </p>
+
+                                    </header>
+
+                                        <div class="list is-hoverable">
+                                            <p className="list-item">{product.description}</p>
+                                            <p className="list-item">{product.details}</p>
+                                            <p className="list-item">{product.price}</p>
+
+                                        </div>
                                 </div>
                             </div>
-                        </div>
+
+                        )) : "loading"}
+
                     </div>
 
-                     )) :"loading"}
-
                 </div>
-
             </div>
         </div>
-    </div>
-        )
-    }
+    )
+}

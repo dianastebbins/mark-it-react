@@ -14,6 +14,30 @@
 
 }
 
+button.is-small {
+    font-family: inherit;
+}
+
+.newuser.title {
+    color: #FFFF
+
+}
+
 #bottomSectionUser {
     padding-bottom: 200px;
+}
+
+#orangebox {
+    background: orangered;
+    color: #FFFF
+}
+
+#greenbox {
+    background: turquoise;
+    color:#FFFF
+}
+
+#purplebox {
+    background: mediumpurple;
+    color: #FFFF
 }

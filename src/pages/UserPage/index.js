@@ -141,7 +141,7 @@ export default function UserPage() {
                                     <div className="tile">
                                         <div className="tile is-parent">
                                             <article class="tile is-child notification is-dark box">
-                                                <p class="title">Welcome To Mark-It!</p>
+                                                <p class="newuser title">Welcome To Mark-It!</p>
                                                 {/* <p class="subtitle">Subtitle</p> */}
                                                 <div class="content">
                                                     <p>To get started, we suggest you check out one of these options:</p>
@@ -151,8 +151,8 @@ export default function UserPage() {
                                         <div className="tile is-8 is-vertical">
                                             <div className="tile">
                                                 <div class="tile is-parent is-full-mobile">
-                                                    <article class="tile is-child notification is-danger is-bold box">
-                                                        <p class="title">Find Something Amazing</p>
+                                                    <article id="orangebox" class="tile is-child box">
+                                                        <p class="newuser title">Find Something Amazing</p>
                                                         <div class="content">
                                                             <p>Head over to our "Items for Sale" section to see what artisans in your area have to offer</p>
                                                             <Link to={`/detail`}>
@@ -162,8 +162,8 @@ export default function UserPage() {
                                                     </article>
                                                 </div>
                                                 <div class="tile is-parent">
-                                                    <article class="tile is-child notification is-primary is-bold box">
-                                                        <p class="title">List Something Amazing</p>
+                                                    <article id="greenbox" class="tile is-child notification is-bold box">
+                                                        <p class="newuser title">List Something Amazing</p>
                                                         <div class="content">
                                                             <p>Artisan? Maker? Baker? Creator? List something to share with the folks in you neighborhood</p>
                                                             <Link to={`/add-product`}>
@@ -174,8 +174,8 @@ export default function UserPage() {
                                                 </div>
                                             </div>
                                             <div class="tile is-parent">
-                                                <article class="tile is-child notification is-success box">
-                                                    <p class="title">Explore your Neighborhood</p>
+                                                <article id="purplebox" class="tile is-child notification  box">
+                                                    <p class="newuser title">Explore your Neighborhood</p>
                                                     <div class="content">
                                                         <p>Head over to the map to find markets and artisans near you</p>
                                                         <Link to={`/map`}>
