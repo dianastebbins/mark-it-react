@@ -7,15 +7,15 @@ const BASE_URL = "https://mark-it.herokuapp.com"
 const API = {
     // api call by zipcode form US Dept of agriculture
     search: function (zip) {
-        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip);
+        return axios.get("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip);
     },
     // api call with latitude and longitude
     searchLatLong: function(lat, long) {
-        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + long)
+        return axios.get("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + long)
     },
     // api call for each id
     searchMarket: function (id) {
-        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id);
+        return axios.get("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id);
     },
     // part of login
     login: function (userData) {
