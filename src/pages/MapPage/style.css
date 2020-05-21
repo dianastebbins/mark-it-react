@@ -7,6 +7,7 @@
   height: 80vh;
   width: 80vw;
   background-color: lightblue;
+  /* background-color: #e76f51; */
 }
 
 .sidebarStyle {
@@ -69,5 +70,9 @@
 
 #searchform {
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(32, 20, 20, 0.1);
+}
 
+.coronavirusalert{
+  color:red;
+  align-items: center;
 }
