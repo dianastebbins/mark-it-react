@@ -10,9 +10,6 @@ import displayMap from "./displayMap"
 import SearchForm from "../../components/SearchForm"
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhlLW1lZGl1bS1wbGFjZSIsImEiOiJja2EwMHcxOWwwa2ZmM2hvMG9nNHhoZXdrIn0.UBg5PKfAeHOcP_xn2SEkTw';
 
-
-// import SomeComponent from '../../components/SomeComponent';
-
 class MapPage extends React.Component {
     state = {
         lng: null,
@@ -25,32 +22,13 @@ class MapPage extends React.Component {
     }
 
 
-
-    // USER MARKER PULL FROM GLOBAL LOCATION VARIABLE
-
-
-
-
-    componentDidMount(userLat, userLong) {
+    componentDidMount() {
         navigator.geolocation.getCurrentPosition(position => {
             this.setState({
                 lng: position.coords.longitude,
                 lat: position.coords.latitude
             })
-
-            const map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v9',
-                center: [this.state.lng, this.state.lat],  // [-96, 37.8]
-                zoom: 9
-            });
             this.getUserLocMarks(position.coords.latitude, position.coords.longitude);
-            const marker = new mapboxgl.Marker()
-                .setLngLat([this.state.lng, this.state.lat])
-                .addTo(map);
-
-
-
         })
     };
 
@@ -82,16 +60,10 @@ class MapPage extends React.Component {
 
                 })
                 setTimeout(() => {
-                    displayMap(MarketArr, this.state.lng, this.state.lat)
+                    displayMap(MarketArr)
 
                 }, 1000);
-                console.log(MarketArr)
-                console.log(this.state.marketname)
-
-
             })
-
-
     }
 
 
@@ -188,11 +160,6 @@ class MapPage extends React.Component {
                     counter++;
                 });
 
-
-
-
-
-
             }).then(() => {
                 //FIXME: TIMEOUT CURRENTLY SET TO GIVE ARRAY TIME TO POPULATE
                 //FIXME: KINDA HACKY RIGHT NOW, NEED TO FIX LATER
@@ -200,21 +167,11 @@ class MapPage extends React.Component {
                 const userLong = this.state.lng
                 setTimeout(function () {
 
-                    displayMap(MarketArr, userLong, userLat);
+                    displayMap(MarketArr);
                 }, 1000);
             });
 
     }
-
-    // searchZips = (input) => {
-
-    //     API.search(input)
-    //         .then((res) => console.log(res)
-    //             //   this.setState({ results: res.data.results }
-
-    //         )
-    //         .catch((err) => console.log(err));
-    // };
 
     handleMarketSaveClick = (marketDetails) => {
 
@@ -275,8 +232,6 @@ class MapPage extends React.Component {
             </div>
         )
     }
-
-
 }
 export default MapPage
 
