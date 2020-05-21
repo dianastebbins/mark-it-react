@@ -19,6 +19,7 @@ const API = {
     },
     // part of login
     login: function (userData) {
+        console.log("BASE_URL at login attempt: " + BASE_URL);
         return axios.post(`${BASE_URL}/login`, userData, { withCredentials: true })
     },
     // part of logout
