@@ -9,20 +9,16 @@ import { toast } from "bulma-toast";
 
 class SignUpPage extends React.Component {
     state = {
-        username: '',
-        password: '',
-        first_name: "",
-        last_name: "",
-        email: "",
-        vendor_name: "",
-        vendor_email: "",
-        vendor_phone: "",
-        bus_lic: "",
         username: null,
-        email: null,
-        password: null,
+        password:null,
         first_name: null,
         last_name: null,
+        email: null,
+        vendor_name: null,
+        vendor_email: null,
+        vendor_phone: null,
+        bus_lic: null,
+ 
         errors: {
             username: '',
             email: '',
@@ -53,10 +49,10 @@ class SignUpPage extends React.Component {
                 errors.password = value.length < 8 ? 'Password must be at least 8 characters' : '';
                 break;
             case 'first_name':
-                errors.first_name = value.length < 1 ? 'Please enter a first name' : '';
+                errors.first_name = value.length <= 1 ? 'Please enter a first name' : '';
                 break;
             case 'last_name':
-                errors.last_name = value.length < 1 ? 'Please enter a last name' : '';
+                errors.last_name = value.length <= 1 ? 'Please enter a last name' : '';
                 break;
             default:
                 break;
@@ -102,15 +98,15 @@ class SignUpPage extends React.Component {
                 } else {
                     // console.log(this.state)
                     this.setState({
-                        username: '',
-                        password: '',
-                        first_name: "",
-                        last_name: "",
-                        email: "",
-                        vendor_name: "",
-                        vendor_email: "",
-                        vendor_phone: "",
-                        bus_lic: ""
+                        username: null,
+                        password: null,
+                        first_name: null,
+                        last_name: null,
+                        email: null,
+                        vendor_name: null,
+                        vendor_email: null,
+                        vendor_phone: null,
+                        bus_lic: null
                     })
                 }
             })
@@ -147,14 +143,14 @@ class SignUpPage extends React.Component {
                                         <label className="label">User Name:<span className="form-error">*</span></label>
                                         <div className="control">
 
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="username" value={this.state.name} placeholder="username" />
+                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="username" placeholder="username" />
                                             {errors.username.length > 0 && <span className='form-error'>{errors.username}</span>}
                                         </div>
                                     </div>
                                     <div className="field">
                                         <label className="label">Password:<span className="form-error">*</span></label>
                                         <div className="control">
-                                            <input type="password" className="input" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
+                                            <input type="password is-hovered" className="input" onChange={this.handleInputChange} name="password" placeholder="password" />
                                             {errors.password.length > 0 && <span className='form-error'>{errors.password}</span>}
 
                                         </div>
@@ -162,7 +158,7 @@ class SignUpPage extends React.Component {
                                     <div className="field">
                                         <label className="label">First Name:<span className="form-error">*</span></label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="first_name" value={this.state.first_name} placeholder="first_name" />
+                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="first_name" placeholder="first_name" />
                                             {errors.first_name.length > 0 && <span className='form-error'>{errors.first_name}</span>}
 
                                         </div>
@@ -170,7 +166,7 @@ class SignUpPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Last Name:<span className="form-error">*</span></label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="last_name" value={this.state.last_name} placeholder="last_name" />
+                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="last_name" placeholder="last_name" />
                                             {errors.last_name.length > 0 && <span className='form-error'>{errors.last_name}</span>}
 
                                         </div>
@@ -178,7 +174,7 @@ class SignUpPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Email:<span className="form-error">*</span></label>
                                         <div className="control">
-                                            <input refs="email" className="input" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                                            <input refs="email is-hovered" className="input" onChange={this.handleInputChange} name="email" placeholder="email" />
                                             {errors.email.length > 0 && <span className='form-error'>{errors.email}</span>}
 
                                         </div>
@@ -186,25 +182,25 @@ class SignUpPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Vendor Name:</label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="vendor_name" value={this.state.vendor_name} placeholder="vendor_name" />
+                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="vendor_name" placeholder="vendor_name" />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <label className="label">Vendor Email:</label>
                                         <div className="control">
-                                            <input type="email" className="input" onChange={this.handleInputChange} name="vendor_email" value={this.state.vendor_email} placeholder="vendor_email" />
+                                            <input type="email is-hovered " className="input" onChange={this.handleInputChange} name="vendor_email" placeholder="vendor_email" />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <label className="label">Vendor Phone:</label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="vendor_phone" value={this.state.vendor_phone} placeholder="vendor_phone" />
+                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="vendor_phone" placeholder="vendor_phone" />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <label className="label">Business License #</label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="bus_lic" value={this.state.bus_lic} placeholder="business license" />
+                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="bus_lic" placeholder="business license" />
                                         </div>
                                     </div>
                                     <div className="field">
