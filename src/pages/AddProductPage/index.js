@@ -244,7 +244,7 @@ export default function AddProductPage() {
                                 </div>
 
                                 {/* TODO: units input should be added later */}
-                                <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+                                <button className="button is-link" onClick={handleFormSubmit}>Add Product!</button>
 
                             </div>
 

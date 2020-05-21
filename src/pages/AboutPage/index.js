@@ -16,14 +16,14 @@ export default function AboutPage() {
       </section>
       <div className="section">
         
-          <div className="columns is-12">
-            <div className=" container">
+          <div className="columns is-12 is-multiline">
+            <div className="container">
               {/* <h1 className="title has-text-centered"> Meet the Team</h1> */}
               {/* start of card for our photos */}
               {/* card 1 */}
               {/* first column */}
               <div className="columns">
-                <div className="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+                <div className="column is-one-quarter-desktop is-full-mobile">
                   <div className="card about">
                     <div className="card-image">
                       <figure className="image is-1by1">
@@ -41,7 +41,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 {/* second column */}
-                <div className="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+                <div className="column is-one-quarter-desktop is-full-mobile">
                   <div className="card about">
                     <div className="card-image">
                       <figure className="image is-3by3">
@@ -59,7 +59,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 {/* third column */}
-                <div className="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+                <div className="column is-one-quarter-desktop is-full-mobile">
                   <div className="card about">
                     <div className="card-image">
                       <figure className="image is-3by3">
@@ -77,7 +77,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 {/* forth column */}
-                <div className="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+                <div className="column is-one-quarter-desktop is-full-mobile">
                   <div className="card about">
                     <div className="card-image">
                       <figure className="image is-3by3">

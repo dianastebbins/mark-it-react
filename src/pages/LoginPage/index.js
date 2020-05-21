@@ -86,7 +86,7 @@ export default function LoginPage(props) {
               </div>
               <div className="field">
                 <div className="control">
-                  <button className="button is-success" onClick={handleFormSubmit}>
+                  <button className="button is-info" onClick={handleFormSubmit}>
                     Login
                     </button>
                 </div>
