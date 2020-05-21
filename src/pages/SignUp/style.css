@@ -1,0 +1,15 @@
+
+
+.box{
+    /* width: 50%; */
+    margin: 0 auto 200px auto;
+}
+
+
+
+.SignUpPage{
+    background-color: lightslategrey;
+    box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
+
+    height: 100%
+}

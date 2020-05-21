@@ -1,9 +1,9 @@
 .container {
     /* background: white; */
-    text-align: center;
+    /* text-align: center; */
     /* color: white; */
-    margin: 0 auto;
-    border-radius: 10px;
+    /* margin: 0 auto; */
+    /* border-radius: 10px; */
     /* width: 50%; */
 
 }
@@ -30,4 +30,8 @@
 
 .uploadicon{
     align-content: center;
+}
+
+.hero {
+    box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.31)
 }

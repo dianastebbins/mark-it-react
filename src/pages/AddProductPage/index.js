@@ -43,7 +43,7 @@ export default function AddProductPage() {
     //         history.push('/')
     //     })
     // }
-   
+
 
     useEffect(() => {
         API.readSessions().then(res => {
@@ -58,12 +58,12 @@ export default function AddProductPage() {
                     lat: position.coords.latitude
                 })
             })
-                
-            
-          })
-    //  the component runs on page load   
 
-    },[])
+
+        })
+        //  the component runs on page load   
+
+    }, [])
 
 
 
@@ -110,8 +110,8 @@ export default function AddProductPage() {
 
         API.addProduct(productState).then(newProduct => {
             console.log(productState)
-            
-            if(newProduct.data.name) {
+
+            if (newProduct.data.name) {
                 // let user know product was created
                 toast({
                     message: newProduct.data.name + " added to products",
@@ -120,7 +120,7 @@ export default function AddProductPage() {
                     duration: 4000,
                     dismissible: true
                 });
-                
+
                 setProductState({
                     name: '',
                     description: '',
@@ -145,7 +145,7 @@ export default function AddProductPage() {
     }
 
 
-// Function to upload image on add product
+    // Function to upload image on add product
 
     const uploadFile = async e => {
         const files = e.target.files;
@@ -169,98 +169,94 @@ export default function AddProductPage() {
     }
 
 
-   
-      return (
-            <div className="AddProductPage">
-                <section class="hero is-success is-bold">
+
+    return (
+        <div className="AddProductPage">
+            <section id="prodHero" class="hero is-info is-bold">
                 <div class="hero-body">
-                    <div class="container">
+                    <div class="addProd container">
                         <h1 class="title">
                             Add a Product
                         </h1>
-                     
+
                     </div>
                 </div>
-                </section>
-                
-                <div className="container addProduct">
+            </section>
 
-                    <div className="section mainSection">
-                        <div className="box">
-                            <form>
-                                <div className="field">
-                                    <label className="label">Product Name</label>
-                                    <div className="control">
-                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
-                                    </div>
-                                </div>
+            <div className="container addProduct">
 
-                                <div className="field">
-                                    <label className="label">Product Description</label>
-                                    <div className="control">
-                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder="Description" />
-                                    </div>
-                                </div>
-
-                                <div className="field">
-                                    <label className="label">Price</label>
-                                    <div className="control">
-                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
-                                    </div>
-                                </div>
-
-                                <div className="field">
-                                    <label className="label">Details</label>
-                                    <div className="control">
-                                        <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
-                                    </div>
-                                </div>
-
-
-                                    <div className="field">
-                                        <label className="label">Photo Placeholder</label>
-                                        <div className="control">
-                                        {/* calling the upload file function for uploading image on card */}
-                                            <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
-
-
-
-                                        <i className="fas fa-upload uploadicon"></i>
-                                    </div>
-                                {/* </div> */}
-                                {/* {productState.image ? (
-                                    <div>
-                                        <img src={productState.image}></img>
-                                    </div> */}
-
-                            {productState.image ? (
-                                <div>
-                                    <img alt="product" src={productState.image}></img>
-                                </div>
-                            ) : ""}
+                <div className="section mainSection">
+                    <div className="box">
+                        <form>
                             <div className="field">
+                                <label className="label">Product Name</label>
                                 <div className="control">
-                                    <label className="checkbox">
-                                        <input required type="checkbox" />
-                                            I agree to the <a href="https://gist.github.com/zahraaliaghazadeh/7f5bbde80804ca1ae0cb6f9ed1fbc540">terms and conditions</a>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
+                                </div>
+                            </div>
 
-                             {/* TODO: units input should be added later */}
-                                    <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+                            <div className="field">
+                                <label className="label">Product Description</label>
+                                <div className="control">
+                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder="Description" />
+                                </div>
+                            </div>
 
+                            <div className="field">
+                                <label className="label">Price</label>
+                                <div className="control">
+                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder="Price" />
+                                </div>
+                            </div>
+
+                            <div className="field">
+                                <label className="label">Details</label>
+                                <div className="control">
+                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder="details" />
+                                </div>
+                            </div>
+
+
+                            <div className="field">
+                                <label className="label">Photo Placeholder</label>
+                                <div className="control">
+                                    {/* calling the upload file function for uploading image on card */}
+                                    <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
+
+
+
+                                    <i className="fas fa-upload uploadicon"></i>
                                 </div>
 
-                               
+
+                                {productState.image ? (
+                                    <div>
+                                        <img alt="product" src={productState.image}></img>
+                                    </div>
+                                ) : ""}
+                                <div className="field">
+                                    <div className="control">
+                                        <label className="checkbox">
+                                            <input required type="checkbox" />
+                                            I agree to the <a href="https://gist.github.com/zahraaliaghazadeh/7f5bbde80804ca1ae0cb6f9ed1fbc540">terms and conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                {/* TODO: units input should be added later */}
+                                <button className="button is-success is-light" onClick={handleFormSubmit}>Add Product!</button>
+
+                            </div>
+
+
                             {/* </div> */}
                         </form>
                     </div>
                 </div>
 
-             </div>
+            </div>
 
-         </div >
+        </div >
 
     )
 }
