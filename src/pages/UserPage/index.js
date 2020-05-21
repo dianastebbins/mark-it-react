@@ -105,7 +105,7 @@ export default function UserPage() {
         for (let i = 0; i < schedState.length; i++) {
             const schedule = schedState[i];
             const scheduleDate = new Date(schedule.open_time)
-            if (calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()) {
+            if (calendarDate.getYear() === scheduleDate.getYear() && calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()) {
                 return schedState[i].market.market_name;
             }
         }

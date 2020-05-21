@@ -239,7 +239,7 @@ class MapPage extends React.Component {
                         <div className="level">
                             <div className="level-item">
 
-                                <p className="coronavirusalert title is-4">Alert: The searh results may be outdated and events might have been canceled due to the Corona virus pandemic.</p>
+                                <p className="coronavirusalert title is-4">Alert: The search results may be outdated and events might have been canceled due to the Corona virus pandemic.</p>
                             </div>
                         </div>
                     </div>
