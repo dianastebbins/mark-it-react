@@ -77,6 +77,10 @@ Logo from [Tailorbrands](https://www.tailorbrands.com/)
 
 deploy with [heroku](https://dashboard.heroku.com/)
 
+animation [animista](https://animista.net/)
+
+video edits [imovie](https://www.apple.com/imovie/)
+
 #### npm packages used:
 
  * [axios](https://www.npmjs.com/package/axios)
@@ -102,6 +106,8 @@ deploy with [heroku](https://dashboard.heroku.com/)
 
 #### Other Technologies used:
 * For photo upload [cloudinary](https://cloudinary.com/)
+* For data manipulation/array methods [Lodash](https://lodash.com/)
+
 
 ## Features
 List of features:
@@ -113,7 +119,6 @@ List of features:
 * Feature 6: Showing market events on calendar.
 * Feature 7: Toast alerts on the page.
 * Feature 8: form validation.
-<!-- * Feature 5: Ability to send email to the users that follow a vender. -->
 
 
 
