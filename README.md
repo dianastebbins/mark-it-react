@@ -18,14 +18,25 @@
 
 ## General Info
 
-This application gives user the ability to find farmers market events when searching by zip code, to post products for sell, to favorite vendors and markets. Your posted item will be pinned to the map and will be shown to the users that have marked you.
+> This application gives user the ability to find farmers market events when searching by zip code, to post products for sell, to favorite vendors and markets. Your posted item will be pinned to the map and will be shown to the users that have marked you.
 
 
 ## Screenshots
 
 mobile screen size responsive
 
-<img src="./public/assets/images/.png" width="250px">  <img src="./public/assets/images/.png" width="250px"> 
+<img src="./public/assets/images/screenshot7.png" width="250px"> <img src="./public/assets/images/screenshot8.png" width="250px" height="370px"> 
+
+<hr>
+Once landing at the splash page , a video showing with introduction about the page
+<img src="./public/assets/images/screenshot6.png">
+
+On Find Market tab, if you are not logged in , you can find farmers market events searched by zip code, If you log in , you can post an item and it will be pinned to the map.
+<img src="./public/assets/images/screenshot9.png">
+
+The user profile layout with shortcuts to the map, add product and all items for sale.
+<img src="./public/assets/images/screenshot5.png">
+
 
 
 
@@ -47,7 +58,7 @@ In order to install, first download the files. Then you would open terminal and 
 
 To use this application, you can [click here](https://awesome-mark-it.herokuapp.com/).
 
-Upon clicking on the link above, you will create a user and password in the app, ...
+Upon clicking on the link above, you can create a user and password in the app and from there you can be directed to posting items for sell or searching markets by zipcode.
 
 ![gif1](./app/public/assets/images/gif1.gif)
 
@@ -62,7 +73,7 @@ Fonts from [Google Fonts](https://developers.google.com/fonts)
 
 Icons from [flat icon](https://www.flaticon.com/)
 
-Logo from [tailorbrands](https://www.tailorbrands.com/)
+Logo from [Tailorbrands](https://www.tailorbrands.com/)
 
 deploy with [heroku](https://dashboard.heroku.com/)
 
@@ -84,23 +95,38 @@ deploy with [heroku](https://dashboard.heroku.com/)
  * [mysql2](https://www.npmjs.com/package/mysql2)
  * [nodemailer](https://www.npmjs.com/package/nodemailer)
  * [session](https://www.npmjs.com/package/node-session)
+ * [react-moment](https://www.npmjs.com/package/react-moment)
+ * [moment](https://www.npmjs.com/package/moment)
+ * [react-calendar](https://www.npmjs.com/package/react-calendar)
+ * [bulma-toast](https://www.npmjs.com/package/bulma-toast)
 
-
+#### Other Technologies used:
+* For photo upload [cloudinary](https://cloudinary.com/)
 
 ## Features
 List of features:
 * Feature 1: Easy to navigate design.
 * Feature 2: Ability to create, update, delete product postings.
-* Feature 3: Map to show where on the map the item is selling.
+* Feature 3: Map to show where on the map an item is selling.
 * Feature 4: Ability to create a user and password.
-* Feature 5: Ability to send email to the users that follow a vender.
+* Feature 5: Ability to post an item for sale which will be pinned to map.
+* Feature 6: Showing market events on calendar.
+* Feature 7: Toast alerts on the page.
+* Feature 8: form validation.
+<!-- * Feature 5: Ability to send email to the users that follow a vender. -->
+
 
 
 To-do list:
-* a
-* b 
-* c
-* d
+* a. Ability to send email to the users that follow a vender.
+* b. pop up functionality, real time notification for vendors
+* c. Chat functionality within the app
+* d. To send a payment verification message to the buyer
+* e. Having a budget graph
+* f. allowing user to rate a vender or write a review
+* g. add to cart
+* h. ability to add review on items from a vendor
+
 
 
 
@@ -174,75 +200,3 @@ Yalda Ali Aghazadeh : Project Manager / Front End Developer/ Designer
 
 
 
-
-
-<!-- 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
