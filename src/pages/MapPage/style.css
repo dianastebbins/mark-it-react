@@ -47,7 +47,10 @@
 
 .mapResultCard li {
   border: 1px solid black;
-  background: silver;
+  background: gainsboro;
+  padding: 8px 8px 8px 8px;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);
+
 }
 
 .marker {
@@ -63,3 +66,8 @@
   background: lightslategray;
     box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
 } */
+
+#searchform {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(32, 20, 20, 0.1);
+
+}

@@ -201,8 +201,14 @@ export default function UserPage() {
                                     <div className="tile is-vertical is-12">
                                         <div className="tile">
                                             <div className="tile is-parent is-vertical has-text-centered">
-                                                {userState.products[0] === undefined ? '' : (<article className="tile is-12 is-child box">
-                                                    <p className="title">My Products</p>
+                                                {userState.products[0] === undefined ? '' : 
+                                                (<article className="tile is-12 is-child card">
+                                                    <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Products</p>
+
+                                                    </header>
+                                                    <div className="card-content">
+                                                    {/* <div className="card-content"> */}
                                                     <ul className="list">
                                                         {/* see if you can throw a value on the text content and send the data to the api
                                         so that you don't have to use a form */}
@@ -216,9 +222,15 @@ export default function UserPage() {
                                                             </li>
                                                         ))}
                                                     </ul>
+                                                    </div>
+                                                    {/* </div> */}
                                                 </article>)}
-                                                {userState.markets[0] === undefined ? '' : (<article className="tile is-12 is-child box">
-                                                    <p className="title" >My Markets</p>
+                                                {userState.markets[0] === undefined ? '' : (<article className="tile is-12 is-child card">
+                                                <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Markets</p>
+
+                                                    </header>
+                                                    <div className="card-content">
                                                     <ul className="list">
 
                                                         {userState.markets.map((market) => (
@@ -231,11 +243,16 @@ export default function UserPage() {
                                                             </li>
                                                         ))}
                                                     </ul>
+                                                    </div>
                                                 </article>)}
                                             </div>
                                             {userState.favorites[0] === undefined ? '' : (<div className="tile is-parent has-text-centered">
-                                                <article className="tile is-child box">
-                                                    <p className="title">My Favorite Sellers</p>
+                                                <article className="tile is-child card">
+                                                <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Favorite Sellers</p>
+
+                                                    </header>
+                                                    <div className="card-content">
                                                     <ul className="list">
 
                                                         {userState.favorites.map((favorite) => (
@@ -249,12 +266,17 @@ export default function UserPage() {
                                                             </li>
                                                         ))}
                                                     </ul>
+                                                    </div>
                                                 </article>
                                             </div>)}
                                         </div>
                                         <div className="tile is-parent has-text-centered">
-                                            {userState.schedules[0] === undefined ? '' : (<article className="tile is-primary is-child box">
-                                                <p className="title">My schedules</p>
+                                            {userState.schedules[0] === undefined ? '' : (<article className="tile is-primary is-child card">
+                                            <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Schedules</p>
+
+                                                    </header>
+                                                    <div className="card-content">
                                                 <ul className="list">
 
                                                     {schedState.map((schedule) => (
@@ -267,6 +289,7 @@ export default function UserPage() {
                                                         </li>
                                                     ))}
                                                 </ul>
+                                                </div>
                                                 {/* original calendar
                                         {userState.schedules[0] !== undefined ? (<Calendar
                                             value={[newArr[0], newArr[newArr.length - 1]]} />) : ''} */}
