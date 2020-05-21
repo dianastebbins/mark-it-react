@@ -1,8 +1,8 @@
 // importing axios 
 import axios from "axios";
-const BASE_URL = "http://localhost:8080"
+// const BASE_URL = "http://localhost:8080"
 // const BASE_URL = "https://mark-it.herokuapp.com"
-// const BASE_URL = process.env.BASE_URL || "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8080";
 
 const API = {
     // api call by zipcode form US Dept of agriculture
@@ -19,6 +19,7 @@ const API = {
     },
     // part of login
     login: function (userData) {
+        console.log("BASE_URL at login attempt: " + BASE_URL);
         return axios.post(`${BASE_URL}/login`, userData, { withCredentials: true })
     },
     // part of logout
