@@ -17,3 +17,7 @@
 .brandlogo{
     margin: 8px 5px 5px 15px;
 }
+
+.button.is-rounded {
+    font-family: inherit;
+}

@@ -131,7 +131,7 @@ export default function UserPage() {
                             </div>
                         </div>
                     </div>
-                    <div id="bottomSectionUser" className="section">
+                    <div id="topSectionUser" className="section">
 
                         {/* <div className="column is-12 is-offset-2"> */}
                         <div className="container">
@@ -141,7 +141,7 @@ export default function UserPage() {
                                     <div className="tile">
                                         <div className="tile is-parent">
                                             <article class="tile is-child notification is-dark box">
-                                                <p class="title">Welcome To Mark-It!</p>
+                                                <p class="newuser title">Welcome To Mark-It!</p>
                                                 {/* <p class="subtitle">Subtitle</p> */}
                                                 <div class="content">
                                                     <p>To get started, we suggest you check out one of these options:</p>
@@ -151,8 +151,8 @@ export default function UserPage() {
                                         <div className="tile is-8 is-vertical">
                                             <div className="tile">
                                                 <div class="tile is-parent is-full-mobile">
-                                                    <article class="tile is-child notification is-danger is-bold box">
-                                                        <p class="title">Find Something Amazing</p>
+                                                    <article id="orangebox" class="tile is-child box">
+                                                        <p class="newuser title">Find Something Amazing</p>
                                                         <div class="content">
                                                             <p>Head over to our "Items for Sale" section to see what artisans in your area have to offer</p>
                                                             <Link to={`/detail`}>
@@ -162,8 +162,8 @@ export default function UserPage() {
                                                     </article>
                                                 </div>
                                                 <div class="tile is-parent">
-                                                    <article class="tile is-child notification is-primary is-bold box">
-                                                        <p class="title">List Something Amazing</p>
+                                                    <article id="greenbox" class="tile is-child notification is-bold box">
+                                                        <p class="newuser title">List Something Amazing</p>
                                                         <div class="content">
                                                             <p>Artisan? Maker? Baker? Creator? List something to share with the folks in you neighborhood</p>
                                                             <Link to={`/add-product`}>
@@ -174,8 +174,8 @@ export default function UserPage() {
                                                 </div>
                                             </div>
                                             <div class="tile is-parent">
-                                                <article class="tile is-child notification is-success box">
-                                                    <p class="title">Explore your Neighborhood</p>
+                                                <article id="purplebox" class="tile is-child notification  box">
+                                                    <p class="newuser title">Explore your Neighborhood</p>
                                                     <div class="content">
                                                         <p>Head over to the map to find markets and artisans near you</p>
                                                         <Link to={`/map`}>
@@ -193,7 +193,7 @@ export default function UserPage() {
                         </div>
                     </div>
             ) :
-                (<div className="section">
+                (<div id="bottomSectionUser" className="section">
                         <div className="columns">
 
                             <div className="column is-10 is-offset-1">
@@ -201,47 +201,64 @@ export default function UserPage() {
                                     <div className="tile is-vertical is-12">
                                         <div className="tile">
                                             <div className="tile is-parent is-vertical has-text-centered">
-                                                {userState.products[0] === undefined ? '' : (<article className="tile is-12 is-child box">
-                                                    <p className="title is-5">My Products</p>
+                                                {userState.products[0] === undefined ? '' : 
+                                                (<article className="tile is-12 is-child card">
+                                                    <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Products</p>
+
+                                                    </header>
+                                                    <div className="card-content">
+                                                    {/* <div className="card-content"> */}
                                                     <ul className="list">
                                                         {/* see if you can throw a value on the text content and send the data to the api
                                         so that you don't have to use a form */}
                                                         {userState.products.map((product) => (
                                                             <li key={product.id} className="list-item">
                                                                 {/* eslint-disable-next-line */}
-                                                                <a name={product.id} data="product" onClick={handleDeleteBtnProd} className="delete">&nbsp</a>
+                                                                <a name={product.id} data="product" onClick={handleDeleteBtnProd} className="delete is-pulled-left">&nbsp</a>
                                                                 {product.name}
-                                                                <button name={product.id} onClick={userProdClick} className="button is-small is-info is-pulled-right">Info</button>
+                                                                <button name={product.id} onClick={userProdClick} className="button is-small is-info is-pulled-right">Edit</button>
 
                                                             </li>
                                                         ))}
                                                     </ul>
+                                                    </div>
+                                                    {/* </div> */}
                                                 </article>)}
-                                                {userState.markets[0] === undefined ? '' : (<article className="tile is-12 is-child box">
-                                                    <p className="title is-5" >My Markets</p>
+                                                {userState.markets[0] === undefined ? '' : (<article className="tile is-12 is-child card">
+                                                <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Markets</p>
+
+                                                    </header>
+                                                    <div className="card-content">
                                                     <ul className="list">
 
                                                         {userState.markets.map((market) => (
                                                             <li key={market.id} className="list-item">
                                                                 {/* eslint-disable-next-line */}
-                                                                <a name={market.id} data="market" onClick={handleDeleteBtnMarket} className="delete">&nbsp</a>
+                                                                <a name={market.id} data="market" onClick={handleDeleteBtnMarket} className="delete is-pulled-left">&nbsp</a>
                                                                 {market.market_name}
-                                                                <button className="button is-small is-info is-pulled-right">Info</button>
+                                                                {/* <button className="button is-small is-info is-pulled-right">Info</button> */}
 
                                                             </li>
                                                         ))}
                                                     </ul>
+                                                    </div>
                                                 </article>)}
                                             </div>
-                                            {userState.favorites[0] === undefined ? '' : (<div className="tile is-parent">
-                                                <article className="tile is-child box">
-                                                    <p className="title is-5">My Favorite Sellers</p>
+                                            {userState.favorites[0] === undefined ? '' : (<div className="tile is-parent has-text-centered">
+                                                <article className="tile is-child card">
+                                                <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Favorite Sellers</p>
+
+                                                    </header>
+                                                    <div className="card-content">
                                                     <ul className="list">
 
                                                         {userState.favorites.map((favorite) => (
                                                             <li key={favorite.id} className="list-item">
                                                                 {/* eslint-disable-next-line */}
-                                                                <a name={favorite.id} data="favorite" onClick={handleDeleteBtnFav} className="delete">&nbsp</a>
+                                                                <a name={favorite.id} data="favorite" onClick={handleDeleteBtnFav} className="delete is-pulled-left">&nbsp</a>
                                                                 {favorite.first_name} {favorite.last_name}
                                                                 <Link to={`/favvendor/${favorite.id}`}>
                                                                     <button className="button is-small is-info is-pulled-right">Info</button>
@@ -249,33 +266,41 @@ export default function UserPage() {
                                                             </li>
                                                         ))}
                                                     </ul>
+                                                    </div>
                                                 </article>
                                             </div>)}
                                         </div>
-                                        <div className="tile is-parent">
-                                            {userState.schedules[0] === undefined ? '' : (<article className="tile is-primary is-child box">
-                                                <p className="title is-5">My schedules</p>
+                                        <div className="tile is-parent has-text-centered">
+                                            {userState.schedules[0] === undefined ? '' : (<article className="tile is-primary is-child card">
+                                            <header className="card-header">
+                                                    <p className="card-header-title title userTitle">My Schedules</p>
+
+                                                    </header>
+                                                    <div className="card-content">
                                                 <ul className="list">
 
                                                     {schedState.map((schedule) => (
                                                         <li key={schedule.id} className="list-item">
                                                             {/* eslint-disable-next-line */}
-                                                            <a name={schedule.id} data="schedule" onClick={handleDeleteBtnSch} className="delete">&nbsp</a>
+                                                            <a name={schedule.id} data="schedule" onClick={handleDeleteBtnSch} className="delete is-pulled-left">&nbsp</a>
                                                             {"At " + schedule.market.market_name + " on "}
                                                             <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
-                                                            <button className="button is-small is-info is-pulled-right">Info</button>
+                                                            {/* <button className="button is-small is-info is-pulled-right">Info</button> */}
                                                         </li>
                                                     ))}
                                                 </ul>
+                                                </div>
                                                 {/* original calendar
                                         {userState.schedules[0] !== undefined ? (<Calendar
                                             value={[newArr[0], newArr[newArr.length - 1]]} />) : ''} */}
-
+                                                <div className="container">
+                                                <div id="calendarBox" className="box">
                                                 {userState.schedules[0] !== undefined ? (<TileContent
                                                     value={newArr[0]} // s/b "today"
                                                     tileContent={({ date, view }) => view === 'month' ? <p>{isDateOnSchedule(date)}</p> : null} />) : ''}
                                                 {/* tileContent={ ({ date, view }) => view === 'month' && isDateOnSchedule(date)  ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''} */}
-
+                                                </div>
+                                                </div>
                                             </article>)}
                                         </div>
                                     </div>
@@ -286,7 +311,7 @@ export default function UserPage() {
 
                     </div>)}
 
-                    <div className="section">
+                    <div id="productEdit" className="section">
 
                         {singleProdSt ? (<ProductInfo refreshPage={refreshPage} product={singleProdSt} />) : ''}
 
