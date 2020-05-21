@@ -114,7 +114,7 @@ class SignUpPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Email:</label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                                            <input type="email" className="input" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -126,7 +126,7 @@ class SignUpPage extends React.Component {
                                     <div className="field">
                                         <label className="label">Vendor Email:</label>
                                         <div className="control">
-                                            <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="vendor_email" value={this.state.vendor_email} placeholder="vendor_email" />
+                                            <input type="email" className="input" onChange={this.handleInputChange} name="vendor_email" value={this.state.vendor_email} placeholder="vendor_email" />
                                         </div>
                                     </div>
                                     <div className="field">
