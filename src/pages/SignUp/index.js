@@ -102,15 +102,15 @@ class SignUpPage extends React.Component {
                 } else {
                     // console.log(this.state)
                     this.setState({
-                        username: '',
-                        password: '',
-                        first_name: "",
-                        last_name: "",
-                        email: "",
-                        vendor_name: "",
-                        vendor_email: "",
-                        vendor_phone: "",
-                        bus_lic: ""
+                        username: null,
+                        password: null,
+                        first_name: null,
+                        last_name: null,
+                        email: null,
+                        vendor_name: null,
+                        vendor_email: null,
+                        vendor_phone: null,
+                        bus_lic: null
                     })
                 }
             })
