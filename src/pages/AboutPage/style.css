@@ -1,3 +1,8 @@
+@media screen and (max-width: 768px) {
+    .card.about {
+        padding: 40px;
+    }
+}
 .AboutPage {
    /* background-color: rgb(183, 93, 105); */
     /* margin: 0 auto; */
@@ -22,6 +27,11 @@ p.subtitle.about {
 }
 
 .aboutImg {
-    padding: 30px;
+    padding: 40px;
     
 }
+
+.card.about {
+    background: linear-gradient(rgba(0, 0, 0, 0.63), lightslategrey)
+}
+

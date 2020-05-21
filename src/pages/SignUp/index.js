@@ -79,7 +79,7 @@ class SignUpPage extends React.Component {
                 </section>
                 <div className="section">
                     <div className="container">
-                        <div className="box">
+                        <div className="box formbox">
 
 
 

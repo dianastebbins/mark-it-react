@@ -6,9 +6,9 @@ function SearchForm(props) {
     <div className="section">
       <div className="container">
         <div className="columns">
-          <div className="column is-12">
-            <div className="box">
-            <div id="searchform" className="field">
+          <div className="column is-8 is-offset-2">
+            <div id="searchform" className="box">
+            <div  className="field">
               <form>
                 <div className="field">
                   <label className="label" htmlFor="search">Find Local Markets:</label>

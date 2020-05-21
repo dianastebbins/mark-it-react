@@ -5,3 +5,15 @@
 .box {
     background: gainsboro;
 }
+
+.logobox {
+    /* background:white; */
+    width: 50%;
+    margin: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+
+}
+
+#bottomSectionUser {
+    padding-bottom: 200px;
+}
