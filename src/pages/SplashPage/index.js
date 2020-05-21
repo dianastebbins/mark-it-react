@@ -20,10 +20,10 @@ export default function SplashPage() {
 
                 <div className="splashpagetext">
 
+                    <img src={logo} alt="logo" className=" title fade-in" />
                     <div className="overlay">
 
                     {/*TODO need to adjust the logo on the screen above the text */}
-                    {/* <img src={logo} alt="logo" className=" title fade-in" /> */}
 
 
                         <p className="SplashSubtitle">

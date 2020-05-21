@@ -175,7 +175,7 @@ export default function AddProductPage() {
             <section id="prodHero" class="hero is-info is-bold">
                 <div class="hero-body">
                     <div class="addProd container">
-                        <h1 class="title">
+                        <h1 class="title has-text-centered">
                             Add a Product
                         </h1>
 
