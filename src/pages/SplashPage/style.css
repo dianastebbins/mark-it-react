@@ -181,11 +181,19 @@ display: none;
       -ms-flex-pack: center;
           justify-content: center;
 }
+/* giving the styling to overlay class p tag */
 .overlay p {
+/* TODO The 3 properties below can change based on our desire */
+
+  /* this is the background of the text on video */
     background:#000 none repeat scroll 0 0;
+    /* color of text */
     color: white;
+    /* how see through the text is */
     opacity: .5;
+
     font-weight: 600;
+    font-style: italic;
     margin: 2rem 3rem 0;
     mix-blend-mode: overlay;
     padding: 5px 15px;
