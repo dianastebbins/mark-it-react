@@ -17,53 +17,110 @@ class SignUpPage extends React.Component {
         vendor_name: "",
         vendor_email: "",
         vendor_phone: "",
-        bus_lic: ""
+        bus_lic: "",
+        username: null,
+        email: null,
+        password: null,
+        first_name: null,
+        last_name: null,
+        errors: {
+            username: '',
+            email: '',
+            password: '',
+            first_name: '',
+            last_name: ''
+        }
     }
-
-
-
-
 
     handleInputChange = event => {
         const { name, value } = event.target;
+        const errors = this.state.errors;
+        const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+
+        // ==============================
+        // CHECK ALL REQUIRED FIELDS AND
+        // UPDATE ERROR MESSAGE IF VALUES
+        // DO NOT MATCH REQUIREMENTS
+        //===============================
+        switch (name) {
+            case 'username':
+                errors.username = value.length < 5 ? 'Username must be at least 5 characters' : '';
+                break;
+            case 'email':
+                errors.email = validEmailRegex.test(value) ? '' : 'Email is not valid';
+                break;
+            case 'password':
+                errors.password = value.length < 8 ? 'Password must be at least 8 characters' : '';
+                break;
+            case 'first_name':
+                errors.first_name = value.length < 1 ? 'Please enter a first name' : '';
+                break;
+            case 'last_name':
+                errors.last_name = value.length < 1 ? 'Please enter a last name' : '';
+                break;
+            default:
+                break;
+        }
 
         this.setState({
-            [name]: value
+            errors, [name]: value
         })
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.createUser(this.state).then(newUser => {
-            if (newUser.status !== 200) {
-                console.log(newUser.status)
 
-                // there was an error, notify user
-                toast({
-                    message: "New account not created. Please check that you have completed all required fields and try again.",
-                    type: "is-danger",
-                    position: "center",
-                    duration: 4000,
-                    dismissible: true
-                });
-            } else {
-                console.log(this.state)
-                this.setState({
-                    username: '',
-                    password: '',
-                    first_name: "",
-                    last_name: "",
-                    email: "",
-                    vendor_name: "",
-                    vendor_email: "",
-                    vendor_phone: "",
-                    bus_lic: ""
-                })
-            }
-        })
+        // ================================
+        // CHECK FOR ERROR STRINGS IN STATE
+        // ================================
+        const validateForm = (errors) => {
+            let valid = true;
+            Object.values(errors).forEach(
+                // if we have an error string set valid to false
+                (val) => val.length > 0 && (valid = false)
+            );
+            return valid;
+        }
+
+        // =============================
+        // IF FORM IS VALID, CREATE USER
+        // =============================
+        if (validateForm(this.state.errors)) {
+            console.info('Valid Form')
+            API.createUser(this.state).then(newUser => {
+                if (newUser.status !== 200) {
+                    // console.log(newUser.status)
+
+                    // there was an error, notify user
+                    toast({
+                        message: "New account not created. Please check that you have completed all required fields and try again.",
+                        type: "is-danger",
+                        position: "center",
+                        duration: 4000,
+                        dismissible: true
+                    });
+                } else {
+                    // console.log(this.state)
+                    this.setState({
+                        username: '',
+                        password: '',
+                        first_name: "",
+                        last_name: "",
+                        email: "",
+                        vendor_name: "",
+                        vendor_email: "",
+                        vendor_phone: "",
+                        bus_lic: ""
+                    })
+                }
+            })
+        } else {
+            console.error('Invalid Form')
+        }
 
     }
     render() {
+        const { errors } = this.state;
 
         return (
             <div className="SignUpPage">
@@ -87,34 +144,43 @@ class SignUpPage extends React.Component {
                                 <form>
 
                                     <div className="field">
-                                        <label className="label">User Name:</label>
+                                        <label className="label">User Name:<span className="form-error">*</span></label>
                                         <div className="control">
 
                                             <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="username" value={this.state.name} placeholder="username" />
+                                            {errors.username.length > 0 && <span className='form-error'>{errors.username}</span>}
                                         </div>
                                     </div>
                                     <div className="field">
-                                        <label className="label">Password:</label>
+                                        <label className="label">Password:<span className="form-error">*</span></label>
                                         <div className="control">
                                             <input type="password" className="input" onChange={this.handleInputChange} name="password" value={this.state.password} placeholder="password" />
+                                            {errors.password.length > 0 && <span className='form-error'>{errors.password}</span>}
+
                                         </div>
                                     </div>
                                     <div className="field">
-                                        <label className="label">First Name:</label>
+                                        <label className="label">First Name:<span className="form-error">*</span></label>
                                         <div className="control">
                                             <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="first_name" value={this.state.first_name} placeholder="first_name" />
+                                            {errors.first_name.length > 0 && <span className='form-error'>{errors.first_name}</span>}
+
                                         </div>
                                     </div>
                                     <div className="field">
-                                        <label className="label">Last Name:</label>
+                                        <label className="label">Last Name:<span className="form-error">*</span></label>
                                         <div className="control">
                                             <input type="text is-hovered" className="input" onChange={this.handleInputChange} name="last_name" value={this.state.last_name} placeholder="last_name" />
+                                            {errors.last_name.length > 0 && <span className='form-error'>{errors.last_name}</span>}
+
                                         </div>
                                     </div>
                                     <div className="field">
-                                        <label className="label">Email:</label>
+                                        <label className="label">Email:<span className="form-error">*</span></label>
                                         <div className="control">
-                                            <input type="email" className="input" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                                            <input refs="email" className="input" onChange={this.handleInputChange} name="email" value={this.state.email} placeholder="email" />
+                                            {errors.email.length > 0 && <span className='form-error'>{errors.email}</span>}
+
                                         </div>
                                     </div>
                                     <div className="field">
@@ -146,6 +212,7 @@ class SignUpPage extends React.Component {
                                             <button class="button is-primary" onClick={this.handleFormSubmit}>Submit</button>
                                         </div>
                                     </div>
+                                    <span className='form-error'>* Required Field</span>
                                 </form>
                             </div>
                         </div>
