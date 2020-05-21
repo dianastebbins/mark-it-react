@@ -3,22 +3,20 @@
     width: 100vw;
     text-align: center;
     color: white;
-    /* background-image: url(../../assets/images/main1.jpg); */
     height: 100%;
-    /* background-image: url(../../assets/images/main1.jpg); */
-    /* background-image: url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2168&q=80); */
-
 }
 
-.MainImage{
+/* code for if we want to have carousel with arrows */
+/* -------- */
+/* .MainImage{ */
     /* background-image: url(../../assets/images/main1.jpg); */
     /* need to adjust and change the image */
-    text-align: center;
-}
+    /* text-align: center; */
+/* } */
 
-.mainIntro{
+/* .mainIntro{
     color: white;
-}
+} */
 
 /* .body{
     height: 70vh;
@@ -29,18 +27,33 @@ width: 40%;
 margin-top: 30px;
 } */
 
-.nextarrow{
+/* .nextarrow{
     width: 100px;
     fill: whitesmoke;
-}
+} */
 
-.splashpagetext{
-position: absolute;
+
+/* the code for bringing the text on video but only worked well with full screen */
+/* .splashpagetext{
+ position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%); 
 color: white;
-}
+z-index: 10000;
+} */
+
+/* tried to adjust the class title which was for logo , didnt look terrible but needs adjustment */
+/* .title{
+  position: relative;
+  margin: 0;
+  padding: 0;
+} */
+
+/* tried the two separate divs and hiding one under the vide for phone size but didnt look as good */
+/* .splashpagetextUnder{
+display: none;
+  } */
 
 
 
@@ -49,14 +62,15 @@ color: white;
 .SplashSubtitle{
     color: white;
 }
-video {
+/* video {
     width: 100%;
     height: auto;
-}
+} */
 
 
 
-/* fade in animated effect */
+/* start of fade in animated effect */
+/* ============= */
 
 .title.fade-in {
     max-width: 10vw;
@@ -116,3 +130,75 @@ video {
       opacity: 1;
   }
 }
+/* =====end of animated logo affects======== */
+
+
+
+/* media for id of video */
+/* ---------- */
+ /* @media screen and (max-width: 1100px){
+#vid{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100vh;
+}
+}  */
+
+
+
+
+/* ========== code for having text on top of video and it being responsive ============== */
+/* @import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900); */
+* {
+  box-sizing: border-box;
+}
+
+
+#vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.overlay {
+  /* padding-top: 20%; */
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/* giving the styling to overlay class p tag */
+.overlay p {
+/* TODO The 3 properties below can change based on our desire */
+
+  /* this is the background of the text on video */
+    background:#000 none repeat scroll 0 0;
+    /* color of text */
+    color: white;
+    /* how see through the text is */
+    opacity: .5;
+
+    font-weight: 600;
+    font-style: italic;
+    margin: 2rem 3rem 0;
+    mix-blend-mode: overlay;
+    padding: 5px 15px;
+    text-align: center;
+    
+}
+
+/* ================== */

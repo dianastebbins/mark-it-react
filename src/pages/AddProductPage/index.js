@@ -174,7 +174,7 @@ export default function AddProductPage() {
         <div className="AddProductPage">
             <section id="prodHero" class="hero is-info is-bold">
                 <div class="hero-body">
-                    <div class="container">
+                    <div class="addProd container">
                         <h1 class="title">
                             Add a Product
                         </h1>

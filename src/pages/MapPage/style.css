@@ -21,11 +21,12 @@
   padding: 6px;
   font-weight: bold;
 }
-.containerMaps {
+.Maps {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   width: auto;
+
 }
 
 .mapCards {
@@ -56,4 +57,7 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.mapPage {
 }
