@@ -1,23 +1,25 @@
 // importing axios 
 import axios from "axios";
-const BASE_URL = "http://localhost:8080"
+// const BASE_URL = "http://localhost:8080"
 // const BASE_URL = "https://mark-it.herokuapp.com"
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8080";
 
 const API = {
     // api call by zipcode form US Dept of agriculture
     search: function (zip) {
-        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip);
+        return axios.get("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip);
     },
     // api call with latitude and longitude
     searchLatLong: function(lat, long) {
-        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + long)
+        return axios.get("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + lat + "&lng=" + long)
     },
     // api call for each id
     searchMarket: function (id) {
-        return axios.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id);
+        return axios.get("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id);
     },
     // part of login
     login: function (userData) {
+        console.log("BASE_URL at login attempt: " + BASE_URL);
         return axios.post(`${BASE_URL}/login`, userData, { withCredentials: true })
     },
     // part of logout

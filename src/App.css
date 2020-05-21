@@ -7,10 +7,15 @@ html {
 
 body {
   font-family: 'Josefin Slab', serif;
-  font-size: 20px;
+  font-size: 22px;
+  text-shadow: .5px .5px .5px rgba(0, 0, 0, 0.1);
 }
 
 .hero {
   padding-top: 48px;
   text-align: center;
+}
+
+.input {
+  font-family: inherit;
 }
