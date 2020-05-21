@@ -1,4 +1,4 @@
-# [Mark-It](#)
+# [Mark-It](#https://awesome-mark-it.herokuapp.com/)
 
 ## Your local farmers market
 
@@ -18,7 +18,7 @@
 
 ## General Info
 
-This application will give you the ability to 
+This application gives user the ability to find farmers market events when searching by zip code, to post products for sell, to favorite vendors and markets. Your posted item will be pinned to the map and will be shown to the users that have marked you.
 
 
 ## Screenshots
