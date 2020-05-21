@@ -7,7 +7,7 @@ import VendorDetail from "../../components/VendorDetail"
 import ProductInfo from "../../components/ProductInfo"
 import Calendar from 'react-calendar';
 import TileContent from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'
+// import 'react-calendar/dist/Calendar.css'
 import Moment from 'react-moment';
 import _ from 'lodash'
 
@@ -96,12 +96,23 @@ export default function UserPage() {
     //     })
     // }
 
+    const isDateOnSchedule = (calendarDate) => {
+        for (let i = 0; i < schedState.length; i++) {
+            const schedule = schedState[i];
+            const scheduleDate = new Date(schedule.open_time)
+            if(calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()){
+                return schedState[i].market.market_name;
+            }
+        }
+        return '';
+    }
+
     return (
         <div className="UserPage">
-           <section class="hero is-info is-bold">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">
+           <section className="hero is-info is-bold">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">
                             Profile
                         </h1>
                      
@@ -139,7 +150,7 @@ export default function UserPage() {
                                                 {userState.markets.map((market) => (
                                                     <li key={market.id} className="list-item">
                                                         {/* eslint-disable-next-line */}
-                                                        <a name={market.id} data="market" onClick={handleDeleteBtnMarket} class="delete">&nbsp</a>
+                                                        <a name={market.id} data="market" onClick={handleDeleteBtnMarket} className="delete">&nbsp</a>
                                                         {market.market_name}
                                                         <button className="button is-small is-info is-pulled-right">Info</button>
 
@@ -182,13 +193,14 @@ export default function UserPage() {
                                                 </li>
                                             ))}
                                         </ul>
+                                        {/* original calendar
                                         {userState.schedules[0] !== undefined ? (<Calendar
-                                            value={[newArr[0], newArr[newArr.length - 1]]} />) : ''}
-{/* 
+                                            value={[newArr[0], newArr[newArr.length - 1]]} />) : ''} */}
+
                                         {userState.schedules[0] !== undefined ? (<TileContent
-    //  onChange={ onDateChange }
-     value={newArr[0] } // s/b "today"
-                                            tileContent={ ({ date, view }) => view === 'month' && ((date.getMonth() === newArr[0].getMonth() && date.getDate() === newArr[0].getDate()) || (date.getMonth() === newArr[1].getMonth() && date.getDate() === newArr[1].getDate()))  ? <p>Market Day</p> : null } />) : ''} */}
+                                            value={newArr[0] } // s/b "today"
+                                            tileContent={ ({ date, view }) => view === 'month' ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''}
+                                            {/* tileContent={ ({ date, view }) => view === 'month' && isDateOnSchedule(date)  ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''} */}
                                             
                                     </article>)}
                                 </div>
