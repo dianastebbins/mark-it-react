@@ -59,9 +59,9 @@ display: none;
 
 
 
-.SplashSubtitle{
+/* .SplashSubtitle{
     color: white;
-}
+} */
 /* video {
     width: 100%;
     height: auto;
@@ -190,7 +190,7 @@ display: none;
     /* color of text */
     color: white;
     /* how see through the text is */
-    opacity: 0.6;
+    opacity: 0.9;
     font-size: 24px;
 
     font-weight: 600;
