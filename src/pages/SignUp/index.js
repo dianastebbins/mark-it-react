@@ -18,11 +18,7 @@ class SignUpPage extends React.Component {
         vendor_email: null,
         vendor_phone: null,
         bus_lic: null,
-        username: null,
-        email: null,
-        password: null,
-        first_name: null,
-        last_name: null,
+ 
         errors: {
             username: '',
             email: '',
