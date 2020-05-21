@@ -18,12 +18,15 @@ export default function SplashPage() {
                  and autoplaying on splash page */}
                 <video autoPlay loop muted src={video} id="vid"></video>
 
-                <div className="splashpagetext">
+                <div className="splashpagetext overlay">
 
-                    <div className="overlay">
+                    <div className="">
 
                     {/*TODO need to adjust the logo on the screen above the text */}
                     {/* <img src={logo} alt="logo" className=" title fade-in" /> */}
+
+
+                    <img src={logo} alt="logo" className="frontlogo rotate-scale-up-ver"/>
 
 
                         <p className="SplashSubtitle">

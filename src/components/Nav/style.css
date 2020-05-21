@@ -3,7 +3,8 @@
 }
 
 #navbarBasicExample {
-    background:hsla(0, 0%, 21%);
+    /* background:hsla(0, 0%, 21%); */
+    background: #264653;
     /* opacity: .98 */
     
 }
