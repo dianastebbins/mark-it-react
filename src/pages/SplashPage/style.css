@@ -186,11 +186,11 @@ display: none;
 /* TODO The 3 properties below can change based on our desire */
 
   /* this is the background of the text on video */
-    background: #e9c46a none repeat scroll 0 0;
+    background: black none repeat scroll 0 0;
     /* color of text */
-    color: black;
+    color: white;
     /* how see through the text is */
-    opacity: 0.9;
+    opacity: 0.6;
     font-size: 24px;
 
     font-weight: 600;

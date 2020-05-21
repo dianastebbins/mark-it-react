@@ -31,7 +31,7 @@ export default function SplashPage() {
 
                         <p className="SplashSubtitle">
                            
-                    Would you like to sell your products?
+                    Would you like to sell your fresh produce , handmade jewelry and crafts?
                     <br></br>
                     Are you looking to buy fresh products from local vendors to help in saving Energy?
                     <br></br>

@@ -235,6 +235,8 @@ class MapPage extends React.Component {
 
                     <div style={{ height: "80vh", width: "65vw" }} className="MapContainer" id="map" />
                 </div>
+
+                <h1 className="coronavirusalert">Alert: The searh results may be outdated and events might have been canceled due to the Corona virus pandemic.</h1>
                 <SearchForm
                     value={this.state.search}
                     handleInputChange={this.handleInputChange}
