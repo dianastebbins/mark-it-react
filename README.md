@@ -1,4 +1,4 @@
-# [Mark-It](#https://awesome-mark-it.herokuapp.com/)
+# [Mark-It](https://awesome-mark-it.herokuapp.com/)
 
 ## Your local farmers market
 
@@ -36,6 +36,9 @@ On Find Market tab, if you are not logged in , you can find farmers market event
 
 The user profile layout with shortcuts to the map, add product and all items for sale.
 <img src="./public/assets/images/screenshot5.png">
+
+The view all products page
+<img src="./public/assets/images/screenshot10.png">
 
 
 
@@ -97,7 +100,6 @@ video edits [imovie](https://www.apple.com/imovie/)
  * [express-session](https://www.npmjs.com/package/express-session)
  * [foundation-sites](https://www.npmjs.com/package/foundation-sites)
  * [mysql2](https://www.npmjs.com/package/mysql2)
- * [nodemailer](https://www.npmjs.com/package/nodemailer)
  * [session](https://www.npmjs.com/package/node-session)
  * [react-moment](https://www.npmjs.com/package/react-moment)
  * [moment](https://www.npmjs.com/package/moment)
@@ -131,6 +133,7 @@ To-do list:
 * f. allowing user to rate a vender or write a review
 * g. add to cart
 * h. ability to add review on items from a vendor
+* i. to make payments within the application
 
 
 
