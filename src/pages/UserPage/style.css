@@ -23,7 +23,11 @@ button.is-small {
 
 }
 
-#bottomSectionUser {
+.delete {
+    margin-top: 5px;
+}
+
+#bottomSectionUser, #topSectionUser, #productEdit {
     padding-bottom: 200px;
 }
 
@@ -40,4 +44,13 @@ button.is-small {
 #purplebox {
     background: mediumpurple;
     color: #FFFF
+}
+
+.react-calendar__tile {
+    padding: 20px;
+}
+
+#calendarBox {
+    margin-left: 300px;
+    margin-right: 300px;
 }

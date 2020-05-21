@@ -110,7 +110,7 @@ export default function ProductInfo(props) {
                                             </div>
                                         </div>
                                         </div>
-                                        <button className="button is-success is-light" onClick={handleFormSubmit}>Update</button>
+                                        <button className="button is-link is-light" onClick={handleFormSubmit}>Update</button>
 
                                  </form>
                                 </div>
