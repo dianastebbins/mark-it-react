@@ -206,7 +206,7 @@ class MapPage extends React.Component {
                     </div>
                 </section>
                 <div className="section">
-                    <div className="container Maps">
+                    <div className="Maps">
                         <div className="mapCards" id="overflow-fix">
                             {(this.state.marketArrState.length < 1) ?
                                 <h1>Markets Loading...</h1> :

@@ -1,3 +1,25 @@
+@media screen and (max-width: 999px) {
+    .react-calendar__tile {
+        padding: 4px;
+        border: .5px solid black
+    }
+    #calendarBox  {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .react-calendar__tile {
+        padding: 30px;
+        border: .5px solid black
+    }
+    #calendarBox {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
 .UserPage {
     background: lightslategray;
     box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
@@ -28,6 +50,7 @@ button.is-small {
 }
 
 #bottomSectionUser, #topSectionUser, #productEdit {
+    
     padding-bottom: 200px;
 }
 
@@ -47,7 +70,7 @@ button.is-small {
 }
 
 .react-calendar__tile {
-    padding: 30px;
+   
     font-family: inherit;
     font-size: 14px
 }
@@ -57,8 +80,7 @@ button.is-small {
 }
 
 #calendarBox {
-    margin-left: 300px;
-    margin-right: 300px;
+   
     margin-bottom: 20px;
 }
 
