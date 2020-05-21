@@ -5,3 +5,64 @@
 .box {
     background: gainsboro;
 }
+
+.logobox {
+    /* background:white; */
+    width: 50%;
+    margin: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+
+}
+
+button.is-small {
+    font-family: inherit;
+}
+
+.newuser.title {
+    color: #FFFF
+
+}
+
+.delete {
+    margin-top: 5px;
+}
+
+#bottomSectionUser, #topSectionUser, #productEdit {
+    padding-bottom: 200px;
+}
+
+#orangebox {
+    background: orangered;
+    color: #FFFF
+}
+
+#greenbox {
+    background: turquoise;
+    color:#FFFF
+}
+
+#purplebox {
+    background: mediumpurple;
+    color: #FFFF
+}
+
+.react-calendar__tile {
+    padding: 30px;
+    font-family: inherit;
+    font-size: 14px
+}
+.react-calendar__tile p {
+    color: mediumorchid;
+    /* padding: 20px */
+}
+
+#calendarBox {
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 20px;
+}
+
+.userTitle {
+    /* box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02); */
+    justify-content: center;
+}

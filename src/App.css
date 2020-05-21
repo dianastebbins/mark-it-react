@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
 html {
-  background: black;
+  background: lightslategray;
+    box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
   
 }
 
 body {
   font-family: 'Josefin Slab', serif;
-  font-size: 20px;
+  font-size: 22px;
+  text-shadow: .5px .5px .5px rgba(0, 0, 0, 0.1);
 }
 
 .hero {
   padding-top: 48px;
+  text-align: center;
+}
+
+.input {
+  font-family: inherit;
 }

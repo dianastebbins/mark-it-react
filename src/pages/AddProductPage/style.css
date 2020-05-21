@@ -1,9 +1,9 @@
 .container {
     /* background: white; */
-    text-align: center;
+    /* text-align: center; */
     /* color: white; */
-    margin: 0 auto;
-    border-radius: 10px;
+    /* margin: 0 auto; */
+    /* border-radius: 10px; */
     /* width: 50%; */
 
 }
@@ -23,9 +23,9 @@
     /* margin: 0 auto; */
 }
 
-.box{
+.formbox{
     width: 50%;
-    margin: 0 auto 200px auto;
+    /* margin: 0 auto 200px auto; */
 }
 
 .uploadicon{

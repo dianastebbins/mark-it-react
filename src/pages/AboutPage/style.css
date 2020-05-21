@@ -1,7 +1,13 @@
+@media screen and (max-width: 768px) {
+    .card.about {
+        padding: 40px;
+    }
+}
 .AboutPage {
    /* background-color: rgb(183, 93, 105); */
     /* margin: 0 auto; */
-    background: linear-gradient(rgba(0, 3, 77, 0.194), rgba(16, 0, 193, 0.413)), url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    background: linear-gradient(rgba(0, 3, 77, 0.194), rgba(16, 0, 193, 0.413)); 
+    /* url(https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60); */
     min-height: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -22,6 +28,11 @@ p.subtitle.about {
 }
 
 .aboutImg {
-    padding: 30px;
+    padding: 40px;
     
 }
+
+.card.about {
+    background: linear-gradient(rgba(0, 0, 0, 0.63), lightslategrey)
+}
+

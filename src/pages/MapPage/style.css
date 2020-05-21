@@ -7,6 +7,7 @@
   height: 80vh;
   width: 80vw;
   background-color: lightblue;
+  /* background-color: #e76f51; */
 }
 
 .sidebarStyle {
@@ -21,11 +22,12 @@
   padding: 6px;
   font-weight: bold;
 }
-.containerMaps {
+.Maps {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   width: auto;
+
 }
 
 .mapCards {
@@ -46,7 +48,10 @@
 
 .mapResultCard li {
   border: 1px solid black;
-  background: silver;
+  background: gainsboro;
+  padding: 8px 8px 8px 8px;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);
+
 }
 
 .marker {
@@ -56,4 +61,18 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* .mapPage.section {
+  background: lightslategray;
+    box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
+} */
+
+#searchform {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(32, 20, 20, 0.1);
+}
+
+.coronavirusalert{
+  color:red;
+  align-items: center;
 }

@@ -1,8 +1,10 @@
 
 
-.box{
+.formbox{
     /* width: 50%; */
     margin: 0 auto 200px auto;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.3), 0 0px 0 1px rgba(10, 10, 10, 0.02), inset 0 0.5em 1em -0.125em rgba(32, 20, 20, 0.1);
+
 }
 
 
@@ -12,4 +14,8 @@
     box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
 
     height: 100%
+}
+
+.form-error {
+    color: rgb(184, 58, 58);
 }
