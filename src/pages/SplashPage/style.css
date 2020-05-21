@@ -186,19 +186,63 @@ display: none;
 /* TODO The 3 properties below can change based on our desire */
 
   /* this is the background of the text on video */
-    background:#000 none repeat scroll 0 0;
+    background: black none repeat scroll 0 0;
     /* color of text */
     color: white;
     /* how see through the text is */
-    opacity: .5;
+    opacity: 0.6;
+    font-size: 24px;
 
     font-weight: 600;
-    font-style: italic;
     margin: 2rem 3rem 0;
     mix-blend-mode: overlay;
     padding: 5px 15px;
     text-align: center;
+    border-radius: 5px;
     
 }
 
-/* ================== */
+
+/* customized size */
+.frontlogo{
+  width: 100px;
+  height: 100px;
+}
+
+/* =======logo animation =========== */
+.rotate-scale-up-ver {
+	-webkit-animation: rotate-scale-up-ver 0.65s linear both;
+	        animation: rotate-scale-up-ver 0.65s linear both;
+}
+
+
+ @-webkit-keyframes rotate-scale-up-ver {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+            transform: scale(1) rotateY(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateY(180deg);
+            transform: scale(2) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateY(360deg);
+            transform: scale(1) rotateY(360deg);
+  }
+}
+@keyframes rotate-scale-up-ver {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+            transform: scale(1) rotateY(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateY(180deg);
+            transform: scale(2) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateY(360deg);
+            transform: scale(1) rotateY(360deg);
+  }
+}
+/* ===============end of logo animation================= */
+

@@ -18,17 +18,20 @@ export default function SplashPage() {
                  and autoplaying on splash page */}
                 <video autoPlay loop muted src={video} id="vid"></video>
 
-                <div className="splashpagetext">
+                <div className="splashpagetext overlay">
 
-                    <div className="overlay">
+                    <div className="">
 
                     {/*TODO need to adjust the logo on the screen above the text */}
                     {/* <img src={logo} alt="logo" className=" title fade-in" /> */}
 
 
+                    <img src={logo} alt="logo" className="frontlogo rotate-scale-up-ver"/>
+
+
                         <p className="SplashSubtitle">
                            
-                    Would you like to sell your products?
+                    Would you like to sell your fresh produce , handmade jewelry and crafts?
                     <br></br>
                     Are you looking to buy fresh products from local vendors to help in saving Energy?
                     <br></br>
