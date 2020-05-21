@@ -5,18 +5,18 @@
     background-color:hsl(0, 0%, 21%);
     height: 20px;
     color: white;
-    margin-top: auto;
-    flex-shrink: 0;
+    /* margin-top: auto; */
+    /* flex-shrink: 0; */
     box-shadow: 2px 2px 8px  rgba(0, 0, 0, 0.31);
     /* opacity: .98; */
 
 }
 
-.copyright{
+/* .copyright{
    text-align: right;
    margin: 10px;
-   margin-bottom: 20px;
-}
+   margin-bottom: 40px;
+} */
 
 .footertag{
     text-align: left;
