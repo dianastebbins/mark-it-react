@@ -1,4 +1,4 @@
-# [Mark-It](#https://awesome-mark-it.herokuapp.com/)
+# [Mark-It](https://awesome-mark-it.herokuapp.com/)
 
 ## Your local farmers market
 
