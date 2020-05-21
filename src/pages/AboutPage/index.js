@@ -24,7 +24,7 @@ export default function AboutPage() {
               {/* first column */}
               <div className="columns">
                 <div className="column is-one-quarter-desktop is-half-tablet is-full-mobile">
-                  <div className="card about">
+                  <div className="card about is-dark">
                     <div className="card-image">
                       <figure className="image is-1by1">
                         <img className="aboutImg" src="../../../assets/images/Diana2.png" alt="A Diana" />

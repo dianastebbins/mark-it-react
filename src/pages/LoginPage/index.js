@@ -69,7 +69,7 @@ export default function LoginPage(props) {
       </section>
       <div className="section">
         <div className="container">
-          <div className="box">
+          <div className="box formbox">
             <form>
               <div className="field">
                 <div className="control">

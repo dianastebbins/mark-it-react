@@ -194,7 +194,18 @@ class MapPage extends React.Component {
 
     render() {
         return (
-            <div className="MapPage section">
+            <div className="MapPage">
+                <section class="hero is-info is-bold">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Find Markets and Artisans
+                            </h1>
+
+                        </div>
+                    </div>
+                </section>
+                <div className="section">
                 <div className="container Maps">
                     <div className="mapCards" id="overflow-fix">
                         {(this.state.marketArrState.length < 1) ?
@@ -229,6 +240,7 @@ class MapPage extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
+                </div>
             </div>
         )
     }

@@ -186,7 +186,7 @@ export default function AddProductPage() {
             <div className="container addProduct">
 
                 <div className="section mainSection">
-                    <div className="box">
+                    <div className="box formbox">
                         <form>
                             <div className="field">
                                 <label className="label">Product Name</label>
