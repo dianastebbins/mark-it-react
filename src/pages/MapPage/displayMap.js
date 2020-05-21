@@ -160,11 +160,6 @@ export default function displayMap(locObjArr, userLong, userLat) {
         });
 
 
-
-
-
-
-
         map.on('mouseenter', 'clusters', function () {
             map.getCanvas().style.cursor = 'pointer';
         });
