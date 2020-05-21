@@ -13,3 +13,7 @@
 
     height: 100%
 }
+
+.form-error {
+    color: rgb(184, 58, 58);
+}
