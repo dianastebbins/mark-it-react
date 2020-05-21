@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
 html {
-  background: black;
+  background: lightslategray;
+    box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
   
 }
 
@@ -11,4 +12,5 @@ body {
 
 .hero {
   padding-top: 48px;
+  text-align: center;
 }

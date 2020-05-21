@@ -10,6 +10,8 @@ import TileContent from 'react-calendar';
 // import 'react-calendar/dist/Calendar.css'
 import Moment from 'react-moment';
 import _ from 'lodash'
+import BrandLogo from "./../../assets/images/brandlogo.png"
+
 
 export default function UserPage() {
     const params = useParams();
@@ -95,12 +97,11 @@ export default function UserPage() {
     //         )
     //     })
     // }
-
     const isDateOnSchedule = (calendarDate) => {
         for (let i = 0; i < schedState.length; i++) {
             const schedule = schedState[i];
             const scheduleDate = new Date(schedule.open_time)
-            if(calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()){
+            if (calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()) {
                 return schedState[i].market.market_name;
             }
         }
@@ -109,117 +110,190 @@ export default function UserPage() {
 
     return (
         <div className="UserPage">
-           <section className="hero is-info is-bold">
+            <section className="hero is-info is-bold">
                 <div className="hero-body">
                     <div className="container">
                         <h1 className="title">
                             Profile
                         </h1>
-                     
+
                     </div>
                 </div>
-                </section>
-            <div className="section">
-                <div className="columns">
-
-                    <div className="column is-10 is-offset-1">
-                        <div className="tile is-ancestor">
-                            <div className="tile is-vertical is-12">
-                                <div className="tile">
-                                    <div className="tile is-parent is-vertical has-text-centered">
-                                        {userState.products[0] === undefined ? '' : (<article className="tile is-12 is-child box">
-                                            <p className="title is-5">My Products</p>
-                                            <ul className="list">
-                                                {/* see if you can throw a value on the text content and send the data to the api
-                                        so that you don't have to use a form */}
-                                                {userState.products.map((product) => (
-                                                    <li key={product.id} className="list-item">
-                                                        {/* eslint-disable-next-line */}
-                                                        <a name={product.id} data="product" onClick={handleDeleteBtnProd} className="delete">&nbsp</a>
-                                                        {product.name}
-                                                        <button name={product.id} onClick={userProdClick} className="button is-small is-info is-pulled-right">Info</button>
-
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </article>)}
-                                        {userState.markets[0] === undefined ? '' : (<article className="tile is-12 is-child box">
-                                            <p className="title is-5" >My Markets</p>
-                                            <ul className="list">
-
-                                                {userState.markets.map((market) => (
-                                                    <li key={market.id} className="list-item">
-                                                        {/* eslint-disable-next-line */}
-                                                        <a name={market.id} data="market" onClick={handleDeleteBtnMarket} className="delete">&nbsp</a>
-                                                        {market.market_name}
-                                                        <button className="button is-small is-info is-pulled-right">Info</button>
-
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </article>)}
-                                    </div>
-                                    {userState.favorites[0] === undefined ? '' : (<div className="tile is-parent">
-                                        <article className="tile is-child box">
-                                            <p className="title is-5">My Favorite Sellers</p>
-                                            <ul className="list">
-
-                                                {userState.favorites.map((favorite) => (
-                                                    <li key={favorite.id} className="list-item">
-                                                        {/* eslint-disable-next-line */}
-                                                        <a name={favorite.id} data="favorite" onClick={handleDeleteBtnFav} className="delete">&nbsp</a>
-                                                        {favorite.first_name} {favorite.last_name}
-                                                        <Link to={`/favvendor/${favorite.id}`}>
-                                                            <button className="button is-small is-info is-pulled-right">Info</button>
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </article>
-                                    </div>)}
-                                </div>
-                                <div className="tile is-parent">
-                                    {userState.schedules[0] === undefined ? '' : (<article className="tile is-primary is-child box">
-                                        <p className="title is-5">My schedules</p>
-                                        <ul className="list">
-
-                                            {schedState.map((schedule) => (
-                                                <li key={schedule.id} className="list-item">
-                                                    {/* eslint-disable-next-line */}
-                                                    <a name={schedule.id} data="schedule" onClick={handleDeleteBtnSch} className="delete">&nbsp</a>
-                                                    {"At " + schedule.market.market_name + " on "}
-                                                    <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
-                                                    <button className="button is-small is-info is-pulled-right">Info</button>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        {/* original calendar
-                                        {userState.schedules[0] !== undefined ? (<Calendar
-                                            value={[newArr[0], newArr[newArr.length - 1]]} />) : ''} */}
-
-                                        {userState.schedules[0] !== undefined ? (<TileContent
-                                            value={newArr[0] } // s/b "today"
-                                            tileContent={ ({ date, view }) => view === 'month' ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''}
-                                            {/* tileContent={ ({ date, view }) => view === 'month' && isDateOnSchedule(date)  ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''} */}
-                                            
-                                    </article>)}
-                                </div>
+            </section>
+            {userState.products[0] === undefined && userState.markets[0] === undefined && userState.favorites[0] === undefined && userState.schedules[0] === undefined ? (
+                <div>
+                    <div className="section">
+                        <div className="container">
+                            <div className="box logobox">
+                                <figure className="image is-1x1">
+                                    <img src={BrandLogo} />
+                                </figure>
                             </div>
                         </div>
                     </div>
+                    <div id="bottomSectionUser" className="section">
+
+                        {/* <div className="column is-12 is-offset-2"> */}
+                        <div className="container">
+
+                            <div class="tile is-ancestor is-12">
+                                <div className="tile is-vertical is-12">
+                                    <div className="tile">
+                                        <div className="tile is-parent">
+                                            <article class="tile is-child notification is-dark box">
+                                                <p class="title">Welcome To Mark-It!</p>
+                                                {/* <p class="subtitle">Subtitle</p> */}
+                                                <div class="content">
+                                                    <p>To get started, we suggest you check out one of these options:</p>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div className="tile is-8 is-vertical">
+                                            <div className="tile">
+                                                <div class="tile is-parent is-full-mobile">
+                                                    <article class="tile is-child notification is-danger is-bold box">
+                                                        <p class="title">Find Something Amazing</p>
+                                                        <div class="content">
+                                                            <p>Head over to our "Items for Sale" section to see what artisans in your area have to offer</p>
+                                                            <Link to={`/detail`}>
+                                                                <button className="button is-small is-info">Go Now!</button>
+                                                            </Link>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                                <div class="tile is-parent">
+                                                    <article class="tile is-child notification is-primary is-bold box">
+                                                        <p class="title">List Something Amazing</p>
+                                                        <div class="content">
+                                                            <p>Artisan? Maker? Baker? Creator? List something to share with the folks in you neighborhood</p>
+                                                            <Link to={`/add-product`}>
+                                                                <button className="button is-small is-info">Well, go on then!</button>
+                                                            </Link>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                            <div class="tile is-parent">
+                                                <article class="tile is-child notification is-success box">
+                                                    <p class="title">Explore your Neighborhood</p>
+                                                    <div class="content">
+                                                        <p>Head over to the map to find markets and artisans near you</p>
+                                                        <Link to={`/map`}>
+                                                            <button className="button is-small is-info">Off you go!</button>
+                                                        </Link>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* </div> */}
+                            </div>
+                        </div>
+                    </div>
+            ) :
+                (<div className="section">
+                        <div className="columns">
+
+                            <div className="column is-10 is-offset-1">
+                                <div className="tile is-ancestor">
+                                    <div className="tile is-vertical is-12">
+                                        <div className="tile">
+                                            <div className="tile is-parent is-vertical has-text-centered">
+                                                {userState.products[0] === undefined ? '' : (<article className="tile is-12 is-child box">
+                                                    <p className="title is-5">My Products</p>
+                                                    <ul className="list">
+                                                        {/* see if you can throw a value on the text content and send the data to the api
+                                        so that you don't have to use a form */}
+                                                        {userState.products.map((product) => (
+                                                            <li key={product.id} className="list-item">
+                                                                {/* eslint-disable-next-line */}
+                                                                <a name={product.id} data="product" onClick={handleDeleteBtnProd} className="delete">&nbsp</a>
+                                                                {product.name}
+                                                                <button name={product.id} onClick={userProdClick} className="button is-small is-info is-pulled-right">Info</button>
+
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </article>)}
+                                                {userState.markets[0] === undefined ? '' : (<article className="tile is-12 is-child box">
+                                                    <p className="title is-5" >My Markets</p>
+                                                    <ul className="list">
+
+                                                        {userState.markets.map((market) => (
+                                                            <li key={market.id} className="list-item">
+                                                                {/* eslint-disable-next-line */}
+                                                                <a name={market.id} data="market" onClick={handleDeleteBtnMarket} className="delete">&nbsp</a>
+                                                                {market.market_name}
+                                                                <button className="button is-small is-info is-pulled-right">Info</button>
+
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </article>)}
+                                            </div>
+                                            {userState.favorites[0] === undefined ? '' : (<div className="tile is-parent">
+                                                <article className="tile is-child box">
+                                                    <p className="title is-5">My Favorite Sellers</p>
+                                                    <ul className="list">
+
+                                                        {userState.favorites.map((favorite) => (
+                                                            <li key={favorite.id} className="list-item">
+                                                                {/* eslint-disable-next-line */}
+                                                                <a name={favorite.id} data="favorite" onClick={handleDeleteBtnFav} className="delete">&nbsp</a>
+                                                                {favorite.first_name} {favorite.last_name}
+                                                                <Link to={`/favvendor/${favorite.id}`}>
+                                                                    <button className="button is-small is-info is-pulled-right">Info</button>
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </article>
+                                            </div>)}
+                                        </div>
+                                        <div className="tile is-parent">
+                                            {userState.schedules[0] === undefined ? '' : (<article className="tile is-primary is-child box">
+                                                <p className="title is-5">My schedules</p>
+                                                <ul className="list">
+
+                                                    {schedState.map((schedule) => (
+                                                        <li key={schedule.id} className="list-item">
+                                                            {/* eslint-disable-next-line */}
+                                                            <a name={schedule.id} data="schedule" onClick={handleDeleteBtnSch} className="delete">&nbsp</a>
+                                                            {"At " + schedule.market.market_name + " on "}
+                                                            <Moment format="MMM Do, YYYY">{schedule.open_time}</Moment>
+                                                            <button className="button is-small is-info is-pulled-right">Info</button>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                                {/* original calendar
+                                        {userState.schedules[0] !== undefined ? (<Calendar
+                                            value={[newArr[0], newArr[newArr.length - 1]]} />) : ''} */}
+
+                                                {userState.schedules[0] !== undefined ? (<TileContent
+                                                    value={newArr[0]} // s/b "today"
+                                                    tileContent={({ date, view }) => view === 'month' ? <p>{isDateOnSchedule(date)}</p> : null} />) : ''}
+                                                {/* tileContent={ ({ date, view }) => view === 'month' && isDateOnSchedule(date)  ? <p>{isDateOnSchedule(date)}</p> : null } />) : ''} */}
+
+                                            </article>)}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>)}
+
+                    <div className="section">
+
+                        {singleProdSt ? (<ProductInfo refreshPage={refreshPage} product={singleProdSt} />) : ''}
+
+                    </div>
                 </div>
 
-
-            </div>
-
-            <div className="section">
-
-                {singleProdSt ? (<ProductInfo refreshPage={refreshPage} product={singleProdSt} />) : ''}
-
-            </div>
-        </div>
-
-    )
+            )
 }
 
 
