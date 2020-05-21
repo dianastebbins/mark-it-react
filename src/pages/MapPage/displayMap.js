@@ -18,7 +18,7 @@ API.getProductMapMarkers().then(res => {
 
 
 
-export default function displayMap(locObjArr, userLong, userLat) {
+export default function displayMap(locObjArr) {
 
     mapboxgl.accessToken = 'pk.eyJ1IjoidGhlLW1lZGl1bS1wbGFjZSIsImEiOiJja2EwMHcxOWwwa2ZmM2hvMG9nNHhoZXdrIn0.UBg5PKfAeHOcP_xn2SEkTw';
 
@@ -30,6 +30,17 @@ export default function displayMap(locObjArr, userLong, userLat) {
     });
 
     map.on('load', function () {
+        // ================================
+        // USER LOCATION UP TO USER CONTROL
+        // USER CLICKS ICON TO CENTER 
+        // ================================
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        }));
+
         // Add a new source from our GeoJSON data and
         // set the 'cluster' option to true. GL-JS will
         // add the point_count property to your source data.
@@ -167,17 +178,6 @@ export default function displayMap(locObjArr, userLong, userLat) {
             map.getCanvas().style.cursor = '';
         });
 
-        // USER MARKER PULLS FROM GLOBAL USER LOCATION VARIABLES
-        // var marker = new mapboxgl.Marker()
-        //     .setLngLat([userLong, userLat])
-        //     .addTo(map);
-
-            map.addControl(new mapboxgl.GeolocateControl({
-                positionOptions: {
-                    enableHighAccuracy: true
-                },
-                trackUserLocation: true
-            }));
 
         // ==========================================
         // ADD MARKERS AND POPUPS FOR VENDOR PRODUCTS
@@ -207,8 +207,6 @@ export default function displayMap(locObjArr, userLong, userLat) {
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(popup)
                 .addTo(map);
-
-
             }
         });
     });
