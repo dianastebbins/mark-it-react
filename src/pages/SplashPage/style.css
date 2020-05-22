@@ -196,7 +196,7 @@ display: none;
 
     font-weight: 800;
     margin: 2rem 3rem 0;
-    mix-blend-mode: hard-light;
+    mix-blend-mode: exclusion;
     padding: 5px 15px;
     text-align: center;
     border-radius: 5px;
