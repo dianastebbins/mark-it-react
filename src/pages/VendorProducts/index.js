@@ -75,7 +75,7 @@ export default function VendorProducts(props) {
 
                                 <div className="card-content">
 
-                                    <nav class="level is-mobile">
+                                    <nav class="level">
 
                                         <div class="level-item has-text-centered">
                                             <div>
