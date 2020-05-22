@@ -96,3 +96,14 @@
   color: red;
   align-items: center;
 }
+
+/* ===to hide the icons on map ===*/
+a.mapboxgl-ctrl-logo{
+  display: none;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+  display: none;
+}
+/* ===== */
+
