@@ -57,8 +57,8 @@ export default function LoginPage(props) {
 
   return (
     <div className="LoginPage">
-      <section className="hero is-info is-bold">
-        <div className="hero-body">
+      <section className="hero is-bold">
+        <div className="hero-body color-change-3x">
           <div className="container">
             <h1 className="title">
               Login to your Account

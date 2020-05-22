@@ -4,7 +4,7 @@ import "./style.css"
 export default function AboutPage() {
   return (
     <div className="AboutPage">
-      <section className="hero is-info is-bold">
+      <section className="hero is-bold color-change-3x ">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">

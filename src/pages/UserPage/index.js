@@ -114,8 +114,8 @@ export default function UserPage() {
     console.log(userState.markets[0])
     return (
         <div className="UserPage">
-            <section className="hero is-info is-bold">
-                <div className="hero-body">
+            <section className="hero is-bold">
+                <div className="hero-body color-change-3x">
                     <div className="container">
                         <h1 className="title">
                             Profile
