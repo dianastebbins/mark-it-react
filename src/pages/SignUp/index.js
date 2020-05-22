@@ -125,10 +125,10 @@ class SignUpPage extends React.Component {
 
         return (
             <div className="SignUpPage">
-                <section class="hero is-info is-bold">
-                    <div class="hero-body">
-                        <div class="container">
-                            <h1 class="title">
+                <section className="hero is-info is-bold">
+                    <div className="hero-body">
+                        <div className="container">
+                            <h1 className="title">
                                 Register as a User
                             </h1>
 
@@ -210,7 +210,7 @@ class SignUpPage extends React.Component {
                                     </div>
                                     <div className="field">
                                         <div className="control">
-                                            <button class="button is-info" onClick={this.handleFormSubmit}>Submit</button>
+                                            <button className="button is-info" onClick={this.handleFormSubmit}>Submit</button>
                                         </div>
                                     </div>
                                     <span className='form-error'>* Required Field</span>

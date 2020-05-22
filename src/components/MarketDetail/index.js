@@ -18,7 +18,7 @@ export default function MarketDetail(props) {
                     </a>
                   </header>
                   <div className="card-image">
-                    <figure class="image is-3by1">
+                    <figure className="image is-3by1">
                       <img
                         src="http://placegoat.com/300/100" alt="a goat"
                       />
