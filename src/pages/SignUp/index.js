@@ -28,6 +28,10 @@ class SignUpPage extends React.Component {
         }
     }
 
+    refreshPage = () => {
+        window.location.reload(false);
+    }
+
     handleInputChange = event => {
         const { name, value } = event.target;
         const errors = this.state.errors;
@@ -109,6 +113,7 @@ class SignUpPage extends React.Component {
                         bus_lic: null
                     })
                 }
+                this.refreshPage();
             })
         } else {
             console.error('Invalid Form')

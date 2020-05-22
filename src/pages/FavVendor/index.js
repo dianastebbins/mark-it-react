@@ -60,9 +60,9 @@ export default function FavVendor(props) {
 
             <div className="section">
                 <div className="container">
-                    <div className="columns is-multiline is-centered">
+                    {/* <div className="columns is-centered"> */}
 
-                        <div className="column">
+                        {/* <div className="column is-12"> */}
                             <div className="card ">
                                 <header className="card-header">
                                     <p className="card-header-title">Get in touch with {vendorState.seller.first_name} </p>
@@ -70,7 +70,7 @@ export default function FavVendor(props) {
 
                                 <div className="card-content">
 
-                                    <nav class="level is-mobile">
+                                    <nav class="level">
 
                                         <div class="level-item has-text-centered">
                                             <div>
@@ -96,8 +96,8 @@ export default function FavVendor(props) {
 
 
                                 </div>
-                            </div>
-                        </div>
+                            {/* </div> */}
+                        {/* </div> */}
 
 
 
