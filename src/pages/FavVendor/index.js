@@ -47,10 +47,10 @@ export default function FavVendor(props) {
 
     return (
         <div className="FavVendor">
-            <section class="hero is-info is-bold">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">
+            <section className="hero is-info is-bold">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">
                             {vendorState.seller.first_name} {vendorState.seller.last_name}
                         </h1>
 
@@ -70,24 +70,24 @@ export default function FavVendor(props) {
 
                                 <div className="card-content">
 
-                                    <nav class="level">
+                                    <nav className="level">
 
-                                        <div class="level-item has-text-centered">
+                                        <div className="level-item has-text-centered">
                                             <div>
-                                                <p class="heading">DBA</p>
-                                                <p class="title">{vendorState.seller.vendor_name}</p>
+                                                <p className="heading">DBA</p>
+                                                <p className="title">{vendorState.seller.vendor_name}</p>
                                             </div>
                                         </div>
-                                        <div class="level-item has-text-centered">
+                                        <div className="level-item has-text-centered">
                                             <div>
-                                                <p class="heading">Email</p>
-                                                <p class="title">{vendorState.seller.vendor_email}</p>
+                                                <p className="heading">Email</p>
+                                                <p className="title">{vendorState.seller.vendor_email}</p>
                                             </div>
                                         </div>
-                                        <div class="level-item has-text-centered">
+                                        <div className="level-item has-text-centered">
                                             <div>
-                                                <p class="heading">Phone</p>
-                                                <p class="title">{vendorState.seller.vendor_phone}</p>
+                                                <p className="heading">Phone</p>
+                                                <p className="title">{vendorState.seller.vendor_phone}</p>
                                             </div>
                                         </div>
 
@@ -116,8 +116,8 @@ export default function FavVendor(props) {
                         {vendorState.products ? vendorState.products.map((product) => (
                             <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
                                 <div className="card has-background-light">
-                                    <div class="card-image">
-                                        <figure class="image is-4by3">{product.image ?
+                                    <div className="card-image">
+                                        <figure className="image is-4by3">{product.image ?
                                             <img
                                                 src={product.image}
                                                 alt="the item for sale"
@@ -132,7 +132,7 @@ export default function FavVendor(props) {
 
                                     </header>
 
-                                        <div class="list is-hoverable">
+                                        <div className="list is-hoverable">
                                             <p className="list-item">{product.description}</p>
                                             <p className="list-item">{product.details}</p>
                                             <p className="list-item">{product.price}</p>

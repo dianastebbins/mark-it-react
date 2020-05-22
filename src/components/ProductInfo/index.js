@@ -55,11 +55,11 @@ export default function ProductInfo(props) {
                             <div className="column is-half">
                                 <div className="card has-background-light">
                                     <header className="card-header">{/* eslint-disable-next-line */}
-                                        <p className="product card-header-title">{props.product.name}<a onClick={handleDeleteBtn} class="delete"></a></p>
+                                        <p className="product card-header-title">{props.product.name}<a onClick={handleDeleteBtn} className="delete"></a></p>
 
                                     </header>
-                                    <div class="card-image">
-                                        <figure class="image is-3by2">
+                                    <div className="card-image">
+                                        <figure className="image is-3by2">
                                             <img
                                                 src={props.product.image}
                                                 alt="Product"
@@ -69,7 +69,7 @@ export default function ProductInfo(props) {
                                         </figure>
                                     </div>
                                     <div className="card-content">
-                                        <div class="list is-hoverable">
+                                        <div className="list is-hoverable">
                                             <p className="list-item">{props.product.description}</p>
                                             <p className="list-item">{props.product.price}</p>
                                             <p className="list-item">{props.product.details}</p>
@@ -83,28 +83,28 @@ export default function ProductInfo(props) {
                                     <div className="field">
                                         <h5 className="has-text-centered">Update Product Information</h5>
                                         <div className="field">
-                                        <label class="label">Name</label>
+                                        <label className="label">Name</label>
                                             <div className="control">
                                                 <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.name} placeholder={props.product.name} required/>
                                             </div>
                                         </div>
 
                                         <div className="field">
-                                        <label class="label">Description</label>
+                                        <label className="label">Description</label>
                                             <div className="control">
                                                 <input className="input is-hovered" type="text" onChange={handleInputChange} name="description" value={productState.description} placeholder={props.product.description} required/>
                                             </div>
                                         </div>
 
                                         <div className="field">
-                                        <label class="label">Price</label>
+                                        <label className="label">Price</label>
                                             <div className="control">
                                                 <input className="input is-hovered" type="text" onChange={handleInputChange} name="price" value={productState.price} placeholder={props.product.price} required/>
                                             </div>
                                         </div>
 
                                         <div className="field">
-                                        <label class="label">Details</label>
+                                        <label className="label">Details</label>
                                             <div className="control">
                                                 <input className="input is-hovered" type="text" onChange={handleInputChange} name="details" value={productState.details} placeholder={props.product.details} required />
                                             </div>
