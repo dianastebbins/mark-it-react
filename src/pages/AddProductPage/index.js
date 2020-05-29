@@ -194,7 +194,7 @@ export default function AddProductPage() {
 
 
                             <div className="field">
-                                <label className="label">Photo Placeholder</label>
+                                <label className="label">Product Image</label>
                                 <div className="control">
                                     {/* calling the upload file function for uploading image on card */}
                                     <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
