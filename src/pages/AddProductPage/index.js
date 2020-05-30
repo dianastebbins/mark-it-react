@@ -16,7 +16,9 @@ export default function AddProductPage() {
         price: '',
         details: '',
         userId: '',
-        image: ''
+        image: '',
+        lat: null,
+        lng: null
     })
 
     const [geoState, setGeoState] = useState({
@@ -53,7 +55,7 @@ export default function AddProductPage() {
             })
 
             navigator.geolocation.getCurrentPosition(position => {
-                setGeoState({
+                setProductState({
                     lng: position.coords.longitude,
                     lat: position.coords.latitude
                 })
@@ -81,35 +83,9 @@ export default function AddProductPage() {
 
         console.log(productState);
         console.log(geoState);
-        // if (geoState.lng != null) {
-        const vendorObj = {
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [geoState.lng, geoState.lat]
-            },
-            properties: {
-                timestamp: Date.now(),
-                name: productState.name,
-                description: productState.description,
-                price: productState.price,
-                details: productState.description,
-                userId: productState.userId,
-                image: productState.image,
-                userId: productState.userId
-            }
-        }
-        // CALL TO MAP MARKER TABLE FOR ALL MARKER DATA
-        // FROM USER PRODUCTS
-        API.addProductMapMarker(vendorObj)
-            .then(newGeoObj => {
-                console.log('item added to marker list')
-                console.log(newGeoObj);
-            })
-        // }
-
+ 
         API.addProduct(productState).then(newProduct => {
-            console.log(productState)
+            console.log(newProduct)
 
             if (newProduct.data.name) {
                 // let user know product was created
@@ -172,10 +148,10 @@ export default function AddProductPage() {
 
     return (
         <div className="AddProductPage">
-            <section id="prodHero" class="hero is-info is-bold">
-                <div class="hero-body">
-                    <div class="addProd container">
-                        <h1 class="title">
+            <section id="prodHero" className="hero is-bold">
+                <div className="hero-body color-change-3x">
+                    <div className="addProd container">
+                        <h1 className="title">
                             Add a Product
                         </h1>
 
@@ -218,7 +194,7 @@ export default function AddProductPage() {
 
 
                             <div className="field">
-                                <label className="label">Photo Placeholder</label>
+                                <label className="label">Product Image</label>
                                 <div className="control">
                                     {/* calling the upload file function for uploading image on card */}
                                     <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />

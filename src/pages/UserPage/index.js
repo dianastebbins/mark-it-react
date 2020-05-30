@@ -105,7 +105,7 @@ export default function UserPage() {
         for (let i = 0; i < schedState.length; i++) {
             const schedule = schedState[i];
             const scheduleDate = new Date(schedule.open_time)
-            if (calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()) {
+            if (calendarDate.getYear() === scheduleDate.getYear() && calendarDate.getMonth() === scheduleDate.getMonth() && calendarDate.getDate() === scheduleDate.getDate()) {
                 return schedState[i].market.market_name;
             }
         }
@@ -114,8 +114,8 @@ export default function UserPage() {
     console.log(userState.markets[0])
     return (
         <div className="UserPage">
-            <section className="hero is-info is-bold">
-                <div className="hero-body">
+            <section className="hero is-bold">
+                <div className="hero-body color-change-3x">
                     <div className="container">
                         <h1 className="title">
                             Profile
@@ -140,24 +140,24 @@ export default function UserPage() {
                         {/* <div className="column is-12 is-offset-2"> */}
                         <div className="container">
 
-                            <div class="tile is-ancestor is-12">
+                            <div className="tile is-ancestor is-12">
                                 <div className="tile is-vertical is-12">
                                     <div className="tile">
                                         <div className="tile is-parent">
-                                            <article class="tile is-child notification is-dark box">
-                                                <p class="newuser title">Welcome To Mark-It!</p>
-                                                {/* <p class="subtitle">Subtitle</p> */}
-                                                <div class="content">
+                                            <article className="tile is-child notification is-dark box">
+                                                <p className="newuser title">Welcome To Mark-It!</p>
+                                                {/* <p className="subtitle">Subtitle</p> */}
+                                                <div className="content">
                                                     <p>To get started, we suggest you check out one of these options:</p>
                                                 </div>
                                             </article>
                                         </div>
                                         <div className="tile is-8 is-vertical">
                                             <div className="tile">
-                                                <div class="tile is-parent is-full-mobile">
-                                                    <article id="orangebox" class="tile is-child box">
-                                                        <p class="newuser title">Find Something Amazing</p>
-                                                        <div class="content">
+                                                <div className="tile is-parent is-full-mobile">
+                                                    <article id="orangebox" className="tile is-child box">
+                                                        <p className="newuser title">Find Something Amazing</p>
+                                                        <div className="content">
                                                             <p>Head over to our "Items for Sale" section to see what artisans in your area have to offer</p>
                                                             <Link to={`/detail`}>
                                                                 <button className="button is-small is-info">Go Now!</button>
@@ -165,10 +165,10 @@ export default function UserPage() {
                                                         </div>
                                                     </article>
                                                 </div>
-                                                <div class="tile is-parent">
-                                                    <article id="greenbox" class="tile is-child notification is-bold box">
-                                                        <p class="newuser title">List Something Amazing</p>
-                                                        <div class="content">
+                                                <div className="tile is-parent">
+                                                    <article id="greenbox" className="tile is-child notification is-bold box">
+                                                        <p className="newuser title">List Something Amazing</p>
+                                                        <div className="content">
                                                             <p>Artisan? Maker? Baker? Creator? List something to share with the folks in you neighborhood</p>
                                                             <Link to={`/add-product`}>
                                                                 <button className="button is-small is-info">Well, go on then!</button>
@@ -177,10 +177,10 @@ export default function UserPage() {
                                                     </article>
                                                 </div>
                                             </div>
-                                            <div class="tile is-parent">
-                                                <article id="purplebox" class="tile is-child notification  box">
-                                                    <p class="newuser title">Explore your Neighborhood</p>
-                                                    <div class="content">
+                                            <div className="tile is-parent">
+                                                <article id="purplebox" className="tile is-child notification  box">
+                                                    <p className="newuser title">Explore your Neighborhood</p>
+                                                    <div className="content">
                                                         <p>Head over to the map to find markets and artisans near you</p>
                                                         <Link to={`/map`}>
                                                             <button className="button is-small is-info">Off you go!</button>

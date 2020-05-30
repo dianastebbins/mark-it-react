@@ -4,10 +4,10 @@ import "./style.css"
 export default function AboutPage() {
   return (
     <div className="AboutPage">
-      <section class="hero is-info is-bold">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
+      <section className="hero is-bold color-change-3x ">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
               Meet the Team
                         </h1>
 

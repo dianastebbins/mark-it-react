@@ -19,3 +19,42 @@ body {
 .input {
   font-family: inherit;
 }
+
+
+
+
+/* banner color animation */
+.color-change-3x {
+	-webkit-animation: color-change-3x 100s linear infinite alternate both;
+	        animation: color-change-3x 100s linear infinite alternate both;
+}
+
+ @-webkit-keyframes color-change-3x {
+    0% {
+      background: #19dcea;
+    }
+    50% {
+      background: #fbc3bc;
+    }
+    100% {
+      background: #a3b18a;
+    }
+  }
+  @keyframes color-change-3x {
+    0% {
+      background: #9f9aa4;
+    }
+    25% {
+      background: #f4d58d;
+    }
+    50% {
+      background: #c2dfe3;
+    }
+    75% {
+      background: #a3b18a;
+    }
+    100% {
+      background: #f7d9c4;
+    }
+  }
+  /* --------- */

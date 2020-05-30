@@ -186,16 +186,17 @@ display: none;
 /* TODO The 3 properties below can change based on our desire */
 
   /* this is the background of the text on video */
-    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    /* background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0; */
+    background-color: hsla(0, 0%, 21%);
     /* color of text */
-    color: white;
+    color:  white;
     /* how see through the text is */
-    opacity: 0.9;
+    /* opacity: 0.5; */
     font-size: 24px;
 
     font-weight: 800;
     margin: 2rem 3rem 0;
-    mix-blend-mode: overlay;
+    mix-blend-mode: hard-light;
     padding: 5px 15px;
     text-align: center;
     border-radius: 5px;

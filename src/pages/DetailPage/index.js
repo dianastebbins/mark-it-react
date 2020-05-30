@@ -43,10 +43,10 @@ export default function DetailPage() {
 
     return (
         <div className="DetailPage">
-            <section class="hero is-info is-bold">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">
+            <section className="hero is-bold">
+                <div className="hero-body color-change-3x">
+                    <div className="container">
+                        <h1 className="title">
                             Available Items
                         </h1>
                      

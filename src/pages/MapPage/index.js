@@ -18,7 +18,8 @@ class MapPage extends React.Component {
         search: '',
         marketname: [],
         id: [],
-        marketArrState: []
+        marketArrState: [],
+        active: false
     }
 
 
@@ -191,14 +192,18 @@ class MapPage extends React.Component {
             .catch(err => console.log(err))
     }
 
+    handleButtonClick = () => {
+        !this.state.active ? this.setState({ active: true }) : this.setState({ active: false })
+        console.log(this.state.active)
+    }
 
     render() {
         return (
             <div className="MapPage">
-                <section class="hero is-info is-bold">
-                    <div class="hero-body">
-                        <div class="container">
-                            <h1 class="title">
+                <section className="hero is-bold">
+                    <div className="hero-body color-change-3x">
+                        <div className="container">
+                            <h1 className="title">
                                 Find Markets and Artisans
                             </h1>
 
@@ -207,7 +212,7 @@ class MapPage extends React.Component {
                 </section>
                 <div className="section">
                     <div className="Maps">
-                        <div className="mapCards" id="overflow-fix">
+                        <div className="mapCards hideMe" id="overflow-fix">
                             {(this.state.marketArrState.length < 1) ?
                                 <h1>Markets Loading...</h1> :
 
@@ -236,10 +241,53 @@ class MapPage extends React.Component {
                         <div style={{ height: "80vh", width: "65vw" }} className="MapContainer" id="map" />
                     </div>
                     <div className="section">
+
+                        <div class={this.state.active ? "modal is-active": "modal"}>
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Markets Near Me</p>
+                                    <button class="delete" aria-label="close" onClick={this.handleButtonClick}></button>
+                                </header>
+                                <section class="modal-card-body">
+                                <div className="mapCards" id="overflow-fix">
+                            {(this.state.marketArrState.length < 1) ?
+                                <h1>Markets Loading...</h1> :
+
+
+
+                                this.state.marketArrState.map((market, index) => {
+
+                                    return (
+                                        <div>
+                                            <MapCard
+                                                name={market.properties.name.substr(4)}
+                                                distance={market.properties.name.slice(0, 4)}
+                                                products={market.properties.products}
+                                                schedule={market.properties.schedule.slice(0, -16)}
+                                                address={market.properties.address}
+                                                key={index}
+                                                USDA_id={market.properties.USDA_id}
+                                                handleMarketSaveClick={this.handleMarketSaveClick}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                                </section>
+                                
+                            </div>
+                        </div>
+                        <div className="level">
+                            <div className="level-item">
+                                <button className="button is-large is-info mapButton" onClick={this.handleButtonClick}>See Markets</button>
+                            </div>
+                        </div>
                         <div className="level">
                             <div className="level-item">
 
-                                <p className="coronavirusalert title is-4">Alert: The searh results may be outdated and events might have been canceled due to the Corona virus pandemic.</p>
+                                <p className="coronavirusalert title is-4">Notice: The search results may be outdated and events <br></br>might have been canceled due to the Corona virus pandemic.</p>
                             </div>
                         </div>
                     </div>
