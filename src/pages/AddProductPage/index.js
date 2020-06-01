@@ -21,32 +21,6 @@ export default function AddProductPage() {
         lng: null
     })
 
-    const [geoState, setGeoState] = useState({
-        lat: null,
-        lng: null
-    })
-
-    // useEffect(()=>{
-    //     API.getAllPlayers().then(res=>{
-    //         console.log(res.data)
-    //         setPlayersState(res.data)
-    //         setFilteredPlayersState(res.data)
-    //     }).catch(err=>{
-    //         console.log(err);
-    //     })
-    // },[])
-
-    // const params = useParams(); // for retrieving id from .../path/:id apis
-    // const history = useHistory();
-
-    // const handleDeleteBtnClick = event=>{
-    //     event.preventDefault();
-    //     API.deletePlayerById(params.id).then(res=>{
-    //         history.push('/')
-    //     })
-    // }
-
-
     useEffect(() => {
         API.readSessions().then(res => {
             const ID = res.data.user.id
@@ -82,8 +56,7 @@ export default function AddProductPage() {
         event.preventDefault();
 
         console.log(productState);
-        console.log(geoState);
- 
+
         API.addProduct(productState).then(newProduct => {
             console.log(newProduct)
 
@@ -225,7 +198,6 @@ export default function AddProductPage() {
                             </div>
 
 
-                            {/* </div> */}
                         </form>
                     </div>
                 </div>

@@ -185,9 +185,9 @@ export default function displayMap(locObjArr) {
         vendorArr.forEach((marker) => {
             // console.log(marker);
             const name = marker.properties.name;
-            const description = marker.properties.description;
-            const price = marker.properties.price;
-            const details = marker.properties.details;
+            // const description = marker.properties.description;
+            // const price = marker.properties.price;
+            // const details = marker.properties.details;
             const userId = marker.properties.userId;
             const image = marker.properties.image;
 
