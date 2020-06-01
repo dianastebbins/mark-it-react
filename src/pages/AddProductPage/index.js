@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react'
-
 import { toast } from "bulma-toast";
-
 
 import "./style.css"
 import API from "../../utils/API"
-
-
 
 export default function AddProductPage() {
     const [productState, setProductState] = useState({
@@ -40,9 +36,6 @@ export default function AddProductPage() {
         //  the component runs on page load   
 
     }, [])
-
-
-
 
     const handleInputChange = event => {
         const { name, value } = event.target;
@@ -89,10 +82,7 @@ export default function AddProductPage() {
                 });
             }
         })
-
-
     }
-
 
     // Function to upload image on add product
 
@@ -116,8 +106,6 @@ export default function AddProductPage() {
             // largeImage: file.eager[0].secure_url
         });
     }
-
-
 
     return (
         <div className="AddProductPage">
@@ -196,15 +184,10 @@ export default function AddProductPage() {
                                 <button className="button is-link" onClick={handleFormSubmit}>Add Product!</button>
 
                             </div>
-
-
                         </form>
                     </div>
                 </div>
-
             </div>
-
         </div >
-
     )
 }
