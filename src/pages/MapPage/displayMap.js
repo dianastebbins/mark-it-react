@@ -183,19 +183,21 @@ export default function displayMap(locObjArr) {
         // ADD MARKERS AND POPUPS FOR VENDOR PRODUCTS
         // ==========================================
         vendorArr.forEach((marker) => {
-            // console.log(marker);
             const name = marker.properties.name;
+            const userId = marker.properties.userId;
+            const image = marker.properties.image;
+
+            // ===================================
+            // OTHER INFO AVAILABLE FOR FUTURE REF
+            // ===================================
             // const description = marker.properties.description;
             // const price = marker.properties.price;
             // const details = marker.properties.details;
-            const userId = marker.properties.userId;
-            const image = marker.properties.image;
 
             const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
                 `<img src="${image}"><br>
                 <h1>${name}</h1><br>
                 Click <a href="/vendor/${userId}" target="_blank">HERE</a> to view this vendor's page!`
-                // 'test test test'
                 );
             // create a HTML element for each feature
             var el = document.createElement('div');
@@ -210,7 +212,5 @@ export default function displayMap(locObjArr) {
             }
         });
     });
-
-
 }
 

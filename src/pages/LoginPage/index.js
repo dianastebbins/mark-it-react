@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom"
-import { Link } from "react-router-dom";
 import "./style.css"
 import API from "../../utils/API"
 import { toast } from "bulma-toast";
-
 
 export default function LoginPage(props) {
   const history = useHistory()
@@ -12,9 +10,6 @@ export default function LoginPage(props) {
     username: "",
     password: ""
   })
-
-
-
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -44,15 +39,6 @@ export default function LoginPage(props) {
         props.submitHandler(false)
       }
     }).catch((err) => console.log(err));
-
-  }
-
-  const handleSesBtnClick = event => {
-    event.preventDefault();
-    API.readSessions().then(res => {
-      console.log(res.data)
-    })
-
   }
 
   return (
@@ -92,18 +78,8 @@ export default function LoginPage(props) {
                 </div>
               </div>
             </form>
-
           </div>
-          {/* <div className="section">
-            <button className="button">
-              <Link to="/map" >temporary link to MapPage</Link>
-            </button>
-            <button onClick={handleSesBtnClick} className="button">
-              check login status
-              </button>
-          </div> */}
         </div>
-
       </div>
     </div>
   )
