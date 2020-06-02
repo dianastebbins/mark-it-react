@@ -44,6 +44,7 @@ export default function UserPage() {
         } else {
             console.log("loading")
         }
+        // eslint-disable-next-line
     }, [])
 
     const newArr = []

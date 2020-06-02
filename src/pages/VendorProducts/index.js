@@ -21,6 +21,7 @@ export default function VendorProducts(props) {
                 })
             )
             .catch((err) => console.log(err));
+            // eslint-disable-next-line
     }, [])
 
     const handleClickEvent = () => {
