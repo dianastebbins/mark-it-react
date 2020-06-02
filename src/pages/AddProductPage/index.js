@@ -128,7 +128,7 @@ export default function AddProductPage() {
                             <div className="field">
                                 <label className="label">Product Name</label>
                                 <div className="control">
-                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
+                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name"/>
                                 </div>
                             </div>
 

@@ -103,6 +103,7 @@ export default function ProductInfo(props) {
                                 <form>
                                     <div className="field">
                                         <h5 className="has-text-centered">Update Product Information</h5>
+                                        <h6 className="has-text-centered has-text-danger">(all fields required)</h6>
                                         <div className="field">
                                             <label className="label">Name</label>
                                             <div className="control">
@@ -133,7 +134,7 @@ export default function ProductInfo(props) {
                                         <div className="field">
                                             <label className="label">Product Image</label>
                                             <div className="control">
-                                                <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead" />
+                                                <input className="input is-hovered" type="file" onChange={uploadFile} name="userId" placeholder="use upload component instead"/>
 
 
 
@@ -145,7 +146,7 @@ export default function ProductInfo(props) {
                                     </div>
                                 ) : ""}
                                         </div>
-                                        <button className="button is-link is-light" onClick={handleFormSubmit}>Update</button>
+                                        <button type="submit" className="button is-link is-light" onClick={handleFormSubmit}>Update</button>
 
                                     </div>
                                 </form>

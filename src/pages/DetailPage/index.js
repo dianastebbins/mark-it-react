@@ -25,7 +25,7 @@ export default function DetailPage() {
                 <div className="hero-body color-change-3x">
                     <div className="container">
                         <h1 className="title">
-                            Available Items
+                            Mark-It-place (Available Items)
                         </h1>
                      
                     </div>
