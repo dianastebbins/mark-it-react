@@ -14,7 +14,7 @@ export default function ProductDetail(props) {
 
                     {props.products.map((product) => (
                         <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
-                            <div className="card has-background-light">
+                            <div className="card product has-background-light">
                                 <div className="card-image">
                                      <figure className="image is-4by3">{product.image ?
                                         <img
