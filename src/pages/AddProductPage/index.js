@@ -58,7 +58,7 @@ export default function AddProductPage() {
                 toast({
                     message: newProduct.data.name + " added to products",
                     type: "is-info",
-                    position: "center",
+                    position: "bottom-center",
                     duration: 4000,
                     dismissible: true
                 });
@@ -76,7 +76,7 @@ export default function AddProductPage() {
                 toast({
                     message: newProduct.data,
                     type: "is-danger",
-                    position: "center",
+                    position: "bottom-center",
                     duration: 4000,
                     dismissible: true
                 });
