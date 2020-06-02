@@ -95,7 +95,7 @@ class SignUpPage extends React.Component {
                     toast({
                         message: "New account not created. Please check that you have completed all required fields and try again.",
                         type: "is-danger",
-                        position: "center",
+                        position: "bottom-center",
                         duration: 4000,
                         dismissible: true
                     });

@@ -62,7 +62,6 @@ class MapPage extends React.Component {
                 })
                 setTimeout(() => {
                     displayMap(MarketArr)
-
                 }, 1000);
             })
     }
@@ -84,12 +83,12 @@ class MapPage extends React.Component {
 
     getDetails = (query, count) => {
         if (query === "Error") {
-            console.log("it's an error");
-        }
+            console.log("error received, likely an invalid zip code");
+        } else {
 
-        API.searchMarket(query)
+            API.searchMarket(query)
             .then((data) => {
-
+                
                 const newMarketObj = {
                     'type': 'Feature',
                     'geometry': {
@@ -102,14 +101,14 @@ class MapPage extends React.Component {
                 };
                 const lat = parseFloat(data.data.marketdetails.GoogleLink.split('=').pop().split('%')[0])
                 const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('%20-').pop().split('%')[0]))
-
+                
                 const coords = [long, lat];
-
-
+                
+                
                 // GET LAT AND LONG FROM data.marketdetails.GoogleLink 
                 // AND MAKE ARRAY [long,lat]
                 // console.log(data.marketdetails.GoogleLInk.split('-'))
-
+                
                 // ADD MARKET DETAILS TO GEOJSON OBJECT newMarketObj
                 newMarketObj.geometry.coordinates = coords;
                 newMarketObj.properties.products = data.data.marketdetails.Products;
@@ -123,6 +122,7 @@ class MapPage extends React.Component {
                     marketArrState: [...MarketArr]
                 })
             })
+        }
     };
 
 
@@ -136,7 +136,6 @@ class MapPage extends React.Component {
         // =======================================
         API.search(zip)
             .then((data) => {
-
                 // LOOP THROUGH ARRAY OF MARKET IDS AND NAMES
                 // AND RUN getDetails FOR EACH ENTRY - 
                 // THIS RUNS THE SECOND AJAX REQUEST
@@ -165,7 +164,6 @@ class MapPage extends React.Component {
                 //FIXME: TIMEOUT CURRENTLY SET TO GIVE ARRAY TIME TO POPULATE
                 //FIXME: KINDA HACKY RIGHT NOW, NEED TO FIX LATER
                 setTimeout(function () {
-
                     displayMap(MarketArr);
                 }, 1000);
             });
