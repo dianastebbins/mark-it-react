@@ -10,9 +10,10 @@ API.getProductMapMarkers().then(res => {
     //eslint-disable-next-line
     res.data.map((geoJson, index) => {
         vendorArr.push(geoJson.vendorObj)
-        console.log(geoJson);
+        // console.log(geoJson);
     })
-}).then(() => console.log(vendorArr))
+})
+    // .then(() => console.log(vendorArr))
     .catch(err => console.log(err))
 
 
@@ -56,7 +57,7 @@ export default function displayMap(locObjArr) {
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
         });
 
-    
+
         // =========================
         // ADD LIST OF FOUND MARKETS
         // =========================
@@ -198,17 +199,17 @@ export default function displayMap(locObjArr) {
                 `<img src="${image}"><br>
                 <h1>${name}</h1><br>
                 Click <a href="/vendor/${userId}" target="_blank">HERE</a> to view this vendor's page!`
-                );
+            );
             // create a HTML element for each feature
             var el = document.createElement('div');
             el.className = 'marker';
-            console.log(marker);
+            // console.log(marker);
             // make a marker for each feature and add to the map
-            if(marker.geometry){
+            if (marker.geometry) {
                 new mapboxgl.Marker(el)
-                .setLngLat(marker.geometry.coordinates)
-                .setPopup(popup)
-                .addTo(map);
+                    .setLngLat(marker.geometry.coordinates)
+                    .setPopup(popup)
+                    .addTo(map);
             }
         });
     });
