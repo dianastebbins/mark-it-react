@@ -5,7 +5,7 @@ export default function MapCard(props) {
 
     return (
         <div className="mapResultCard container">
-            <ul >
+            <ul>
                 <li>{props.name}</li>
                 <li>{props.distance} Miles from your search!</li>
                 <li>{props.schedule}</li>

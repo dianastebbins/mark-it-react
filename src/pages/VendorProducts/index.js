@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import "./style.css"
 import API from "../../utils/API"
-import _ from 'lodash'
 import { toast } from "bulma-toast"
 import BrandLogo from "./../../assets/images/brandlogo.png"
 
-
 export default function VendorProducts(props) {
-    const history = useHistory()
     const params = useParams();
     const [vendorState, setVendorState] = useState({
         seller: '',
         products: ''
     });
-
 
     useEffect(() => {
         API.getUserProducts(params.id)
@@ -22,11 +18,10 @@ export default function VendorProducts(props) {
                 setVendorState({
                     seller: res.data[0],
                     products: res.data[0].products,
-
                 })
-
             )
             .catch((err) => console.log(err));
+            // eslint-disable-next-line
     }, [])
 
     const handleClickEvent = () => {
@@ -44,12 +39,9 @@ export default function VendorProducts(props) {
             ).catch((err) => console.log(err))
     }
 
-    console.log(vendorState.seller)
-
     return (
 
         <div className="VendorProducts">
-
             <section className="hero is-info is-bold">
                 <div className="hero-body">
                     <div className="container">
@@ -70,13 +62,9 @@ export default function VendorProducts(props) {
                                 <header className="card-header">
                                     <p className="card-header-title">Get in touch with {vendorState.seller.first_name} </p>
                                     {props.currentUser ? <button onClick={handleClickEvent} className="button is-small is-info">Mark-It!</button> : ''}
-
                                 </header>
-
                                 <div className="card-content">
-
                                     <nav className="level">
-
                                         <div className="level-item has-text-centered">
                                             <div>
                                                 <p className="heading">DBA</p>
@@ -95,29 +83,16 @@ export default function VendorProducts(props) {
                                                 <p className="title">{vendorState.seller.vendor_phone}</p>
                                             </div>
                                         </div>
-
                                     </nav>
-
-
-
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
                     </div>
-
                 </div>
             </div>
             <div className="favven section">
                 <div className="container">
                     <div className="columns is-multiline is-centered">
-
                         {vendorState.products ? vendorState.products.map((product) => (
                             <div className="column is-full-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
                                 <div className="card has-background-light">
@@ -127,29 +102,21 @@ export default function VendorProducts(props) {
                                                 src={product.image}
                                                 alt="the item for sale"
                                             /> : <img className="logoImageAdd" src={BrandLogo} alt="Mark-It Logo" />}
-
-
                                         </figure>
                                     </div>
 
                                     <header className="card-header">
                                         <p className="card-header-title">{product.name} </p>
-
                                     </header>
-
                                     <div className="list is-hoverable">
                                         <p className="list-item">{product.description}</p>
                                         <p className="list-item">{product.details}</p>
                                         <p className="list-item">{product.price}</p>
-
                                     </div>
                                 </div>
                             </div>
-
                         )) : "loading"}
-
                     </div>
-
                 </div>
             </div>
         </div>

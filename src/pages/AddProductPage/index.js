@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react'
-
 import { toast } from "bulma-toast";
-
 
 import "./style.css"
 import API from "../../utils/API"
-
-
 
 export default function AddProductPage() {
     const [productState, setProductState] = useState({
@@ -20,32 +16,6 @@ export default function AddProductPage() {
         lat: null,
         lng: null
     })
-
-    const [geoState, setGeoState] = useState({
-        lat: null,
-        lng: null
-    })
-
-    // useEffect(()=>{
-    //     API.getAllPlayers().then(res=>{
-    //         console.log(res.data)
-    //         setPlayersState(res.data)
-    //         setFilteredPlayersState(res.data)
-    //     }).catch(err=>{
-    //         console.log(err);
-    //     })
-    // },[])
-
-    // const params = useParams(); // for retrieving id from .../path/:id apis
-    // const history = useHistory();
-
-    // const handleDeleteBtnClick = event=>{
-    //     event.preventDefault();
-    //     API.deletePlayerById(params.id).then(res=>{
-    //         history.push('/')
-    //     })
-    // }
-
 
     useEffect(() => {
         API.readSessions().then(res => {
@@ -67,9 +37,6 @@ export default function AddProductPage() {
 
     }, [])
 
-
-
-
     const handleInputChange = event => {
         const { name, value } = event.target;
 
@@ -82,8 +49,7 @@ export default function AddProductPage() {
         event.preventDefault();
 
         console.log(productState);
-        console.log(geoState);
- 
+
         API.addProduct(productState).then(newProduct => {
             console.log(newProduct)
 
@@ -92,7 +58,7 @@ export default function AddProductPage() {
                 toast({
                     message: newProduct.data.name + " added to products",
                     type: "is-info",
-                    position: "center",
+                    position: "bottom-center",
                     duration: 4000,
                     dismissible: true
                 });
@@ -110,16 +76,13 @@ export default function AddProductPage() {
                 toast({
                     message: newProduct.data,
                     type: "is-danger",
-                    position: "center",
+                    position: "bottom-center",
                     duration: 4000,
                     dismissible: true
                 });
             }
         })
-
-
     }
-
 
     // Function to upload image on add product
 
@@ -144,8 +107,6 @@ export default function AddProductPage() {
         });
     }
 
-
-
     return (
         <div className="AddProductPage">
             <section id="prodHero" className="hero is-bold">
@@ -167,7 +128,7 @@ export default function AddProductPage() {
                             <div className="field">
                                 <label className="label">Product Name</label>
                                 <div className="control">
-                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name" />
+                                    <input className="input is-hovered" type="text" onChange={handleInputChange} name="name" value={productState.className} placeholder="Product Name"/>
                                 </div>
                             </div>
 
@@ -223,16 +184,10 @@ export default function AddProductPage() {
                                 <button className="button is-link" onClick={handleFormSubmit}>Add Product!</button>
 
                             </div>
-
-
-                            {/* </div> */}
                         </form>
                     </div>
                 </div>
-
             </div>
-
         </div >
-
     )
 }

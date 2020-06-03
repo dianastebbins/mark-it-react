@@ -6,7 +6,6 @@ import { toast } from "bulma-toast";
 
 // convert to rfc
 
-
 class SignUpPage extends React.Component {
     state = {
         username: null,
@@ -35,7 +34,8 @@ class SignUpPage extends React.Component {
     handleInputChange = event => {
         const { name, value } = event.target;
         const errors = this.state.errors;
-        const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+        const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+.)+[^<>()[\].,;:\s@"]{2,})$/i);
+        // const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
         // ==============================
         // CHECK ALL REQUIRED FIELDS AND
@@ -95,7 +95,7 @@ class SignUpPage extends React.Component {
                     toast({
                         message: "New account not created. Please check that you have completed all required fields and try again.",
                         type: "is-danger",
-                        position: "center",
+                        position: "bottom-center",
                         duration: 4000,
                         dismissible: true
                     });
@@ -220,16 +220,6 @@ class SignUpPage extends React.Component {
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
         )
     }
 }

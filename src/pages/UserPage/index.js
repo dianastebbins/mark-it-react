@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom'
 import "./style.css"
 import { useParams } from "react-router-dom"
 import API from "../../utils/API"
-import VendorDetail from "../../components/VendorDetail"
+// import VendorDetail from "../../components/VendorDetail"
 import ProductInfo from "../../components/ProductInfo"
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar';
 import TileContent from 'react-calendar';
 // import 'react-calendar/dist/Calendar.css'
 import Moment from 'react-moment';
-import _ from 'lodash'
+// import _ from 'lodash'
 import BrandLogo from "./../../assets/images/brandlogo.png"
 
 
 export default function UserPage() {
     const params = useParams();
     const [singleProdSt, setSingleProdSt] = useState([])
-    const [value, setValue] = useState([]);
+    // const [value, setValue] = useState([]);
     const [schedState, setSchedState] = useState([])
     const [userState, setUserState] = useState({
         markets: [],
@@ -44,6 +44,7 @@ export default function UserPage() {
         } else {
             console.log("loading")
         }
+        // eslint-disable-next-line
     }, [])
 
     const newArr = []
@@ -130,7 +131,7 @@ export default function UserPage() {
                         <div className="container">
                             <div className="box logobox">
                                 <figure className="image is-1x1">
-                                    <img src={BrandLogo} />
+                                    <img alt="Mark-It Logo" src={BrandLogo} />
                                 </figure>
                             </div>
                         </div>

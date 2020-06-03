@@ -53,7 +53,7 @@ class MapPage extends React.Component {
                     marketname: [...nameArr],
                     id: [...idArr]
                 })
-                console.log(data.data.results);
+                // console.log(data.data.results);
                 let counter = 0;
                 data.data.results.forEach(market => {
                     this.getDetails(market.id, counter);
@@ -62,7 +62,6 @@ class MapPage extends React.Component {
                 })
                 setTimeout(() => {
                     displayMap(MarketArr)
-
                 }, 1000);
             })
     }
@@ -83,13 +82,13 @@ class MapPage extends React.Component {
     };
 
     getDetails = (query, count) => {
-        if (query == "Error") {
-            console.log("it's an error");
-        }
+        if (query === "Error") {
+            console.log("error received, likely an invalid zip code");
+        } else {
 
-        API.searchMarket(query)
+            API.searchMarket(query)
             .then((data) => {
-
+                
                 const newMarketObj = {
                     'type': 'Feature',
                     'geometry': {
@@ -102,14 +101,14 @@ class MapPage extends React.Component {
                 };
                 const lat = parseFloat(data.data.marketdetails.GoogleLink.split('=').pop().split('%')[0])
                 const long = parseFloat("-" + (data.data.marketdetails.GoogleLink.split('%20-').pop().split('%')[0]))
-
+                
                 const coords = [long, lat];
-
-
+                
+                
                 // GET LAT AND LONG FROM data.marketdetails.GoogleLink 
                 // AND MAKE ARRAY [long,lat]
                 // console.log(data.marketdetails.GoogleLInk.split('-'))
-
+                
                 // ADD MARKET DETAILS TO GEOJSON OBJECT newMarketObj
                 newMarketObj.geometry.coordinates = coords;
                 newMarketObj.properties.products = data.data.marketdetails.Products;
@@ -123,6 +122,7 @@ class MapPage extends React.Component {
                     marketArrState: [...MarketArr]
                 })
             })
+        }
     };
 
 
@@ -136,7 +136,6 @@ class MapPage extends React.Component {
         // =======================================
         API.search(zip)
             .then((data) => {
-
                 // LOOP THROUGH ARRAY OF MARKET IDS AND NAMES
                 // AND RUN getDetails FOR EACH ENTRY - 
                 // THIS RUNS THE SECOND AJAX REQUEST
@@ -164,10 +163,7 @@ class MapPage extends React.Component {
             }).then(() => {
                 //FIXME: TIMEOUT CURRENTLY SET TO GIVE ARRAY TIME TO POPULATE
                 //FIXME: KINDA HACKY RIGHT NOW, NEED TO FIX LATER
-                const userLat = this.state.lat
-                const userLong = this.state.lng
                 setTimeout(function () {
-
                     displayMap(MarketArr);
                 }, 1000);
             });
@@ -176,7 +172,7 @@ class MapPage extends React.Component {
 
     handleMarketSaveClick = (marketDetails) => {
 
-        console.log(marketDetails)
+        // console.log(marketDetails)
         API.addFavMarkets(marketDetails)
             .then(newMarket => {
                 // let user know save is complete
@@ -194,7 +190,7 @@ class MapPage extends React.Component {
 
     handleButtonClick = () => {
         !this.state.active ? this.setState({ active: true }) : this.setState({ active: false })
-        console.log(this.state.active)
+        // console.log(this.state.active)
     }
 
     render() {
@@ -219,7 +215,6 @@ class MapPage extends React.Component {
 
 
                                 this.state.marketArrState.map((market, index) => {
-
                                     return (
                                         <div>
                                             <MapCard
@@ -240,64 +235,67 @@ class MapPage extends React.Component {
 
                         <div style={{ height: "80vh", width: "65vw" }} className="MapContainer" id="map" />
                     </div>
-                    <div className="section">
 
-                        <div class={this.state.active ? "modal is-active": "modal"}>
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Markets Near Me</p>
-                                    <button class="delete" aria-label="close" onClick={this.handleButtonClick}></button>
-                                </header>
-                                <section class="modal-card-body">
+                </div>
+
+
+                <div className="section">
+
+                    <div className={this.state.active ? "modal is-active" : "modal"}>
+                        <div className="modal-background"></div>
+                        <div className="modal-card">
+                            <header className="modal-card-head">
+                                <p className="modal-card-title">Markets Near Me</p>
+                                <button className="delete" aria-label="close" onClick={this.handleButtonClick}></button>
+                            </header>
+                            <section className="modal-card-body">
                                 <div className="mapCards" id="overflow-fix">
-                            {(this.state.marketArrState.length < 1) ?
-                                <h1>Markets Loading...</h1> :
+                                    {(this.state.marketArrState.length < 1) ?
+                                        <h1>Markets Loading...</h1> :
 
 
 
-                                this.state.marketArrState.map((market, index) => {
+                                        this.state.marketArrState.map((market, index) => {
 
-                                    return (
-                                        <div>
-                                            <MapCard
-                                                name={market.properties.name.substr(4)}
-                                                distance={market.properties.name.slice(0, 4)}
-                                                products={market.properties.products}
-                                                schedule={market.properties.schedule.slice(0, -16)}
-                                                address={market.properties.address}
-                                                key={index}
-                                                USDA_id={market.properties.USDA_id}
-                                                handleMarketSaveClick={this.handleMarketSaveClick}
-                                            />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                                </section>
-                                
-                            </div>
-                        </div>
-                        <div className="level">
-                            <div className="level-item">
-                                <button className="button is-large is-info mapButton" onClick={this.handleButtonClick}>See Markets</button>
-                            </div>
-                        </div>
-                        <div className="level">
-                            <div className="level-item">
+                                            return (
+                                                <div>
+                                                    <MapCard
+                                                        name={market.properties.name.substr(4)}
+                                                        distance={market.properties.name.slice(0, 4)}
+                                                        products={market.properties.products}
+                                                        schedule={market.properties.schedule.slice(0, -16)}
+                                                        address={market.properties.address}
+                                                        key={index}
+                                                        USDA_id={market.properties.USDA_id}
+                                                        handleMarketSaveClick={this.handleMarketSaveClick}
+                                                    />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </section>
 
-                                <p className="coronavirusalert title is-4">Notice: The search results may be outdated and events <br></br>might have been canceled due to the Corona virus pandemic.</p>
-                            </div>
                         </div>
                     </div>
+                    <div className="level">
+                        <div className="level-item">
+                            <button className="button is-large is-info mapButton" onClick={this.handleButtonClick}>See Markets</button>
+                        </div>
+                    </div>
+                    <div className="level">
+                        <div className="level-item">
 
-                    <SearchForm
-                        value={this.state.search}
-                        handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit}
-                    />
+                            <p className="coronavirusalert title is-4">Notice: The search results may be outdated and events <br></br>might have been canceled due to the Corona virus pandemic.</p>
+                        </div>
+                    </div>
                 </div>
+
+                <SearchForm
+                    value={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                />
             </div>
         )
     }
