@@ -3,10 +3,12 @@ import React from 'react'
 import API from "../../utils/API"
 import "./style.css"
 import { toast } from "bulma-toast";
+import { withRouter } from 'react-router-dom';
 
 // convert to rfc
 
 class SignUpPage extends React.Component {
+    
     state = {
         username: null,
         password:null,
@@ -30,6 +32,7 @@ class SignUpPage extends React.Component {
     refreshPage = () => {
         window.location.reload(false);
     }
+     
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -113,7 +116,8 @@ class SignUpPage extends React.Component {
                         bus_lic: null
                     })
                 }
-                this.refreshPage();
+                
+                this.props.history.push('/login');
             })
         } else {
             console.error('Invalid Form')
@@ -135,7 +139,7 @@ class SignUpPage extends React.Component {
                         </div>
                     </div>
                 </section>
-                <div className="section">
+                <div className="section signupSection">
                     <div className="container">
                         <div className="box formbox">
 
@@ -223,4 +227,4 @@ class SignUpPage extends React.Component {
         )
     }
 }
-export default SignUpPage
+export default withRouter(SignUpPage);

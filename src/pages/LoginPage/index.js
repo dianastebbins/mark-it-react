@@ -53,7 +53,7 @@ export default function LoginPage(props) {
           </div>
         </div>
       </section>
-      <div className="section">
+      <div className="section loginSection">
         <div className="container">
           <div className="box formbox">
             <form>

@@ -1,6 +1,7 @@
 .footer{
-    position: fixed;
+    position: sticky;
     width: 100%;
+    min-height: 50px;
     bottom: 0;
     background-color:hsl(0, 0%, 21%);
     /* background: #264653; */

@@ -159,7 +159,7 @@ export default function UserPage() {
                                                     <article id="orangebox" className="tile is-child box">
                                                         <p className="newuser title">Find Something Amazing</p>
                                                         <div className="content">
-                                                            <p>Head over to our "Items for Sale" section to see what artisans in your area have to offer</p>
+                                                            <p>Head over to the Mark-It-Place to see what artisans in your area have to offer.</p>
                                                             <Link to={`/detail`}>
                                                                 <button className="button is-small is-info">Go Now!</button>
                                                             </Link>
@@ -170,7 +170,7 @@ export default function UserPage() {
                                                     <article id="greenbox" className="tile is-child notification is-bold box">
                                                         <p className="newuser title">List Something Amazing</p>
                                                         <div className="content">
-                                                            <p>Artisan? Maker? Baker? Creator? List something to share with the folks in you neighborhood</p>
+                                                            <p>Artisan? Maker? Baker? Creator? List something to share with the folks in you neighborhood.</p>
                                                             <Link to={`/add-product`}>
                                                                 <button className="button is-small is-info">Well, go on then!</button>
                                                             </Link>
@@ -182,7 +182,7 @@ export default function UserPage() {
                                                 <article id="purplebox" className="tile is-child notification  box">
                                                     <p className="newuser title">Explore your Neighborhood</p>
                                                     <div className="content">
-                                                        <p>Head over to the map to find markets and artisans near you</p>
+                                                        <p>Head over to the map to find markets and artisans near you. When you find something you like, Mark-It!</p>
                                                         <Link to={`/map`}>
                                                             <button className="button is-small is-info">Off you go!</button>
                                                         </Link>
