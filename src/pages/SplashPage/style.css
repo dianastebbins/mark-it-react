@@ -1,17 +1,17 @@
 .SplashPage {
-    background: black;
-    width: 100vw;
-    text-align: center;
-    color: white;
-    height: 100%;
+  background-color: black;
+  width: 100vw;
+  text-align: center;
+  color: white;
+  height: 100%;
 }
 
 /* code for if we want to have carousel with arrows */
 /* -------- */
 /* .MainImage{ */
-    /* background-image: url(../../assets/images/main1.jpg); */
-    /* need to adjust and change the image */
-    /* text-align: center; */
+/* background-image: url(../../assets/images/main1.jpg); */
+/* need to adjust and change the image */
+/* text-align: center; */
 /* } */
 
 /* .mainIntro{
@@ -31,7 +31,6 @@ margin-top: 30px;
     width: 100px;
     fill: whitesmoke;
 } */
-
 
 /* the code for bringing the text on video but only worked well with full screen */
 /* .splashpagetext{
@@ -55,10 +54,6 @@ z-index: 10000;
 display: none;
   } */
 
-
-
-
-
 /* .SplashSubtitle{
     color: white;
 } */
@@ -67,76 +62,70 @@ display: none;
     height: auto;
 } */
 
-
-
 /* start of fade in animated effect */
 /* ============= */
 
 .title.fade-in {
-    max-width: 10vw;
-    color: white;
+  max-width: 10vw;
+  color: white;
 }
 
-
-
 .fade-in {
-    animation: fadeIn ease 1.5s;
-    -webkit-animation: fadeIn ease 1.5s;
-    -moz-animation: fadeIn ease 1.5s;
-    -o-animation: fadeIn ease 1.5s;
-    -ms-animation: fadeIn ease 1.5s;
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  @keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
-  
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
-  
-  @-o-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity: 1;
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /* =====end of animated logo affects======== */
 
-
-
 /* media for id of video */
 /* ---------- */
- /* @media screen and (max-width: 1100px){
+/* @media screen and (max-width: 1100px){
 #vid{
   position: fixed;
   right: 0;
@@ -146,15 +135,11 @@ display: none;
 }
 }  */
 
-
-
-
 /* ========== code for having text on top of video and it being responsive ============== */
 /* @import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900); */
 * {
   box-sizing: border-box;
 }
-
 
 #vid {
   position: absolute;
@@ -163,9 +148,9 @@ display: none;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 
 .overlay {
@@ -175,75 +160,71 @@ display: none;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 /* giving the styling to overlay class p tag */
 .overlay p {
-/* TODO The 3 properties below can change based on our desire */
+  /* TODO The 3 properties below can change based on our desire */
 
   /* this is the background of the text on video */
-    /* background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0; */
-    background-color: hsla(0, 0%, 21%);
-    /* color of text */
-    color:  white;
-    /* how see through the text is */
-    /* opacity: 0.5; */
-    font-size: 24px;
+  /* background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0; */
+  background-color: hsla(0, 0%, 21%);
+  /* color of text */
+  color: white;
+  /* how see through the text is */
+  /* opacity: 0.5; */
+  font-size: 24px;
 
-    font-weight: 800;
-    margin: 2rem 3rem 0;
-    mix-blend-mode: hard-light;
-    padding: 5px 15px;
-    text-align: center;
-    border-radius: 5px;
-    
+  font-weight: 800;
+  margin: 2rem 3rem 0;
+  mix-blend-mode: hard-light;
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 5px;
 }
 
-
 /* customized size */
-.frontlogo{
+.frontlogo {
   width: 100px;
   height: 100px;
 }
 
 /* =======logo animation =========== */
 .rotate-scale-up-ver {
-	-webkit-animation: rotate-scale-up-ver 0.65s linear both;
-	        animation: rotate-scale-up-ver 0.65s linear both;
+  -webkit-animation: rotate-scale-up-ver 0.65s linear both;
+  animation: rotate-scale-up-ver 0.65s linear both;
 }
 
-
- @-webkit-keyframes rotate-scale-up-ver {
+@-webkit-keyframes rotate-scale-up-ver {
   0% {
     -webkit-transform: scale(1) rotateY(0);
-            transform: scale(1) rotateY(0);
+    transform: scale(1) rotateY(0);
   }
   50% {
     -webkit-transform: scale(2) rotateY(180deg);
-            transform: scale(2) rotateY(180deg);
+    transform: scale(2) rotateY(180deg);
   }
   100% {
     -webkit-transform: scale(1) rotateY(360deg);
-            transform: scale(1) rotateY(360deg);
+    transform: scale(1) rotateY(360deg);
   }
 }
 @keyframes rotate-scale-up-ver {
   0% {
     -webkit-transform: scale(1) rotateY(0);
-            transform: scale(1) rotateY(0);
+    transform: scale(1) rotateY(0);
   }
   50% {
     -webkit-transform: scale(2) rotateY(180deg);
-            transform: scale(2) rotateY(180deg);
+    transform: scale(2) rotateY(180deg);
   }
   100% {
     -webkit-transform: scale(1) rotateY(360deg);
-            transform: scale(1) rotateY(360deg);
+    transform: scale(1) rotateY(360deg);
   }
 }
 /* ===============end of logo animation================= */
-

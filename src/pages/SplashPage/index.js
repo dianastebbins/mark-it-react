@@ -31,12 +31,7 @@ export default function SplashPage() {
 
                         <p className="SplashSubtitle">
                            
-                    Would you like to sell your fresh produce , handmade jewelry and crafts?
-                    <br></br>
-                    Are you looking to buy fresh products from local vendors to help in saving Energy?
-                    <br></br>
-                    Mark It has made it Easy! You can get started by creating an account
-                    <br></br>
+                    Bringing the Farmer's Market experience to your desktop or phone.
                     </p>
                     
 
