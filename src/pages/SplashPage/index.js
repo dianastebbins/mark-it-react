@@ -2,7 +2,7 @@ import React from 'react'
 // for the next arrow svg icon
 // import { ReactComponent as NextArrow } from "../../assets/images/nextarrow.svg";
 import "./style.css"
-import video from '../../assets/images/flowers.mp4'
+import video from '../../assets/images/slideshow.mp4'
 import logo from '../../assets/images/brandlogo.png'
 
 
