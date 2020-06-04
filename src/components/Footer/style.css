@@ -1,7 +1,7 @@
 .footer{
     position: sticky;
     width: 100%;
-    min-height: 50px;
+    min-height: 100%;
     bottom: 0;
     background-color:hsl(0, 0%, 21%);
     /* background: #264653; */
@@ -16,9 +16,9 @@
 }
 
 .footSpan {
-    font-size: 1rem;
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    font-size: .9rem;
+    /* padding-top: .75rem; */
+    /* padding-bottom: 1rem; */
 }
 /* .copyright{
    text-align: right;
