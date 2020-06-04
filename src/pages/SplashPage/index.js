@@ -2,7 +2,7 @@ import React from 'react'
 // for the next arrow svg icon
 // import { ReactComponent as NextArrow } from "../../assets/images/nextarrow.svg";
 import "./style.css"
-import video from '../../assets/images/farm2.mp4'
+import video from '../../assets/images/slideshow.mp4'
 import logo from '../../assets/images/brandlogo.png'
 
 
@@ -31,12 +31,7 @@ export default function SplashPage() {
 
                         <p className="SplashSubtitle">
                            
-                    Would you like to sell your fresh produce , handmade jewelry and crafts?
-                    <br></br>
-                    Are you looking to buy fresh products from local vendors to help in saving Energy?
-                    <br></br>
-                    Mark It has made it Easy! You can get started by creating an account
-                    <br></br>
+                    Bringing the Farmer's Market experience to your desktop or phone.
                     </p>
                     
 

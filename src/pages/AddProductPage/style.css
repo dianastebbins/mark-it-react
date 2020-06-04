@@ -18,6 +18,7 @@
 .AddProductPage{
     background: lightslategray;
     box-shadow: inset 10px 10px 100px rgba(0, 0, 0, 0.507), inset -10px -10px 100px rgba(0, 0, 0, 0.507);
+    min-height: 100vh;
 }
 
 /* .label{
@@ -28,6 +29,7 @@
     /* margin: 20px; */
     height: 100%;
     /* margin: 0 auto; */
+    padding-bottom: 0;
 }
 
 .formbox{

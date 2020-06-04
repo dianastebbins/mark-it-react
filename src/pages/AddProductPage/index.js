@@ -171,14 +171,14 @@ export default function AddProductPage() {
                                         <img alt="product" src={productState.image}></img>
                                     </div>
                                 ) : ""}
-                                <div className="field">
+                                {/* <div className="field">
                                     <div className="control">
                                         <label className="checkbox">
                                             <input required type="checkbox" />
                                             I agree to the <a href="https://gist.github.com/zahraaliaghazadeh/7f5bbde80804ca1ae0cb6f9ed1fbc540">terms and conditions</a>
                                         </label>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* TODO: units input should be added later */}
                                 <button className="button is-link" onClick={handleFormSubmit}>Add Product!</button>
