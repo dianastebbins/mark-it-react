@@ -27,20 +27,21 @@
 
 mobile screen size responsive
 
-<img src="./public/assets/images/screenshot14.png" width="250px" height="370px"> <img src="./public/assets/images/screenshot11.png" width="250px" height="370px"> <img src="./public/assets/images/screenshot12.png" width="250px" height="370px"> 
+<img src="./public/assets/images/screenshot6.png" width="250px" height="370px"> <img src="./public/assets/images/screenshot7.png" width="250px" height="370px">
+ <!-- <img src="./public/assets/images/screenshot12.png" width="250px" height="370px">  -->
 
 <hr>
 Once landing at the splash page , a video showing with introduction about the page
-<img src="./public/assets/images/screenshot13.png">
+<img src="./public/assets/images/screenshot1.png">
 
 On Find Market tab, if you are not logged in , you can find farmers market events searched by zip code, If you log in , you can post an item and it will be pinned to the map.
-<img src="./public/assets/images/screenshot9.png">
+<img src="./public/assets/images/screenshot2.png">
 
 The user profile layout with shortcuts to the map, add product and all items for sale.
 <img src="./public/assets/images/screenshot5.png">
 
 The view all products page
-<img src="./public/assets/images/screenshot10.png">
+<img src="./public/assets/images/screenshot3.png">
 
 
 
